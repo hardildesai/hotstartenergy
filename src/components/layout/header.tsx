@@ -27,7 +27,7 @@ export function Header() {
         <div className="mr-4 flex items-center">
           <Link href="/" className="flex items-center gap-2 font-bold">
             <Zap className="h-6 w-6 text-accent" />
-            <span className="text-lg">Hotstart Solutions</span>
+            <span className="text-lg">Hotstart Energies</span>
           </Link>
         </div>
 
@@ -61,7 +61,7 @@ export function Header() {
             <SheetContent side="left">
               <Link href="/" className="flex items-center gap-2 font-bold" onClick={() => setIsSheetOpen(false)}>
                 <Zap className="h-6 w-6 text-accent" />
-                <span className="text-lg">Hotstart Solutions</span>
+                <span className="text-lg">Hotstart Energies</span>
               </Link>
               <div className="mt-8 flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (

@@ -7,11 +7,11 @@ export function Footer() {
         <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-muted-foreground" />
             <p className="text-sm text-muted-foreground">
-                Hotstart Solutions
+                Hotstart Energies
             </p>
         </div>
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Hotstart Solutions. All rights reserved.
+          &copy; {new Date().getFullYear()} Hotstart Energies. All rights reserved.
         </p>
       </div>
     </footer>

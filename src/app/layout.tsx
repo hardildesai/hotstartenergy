@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Hotstart Solutions',
+  title: 'Hotstart Energies',
   description: 'Your trusted partner for switchgear and home solutions.',
 };
 
