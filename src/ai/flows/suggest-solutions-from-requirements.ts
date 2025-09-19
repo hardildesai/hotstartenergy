@@ -41,7 +41,7 @@ const prompt = ai.definePrompt({
   name: 'suggestSolutionsFromRequirementsPrompt',
   input: {schema: SuggestSolutionsFromRequirementsInputSchema},
   output: {schema: SuggestSolutionsFromRequirementsOutputSchema},
-  prompt: `You are an expert switchgear solutions advisor. Based on the user's requirements, suggest optimal switchgear solutions.
+  prompt: `You are an expert solutions advisor for Hotstart Solutions. Based on the user's requirements, suggest optimal switchgear solutions.
 
 Requirements: {{{requirements}}}
 
