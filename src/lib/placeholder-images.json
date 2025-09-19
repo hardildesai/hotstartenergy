@@ -1,3 +1,70 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "prod-mv-switchgear",
+      "description": "Medium voltage switchgear in an industrial setting",
+      "imageUrl": "https://picsum.photos/seed/101/600/400",
+      "imageHint": "industrial equipment"
+    },
+    {
+      "id": "prod-lv-panel",
+      "description": "Low voltage distribution panel",
+      "imageUrl": "https://picsum.photos/seed/102/600/400",
+      "imageHint": "electrical panel"
+    },
+    {
+      "id": "prod-legrand-switch",
+      "description": "A modern Legrand smart light switch on a wall",
+      "imageUrl": "https://picsum.photos/seed/103/600/400",
+      "imageHint": "smart home"
+    },
+    {
+      "id": "prod-home-automation",
+      "description": "Home automation system hub",
+      "imageUrl": "https://picsum.photos/seed/104/600/400",
+      "imageHint": "home technology"
+    },
+    {
+      "id": "prod-circuit-breaker",
+      "description": "Industrial circuit breaker unit",
+      "imageUrl": "https://picsum.photos/seed/105/600/400",
+      "imageHint": "circuit breaker"
+    },
+    {
+      "id": "prod-legrand-socket",
+      "description": "Elegant Legrand power socket",
+      "imageUrl": "https://picsum.photos/seed/106/600/400",
+      "imageHint": "wall socket"
+    },
+    {
+      "id": "blog-intro-switchgear",
+      "description": "An overview of different types of switchgear",
+      "imageUrl": "https://picsum.photos/seed/201/800/400",
+      "imageHint": "electrical grid"
+    },
+    {
+      "id": "blog-smart-home",
+      "description": "A person using a tablet to control a smart home",
+      "imageUrl": "https://picsum.photos/seed/202/800/400",
+      "imageHint": "smart home"
+    },
+    {
+      "id": "blog-legrand-innovations",
+      "description": "Showcase of Legrand's latest product designs",
+      "imageUrl": "https://picsum.photos/seed/203/800/400",
+      "imageHint": "modern design"
+    },
+    {
+      "id": "hero-background",
+      "description": "A stylized image of an electrical power station at dusk.",
+      "imageUrl": "https://picsum.photos/seed/301/1920/1080",
+      "imageHint": "power station"
+    },
+    {
+      "id": "advisor-background",
+      "description": "A blueprint of an electrical circuit.",
+      "imageUrl": "https://picsum.photos/seed/302/1200/600",
+      "imageHint": "blueprint circuit"
+    }
+  ]
 }
