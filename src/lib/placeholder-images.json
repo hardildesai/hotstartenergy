@@ -3,67 +3,67 @@
     {
       "id": "prod-mv-switchgear",
       "description": "Medium voltage switchgear in an industrial setting",
-      "imageUrl": "https://images.unsplash.com/photo-1588665094596-9b65a9534a83?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/1/600/400",
       "imageHint": "industrial equipment"
     },
     {
       "id": "prod-lv-panel",
       "description": "Low voltage distribution panel",
-      "imageUrl": "https://images.unsplash.com/photo-1617860133149-2f7b8b211d3a?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/2/600/400",
       "imageHint": "electrical panel"
     },
     {
       "id": "prod-legrand-switch",
       "description": "A modern Legrand smart light switch on a wall",
-      "imageUrl": "https://images.unsplash.com/photo-1586232777935-9a47a14934e6?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/3/600/400",
       "imageHint": "smart home"
     },
     {
       "id": "prod-home-automation",
       "description": "Home automation system hub",
-      "imageUrl": "https://images.unsplash.com/photo-1599658880111-a59e6c35aad3?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/4/600/400",
       "imageHint": "home technology"
     },
     {
       "id": "prod-circuit-breaker",
       "description": "Industrial circuit breaker unit",
-      "imageUrl": "https://images.unsplash.com/photo-1567120192301-380211794939?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/5/600/400",
       "imageHint": "circuit breaker"
     },
     {
       "id": "prod-legrand-socket",
       "description": "Elegant Legrand power socket",
-      "imageUrl": "https://images.unsplash.com/photo-1614798361623-0afe40ea907a?q=80&w=600&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/6/600/400",
       "imageHint": "wall socket"
     },
     {
       "id": "blog-intro-switchgear",
       "description": "An overview of different types of switchgear",
-      "imageUrl": "https://images.unsplash.com/photo-1506729623303-b3a5a4846353?q=80&w=800&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/7/800/400",
       "imageHint": "electrical grid"
     },
     {
       "id": "blog-smart-home",
       "description": "A person using a tablet to control a smart home",
-      "imageUrl": "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/8/800/400",
       "imageHint": "smart home"
     },
     {
       "id": "blog-legrand-innovations",
       "description": "Showcase of Legrand's latest product designs",
-      "imageUrl": "https://images.unsplash.com/photo-1631173716594-159e8f239016?q=80&w=800&h=400&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/9/800/400",
       "imageHint": "modern design"
     },
     {
       "id": "hero-background",
       "description": "A stylized image of an electrical power station at dusk.",
-      "imageUrl": "https://images.unsplash.com/photo-1553342385-116498345076?q=80&w=1920&h=1080&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/10/1920/1080",
       "imageHint": "data center"
     },
     {
       "id": "advisor-background",
       "description": "A blueprint of an electrical circuit.",
-      "imageUrl": "https://images.unsplash.com/photo-1518429399852-259c1b359a63?q=80&w=1200&h=600&fit=crop",
+      "imageUrl": "https://picsum.photos/seed/11/1200/600",
       "imageHint": "blueprint circuit"
     }
   ]
