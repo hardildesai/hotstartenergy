@@ -4,7 +4,9 @@ import Lenis from '@studio-freight/lenis';
 
 const SmoothScroll = () => {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      smoothTouch: true,
+    });
 
     function raf(time: number) {
       lenis.raf(time);
