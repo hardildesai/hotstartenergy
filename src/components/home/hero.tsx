@@ -22,17 +22,17 @@ export function Hero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-foreground">
         <div className="container px-4">
           <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-            Reliable Power, Innovative Solutions
+            Agility. Versatility. Technical Competence.
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
             Your trusted partner for industry-leading switchgear and modern home automation, engineered for performance and reliability.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild>
-              <Link href="/products">Explore Products</Link>
+              <Link href="/products">Explore Solutions</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">Get in Touch</Link>
             </Button>
           </div>
         </div>

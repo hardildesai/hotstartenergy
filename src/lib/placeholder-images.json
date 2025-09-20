@@ -58,7 +58,7 @@
       "id": "hero-background",
       "description": "A stylized image of an electrical power station at dusk.",
       "imageUrl": "https://picsum.photos/seed/301/1920/1080",
-      "imageHint": "power station"
+      "imageHint": "data center"
     },
     {
       "id": "advisor-background",

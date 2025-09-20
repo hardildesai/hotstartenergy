@@ -6,8 +6,8 @@ import { Toaster } from "@/components/ui/toaster"
 import SmoothScroll from '@/components/layout/smooth-scroll';
 
 export const metadata: Metadata = {
-  title: 'Hotstart Energies',
-  description: 'Your trusted partner for switchgear and home solutions.',
+  title: 'Hotstart Energy',
+  description: 'Agility. Versatility. Technical Competence.',
 };
 
 export default function RootLayout({
