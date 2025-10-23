@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%; /* Light Gray */
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 222.2 84% 4.9%; /* Dark Gray */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -114,31 +114,31 @@
 
   @property --color-1 {
     syntax: '<color>';
-    initial-value: #1e3a8a;
+    initial-value: #93c5fd;
     inherits: false;
   }
 
   @property --color-2 {
     syntax: '<color>';
-    initial-value: #3b82f6;
+    initial-value: #60a5fa;
     inherits: false;
   }
 
   @property --color-3 {
     syntax: '<color>';
-    initial-value: #93c5fd;
+    initial-value: #3b82f6;
     inherits: false;
   }
 
   @property --color-4 {
     syntax: '<color>';
-    initial-value: #60a5fa;
+    initial-value: #2563eb;
     inherits: false;
   }
 
   @property --color-5 {
     syntax: '<color>';
-    initial-value: #2563eb;
+    initial-value: #1e3a8a;
     inherits: false;
   }
 
@@ -243,11 +243,11 @@
     --pos-y: 91.51%;
     --spread-x: 120.24%;
     --spread-y: 103.18%;
-    --color-1: #93c5fd;
-    --color-2: #60a5fa;
-    --color-3: #3b82f6;
-    --color-4: #2563eb;
-    --color-5: #1e3a8a;
+    --color-1: #dbeafe;
+    --color-2: #bfdbfe;
+    --color-3: #93c5fd;
+    --color-4: #60a5fa;
+    --color-5: #3b82f6;
     --border-angle: 190deg;
     --border-color-1: hsla(220, 78%, 90%, 0.3);
     --border-color-2: hsla(220, 75%, 90%, 0.8);
@@ -287,5 +287,9 @@
     --border-angle: 210deg;
     --border-color-1: hsla(220, 10%, 80%, 0.2);
     --border-color-2: hsla(220, 10%, 80%, 0.75);
+  }
+
+  .footer-container .lower-footer {
+      border-top: 1px solid hsl(var(--border));
   }
 }
