@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 export function MarineElectricalsLogo({ className }: { className?: string }) {
   return (
     <svg
-      className={cn('text-white', className)}
+      className={cn('text-gray-800', className)}
       width="180"
       height="30"
       viewBox="0 0 180 30"

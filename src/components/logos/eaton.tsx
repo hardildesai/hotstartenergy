@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 export function EatonLogo({ className }: { className?: string }) {
   return (
     <svg
-      className={cn('text-white', className)}
+      className={cn('text-gray-800', className)}
       width="100"
       height="30"
       viewBox="0 0 100 30"
