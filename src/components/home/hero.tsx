@@ -16,8 +16,8 @@ export function Hero() {
         data-ai-hint="modern building night"
       />
       <div className="absolute inset-0 bg-black/70" />
-      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
-        <div className="container px-4 flex flex-col justify-center">
+      <div className="relative z-10 flex flex-col items-center justify-end text-center text-white h-full pb-48">
+        <div className="container px-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Powering the <span className="text-accent">future</span> with precision and control
           </h1>
@@ -32,10 +32,6 @@ export function Hero() {
               <Link href="/products">View Products</Link>
             </Button>
           </div>
-        </div>
-        <div className="w-full pb-8 space-y-6">
-            <BrandPartners />
-            <TrustedBy />
         </div>
       </div>
     </section>
