@@ -28,7 +28,7 @@ export function Hero() {
             <GradientButton asChild>
               <Link href="/contact">Contact us now</Link>
             </GradientButton>
-            <GradientButton asChild variant="outline">
+            <GradientButton asChild variant="variant">
               <Link href="/products">View Products</Link>
             </GradientButton>
           </div>
