@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
 
@@ -25,12 +25,12 @@ export function Hero() {
             Trust Hotstart Energy to energize industry with reliability, technical expertise, and world-class brand partners.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">
+            <GradientButton asChild>
               <Link href="/contact">Contact us now</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-black rounded-full">
+            </GradientButton>
+            <GradientButton asChild variant="outline">
               <Link href="/products">View Products</Link>
-            </Button>
+            </GradientButton>
           </div>
         </div>
         <div className="w-full pb-8 space-y-8">
