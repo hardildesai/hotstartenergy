@@ -26,14 +26,14 @@ const partners = [
 export function BrandPartners() {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-center mb-8">Our Brand Partners</h2>
+      <h2 className="text-lg font-bold text-center mb-4">Our Brand Partners</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll group-hover:pause">
             <div className="flex w-max space-x-12 pr-12">
               {[...partners, ...partners].map((partner, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <partner.logo className="h-6 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
+                  <partner.logo className="h-5 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
                 </div>
               ))}
             </div>

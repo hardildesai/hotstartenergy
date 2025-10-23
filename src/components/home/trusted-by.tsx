@@ -20,14 +20,14 @@ const clients = [
 export function TrustedBy() {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-center mb-8">Trusted By Leading Companies</h2>
+      <h2 className="text-lg font-bold text-center mb-4">Trusted By Leading Companies</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll-reverse group-hover:pause">
             <div className="flex w-max space-x-16 pr-16">
               {[...clients, ...clients].map((client, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <client.logo className="h-6 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
+                  <client.logo className="h-5 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
                 </div>
               ))}
             </div>
