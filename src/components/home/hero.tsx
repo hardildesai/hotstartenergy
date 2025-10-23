@@ -17,7 +17,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-black/70" />
       <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
-        <div className="container px-4 flex flex-col justify-center flex-grow">
+        <div className="container px-4 flex flex-col justify-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Powering the <span className="text-accent">future</span> with precision and control
           </h1>
