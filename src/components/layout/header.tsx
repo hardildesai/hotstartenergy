@@ -4,7 +4,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar
 import { cn } from "@/lib/utils";
 import { Logo } from "../logo";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { FlowButton } from "../ui/flow-button";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -44,9 +44,7 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <HoveredLink href="/career">Career</HoveredLink>
-        <Button asChild>
-          <Link href="/contact">Contact Us</Link>
-        </Button>
+        <FlowButton text="Contact Us" href="/contact" />
       </Menu>
     </div>
   );
