@@ -33,7 +33,7 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div className="w-full pb-8 space-y-8">
+        <div className="w-full pb-8 space-y-6">
             <BrandPartners />
             <TrustedBy />
         </div>
