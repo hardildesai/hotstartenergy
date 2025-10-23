@@ -24,11 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn("font-body antialiased", spaceGrotesk.variable)}>
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main>{children}</main>
+        <Footer />
         <Toaster />
       </body>
     </html>

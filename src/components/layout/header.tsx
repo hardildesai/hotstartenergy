@@ -25,6 +25,7 @@ export function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
+      // Show header if scrolled more than 10px
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
@@ -34,7 +35,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
+        'fixed top-0 z-50 w-full transition-all duration-300',
         isScrolled
           ? 'translate-y-0 bg-background/80 backdrop-blur-sm border-b'
           : '-translate-y-full bg-transparent'
