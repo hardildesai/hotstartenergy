@@ -1,19 +1,14 @@
 import { Hero } from '@/components/home/hero';
-import { FeaturedProducts } from '@/components/home/featured-products';
-import { AdvisorCta } from '@/components/home/advisor-cta';
-import { BlogPreview } from '@/components/home/blog-preview';
-import { Separator } from '@/components/ui/separator';
+import { BrandPartners } from '@/components/home/brand-partners';
+import { TrustedBy } from '@/components/home/trusted-by';
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <Hero />
-      <div className="container mx-auto px-4">
-        <FeaturedProducts />
-        <Separator className="my-16" />
-        <AdvisorCta />
-        <Separator className="my-16" />
-        <BlogPreview />
+      <div className="container mx-auto px-4 py-16 space-y-16">
+        <BrandPartners />
+        <TrustedBy />
       </div>
     </div>
   );

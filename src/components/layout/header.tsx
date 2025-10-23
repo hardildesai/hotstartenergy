@@ -3,31 +3,46 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Zap, Menu } from 'lucide-react';
+import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import React from 'react';
+import { Logo } from '@/components/logo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/products', label: 'Products' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/advisor', label: 'Solution Advisor' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 flex items-center">
-          <Link href="/" className="flex items-center gap-2 font-bold">
-            <Zap className="h-6 w-6 text-accent" />
-            <span className="text-lg">Hotstart Energy</span>
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full transition-all duration-300',
+        isScrolled ? 'bg-background/80 backdrop-blur-sm border-b' : 'bg-transparent'
+      )}
+    >
+      <div className="container flex h-20 items-center">
+        <div className="mr-8 flex items-center">
+          <Link href="/" className="flex items-center gap-2 font-bold text-white">
+            <Logo className="h-8 w-auto text-accent" />
+            <span className="text-lg sr-only">Hotstart Energy</span>
           </Link>
         </div>
 
@@ -37,8 +52,8 @@ export function Header() {
               key={href}
               href={href}
               className={cn(
-                'transition-colors hover:text-foreground/80',
-                pathname === href ? 'text-foreground' : 'text-foreground/60'
+                'text-neutral-300 transition-colors hover:text-white',
+                pathname === href ? 'text-white font-semibold' : ''
               )}
             >
               {label}
@@ -46,22 +61,17 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end gap-2">
-          <Button asChild className="hidden md:flex">
-            <Link href="/quote">Request a Quote</Link>
-          </Button>
-
-          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+        <div className="flex flex-1 items-center justify-end gap-2 md:hidden">
+           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="md:hidden">
-                <Menu className="h-4 w-4" />
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="bg-background">
               <Link href="/" className="flex items-center gap-2 font-bold" onClick={() => setIsSheetOpen(false)}>
-                <Zap className="h-6 w-6 text-accent" />
-                <span className="text-lg">Hotstart Energy</span>
+                 <Logo className="h-8 w-auto text-accent" />
               </Link>
               <div className="mt-8 flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (
@@ -77,9 +87,6 @@ export function Header() {
                     {label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4">
-                  <Link href="/quote" onClick={() => setIsSheetOpen(false)}>Request a Quote</Link>
-                </Button>
               </div>
             </SheetContent>
           </Sheet>
