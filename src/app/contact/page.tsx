@@ -1,5 +1,4 @@
 import { ContactForm } from '@/components/contact/contact-form';
-import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle, Mail, MapPin, Phone } from 'lucide-react';
 
@@ -14,8 +13,7 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
-        <Badge variant="outline">CONTACT US</Badge>
-        <h1 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Get in touch with us</h1>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Get in touch with us</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
           Fill out the form below or schedule a meeting with us at your convenience.
         </p>
