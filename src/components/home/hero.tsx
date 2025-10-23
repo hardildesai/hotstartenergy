@@ -6,7 +6,7 @@ import { TrustedBy } from './trusted-by';
 
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[700px] w-full flex flex-col justify-center">
+    <section className="relative h-screen min-h-[700px] w-full flex flex-col">
       <Image
         src="https://images.unsplash.com/photo-1581093450021-9a41386a3b1f?q=80&w=2070&auto=format&fit=crop"
         alt="Modern building at night"
@@ -16,8 +16,8 @@ export function Hero() {
         data-ai-hint="modern building night"
       />
       <div className="absolute inset-0 bg-black/70" />
-      <div className="relative z-10 flex flex-col items-center justify-end text-center text-white h-full pb-48">
-        <div className="container px-4">
+      <div className="relative z-10 flex flex-col items-center text-center text-white h-full">
+        <div className="container px-4 flex flex-col justify-center flex-grow">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Powering the <span className="text-accent">future</span> with precision and control
           </h1>
@@ -32,6 +32,10 @@ export function Hero() {
               <Link href="/products">View Products</Link>
             </Button>
           </div>
+        </div>
+        <div className="w-full pb-8 space-y-8">
+          <BrandPartners />
+          <TrustedBy />
         </div>
       </div>
     </section>
