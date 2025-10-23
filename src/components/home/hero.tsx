@@ -25,7 +25,7 @@ const heroImages = [
 
 export function Hero() {
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const carouselImages = PlaceHolderImages.filter(p => heroImages.includes(p.id));

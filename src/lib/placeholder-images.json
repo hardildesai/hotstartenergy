@@ -55,18 +55,6 @@
       "imageHint": "modern design"
     },
     {
-      "id": "hero-background",
-      "description": "A stylized image of an electrical power station at dusk.",
-      "imageUrl": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1770&auto=format&fit=crop",
-      "imageHint": "data center"
-    },
-    {
-      "id": "advisor-background",
-      "description": "A blueprint of an electrical circuit.",
-      "imageUrl": "https://images.unsplash.com/photo-1599837569374-399a0d6f6004?q=80&w=1854&auto=format&fit=crop",
-      "imageHint": "blueprint circuit"
-    },
-    {
       "id": "hero-carousel-1",
       "description": "Wind turbines in a field at sunset",
       "imageUrl": "https://images.unsplash.com/photo-1497435334432-56a02d68e068?q=80&w=2070&auto=format&fit=crop",
