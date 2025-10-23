@@ -14,6 +14,9 @@ const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Invalid email address.'),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
+  terms: z.boolean().refine(val => val === true, {
+    message: 'You must agree to the terms and conditions.',
+  }),
 });
 
 export async function submitQuote(data: unknown) {
