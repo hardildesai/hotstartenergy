@@ -27,7 +27,7 @@ export function TrustedBy() {
             <div className="flex w-max space-x-16 pr-16">
               {[...clients, ...clients].map((client, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <client.logo className="h-12 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
+                  <client.logo className="h-6 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
                 </div>
               ))}
             </div>

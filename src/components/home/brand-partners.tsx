@@ -33,7 +33,7 @@ export function BrandPartners() {
             <div className="flex w-max space-x-12 pr-12">
               {[...partners, ...partners].map((partner, index) => (
                 <div key={index} className="flex-shrink-0">
-                  <partner.logo className="h-12 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
+                  <partner.logo className="h-6 w-auto object-contain grayscale transition duration-300 hover:grayscale-0" />
                 </div>
               ))}
             </div>
