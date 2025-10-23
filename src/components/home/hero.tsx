@@ -9,6 +9,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -25,7 +27,7 @@ const heroImages = [
 
 export function Hero() {
   const plugin = React.useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   const carouselImages = PlaceHolderImages.filter(p => heroImages.includes(p.id));
@@ -35,6 +37,9 @@ export function Hero() {
       <Carousel
         className="absolute inset-0 w-full h-full"
         plugins={[plugin.current]}
+        opts={{
+          loop: true,
+        }}
       >
         <CarouselContent className="h-full">
           {carouselImages.map((image, index) => (
@@ -50,6 +55,8 @@ export function Hero() {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
       </Carousel>
 
       <div className="absolute inset-0 bg-white/50" />
