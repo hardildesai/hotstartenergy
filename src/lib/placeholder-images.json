@@ -65,6 +65,42 @@
       "description": "A blueprint of an electrical circuit.",
       "imageUrl": "https://images.unsplash.com/photo-1599837569374-399a0d6f6004?q=80&w=1854&auto=format&fit=crop",
       "imageHint": "blueprint circuit"
+    },
+    {
+      "id": "hero-carousel-1",
+      "description": "Wind turbines in a field at sunset",
+      "imageUrl": "https://images.unsplash.com/photo-1497435334432-56a02d68e068?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "wind turbine"
+    },
+    {
+      "id": "hero-carousel-2",
+      "description": "An electrical power grid with a dramatic sky",
+      "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "power grid"
+    },
+    {
+      "id": "hero-carousel-3",
+      "description": "A technician working on an electrical panel",
+      "imageUrl": "https://images.unsplash.com/photo-1581092919534-89cda27c1d63?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "electrical technician"
+    },
+    {
+      "id": "hero-carousel-4",
+      "description": "Solar panels on a roof",
+      "imageUrl": "https://images.unsplash.com/photo-1509934442137-2ea2689d045a?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "solar panel"
+    },
+    {
+      "id": "hero-carousel-5",
+      "description": "A modern data center with server racks",
+      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data center"
+    },
+    {
+      "id": "hero-carousel-6",
+      "description": "A close-up of a complex circuit board",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4138d0e2ca7c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "circuit board"
     }
   ]
 }
