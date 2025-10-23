@@ -26,7 +26,7 @@ const partners = [
 export function BrandPartners() {
   return (
     <section>
-      <h2 className="text-lg font-bold text-center mb-4">Our Brand Partners</h2>
+      <h2 className="text-lg font-bold text-center mb-4 text-foreground">Our Brand Partners</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll group-hover:pause">

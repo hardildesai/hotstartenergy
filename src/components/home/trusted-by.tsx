@@ -20,7 +20,7 @@ const clients = [
 export function TrustedBy() {
   return (
     <section>
-      <h2 className="text-lg font-bold text-center mb-4">Trusted By Leading Companies</h2>
+      <h2 className="text-lg font-bold text-center mb-4 text-foreground">Trusted By Leading Companies</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll-reverse group-hover:pause">
