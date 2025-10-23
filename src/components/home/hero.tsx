@@ -25,10 +25,10 @@ export function Hero() {
             Trust Hotstart Energy to energize industry with reliability, technical expertise, and world-class brand partners.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">
               <Link href="/contact">Contact us now</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-black">
+            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white hover:text-black rounded-full">
               <Link href="/products">View Products</Link>
             </Button>
           </div>
