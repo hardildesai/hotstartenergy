@@ -1,3 +1,4 @@
+
 import type { Product, BlogPost, ProductCategory } from './types';
 
 export const products: Product[] = [
@@ -111,7 +112,7 @@ export const blogPosts: BlogPost[] = [
 export const productCategories: ProductCategory[] = [
   {
     id: 'switchgear-panels',
-    title: 'Switchgear & Panels',
+    title: 'switchgear for panels',
     description: 'Safe and efficient power distribution for commercial and industrial networks.',
     imageId: 'cat-switchgear'
   },
