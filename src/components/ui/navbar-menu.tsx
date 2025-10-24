@@ -25,7 +25,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative">
+    <div onMouseEnter={() => setActive(item)} className="relative" onMouseLeave={() => setActive(null)}>
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
@@ -41,7 +41,6 @@ export const MenuItem = ({
           {active === item && (
             <div
               className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4"
-              onMouseLeave={() => setActive(null)}
             >
               <motion.div
                 transition={transition}
@@ -96,8 +95,8 @@ export const ProductItem = ({
     <Link href={href} className="flex space-x-2">
       <Image
         src={src}
-        width={80}
-        height={80}
+        width={60}
+        height={60}
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl object-cover"
       />
