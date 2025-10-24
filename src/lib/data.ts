@@ -117,12 +117,6 @@ export const productCategories: ProductCategory[] = [
     imageId: 'cat-switchgear'
   },
   {
-    id: 'busbar-systems',
-    title: 'Busbar Trunking Systems',
-    description: 'Flexible & space-efficient alternative to traditional cabling.',
-    imageId: 'cat-busbar'
-  },
-  {
     id: 'cables-wires',
     title: 'Cables & Wires',
     description: 'Power, control, and instrumentation cables for every application.',
@@ -135,15 +129,21 @@ export const productCategories: ProductCategory[] = [
     imageId: 'cat-meters'
   },
   {
-    id: 'automation-drives',
-    title: 'Automation & Drives',
-    description: 'PLCs, HMIs, AC drives, and control devices for smart operations.',
-    imageId: 'cat-automation'
+    id: 'busbar-systems',
+    title: 'Busbar Trunking Systems',
+    description: 'Flexible & space-efficient alternative to traditional cabling.',
+    imageId: 'cat-busbar'
   },
   {
     id: 'lighting-accessories',
     title: 'Lighting & Accessories',
     description: 'LED lighting, industrial luminaires and electrical safety components.',
     imageId: 'cat-lighting'
+  },
+  {
+    id: 'automation-drives',
+    title: 'Automation & Drives',
+    description: 'PLCs, HMIs, AC drives, and control devices for smart operations.',
+    imageId: 'cat-automation'
   }
 ];
