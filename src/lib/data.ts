@@ -1,4 +1,4 @@
-import type { Product, BlogPost } from './types';
+import type { Product, BlogPost, ProductCategory } from './types';
 
 export const products: Product[] = [
   {
@@ -106,4 +106,43 @@ export const blogPosts: BlogPost[] = [
         imageId: 'blog-legrand-innovations',
         date: '2024-07-05',
     }
+];
+
+export const productCategories: ProductCategory[] = [
+  {
+    id: 'switchgear-panels',
+    title: 'Switchgear & Panels',
+    description: 'Safe and efficient power distribution for commercial and industrial networks.',
+    imageId: 'cat-switchgear'
+  },
+  {
+    id: 'busbar-systems',
+    title: 'Busbar Trunking Systems',
+    description: 'Flexible & space-efficient alternative to traditional cabling.',
+    imageId: 'cat-busbar'
+  },
+  {
+    id: 'cables-wires',
+    title: 'Cables & Wires',
+    description: 'Power, control, and instrumentation cables for every application.',
+    imageId: 'cat-cables'
+  },
+  {
+    id: 'meters-monitoring',
+    title: 'Meters & Monitoring',
+    description: 'Power quality meters, multi-function meters and smart energy monitoring.',
+    imageId: 'cat-meters'
+  },
+  {
+    id: 'automation-drives',
+    title: 'Automation & Drives',
+    description: 'PLCs, HMIs, AC drives, and control devices for smart operations.',
+    imageId: 'cat-automation'
+  },
+  {
+    id: 'lighting-accessories',
+    title: 'Lighting & Accessories',
+    description: 'LED lighting, industrial luminaires and electrical safety components.',
+    imageId: 'cat-lighting'
+  }
 ];

@@ -16,3 +16,10 @@ export interface BlogPost {
   imageId: string;
   date: string;
 }
+
+export interface ProductCategory {
+  id: string;
+  title: string;
+  description: string;
+  imageId: string;
+}
