@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
 export const productCategories: ProductCategory[] = [
   {
     id: 'switchgear-panels',
-    title: 'switchgear for panels',
+    title: 'Switchgear For Panels',
     description: 'Safe and efficient power distribution for commercial and industrial networks.',
     imageId: 'cat-switchgear'
   },
