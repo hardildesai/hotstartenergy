@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { Card } from "./card";
+import { cn } from "@/lib/utils";
 
 const transition = {
   type: "spring",
@@ -117,17 +119,18 @@ export const BrandItem = ({
   name,
   href,
   logo: Logo,
+  className
 }: {
   name: string;
   href: string;
   logo: (props: { className?: string }) => JSX.Element;
+  className?: string;
 }) => {
   return (
-    <Link href={href} className="flex items-center space-x-2">
-       <Logo className="h-8 w-auto flex-shrink-0 text-black dark:text-white" />
-       <h4 className="text-lg font-bold text-black dark:text-white">
-          {name}
-        </h4>
+    <Link href={href}>
+       <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
+         <Logo className="h-5 w-auto text-foreground" />
+       </Card>
     </Link>
   );
 };

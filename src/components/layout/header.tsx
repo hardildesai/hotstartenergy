@@ -44,13 +44,14 @@ function Navbar({ className }: { className?: string }) {
           </Link>
           <div onMouseEnter={() => setActive('Brands')}>
             <MenuItem setActive={setActive} active={active} item="Brands">
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                {brands.map((brand) => (
+              <div className="grid grid-cols-4 w-[40rem] gap-px overflow-hidden rounded-lg border bg-background shadow-lg">
+                {brands.map((brand, index) => (
                   <BrandItem
                     key={brand.id}
                     name={brand.name}
                     href={`/brands/${brand.slug}`}
                     logo={brand.logo}
+                    className="border-0 rounded-none"
                   />
                 ))}
               </div>
