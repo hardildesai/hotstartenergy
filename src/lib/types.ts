@@ -1,3 +1,4 @@
+
 export interface Product {
   id: string;
   name: string;
@@ -22,4 +23,14 @@ export interface ProductCategory {
   title: string;
   description: string;
   imageId: string;
+}
+
+export interface Brand {
+  id: string;
+  name: string;
+  slug: string;
+  logo: (props: { className?: string }) => JSX.Element;
+  short_description: string;
+  productCount: number;
+  categories: string[];
 }

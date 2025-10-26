@@ -39,6 +39,7 @@ function Navbar({ className }: { className?: string }) {
               })}
             </div>
           </MenuItem>
+          <HoveredLink href="/brands">Brands</HoveredLink>
           <HoveredLink href="/career">Career</HoveredLink>
         </div>
         <FlowButton text="Contact Us" href="/contact" />
