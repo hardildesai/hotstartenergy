@@ -33,5 +33,4 @@ export interface Brand {
   short_description: string;
   productCount: number;
   categories: string[];
-  staticCategories?: string[]; // Optional static categories for merging
 }
