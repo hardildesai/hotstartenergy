@@ -34,3 +34,13 @@ export interface Brand {
   productCount: number;
   categories: string[];
 }
+
+export interface JobOpening {
+    id: string;
+    title: string;
+    location: string;
+    shortDescription: string;
+    roleDescription: string;
+    responsibilities: string[];
+    qualifications: string[];
+}

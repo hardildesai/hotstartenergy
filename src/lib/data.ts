@@ -1,5 +1,5 @@
 
-import type { Product, BlogPost, ProductCategory } from './types';
+import type { Product, BlogPost, ProductCategory, JobOpening } from './types';
 
 export const products: Product[] = [
   {
@@ -146,4 +146,64 @@ export const productCategories: ProductCategory[] = [
     description: 'PLCs, HMIs, AC drives, and control devices for smart operations.',
     imageId: 'cat-automation'
   }
+];
+
+export const jobOpenings: JobOpening[] = [
+    {
+        id: 'electrical-design-engineer-pune',
+        title: 'Electrical Design Engineer',
+        location: 'Pune',
+        shortDescription: 'Design and develop electrical systems for industrial projects.',
+        roleDescription: 'As an Electrical Design Engineer, you will be responsible for creating detailed electrical drawings, selecting components, and ensuring compliance with industry standards. You will work closely with the project team to deliver high-quality solutions.',
+        responsibilities: [
+            'Prepare and review electrical schematics, panel layouts, and BOMs.',
+            'Collaborate with project managers to meet project timelines and budgets.',
+            'Provide technical support during manufacturing and commissioning.',
+            'Ensure designs meet safety and regulatory requirements.'
+        ],
+        qualifications: [
+            'Bachelor\'s degree in Electrical Engineering.',
+            '2+ years of experience in electrical design, preferably in the switchgear industry.',
+            'Proficiency in AutoCAD Electrical or similar software.',
+            'Strong understanding of electrical codes and standards.'
+        ]
+    },
+    {
+        id: 'automation-specialist-ahmedabad',
+        title: 'Automation Specialist',
+        location: 'Ahmedabad',
+        shortDescription: 'Implement and support industrial automation and control systems.',
+        roleDescription: 'This role involves programming PLCs, configuring HMIs, and commissioning automation projects. You will be a key player in bringing our smart solutions to life for our clients.',
+        responsibilities: [
+            'Develop and test PLC and HMI software.',
+            'Provide on-site support for system installation and startup.',
+            'Troubleshoot and resolve automation system issues.',
+            'Train clients on the operation and maintenance of new systems.'
+        ],
+        qualifications: [
+            'Degree or diploma in Electrical, Electronics, or Instrumentation Engineering.',
+            'Experience with PLCs from brands like Siemens, Rockwell, or Schneider.',
+            'Knowledge of industrial communication protocols (e.g., Modbus, Profinet).',
+            'Strong problem-solving skills.'
+        ]
+    },
+    {
+        id: 'project-coordinator-pune',
+        title: 'Project Coordinator',
+        location: 'Pune',
+        shortDescription: 'Coordinate project activities to ensure timely and successful delivery.',
+        roleDescription: 'The Project Coordinator will support the project management team by tracking project milestones, managing documentation, and communicating with stakeholders to ensure projects are delivered on time and within scope.',
+        responsibilities: [
+            'Maintain project schedules and track deliverables.',
+            'Act as a point of contact for project stakeholders.',
+            'Prepare project status reports and meeting minutes.',
+            'Assist in the allocation of project resources.'
+        ],
+        qualifications: [
+            'Bachelor\'s degree in a related field.',
+            'Excellent organizational and communication skills.',
+            'Proficiency in project management software (e.g., MS Project).',
+            'Ability to work effectively in a team environment.'
+        ]
+    }
 ];
