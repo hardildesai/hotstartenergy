@@ -18,30 +18,30 @@ export default function BrandsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {brands.map((brand) => (
-          <Card key={brand.id} className="flex flex-col group transition-all hover:shadow-lg hover:-translate-y-1">
-            <CardHeader className="items-center text-center">
-              <div className="h-12 flex items-center justify-center">
-                <brand.logo className="h-8 w-auto text-foreground" />
-              </div>
-              <CardTitle className="pt-4">{brand.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow text-center">
-              <CardDescription>{brand.short_description}</CardDescription>
-              <div className="mt-4 flex flex-wrap justify-center gap-2">
-                {brand.categories.slice(0, 2).map(category => (
-                  <Badge key={category} variant="secondary">{category}</Badge>
-                ))}
-                 {brand.categories.length > 2 && <Badge variant="secondary">+{brand.categories.length - 2}</Badge>}
-              </div>
-            </CardContent>
-            <CardFooter className="justify-center">
-                <Button asChild variant="link" className="text-accent group-hover:text-primary">
-                    <Link href={`/brands/${brand.slug}`}>
-                        View Products <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                </Button>
-            </CardFooter>
-          </Card>
+          <Link href={`/brands/${brand.slug}`} key={brand.id} className="group block">
+            <Card className="flex flex-col h-full group transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1.5">
+              <CardHeader className="items-center text-center pt-8 pb-4">
+                <div className="h-16 flex items-center justify-center">
+                  <brand.logo className="h-10 w-auto text-foreground transition-colors group-hover:text-primary" />
+                </div>
+                <CardTitle className="pt-4 text-lg font-semibold">{brand.name}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow text-center px-4 pb-4">
+                <p className="text-sm text-muted-foreground">{brand.short_description}</p>
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
+                  {brand.categories.slice(0, 2).map(category => (
+                    <Badge key={category} variant="secondary" className="font-normal">{category}</Badge>
+                  ))}
+                  {brand.categories.length > 2 && <Badge variant="secondary" className="font-normal">+{brand.categories.length - 2}</Badge>}
+                </div>
+              </CardContent>
+              <CardFooter className="justify-center pb-6 pt-2">
+                <div className="text-xs text-muted-foreground group-hover:text-accent">
+                  {brand.productCount} products <ArrowRight className="inline-block ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                </div>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
