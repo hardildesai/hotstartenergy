@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react";
 interface TravelCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
   imageAlt: string;
-  logo?: React.ReactNode;
   title: string;
   location: string;
   overview: string;
@@ -22,7 +21,6 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
       className,
       imageUrl,
       imageAlt,
-      logo,
       title,
       location,
       overview,
@@ -54,15 +52,7 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
         {/* Content Container */}
-        <div className="relative flex h-full flex-col justify-between p-6 text-card-foreground">
-          {/* Top Section: Logo */}
-          <div className="flex h-40 items-start">
-             {logo && (
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/50 bg-black/20 backdrop-blur-sm">
-                   {logo}
-                </div>
-             )}
-          </div>
+        <div className="relative flex h-full flex-col justify-end p-6 text-card-foreground">
           
           {/* Middle Section: Details (slides up on hover) */}
           <div className="space-y-4 transition-transform duration-500 ease-in-out group-hover:-translate-y-16">
@@ -70,9 +60,9 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
               <h3 className="text-3xl font-bold text-white">{title}</h3>
               <p className="text-sm text-white/80">{location}</p>
             </div>
-            <div>
+            <div className="h-20">
               <h4 className="font-semibold text-white/90">OVERVIEW</h4>
-              <p className="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-white/70 leading-relaxed line-clamp-3">
                 {overview}
               </p>
             </div>

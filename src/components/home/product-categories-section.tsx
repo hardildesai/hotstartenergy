@@ -5,7 +5,6 @@ import { productCategories } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { TravelCard } from '@/components/ui/card-7';
 import { toast } from 'sonner';
-import { Zap } from 'lucide-react';
 
 export function ProductCategoriesSection() {
   const router = useRouter();
@@ -40,7 +39,6 @@ export function ProductCategoriesSection() {
                 key={category.id}
                 imageUrl={image?.imageUrl || ''}
                 imageAlt={category.title}
-                logo={<Zap className="h-6 w-6 text-white/80" />}
                 title={category.title}
                 location="Global Shipping"
                 overview={category.description}
