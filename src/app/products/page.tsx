@@ -4,12 +4,22 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
+import { ProductGrid } from '@/components/products/product-grid';
 
 export default function ProductsPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight">Explore Products by Brand</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Our Products</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          Browse all our products or select a brand to view their specific catalog.
+        </p>
+      </div>
+
+      <ProductGrid />
+
+      <div className="text-center my-24">
+        <h2 className="text-3xl font-bold tracking-tight">Explore by Brand</h2>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Find official products from Legrand, Socomec, KEI, Havells, Eaton and more — filter by category, voltage and application.
         </p>
