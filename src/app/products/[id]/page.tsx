@@ -24,7 +24,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const image = PlaceHolderImages.find((p) => p.id === product.imageId);
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 pt-32">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div>
           {image && (

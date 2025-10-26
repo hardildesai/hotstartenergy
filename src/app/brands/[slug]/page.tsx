@@ -26,7 +26,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   const brandProducts = products.filter(p => p.brand === brand.name);
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 pt-32">
       <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
         <div className="h-24 w-48 flex-shrink-0 flex items-center justify-center bg-card p-4 rounded-lg border">
           <brand.logo className="h-14 w-auto" />

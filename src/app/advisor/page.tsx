@@ -3,7 +3,7 @@ import { Lightbulb } from 'lucide-react';
 
 export default function AdvisorPage() {
   return (
-    <div className="container max-w-3xl mx-auto px-4 py-12">
+    <div className="container max-w-3xl mx-auto px-4 py-12 pt-32">
       <div className="text-center">
         <Lightbulb className="mx-auto h-12 w-12 text-accent" />
         <h1 className="mt-4 text-4xl font-bold tracking-tight">AI Solution Advisor</h1>
