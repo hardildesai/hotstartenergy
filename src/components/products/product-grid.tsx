@@ -1,34 +1,17 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
 
 export function ProductGrid() {
-  const [legrandOnly, setLegrandOnly] = useState(false);
-
-  const filteredProducts = legrandOnly
-    ? products.filter((p) => p.brand === 'Legrand')
-    : products;
+  const filteredProducts = products;
 
   return (
     <>
-      <div className="my-8 flex justify-center items-center gap-2">
-        <Switch
-          id="legrand-filter"
-          checked={legrandOnly}
-          onCheckedChange={setLegrandOnly}
-        />
-        <Label htmlFor="legrand-filter" className="text-sm font-medium">
-          Show Legrand products only
-        </Label>
-      </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredProducts.map((product) => {
           const image = PlaceHolderImages.find((p) => p.id === product.imageId);
