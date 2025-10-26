@@ -1,5 +1,5 @@
 
-import type { Product, BlogPost, ProductCategory, JobOpening } from './types';
+import type { Product, ProductCategory, JobOpening } from './types';
 
 export const products: Product[] = [
   {
@@ -80,33 +80,6 @@ export const products: Product[] = [
       'USB Charging': 'Optional Type-A + Type-C',
     },
   },
-];
-
-export const blogPosts: BlogPost[] = [
-    {
-        slug: 'understanding-switchgear-a-comprehensive-guide',
-        title: 'Understanding Switchgear: A Comprehensive Guide',
-        excerpt: 'Dive deep into the world of switchgear. From low voltage to high voltage, we cover the basics you need to know.',
-        content: 'Switchgear is a broad term that covers a range of switching devices that control, protect, and isolate electrical equipment. It is a critical component of any electrical power system, from generation to transmission and distribution. In this post, we will explore the different types of switchgear, their applications, and the key considerations when selecting the right solution for your project. We will discuss air-insulated, gas-insulated, and hybrid switchgear, covering their pros and cons in various scenarios.',
-        imageId: 'blog-intro-switchgear',
-        date: '2024-07-15',
-    },
-    {
-        slug: 'transform-your-home-with-legrand-smart-solutions',
-        title: 'Transform Your Home with Legrand Smart Solutions',
-        excerpt: 'Discover how Legrand\'s innovative home automation products can bring comfort, security, and style to your living space.',
-        content: 'The smart home is no longer a futuristic concept; it\'s a reality. Legrand is at the forefront of this revolution with its range of intuitive and beautifully designed smart home solutions. From automated lighting and climate control with Arteor to seamless connectivity with Living Now, Legrand offers a complete ecosystem to enhance your lifestyle. This article explores how you can start your smart home journey, the benefits of home automation, and showcases some of Legrand\'s most popular products that blend technology with elegance.',
-        imageId: 'blog-smart-home',
-        date: '2024-07-10',
-    },
-    {
-        slug: 'the-latest-innovations-in-switchgear-technology',
-        title: 'The Latest Innovations in Switchgear Technology',
-        excerpt: 'Stay ahead of the curve with our look at the latest trends and innovations shaping the future of switchgear technology.',
-        content: 'The switchgear industry is constantly evolving, driven by the need for greater efficiency, safety, and sustainability. This post highlights some of the most exciting advancements, including the rise of digital switchgear, the use of eco-friendly insulating gases, and the integration of IoT for predictive maintenance. We will also look at how companies like Legrand are pushing the boundaries of design and functionality, creating products that are not only high-performing but also aesthetically pleasing.',
-        imageId: 'blog-legrand-innovations',
-        date: '2024-07-05',
-    }
 ];
 
 export const productCategories: ProductCategory[] = [

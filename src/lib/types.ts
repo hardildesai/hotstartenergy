@@ -9,15 +9,6 @@ export interface Product {
   imageId: string;
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  imageId: string;
-  date: string;
-}
-
 export interface ProductCategory {
   id: string;
   title: string;

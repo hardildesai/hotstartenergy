@@ -37,24 +37,6 @@
       "imageHint": "wall socket"
     },
     {
-      "id": "blog-intro-switchgear",
-      "description": "An overview of different types of switchgear",
-      "imageUrl": "https://images.unsplash.com/photo-1556942154-1f79590441a3?q=80&w=1844&auto=format&fit=crop",
-      "imageHint": "electrical grid"
-    },
-    {
-      "id": "blog-smart-home",
-      "description": "A person using a tablet to control a smart home",
-      "imageUrl": "https://images.unsplash.com/photo-1562280946-eb32882190a9?q=80&w=1801&auto=format&fit=crop",
-      "imageHint": "smart home"
-    },
-    {
-      "id": "blog-legrand-innovations",
-      "description": "Showcase of Legrand's latest product designs",
-      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop",
-      "imageHint": "modern design"
-    },
-    {
       "id": "hero-carousel-1",
       "description": "Wind turbines in a field at sunset",
       "imageUrl": "https://images.unsplash.com/photo-1497435334432-56a02d68e068?q=80&w=2070&auto=format&fit=crop",

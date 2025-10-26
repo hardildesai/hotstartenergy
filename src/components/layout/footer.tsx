@@ -4,7 +4,6 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Linkedin, Instagram, Youtube, Facebook, Phone } from 'lucide-react';
-import { ContactForm } from '../contact/contact-form';
 
 
 export function Footer() {
@@ -49,7 +48,6 @@ export function Footer() {
               <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
               <li><Link href="/products" className="text-muted-foreground hover:text-primary">Products</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-primary">Blog</Link></li>
               <li><Link href="/career" className="text-muted-foreground hover:text-primary">Careers</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact Us</Link></li>
             </ul>
