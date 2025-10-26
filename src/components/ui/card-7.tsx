@@ -72,8 +72,8 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
           {/* Bottom Section: Price and Button (revealed on hover) */}
           <div className="absolute -bottom-20 left-0 w-full p-6 opacity-0 transition-all duration-500 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
             <div className="flex items-end justify-between">
-               <Button asChild variant="ghost" className="text-white hover:bg-white/10">
-                 <Link href="/contact">{pricePeriod}</Link>
+               <Button asChild variant="ghost" size="sm" className="text-white hover:bg-white/10">
+                 <Link href="/contact">Request Quote</Link>
                </Button>
               <Button onClick={onBookNow} className="bg-white text-black hover:bg-white/90">
                 View Products <ArrowRight className="ml-2 h-4 w-4" />
