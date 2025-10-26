@@ -2,6 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // Define the props for the TravelCard component
 interface TravelCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -71,10 +72,9 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
           {/* Bottom Section: Price and Button (revealed on hover) */}
           <div className="absolute -bottom-20 left-0 w-full p-6 opacity-0 transition-all duration-500 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
             <div className="flex items-end justify-between">
-              <div className="flex items-baseline">
-                {price > 0 && <span className="text-4xl font-bold text-white">${price}</span>}
-                <span className="text-white/80 ml-2"> {pricePeriod}</span>
-              </div>
+               <Button asChild variant="ghost" className="text-white hover:bg-white/10 p-2">
+                 <Link href="/contact">{pricePeriod}</Link>
+               </Button>
               <Button onClick={onBookNow} size="lg" className="bg-white text-black hover:bg-white/90">
                 View Products <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
