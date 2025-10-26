@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 import { Toaster } from "@/components/ui/toaster"
 import { Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -108,6 +109,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Toaster />
+        <SonnerToaster richColors />
       </body>
     </html>
   );
