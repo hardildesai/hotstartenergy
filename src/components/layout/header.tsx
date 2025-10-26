@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
+import { HoveredLink, Menu, MenuItem, ProductItem, BrandItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { Logo } from "../logo";
 import Link from "next/link";
 import { FlowButton } from "../ui/flow-button";
 import { productCategories } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { brands } from "@/lib/brands";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -23,7 +24,7 @@ function Navbar({ className }: { className?: string }) {
         <div className="flex items-center space-x-4">
           <HoveredLink href="/">Home</HoveredLink>
           <HoveredLink href="/about">About Us</HoveredLink>
-          <Link href="/products">
+          <Link href="/products" onMouseEnter={() => setActive('Products')}>
             <MenuItem setActive={setActive} active={active} item="Products">
               <div className="text-sm grid grid-cols-2 gap-10 p-4">
                 {productCategories.map((category) => {
@@ -41,7 +42,20 @@ function Navbar({ className }: { className?: string }) {
               </div>
             </MenuItem>
           </Link>
-          <HoveredLink href="/brands">Brands</HoveredLink>
+          <div onMouseEnter={() => setActive('Brands')}>
+            <MenuItem setActive={setActive} active={active} item="Brands">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                {brands.map((brand) => (
+                  <BrandItem
+                    key={brand.id}
+                    name={brand.name}
+                    href={`/brands/${brand.slug}`}
+                    logo={brand.logo}
+                  />
+                ))}
+              </div>
+            </MenuItem>
+          </div>
           <HoveredLink href="/career">Career</HoveredLink>
         </div>
         <FlowButton text="Contact Us" href="/contact" />

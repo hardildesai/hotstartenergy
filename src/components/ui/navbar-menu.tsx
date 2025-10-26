@@ -113,6 +113,26 @@ export const ProductItem = ({
   );
 };
 
+export const BrandItem = ({
+  name,
+  href,
+  logo: Logo,
+}: {
+  name: string;
+  href: string;
+  logo: (props: { className?: string }) => JSX.Element;
+}) => {
+  return (
+    <Link href={href} className="flex items-center space-x-2">
+       <Logo className="h-8 w-auto flex-shrink-0 text-black dark:text-white" />
+       <h4 className="text-lg font-bold text-black dark:text-white">
+          {name}
+        </h4>
+    </Link>
+  );
+};
+
+
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
