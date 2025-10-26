@@ -8,7 +8,7 @@ import { ProductGrid } from '@/components/products/product-grid';
 
 export default function ProductsPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 pt-32">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Our Products</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
