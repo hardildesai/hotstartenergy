@@ -23,22 +23,24 @@ function Navbar({ className }: { className?: string }) {
         <div className="flex items-center space-x-4">
           <HoveredLink href="/">Home</HoveredLink>
           <HoveredLink href="/about">About Us</HoveredLink>
-          <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="text-sm grid grid-cols-2 gap-10 p-4">
-              {productCategories.map((category) => {
-                const image = PlaceHolderImages.find(p => p.id === category.imageId);
-                return (
-                   <ProductItem
-                    key={category.id}
-                    title={category.title}
-                    href={`/products?category=${category.id}`}
-                    src={image?.imageUrl || ''}
-                    description={category.description}
-                  />
-                )
-              })}
-            </div>
-          </MenuItem>
+          <Link href="/products">
+            <MenuItem setActive={setActive} active={active} item="Products">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                {productCategories.map((category) => {
+                  const image = PlaceHolderImages.find(p => p.id === category.imageId);
+                  return (
+                    <ProductItem
+                      key={category.id}
+                      title={category.title}
+                      href={`/products?category=${category.id}`}
+                      src={image?.imageUrl || ''}
+                      description={category.description}
+                    />
+                  )
+                })}
+              </div>
+            </MenuItem>
+          </Link>
           <HoveredLink href="/brands">Brands</HoveredLink>
           <HoveredLink href="/career">Career</HoveredLink>
         </div>
