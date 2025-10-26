@@ -143,6 +143,18 @@
       "description": "An engineer working on-site with industrial equipment",
       "imageUrl": "https://images.unsplash.com/photo-1581092919534-89cda27c1d63?q=80&w=1770&auto=format&fit=crop",
       "imageHint": "industrial work"
+    },
+    {
+      "id": "about-hero",
+      "description": "Abstract image of interconnected power grids and data streams",
+      "imageUrl": "https://images.unsplash.com/photo-1533107862482-0e6974b06e4d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "power grid"
+    },
+    {
+      "id": "about-story",
+      "description": "Modern office building representing the Pune headquarters",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "modern office"
     }
   ]
 }
