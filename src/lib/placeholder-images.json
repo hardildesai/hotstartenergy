@@ -51,7 +51,7 @@
     {
       "id": "hero-carousel-3",
       "description": "A technician working on an electrical panel",
-      "imageUrl": "https://images.unsplash.com/photo-1581092919534-89cda27c1d63?q=80&w=2070&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1581092289299-47c4ea4f58c7?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "electrical technician"
     },
     {
@@ -129,8 +129,8 @@
     {
       "id": "about-hero",
       "description": "Abstract image of interconnected power grids and data streams",
-      "imageUrl": "https://images.unsplash.com/photo-1533107862482-0e6974b06e4d?q=80&w=2070&auto=format&fit=crop",
-      "imageHint": "power grid"
+      "imageUrl": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvZmZpY2V8ZW58MHx8fHwxNzYxNDY5NzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern office"
     },
     {
       "id": "about-story",
