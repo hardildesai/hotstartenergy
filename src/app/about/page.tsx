@@ -1,3 +1,4 @@
+
 import { AboutHero } from '@/components/about/about-hero';
 import { Milestones } from '@/components/about/milestones';
 import { OurStory } from '@/components/about/our-story';
@@ -49,7 +50,6 @@ export default function AboutPage() {
                     </ul>
                 </div>
                 <div className="space-y-8">
-                     <h3 className="text-2xl font-semibold text-foreground">Our Brand Partners</h3>
                      <BrandPartners />
                 </div>
             </div>
