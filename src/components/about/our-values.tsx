@@ -20,7 +20,7 @@ export function OurValues() {
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {values.map((value, index) => (
-                        <Card key={index} className="text-center">
+                        <Card key={index} className="text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                             <CardHeader>
                                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
                                     <value.icon className="h-6 w-6 text-accent" />
