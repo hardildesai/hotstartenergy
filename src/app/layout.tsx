@@ -103,7 +103,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className={cn("font-body antialiased", spaceGrotesk.variable)}>
+      <body
+        className={cn("font-body antialiased", spaceGrotesk.variable)}
+        suppressHydrationWarning
+      >
         <GlassFilter />
         <Header />
         <main>{children}</main>
