@@ -108,8 +108,13 @@ const productCategories = [
                 imageId: 'prod-legrand-switch'
             },
             {
-                title: 'Myrius™ & Myrius Nextgen',
-                description: 'Simple, sleek, and smooth design in classic black and white, now with anti-bacterial properties for enhanced safety.',
+                title: 'Myrius Regular™',
+                description: 'Simple, sleek, and smooth, Myrius offers a classic black and white look with anti-bacterial properties. Ideal for homes, offices, and healthcare environments.',
+                imageId: 'prod-legrand-switch'
+            },
+            {
+                title: 'Myrius™',
+                description: 'Inspired by you, crafted by us. The Myrius range combines technology and design aesthetics with myriad patterns, including the Motifs series of plates and switches.',
                 imageId: 'prod-legrand-switch'
             },
             {
@@ -308,3 +313,5 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
