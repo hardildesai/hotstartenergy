@@ -1,4 +1,5 @@
 import { AboutSection } from '@/components/home/about-section';
+import { ContactSection } from '@/components/home/contact-section';
 import { ProductCategoriesSection } from '@/components/home/product-categories-section';
 import { Hero } from '@/components/home/hero';
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ProductCategoriesSection />
+      <ContactSection />
     </div>
   );
 }
