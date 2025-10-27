@@ -29,24 +29,22 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/about">About Us</HoveredLink>
           </div>
           <div onMouseEnter={() => setActive('Products')}>
-            <Link href="/products">
-              <MenuItem setActive={setActive} active={active} item="Products">
-                <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                  {productCategories.map((category) => {
-                    const image = PlaceHolderImages.find(p => p.id === category.imageId);
-                    return (
-                      <ProductItem
-                        key={category.id}
-                        title={category.title}
-                        href={`/products?category=${category.id}`}
-                        src={image?.imageUrl || ''}
-                        description={category.description}
-                      />
-                    )
-                  })}
-                </div>
-              </MenuItem>
-            </Link>
+            <MenuItem setActive={setActive} active={active} item="Products">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                {productCategories.map((category) => {
+                  const image = PlaceHolderImages.find(p => p.id === category.imageId);
+                  return (
+                    <ProductItem
+                      key={category.id}
+                      title={category.title}
+                      href={`/products?category=${category.id}`}
+                      src={image?.imageUrl || ''}
+                      description={category.description}
+                    />
+                  )
+                })}
+              </div>
+            </MenuItem>
           </div>
           <div onMouseEnter={() => setActive('Brands')}>
             <MenuItem setActive={setActive} active={active} item="Brands">
