@@ -11,6 +11,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { KeiCablesPage } from '@/components/brands/kei-cables-page';
 import { LegrandPage } from '@/components/brands/legrand-page';
+import { SocomecPage } from '@/components/brands/socomec-page';
 
 export function generateStaticParams() {
   return brands.map((brand) => ({
@@ -33,6 +34,11 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   // Special page for Legrand
   if (brand.slug === 'legrand') {
     return <LegrandPage brand={brand} />;
+  }
+
+  // Special page for Socomec
+  if (brand.slug === 'socomec') {
+    return <SocomecPage brand={brand} />;
   }
 
   // Default page for other brands

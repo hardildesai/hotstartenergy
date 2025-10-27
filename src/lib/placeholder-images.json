@@ -203,6 +203,54 @@
       "description": "Fire-resistant cables in a conduit",
       "imageUrl": "https://images.unsplash.com/photo-1599932566288-33d57caf0cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmaXJlJTIwcHJvb2Z8ZW58MHx8fHwxNzYxNTYwMjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fire proof"
+    },
+    {
+      "id": "socomec-hero",
+      "description": "Abstract image of Socomec power switching solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1581093582415-99881a30f7c2?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "power management"
+    },
+    {
+      "id": "socomec-countis-meter",
+      "description": "Socomec Countis energy meter",
+      "imageUrl": "https://images.unsplash.com/photo-1622801185864-874be8248594?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbmVyZ3klMjBtZXRlcnxlbnwwfHx8fDE3NjEyODcxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "energy meter"
+    },
+    {
+      "id": "socomec-multis-meter",
+      "description": "Socomec MULTIS multifunction meter",
+      "imageUrl": "https://images.unsplash.com/photo-1555543118-0f3a8b4d830c?q=80&w=1964&auto=format&fit=crop",
+      "imageHint": "multifunction meter"
+    },
+    {
+      "id": "socomec-diris-digiware",
+      "description": "Socomec DIRIS Digiware monitoring system",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4138d0e2ca7c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "monitoring system"
+    },
+    {
+      "id": "socomec-manual-changeover",
+      "description": "Socomec manual changeover switch",
+      "imageUrl": "https://images.unsplash.com/photo-1617861096383-0593ef53e3a4?q=80&w=1770&auto=format&fit=crop",
+      "imageHint": "changeover switch"
+    },
+    {
+      "id": "socomec-load-break",
+      "description": "Socomec load break switch",
+      "imageUrl": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55fGVufDB8fHx8MTc2MTU1ODk3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "load switch"
+    },
+    {
+      "id": "socomec-bypass-switch",
+      "description": "Socomec bypass switch",
+      "imageUrl": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1769&auto=format&fit=crop",
+      "imageHint": "bypass switch"
+    },
+    {
+      "id": "socomec-ats",
+      "description": "Socomec Automatic Transfer Switch",
+      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzd2l0Y2hnZWFyJTIwcGFuZWx8ZW58MHx8fHwxNzYxMjg3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "transfer switch"
     }
   ]
 }
