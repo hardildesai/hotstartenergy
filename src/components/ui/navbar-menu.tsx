@@ -129,7 +129,7 @@ export const BrandItem = ({
   return (
     <Link href={href}>
        <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
-         <Logo className="h-5 w-auto text-foreground" />
+         <Logo className="h-8 w-auto" />
        </Card>
     </Link>
   );
