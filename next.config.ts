@@ -28,6 +28,24 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'logo.clearbit.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.legrand.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.se.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
   webpack: (config, { isServer }) => {
