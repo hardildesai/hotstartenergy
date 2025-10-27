@@ -6,6 +6,7 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 import { Toaster } from "@/components/ui/toaster"
 import { Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -113,6 +114,7 @@ export default function RootLayout({
         <Footer />
         <Toaster />
         <SonnerToaster richColors />
+        <SpeedInsights />
       </body>
     </html>
   );
