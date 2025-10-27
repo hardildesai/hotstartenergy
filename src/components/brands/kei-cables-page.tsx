@@ -7,16 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Brand } from '@/lib/types';
 import { CheckCircle, Download, Power, Shield, Zap } from 'lucide-react';
-import { KeiCablesLogo } from '../logos';
 import { motion } from 'framer-motion';
-
-const productPortfolio = [
-  { title: 'Power Cables (LV, MV, HV)', description: 'For reliable energy transmission in industrial and utility networks.', icon: Power },
-  { title: 'Control Cables', description: 'For signaling and control circuits in automation systems.', icon: Zap },
-  { title: 'Instrumentation Cables', description: 'For precise signal transmission with minimal interference.', icon: Shield },
-  { title: 'Flexible & House Wires', description: 'For residential, commercial, and appliance wiring.', icon: Power },
-  { title: 'Specialty Cables', description: 'Including rubber cables, solar cables, and fire-resistant variants.', icon: Zap },
-];
 
 const featuredProducts = [
     {
@@ -101,7 +92,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 container px-4 flex flex-col items-center">
-            <brand.logo className="h-20 w-auto mb-6" />
+            <Image src={brand.logo} alt={`${brand.name} logo`} width={160} height={60} className="h-20 w-auto mb-6 dark:invert" />
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Quality Cables for Every Application
           </h1>
@@ -163,7 +154,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                                         />
                                     </div>
                                     <div className="mt-2">
-                                        <KeiCablesLogo className="h-8 mx-auto" />
+                                        <Image src={brand.logo} alt={`${brand.name} logo`} width={80} height={30} className="h-8 mx-auto dark:invert" />
                                         <p className="text-sm font-semibold text-foreground mt-2">{product.imageCaption}</p>
                                     </div>
                                  </div>

@@ -20,7 +20,7 @@ export interface Brand {
   id: string;
   name: string;
   slug: string;
-  logo: (props: { className?: string }) => JSX.Element;
+  logo: string;
   short_description: string;
   productCount: number;
   categories: string[];

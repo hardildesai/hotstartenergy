@@ -1,15 +1,5 @@
 
 import type { Brand } from './types';
-import {
-  LegrandLogo,
-  SocomecLogo,
-  KeiCablesLogo,
-  ElmeasureLogo,
-  EatonLogo,
-  HavellsLogo,
-  SelecControlsLogo,
-  SecureMetersLogo,
-} from '@/components/logos';
 import { products } from './data';
 
 const getProductCount = (brandName: string) => products.filter(p => p.brand === brandName).length;
@@ -42,7 +32,7 @@ export const brands: Brand[] = [
     id: 'legrand',
     name: 'Legrand',
     slug: 'legrand',
-    logo: (props) => LegrandLogo(props),
+    logo: "https://www.legrand.com/themes/custom/legrand_ecat/logo.svg",
     short_description: 'Global leader in electrical infrastructure & busbar systems.',
     productCount: getProductCount('Legrand'),
     categories: getCategoriesForBrand('Legrand', ['Busbar']),
@@ -51,7 +41,7 @@ export const brands: Brand[] = [
     id: 'socomec',
     name: 'Socomec',
     slug: 'socomec',
-    logo: (props) => SocomecLogo(props),
+    logo: "https://logo.clearbit.com/socomec.com",
     short_description: 'Specialist in low-voltage power switching, monitoring & protection.',
     productCount: getProductCount('Socomec'),
     categories: getCategoriesForBrand('Socomec', ['Metering']),
@@ -60,7 +50,7 @@ export const brands: Brand[] = [
     id: 'kei-cables',
     name: 'KEI Cables',
     slug: 'kei-cables',
-    logo: (props) => KeiCablesLogo(props),
+    logo: "https://logo.clearbit.com/kei-ind.com",
     short_description: 'Leading manufacturer of power and instrumentation cables.',
     productCount: getProductCount('KEI Cables'),
     categories: getCategoriesForBrand('KEI Cables', ['Cables']),
@@ -69,7 +59,7 @@ export const brands: Brand[] = [
     id: 'havells',
     name: 'Havells',
     slug: 'havells',
-    logo: (props) => HavellsLogo(props),
+    logo: "https://logo.clearbit.com/havells.com",
     short_description: 'Major power distribution equipment manufacturer.',
     productCount: getProductCount('Havells'),
     categories: getCategoriesForBrand('Havells', ['Lighting']),
@@ -78,7 +68,7 @@ export const brands: Brand[] = [
     id: 'eaton',
     name: 'Eaton',
     slug: 'eaton',
-    logo: (props) => EatonLogo(props),
+    logo: "https://logo.clearbit.com/eaton.com",
     short_description: 'Power management company providing energy-efficient solutions.',
     productCount: getProductCount('Eaton'),
     categories: getCategoriesForBrand('Eaton', ['Automation']),
@@ -87,7 +77,7 @@ export const brands: Brand[] = [
     id: 'generic-electric',
     name: 'Generic Electric',
     slug: 'generic-electric',
-    logo: (props) => SelecControlsLogo(props), // Using a placeholder logo
+    logo: "https://logo.clearbit.com/selec.com", // Using a placeholder logo
     short_description: 'Robust and reliable electrical solutions for various applications.',
     productCount: getProductCount('Generic Electric'),
     categories: getCategoriesForBrand('Generic Electric'),
@@ -96,7 +86,7 @@ export const brands: Brand[] = [
     id: 'generic-home',
     name: 'Generic Home',
     slug: 'generic-home',
-    logo: (props) => SecureMetersLogo(props), // Using a placeholder logo
+    logo: "https://logo.clearbit.com/securemeters.com", // Using a placeholder logo
     short_description: 'Innovative smart home and automation products.',
     productCount: getProductCount('Generic Home'),
     categories: getCategoriesForBrand('Generic Home'),

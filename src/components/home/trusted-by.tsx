@@ -19,7 +19,7 @@ export function TrustedBy() {
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll-reverse group-hover:pause">
             <div className="flex w-max space-x-16 pr-16 items-center">
-              {[...clients, ...clients].map((client, index) => (
+              {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
                 <div key={index} className="flex-shrink-0">
                   <Image
                     src={client.logoUrl}

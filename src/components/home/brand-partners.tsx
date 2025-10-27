@@ -2,19 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-
-const partners = [
-  { name: 'Legrand', logoUrl: 'https://www.legrand.com/themes/custom/legrand_ecat/logo.svg' },
-  { name: 'Socomec', logoUrl: 'https://logo.clearbit.com/socomec.com' },
-  { name: 'KEI Cables', logoUrl: 'https://logo.clearbit.com/kei-ind.com' },
-  { name: 'Elmeasure', logoUrl: 'https://logo.clearbit.com/elmeasure.com' },
-  { name: 'Eaton', logoUrl: 'https://logo.clearbit.com/eaton.com' },
-  { name: 'Havells', logoUrl: 'https://logo.clearbit.com/havells.com' },
-  { name: 'Selec Controls', logoUrl: 'https://logo.clearbit.com/selec.com' },
-  { name: 'Secure Meters', logoUrl: 'https://logo.clearbit.com/securemeters.com' },
-];
+import { brands } from '@/lib/brands';
 
 export function BrandPartners() {
+  const partners = brands;
   return (
     <section>
       <h2 className="text-lg font-bold text-center mb-4 text-foreground">Our Brand Partners</h2>
@@ -25,7 +16,7 @@ export function BrandPartners() {
               {[...partners, ...partners].map((partner, index) => (
                 <div key={index} className="flex-shrink-0">
                   <Image 
-                    src={partner.logoUrl} 
+                    src={partner.logo} 
                     alt={`${partner.name} logo`}
                     width={100} 
                     height={24} 

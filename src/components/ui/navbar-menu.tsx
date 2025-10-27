@@ -118,18 +118,24 @@ export const ProductItem = ({
 export const BrandItem = ({
   name,
   href,
-  logo: Logo,
+  logo,
   className
 }: {
   name: string;
   href: string;
-  logo: (props: { className?: string }) => JSX.Element;
+  logo: string;
   className?: string;
 }) => {
   return (
     <Link href={href}>
        <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
-         <Logo className="h-8 w-auto" />
+         <Image
+            src={logo}
+            alt={`${name} logo`}
+            width={120}
+            height={30}
+            className="h-8 w-auto object-contain dark:invert"
+          />
        </Card>
     </Link>
   );
