@@ -51,6 +51,7 @@ function Navbar({ className }: { className?: string }) {
                       href={getProductCategoryHref(category.id)}
                       src={image?.imageUrl || ''}
                       description={category.description}
+                      setActive={setActive}
                     />
                   )
                 })}
