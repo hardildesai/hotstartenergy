@@ -4,22 +4,15 @@ import { useRouter } from 'next/navigation';
 import { productCategories } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { TravelCard } from '@/components/ui/card-7';
-import { toast } from 'sonner';
 
 export function ProductCategoriesSection() {
   const router = useRouter();
 
   const handleCardClick = (categoryId: string) => {
     if (categoryId === 'cables-wires') {
-        toast.success("Redirecting to KEI Cables...", {
-            description: `Showing products for KEI Cables`,
-        });
-        router.push('/brands/kei-cables');
+      router.push('/brands/kei-cables');
     } else {
-        toast.success("Redirecting to products...", {
-            description: `Showing products for category: ${categoryId}`,
-        });
-        router.push(`/products?category=${categoryId}`);
+      router.push(`/products?category=${categoryId}`);
     }
   };
 
