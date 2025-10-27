@@ -10,10 +10,17 @@ export function ProductCategoriesSection() {
   const router = useRouter();
 
   const handleCardClick = (categoryId: string) => {
-    toast.success("Redirecting to products...", {
-      description: `Showing products for category: ${categoryId}`,
-    });
-    router.push(`/products?category=${categoryId}`);
+    if (categoryId === 'cables-wires') {
+        toast.success("Redirecting to KEI Cables...", {
+            description: `Showing products for KEI Cables`,
+        });
+        router.push('/brands/kei-cables');
+    } else {
+        toast.success("Redirecting to products...", {
+            description: `Showing products for category: ${categoryId}`,
+        });
+        router.push(`/products?category=${categoryId}`);
+    }
   };
 
   return (
