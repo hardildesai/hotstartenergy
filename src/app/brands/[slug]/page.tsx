@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
+import { KeiCablesPage } from '@/components/brands/kei-cables-page';
 
 export function generateStaticParams() {
   return brands.map((brand) => ({
@@ -23,6 +24,12 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
+  // Special page for KEI
+  if (brand.slug === 'kei-cables') {
+    return <KeiCablesPage brand={brand} />;
+  }
+
+  // Default page for other brands
   const brandProducts = products.filter(p => p.brand === brand.name);
 
   return (
