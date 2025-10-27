@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Brand } from '@/lib/types';
 import { CheckCircle, Download, Power, Shield, Zap } from 'lucide-react';
+import { KeiCablesLogo } from '../logos';
 
 const productPortfolio = [
   { title: 'Power Cables (LV, MV, HV)', description: 'For reliable energy transmission in industrial and utility networks.', icon: Power },
@@ -13,6 +14,21 @@ const productPortfolio = [
   { title: 'Instrumentation Cables', description: 'For precise signal transmission with minimal interference.', icon: Shield },
   { title: 'Flexible & House Wires', description: 'For residential, commercial, and appliance wiring.', icon: Power },
   { title: 'Specialty Cables', description: 'Including rubber cables, solar cables, and fire-resistant variants.', icon: Zap },
+];
+
+const featuredProducts = [
+    {
+        title: 'HV Power Cable',
+        description: 'Built for high performance, KEI HV wire ensures safe and efficient power transmission. These cables are designed to handle high voltage with reliability, making them ideal for demanding industrial and commercial applications.',
+        imageId: 'kei-hv-cable',
+        imageCaption: 'HV POWER CABLE'
+    },
+    {
+        title: 'LV Power & Control Cable',
+        description: 'KEI LV wire and cable are ideal for low-voltage power needs. The LV Power & Control Cable ensures efficient performance and safety, making it perfect for residential, commercial, and industrial use.',
+        imageId: 'kei-lv-cable',
+        imageCaption: 'LV POWER & CONTROL CABLE'
+    }
 ];
 
 const whyKei = [
@@ -69,21 +85,41 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">KEI Cables Product Portfolio</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productPortfolio.map((product, index) => (
-              <Card key={index} className="text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
-                    <product.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <CardTitle className="mt-4">{product.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{product.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+           <div className="space-y-12">
+                {featuredProducts.map((product, index) => {
+                    const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                    return (
+                        <div key={index} className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-card p-8 rounded-lg shadow-sm border">
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold">{product.title}</h3>
+                                <p className="text-muted-foreground">{product.description}</p>
+                                <Button asChild variant="destructive">
+                                    <Link href="/contact">Learn More</Link>
+                                </Button>
+                            </div>
+                            <div className="text-center">
+                               {image && (
+                                 <div className="bg-white p-4 rounded-lg shadow-md inline-block">
+                                    <div className="relative h-64 w-64">
+                                        <Image 
+                                            src={image.imageUrl}
+                                            alt={product.title}
+                                            fill
+                                            className="object-contain"
+                                            data-ai-hint={image.imageHint}
+                                        />
+                                    </div>
+                                    <div className="mt-2">
+                                        <KeiCablesLogo className="h-8 mx-auto" />
+                                        <p className="text-sm font-semibold text-foreground mt-2">{product.imageCaption}</p>
+                                    </div>
+                                 </div>
+                               )}
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
       </section>
 

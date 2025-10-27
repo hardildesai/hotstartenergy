@@ -143,6 +143,18 @@
       "description": "Closeup of industrial cables and wires",
       "imageUrl": "https://images.unsplash.com/photo-1598252510902-b63c636d338f?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "industrial cables"
+    },
+    {
+      "id": "kei-hv-cable",
+      "description": "KEI High Voltage power cables",
+      "imageUrl": "https://images.unsplash.com/photo-1664199014827-02b92524fcea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwb3dlciUyMGNhYmxlc3xlbnwwfHx8fDE3NjE1NjAxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "power cables"
+    },
+    {
+      "id": "kei-lv-cable",
+      "description": "KEI Low Voltage power and control cables",
+      "imageUrl": "https://images.unsplash.com/photo-1544672531-c546e93e2cfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb250cm9sJTIwY2FibGVzfGVufDB8fHx8MTc2MTU2MDExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "control cables"
     }
   ]
 }
