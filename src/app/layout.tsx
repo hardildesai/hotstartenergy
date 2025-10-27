@@ -25,16 +25,16 @@ const organizationSchema = {
   "logo": "https://www.hotstartenergy.com/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-xxxxxxxxxx",
+    "telephone": "+91-99211-88399",
     "contactType": "customer service",
-    "email": "info@hotstartenergy.com"
+    "email": "hotstartenergy@gmail.com"
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "A-501, XYZ Industrial Park",
-    "addressLocality": "Ahmedabad",
-    "postalCode": "3800xx",
-    "addressRegion": "Gujarat",
+    "streetAddress": "Office No. 203, K. Square, K. P. Shroff Rd, Baner",
+    "addressLocality": "Pune",
+    "postalCode": "411045",
+    "addressRegion": "Maharashtra",
     "addressCountry": "IN"
   },
   "sameAs": [

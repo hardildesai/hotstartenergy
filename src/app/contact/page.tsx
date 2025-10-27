@@ -26,33 +26,32 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-foreground">Direct Contact</h3>
                     <div className="flex items-center gap-4">
                         <Mail className="h-5 w-5 text-accent" />
-                        <a href="mailto:info@hotstartenergy.com" className="hover:text-primary">info@hotstartenergy.com</a>
+                        <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="h-5 w-5 text-accent" />
-                        <span>+91 9876543210</span>
+                        <span>+91 99211-88399</span>
                     </div>
                 </div>
                 <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Our Offices</h3>
+                    <h3 className="text-lg font-semibold text-foreground">Our Office</h3>
                     <div className="space-y-4">
                         <div>
                             <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                <MapPin className="h-5 w-5 text-accent"/> India (Head Office)
+                                <MapPin className="h-5 w-5 text-accent"/> Pune (Head Office)
                             </h4>
                             <p className="text-muted-foreground pl-7">
-                                Hotstart Energy Pvt. Ltd. <br />
-                                A-501, XYZ Industrial Park, <br />
-                                Ahmedabad – 3800xx, Gujarat
+                                Office No. 203, K. Square, K. P. Shroff Rd, Baner,<br />
+                                Pune – 411045, Maharashtra, India
                             </p>
                         </div>
-                        <div>
+                         <div>
                             <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                <MapPin className="h-5 w-5 text-accent"/> India (Branch Office)
+                                <MapPin className="h-5 w-5 text-accent"/> Ahmedabad (Branch Office)
                             </h4>
                             <p className="text-muted-foreground pl-7">
-                                123, ABC Tower, <br />
-                                Pune – 4110xx, Maharashtra, India
+                                Times Square 1, Thaltej-Shilaj Road, <br />
+                                Ahmedabad - 380059, Gujarat
                             </p>
                         </div>
                     </div>

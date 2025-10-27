@@ -3,7 +3,7 @@ import { Logo } from '../logo';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
-import { Linkedin, Instagram, Youtube, Facebook, Phone } from 'lucide-react';
+import { Linkedin, Instagram, Youtube, Facebook, Phone, Mail } from 'lucide-react';
 
 
 export function Footer() {
@@ -17,25 +17,28 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Delivering reliable power distribution, automation & energy-management solutions.
             </p>
-            <div className="space-y-2 text-sm">
-              <h4 className="font-semibold">Registered office:</h4>
-              <p className="text-muted-foreground">
-                Hotstart Energy Pvt. Ltd. <br />
-                A-501, XYZ Industrial Park, <br />
-                Ahmedabad – 3800xx, Gujarat, India
-              </p>
-              <h4 className="font-semibold mt-2">Branch office:</h4>
-               <p className="text-muted-foreground">
-                123, ABC Tower, <br />
-                Pune – 4110xx, Maharashtra, India
-              </p>
+             <div className="space-y-4 text-sm">
+                <div className="space-y-1">
+                    <h4 className="font-semibold flex items-center gap-2">Pune (Head Office)</h4>
+                    <p className="text-muted-foreground">
+                        Office No. 203, K. Square, K. P. Shroff Rd, Baner, Pune – 411045, Maharashtra, India.
+                    </p>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                        <Phone className="h-4 w-4" />
+                        <span>+91-99211-88399</span>
+                    </div>
+                     <div className="flex items-center gap-2 text-muted-foreground">
+                        <Mail className="h-4 w-4" />
+                        <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
+                    </div>
+                </div>
+                <div className="space-y-1">
+                    <h4 className="font-semibold flex items-center gap-2">Ahmedabad (Branch Office)</h4>
+                    <p className="text-muted-foreground">
+                        Times Square 1, Thaltej-Shilaj Road, Ahmedabad - 380059, Gujarat
+                    </p>
+                </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              <span className="font-semibold">Phone:</span> +91 9876543210
-            </p>
-            <p className="text-sm text-muted-foreground">
-              <span className="font-semibold">Email:</span> info@hotstartenergy.com
-            </p>
             <Button asChild>
               <Link href="/contact"><Phone className="mr-2 h-4 w-4" /> Request Quote / Contact Sales</Link>
             </Button>
@@ -71,13 +74,13 @@ export function Footer() {
             <h3 className="font-semibold text-lg">Get in Touch</h3>
             <div>
                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.939234871928!2d72.5836263154238!3d23.02603468495147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f521640d9b%3A0x43f9a7238644837!2sAhmedabad%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sus!4v1626356983633!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.148630041248!2d73.7785208759458!3d18.56702606689893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf3ae7c2125f%3A0x1999645377a06416!2sK%20Square!5e0!3m2!1sen!2sin!4v1716301130325!5m2!1sen!2sin"
                     width="100%"
                     height="150"
                     style={{ border: 0, borderRadius: '15px' }}
                     allowFullScreen={false}
                     loading="lazy"
-                    title="Google Maps Location of Ahmedabad Office"
+                    title="Google Maps Location of Pune Office"
                 ></iframe>
             </div>
              <div className="flex space-x-4">
