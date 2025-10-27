@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FlowButton } from '../ui/flow-button';
+import { motion } from 'framer-motion';
 
 const highlights = [
     'Authorized Channel Partner for Global Electrical Brands',
@@ -21,7 +22,13 @@ export function AboutSection() {
         <section className="w-full bg-gray-50/50 dark:bg-gray-900/20 py-16 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative aspect-square md:aspect-[4/3] rounded-lg shadow-md overflow-hidden">
+                    <motion.div 
+                        className="relative aspect-square md:aspect-[4/3] rounded-lg shadow-md overflow-hidden"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
                         {image && (
                             <Image
                                 src={image.imageUrl}
@@ -32,7 +39,7 @@ export function AboutSection() {
                                 data-ai-hint={image.imageHint}
                             />
                         )}
-                    </div>
+                    </motion.div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
                             Powering Reliable Electrical Solutions for Every Industry
