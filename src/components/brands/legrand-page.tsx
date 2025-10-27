@@ -104,17 +104,32 @@ const productCategories = [
         products: [
             {
                 title: 'Arteor™',
-                description: 'A versatile range with minimalist design, inspired by modern technology.',
+                description: 'A versatile range with minimalist design, inspired by modern technology. Available in round & square shapes with a rich choice of cover plates.',
                 imageId: 'prod-legrand-switch'
             },
             {
                 title: 'Myrius™ & Myrius Nextgen',
-                description: 'Simple, sleek, and smooth design in classic black and white, now with anti-bacterial properties.',
+                description: 'Simple, sleek, and smooth design in classic black and white, now with anti-bacterial properties for enhanced safety.',
                 imageId: 'prod-legrand-switch'
             },
             {
-                title: 'Mylinc™, Lyncus™, Allzy™, Britzy™',
-                description: 'A wide collection of switches offering smart design, safety, and reliability for every need.',
+                title: 'Mylinc™',
+                description: 'Reveals smartness in modular switches with a screw-less finish and alignment perfection for ultimate convenience.',
+                imageId: 'prod-legrand-switch'
+            },
+            {
+                title: 'Lyncus™',
+                description: 'Modern, minimalist, and beveled design that suits any requirement from residential to commercial buildings.',
+                imageId: 'prod-legrand-switch'
+            },
+            {
+                title: 'Allzy™',
+                description: 'The all-rounder switch with a wide range of ergonomics and finishes to satisfy the most demanding customers.',
+                imageId: 'prod-legrand-switch'
+            },
+            {
+                title: 'Britzy™',
+                description: 'The "No Problem Switch" that is versatile and suits any requirement in terms of design and function.',
                 imageId: 'prod-legrand-switch'
             }
         ]
