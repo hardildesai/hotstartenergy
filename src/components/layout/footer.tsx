@@ -95,12 +95,6 @@ export function Footer() {
                     title="Google Maps Location of Pune Office"
                 ></iframe>
             </div>
-             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Youtube /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-            </div>
           </div>
         </div>
 
