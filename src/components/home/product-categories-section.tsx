@@ -11,7 +11,10 @@ export function ProductCategoriesSection() {
   const handleCardClick = (categoryId: string) => {
     if (categoryId === 'cables-wires') {
       router.push('/brands/kei-cables');
-    } else {
+    } else if (categoryId === 'lighting-accessories') {
+        router.push('/brands/havells');
+    }
+    else {
       router.push(`/products?category=${categoryId}`);
     }
   };
