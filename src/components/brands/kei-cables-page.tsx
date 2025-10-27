@@ -185,13 +185,6 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                     </li>
                 ))}
                 </ul>
-                 <div className="pt-4">
-                    <Button asChild size="lg">
-                        <Link href="/contact?query=kei-datasheet">
-                            <Download className="mr-2 h-5 w-5" /> Download Datasheets
-                        </Link>
-                    </Button>
-                </div>
             </div>
         </div>
       </section>
