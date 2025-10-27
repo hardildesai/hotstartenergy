@@ -170,15 +170,14 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
       {/* Why Choose KEI */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                     Unmatched Quality and Performance
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
                     KEI Industries is one of the world's leading cable manufacturers, renowned for its commitment to quality, innovation, and sustainability. Their products form the backbone of critical infrastructure globally.
                 </p>
-                <ul className="space-y-3 pt-2">
+                <ul className="space-y-3 pt-2 inline-grid sm:grid-cols-2 gap-x-12 gap-y-3 text-left">
                 {whyKei.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
@@ -186,17 +185,14 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                     </li>
                 ))}
                 </ul>
+                 <div className="pt-4">
+                    <Button asChild size="lg">
+                        <Link href="/contact?query=kei-datasheet">
+                            <Download className="mr-2 h-5 w-5" /> Download Datasheets
+                        </Link>
+                    </Button>
+                </div>
             </div>
-            <div className="text-center p-8 bg-card rounded-lg border">
-                <h3 className="text-xl font-semibold mb-4">Technical Specifications & Downloads</h3>
-                <p className="text-muted-foreground mb-6">Access detailed product catalogues and datasheets to find the perfect cable for your needs.</p>
-                <Button asChild size="lg">
-                    <Link href="/contact?query=kei-datasheet">
-                        <Download className="mr-2 h-5 w-5" /> Download Datasheets
-                    </Link>
-                </Button>
-            </div>
-          </div>
         </div>
       </section>
 
