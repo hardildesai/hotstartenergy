@@ -5,7 +5,7 @@ import { OurStory } from '@/components/about/our-story';
 import { OurValues } from '@/components/about/our-values';
 import { BrandPartners } from '@/components/home/brand-partners';
 import { TrustedBy } from '@/components/home/trusted-by';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -96,9 +96,9 @@ export default function AboutPage() {
                     Hotstart Energy Pvt. Ltd. continues to evolve with India’s growing industrial and energy needs — focusing on sustainability, smart automation, and high-efficiency power systems. With an expanding presence and a talented, motivated team, HSEPL is poised to lead the next wave of India’s electrical innovation.
                 </p>
                  <div className="mt-8">
-                    <Button asChild size="lg">
+                    <GradientButton asChild>
                         <Link href="/contact">Get in Touch</Link>
-                    </Button>
+                    </GradientButton>
                 </div>
             </div>
         </section>
