@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { KeiCablesPage } from '@/components/brands/kei-cables-page';
+import { LegrandPage } from '@/components/brands/legrand-page';
 
 export function generateStaticParams() {
   return brands.map((brand) => ({
@@ -27,6 +28,11 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   // Special page for KEI
   if (brand.slug === 'kei-cables') {
     return <KeiCablesPage brand={brand} />;
+  }
+  
+  // Special page for Legrand
+  if (brand.slug === 'legrand') {
+    return <LegrandPage brand={brand} />;
   }
 
   // Default page for other brands

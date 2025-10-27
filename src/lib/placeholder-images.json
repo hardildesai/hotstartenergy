@@ -139,6 +139,12 @@
       "imageHint": "modern office"
     },
     {
+      "id": "legrand-hero",
+      "description": "Abstract image of Legrand smart home devices",
+      "imageUrl": "https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?q=80&w=1886&auto=format&fit=crop",
+      "imageHint": "smart home"
+    },
+    {
       "id": "kei-hero",
       "description": "Closeup of industrial cables and wires",
       "imageUrl": "https://images.unsplash.com/photo-1598252510902-b63c636d338f?q=80&w=2070&auto=format&fit=crop",
