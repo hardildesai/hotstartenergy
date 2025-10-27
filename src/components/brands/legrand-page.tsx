@@ -144,23 +144,28 @@ const productCategories = [
         products: [
             {
                 title: 'CABLOFIL® Wire Mesh Cable Trays',
-                description: 'Create neat, orderly, and easy-to-install pathways for cables.',
+                description: 'Increase contractor productivity and reduce installation costs. Cablofil creates neat and orderly pathways, ideal for open installations. Available in various materials and sizes.',
                 imageId: 'cat-cables'
             },
             {
-                title: 'Pop-up & Floor Boxes',
-                description: 'Discreet and elegant solutions for providing power and data access from the floor.',
+                title: 'Pop-Up Boxes',
+                description: 'Equipped with a "push and slide" locking system to avoid accidental opening. Designed to be equipped with Arteor/Myrius socket outlets, available in multiple configurations and elegant finishes.',
                 imageId: 'prod-legrand-socket'
             },
             {
-                title: 'Raceways & DLP Trunking Systems',
-                description: 'uPVC and Aluminium trunking systems for flexible cable routing.',
+                title: 'Floor Boxes',
+                description: 'Durable solutions for raised floors, screed, tiles, and marbles. Available in various sizes with options for heavy-duty applications and accessories for fitting wiring accessories.',
+                imageId: 'prod-legrand-socket'
+            },
+            {
+                title: 'Raceways and Junction Boxes',
+                description: 'PVC and Galvanized sheet raceways confirming to EN 50 085-2-2, compatible with Cat.6 cabling systems. Supplied in various sizes with matching junction boxes.',
                 imageId: 'cat-busbar'
             },
             {
-                title: 'P-17 Tempra Plugs & Sockets',
-                description: 'Industrial plugs and sockets with IP44 and IP66/67 protection.',
-                imageId: 'prod-legrand-socket'
+                title: 'DLP U-PVC & Aluminium Trunking Systems',
+                description: 'Flexible trunking systems with base, covers, partitions, and finishing accessories. Suitable for mounting Arteor wiring accessories in a variety of sizes.',
+                imageId: 'cat-busbar'
             }
         ]
     }
@@ -313,5 +318,3 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
-
-    
