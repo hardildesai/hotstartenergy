@@ -168,6 +168,16 @@ const productCategories = [
                 imageId: 'cat-busbar'
             }
         ]
+    },
+     {
+        category: 'Plugs & Socket',
+        products: [
+            {
+                title: 'P-17 Tempra Plug, Sockets',
+                description: 'Built as per IEC 61439-3, these include surface mounting sockets, panel mounted angle sockets, mobile sockets, and straight plugs. Available from 16A to 125A in various frame sizes with IP44 and IP66/67 protection.',
+                imageId: 'prod-legrand-socket'
+            }
+        ]
     }
 ];
 
