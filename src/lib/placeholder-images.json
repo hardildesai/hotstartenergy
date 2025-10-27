@@ -206,50 +206,50 @@
     },
     {
       "id": "socomec-hero",
-      "description": "Abstract image of Socomec power switching solutions",
-      "imageUrl": "https://images.unsplash.com/photo-1581093582415-99881a30f7c2?q=80&w=1887&auto=format&fit=crop",
-      "imageHint": "power management"
+      "description": "Bright and clean image of a modern power management facility",
+      "imageUrl": "https://images.unsplash.com/photo-1630695034875-7289980838e1?q=80&w=1932&auto=format&fit=crop",
+      "imageHint": "power facility"
     },
     {
       "id": "socomec-countis-meter",
-      "description": "Socomec Countis energy meter",
-      "imageUrl": "https://images.unsplash.com/photo-1622801185864-874be8248594?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbmVyZ3klMjBtZXRlcnxlbnwwfHx8fDE3NjEyODcxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Clear shot of a Socomec Countis energy meter",
+      "imageUrl": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1769&auto=format&fit=crop",
       "imageHint": "energy meter"
     },
     {
       "id": "socomec-multis-meter",
-      "description": "Socomec MULTIS multifunction meter",
-      "imageUrl": "https://images.unsplash.com/photo-1555543118-0f3a8b4d830c?q=80&w=1964&auto=format&fit=crop",
+      "description": "Front view of a Socomec MULTIS multifunction meter",
+      "imageUrl": "https://images.unsplash.com/photo-1567504381395-5a213955e85f?q=80&w=1932&auto=format&fit=crop",
       "imageHint": "multifunction meter"
     },
     {
       "id": "socomec-diris-digiware",
-      "description": "Socomec DIRIS Digiware monitoring system",
-      "imageUrl": "https://images.unsplash.com/photo-1550751827-4138d0e2ca7c?q=80&w=2070&auto=format&fit=crop",
+      "description": "Socomec DIRIS Digiware monitoring system in a server rack",
+      "imageUrl": "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "monitoring system"
     },
     {
       "id": "socomec-manual-changeover",
-      "description": "Socomec manual changeover switch",
+      "description": "A clean, well-lit Socomec manual changeover switch",
       "imageUrl": "https://images.unsplash.com/photo-1617861096383-0593ef53e3a4?q=80&w=1770&auto=format&fit=crop",
       "imageHint": "changeover switch"
     },
     {
       "id": "socomec-load-break",
-      "description": "Socomec load break switch",
-      "imageUrl": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55fGVufDB8fHx8MTc2MTU1ODk3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Industrial Socomec load break switch",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
       "imageHint": "load switch"
     },
     {
       "id": "socomec-bypass-switch",
-      "description": "Socomec bypass switch",
-      "imageUrl": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1769&auto=format&fit=crop",
+      "description": "Close-up of a Socomec bypass switch",
+      "imageUrl": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop",
       "imageHint": "bypass switch"
     },
     {
       "id": "socomec-ats",
-      "description": "Socomec Automatic Transfer Switch",
-      "imageUrl": "https://images.unsplash.com/photo-1467733238130-bb6846885316?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzd2l0Y2hnZWFyJTIwcGFuZWx8ZW58MHx8fHwxNzYxMjg3MTExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A Socomec Automatic Transfer Switch in a control panel",
+      "imageUrl": "https://images.unsplash.com/photo-1596008610979-9a6d685140b2?q=80&w=1974&auto=format&fit=crop",
       "imageHint": "transfer switch"
     }
   ]
