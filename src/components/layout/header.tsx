@@ -11,6 +11,17 @@ import { brands } from "@/lib/brands";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+
+  const getProductCategoryHref = (categoryId: string) => {
+    if (categoryId === 'cables-wires') {
+      return '/brands/kei-cables';
+    }
+    if (categoryId === 'lighting-accessories') {
+      return '/brands/havells';
+    }
+    return `/products?category=${categoryId}`;
+  };
+
   return (
     <div
       className={cn("fixed top-2 inset-x-0 max-w-5xl mx-auto z-50", className)}
@@ -37,7 +48,7 @@ function Navbar({ className }: { className?: string }) {
                     <ProductItem
                       key={category.id}
                       title={category.title}
-                      href={`/products?category=${category.id}`}
+                      href={getProductCategoryHref(category.id)}
                       src={image?.imageUrl || ''}
                       description={category.description}
                     />
