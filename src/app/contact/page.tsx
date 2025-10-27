@@ -21,38 +21,51 @@ export default function ContactPage() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-card p-8 rounded-lg shadow-sm border">
             <h2 className="text-2xl font-bold mb-6 text-center">Contact Information</h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-4 text-muted-foreground">
-                    <h3 className="text-lg font-semibold text-foreground">Direct Contact</h3>
-                    <div className="flex items-center gap-4">
-                        <Mail className="h-5 w-5 text-accent" />
-                        <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <Phone className="h-5 w-5 text-accent" />
-                        <span>+91 99211-88399</span>
-                    </div>
-                </div>
+            <div className="grid md:grid-cols-1 gap-8 mb-8">
                 <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-foreground">Our Office</h3>
-                    <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-foreground">Our Offices</h3>
+                    <div className="space-y-6">
                         <div>
                             <h4 className="font-semibold mb-2 flex items-center gap-2">
                                 <MapPin className="h-5 w-5 text-accent"/> Pune (Head Office)
                             </h4>
-                            <p className="text-muted-foreground pl-7">
-                                Office No. 203, K. Square, K. P. Shroff Rd, Baner,<br />
-                                Pune – 411045, Maharashtra, India
-                            </p>
+                            <div className="pl-7 space-y-1">
+                                <p className="text-muted-foreground">
+                                    Office No. 203, K. Square, K. P. Shroff Rd, Baner,<br />
+                                    Pune – 411045, Maharashtra, India
+                                </p>
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Phone className="h-4 w-4 text-accent" />
+                                    <span>+91-99211-88399</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Mail className="h-4 w-4 text-accent" />
+                                    <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
+                                </div>
+                            </div>
                         </div>
                          <div>
                             <h4 className="font-semibold mb-2 flex items-center gap-2">
                                 <MapPin className="h-5 w-5 text-accent"/> Ahmedabad (Branch Office)
                             </h4>
-                            <p className="text-muted-foreground pl-7">
-                                Times Square 1, Thaltej-Shilaj Road, <br />
-                                Ahmedabad - 380059, Gujarat
-                            </p>
+                            <div className="pl-7 space-y-1">
+                                <p className="text-muted-foreground">
+                                    514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej,<br />
+                                    Ahmedabad, Gujarat, 380059.
+                                </p>
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Phone className="h-4 w-4 text-accent" />
+                                    <span>+91-94263 21532</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Mail className="h-4 w-4 text-accent" />
+                                    <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
+                                </div>
+                                <div className="flex items-center gap-2 text-muted-foreground">
+                                    <Mail className="h-4 w-4 text-accent" />
+                                    <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

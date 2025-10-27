@@ -95,26 +95,21 @@ export default function CareerPage() {
        <section className="py-16 md:py-24 border-t">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Get in Touch</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our Locations</h2>
                  <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Have questions about careers at Hotstart Energy? Contact our HR department.
+                    Find us at our offices in Pune and Ahmedabad.
                 </p>
             </div>
-            <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-center">
                 <div className="flex flex-col items-center">
-                    <Mail className="h-8 w-8 text-accent mb-2"/>
-                    <h3 className="font-semibold">HR Department</h3>
-                    <a href="mailto:careers@hotstartenergy.com" className="text-muted-foreground hover:text-primary">careers@hotstartenergy.com</a>
+                    <MapPin className="h-8 w-8 text-accent mb-2"/>
+                    <h3 className="font-semibold">Pune (Head Office)</h3>
+                    <p className="text-muted-foreground">Office No. 203, K. Square, K. P. Shroff Rd, Baner, Pune – 411045, Maharashtra, India</p>
                 </div>
                 <div className="flex flex-col items-center">
                     <MapPin className="h-8 w-8 text-accent mb-2"/>
-                    <h3 className="font-semibold">Pune Office</h3>
-                    <p className="text-muted-foreground">Office No. 203, K. Square, K. P. Shroff Rd, Baner, Pune 411045</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <MapPin className="h-8 w-8 text-accent mb-2"/>
-                    <h3 className="font-semibold">Ahmedabad Office</h3>
-                    <p className="text-muted-foreground">Times Square 1, Thaltej-Shilaj Road, Ahmedabad - 380059</p>
+                    <h3 className="font-semibold">Ahmedabad (Branch Office)</h3>
+                    <p className="text-muted-foreground">514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej, Ahmedabad, Gujarat, 380059.</p>
                 </div>
             </div>
         </div>

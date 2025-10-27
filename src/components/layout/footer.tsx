@@ -35,8 +35,20 @@ export function Footer() {
                 <div className="space-y-1">
                     <h4 className="font-semibold flex items-center gap-2">Ahmedabad (Branch Office)</h4>
                     <p className="text-muted-foreground">
-                        Times Square 1, Thaltej-Shilaj Road, Ahmedabad - 380059, Gujarat
+                        514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej, Ahmedabad, Gujarat, 380059.
                     </p>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                        <Phone className="h-4 w-4" />
+                        <span>+91-94263 21532</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                        <Mail className="h-4 w-4" />
+                        <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                        <Mail className="h-4 w-4" />
+                        <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
+                    </div>
                 </div>
             </div>
             <Button asChild>
