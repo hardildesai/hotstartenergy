@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 import { ProductGrid } from '@/components/products/product-grid';
+import Image from 'next/image';
 
 export default function ProductsPage() {
   return (
@@ -31,7 +32,7 @@ export default function ProductsPage() {
             <Card className="flex flex-col h-full group transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-1.5">
               <CardHeader className="items-center text-center pt-8 pb-4">
                 <div className="h-16 flex items-center justify-center">
-                  <brand.logo className="h-10 w-auto text-foreground transition-colors group-hover:text-primary" />
+                  <Image src={brand.logo} alt={`${brand.name} logo`} width={120} height={30} className="h-10 w-auto text-foreground transition-colors group-hover:text-primary dark:invert" />
                 </div>
                 <CardTitle className="pt-4 text-lg font-semibold">{brand.name}</CardTitle>
               </CardHeader>
