@@ -1,3 +1,4 @@
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Brand } from '@/lib/types';
 import { CheckCircle, Download, Power, Shield, Zap } from 'lucide-react';
 import { KeiCablesLogo } from '../logos';
+import { motion } from 'framer-motion';
 
 const productPortfolio = [
   { title: 'Power Cables (LV, MV, HV)', description: 'For reliable energy transmission in industrial and utility networks.', icon: Power },
@@ -132,7 +134,14 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                     const image = PlaceHolderImages.find(p => p.id === product.imageId);
                     const isReversed = index % 2 !== 0;
                     return (
-                        <div key={index} className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-card p-8 rounded-lg shadow-sm border`}>
+                        <motion.div 
+                          key={index} 
+                          className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-card p-8 rounded-lg shadow-sm border`}
+                          initial={{ opacity: 0, y: 50 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
                             <div className={`space-y-4 ${isReversed ? 'md:order-2' : ''}`}>
                                 <h3 className="text-2xl font-bold">{product.title}</h3>
                                 <p className="text-muted-foreground">{product.description}</p>
@@ -160,7 +169,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                                  </div>
                                )}
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>
