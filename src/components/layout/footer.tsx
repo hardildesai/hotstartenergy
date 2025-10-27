@@ -64,11 +64,6 @@ export function Footer() {
               <li><Link href="/products?category=lighting" className="text-muted-foreground hover:text-primary">Lighting & Accessories</Link></li>
               <li><Link href="/products?category=automation" className="text-muted-foreground hover:text-primary">Automation & Drives</Link></li>
             </ul>
-            <div className="pt-4">
-                <Button variant="outline" asChild>
-                    <Link href="/company-profile.pdf" target="_blank">Download Company Profile (PDF)</Link>
-                </Button>
-            </div>
           </div>
 
           {/* Column 4: Get in Touch / Social */}
