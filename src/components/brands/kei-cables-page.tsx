@@ -21,13 +21,55 @@ const featuredProducts = [
         title: 'HV Power Cable',
         description: 'Built for high performance, KEI HV wire ensures safe and efficient power transmission. These cables are designed to handle high voltage with reliability, making them ideal for demanding industrial and commercial applications.',
         imageId: 'kei-hv-cable',
-        imageCaption: 'HV POWER CABLE'
+        imageCaption: 'KEI HV Power Cables'
     },
     {
         title: 'LV Power & Control Cable',
         description: 'KEI LV wire and cable are ideal for low-voltage power needs. The LV Power & Control Cable ensures efficient performance and safety, making it perfect for residential, commercial, and industrial use.',
         imageId: 'kei-lv-cable',
-        imageCaption: 'LV POWER & CONTROL CABLE'
+        imageCaption: 'KEI LV Power & Control Cable'
+    },
+    {
+        title: 'Building Wires',
+        description: 'KEI building wires are crafted for secure and efficient electrical connections in homes and offices. The building wires offer high durability and superior insulation, ensuring long-lasting performance and safety for everyday use.',
+        imageId: 'kei-building-wires',
+        imageCaption: 'KEI Building Wires'
+    },
+    {
+        title: 'Solar Cables',
+        description: 'KEI solar cable is designed for reliable and efficient energy transmission in solar power systems. These Solar Cables ensure durability, UV resistance, and safety, making them ideal for sustainable energy solutions in residential and commercial setups.',
+        imageId: 'kei-solar-cables',
+        imageCaption: 'KEI Solar Cables'
+    },
+    {
+        title: 'Flexible Single And Multi Core Wires',
+        description: 'KEI flexible cable is built for versatile use in residential, commercial, and industrial setups. These flexible single and multi core wires offer excellent conductivity, durability, and ease of installation, ensuring reliable performance in various applications.',
+        imageId: 'kei-flexible-wires',
+        imageCaption: 'KEI Flexible single core and multi core Wires'
+    },
+    {
+        title: 'EHV Power Cable',
+        description: 'KEI EHV wire and KEI EHV cable are designed for efficient power transmission at extremely high voltages. These EHV power cables ensure superior insulation, reliability, and safety, making them ideal for large-scale industrial and infrastructure projects.',
+        imageId: 'kei-ehv-cable',
+        imageCaption: 'KEI EHV Power Cable'
+    },
+    {
+        title: 'Telecom Cables',
+        description: 'KEI telecom cables are engineered to ensure seamless and reliable data and voice transmission. Designed for durability and high performance, these telecom cables provide efficient connectivity, making them ideal for modern communication networks.',
+        imageId: 'kei-telecom-cables',
+        imageCaption: 'KEI Telecom Cables'
+    },
+    {
+        title: 'Instrumentation Cables',
+        description: 'KEI instrumentation cable is designed for precise signal transmission in industrial applications. These cables ensure accuracy, reliability, and durability, making them essential for controlling and monitoring processes in various industries.',
+        imageId: 'kei-instrumentation-cables',
+        imageCaption: 'KEI Instrumentation Cables'
+    },
+    {
+        title: 'Fire Survival Cables',
+        description: 'KEI fire survival cables are designed to maintain circuit integrity during fire emergencies. These cables ensure safety and reliability in critical applications, making them ideal for fire-prone environments in residential, commercial, and industrial setups.',
+        imageId: 'kei-fire-survival-cables',
+        imageCaption: 'KEI Fire Survival Cables'
     }
 ];
 
@@ -88,16 +130,17 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
            <div className="space-y-12">
                 {featuredProducts.map((product, index) => {
                     const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                    const isReversed = index % 2 !== 0;
                     return (
-                        <div key={index} className="grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-card p-8 rounded-lg shadow-sm border">
-                            <div className="space-y-4">
+                        <div key={index} className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center bg-card p-8 rounded-lg shadow-sm border`}>
+                            <div className={`space-y-4 ${isReversed ? 'md:order-2' : ''}`}>
                                 <h3 className="text-2xl font-bold">{product.title}</h3>
                                 <p className="text-muted-foreground">{product.description}</p>
                                 <Button asChild variant="destructive">
                                     <Link href="/contact">Learn More</Link>
                                 </Button>
                             </div>
-                            <div className="text-center">
+                            <div className={`text-center ${isReversed ? 'md:order-1' : ''}`}>
                                {image && (
                                  <div className="bg-white p-4 rounded-lg shadow-md inline-block">
                                     <div className="relative h-64 w-64">
@@ -106,6 +149,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                                             alt={product.title}
                                             fill
                                             className="object-contain"
+                                            sizes="256px"
                                             data-ai-hint={image.imageHint}
                                         />
                                     </div>
