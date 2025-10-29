@@ -6,60 +6,25 @@ import Link from 'next/link';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import React from 'react';
-
-const heroImageIds = [
-  'hero-1',
-  'hero-2',
-  'hero-3',
-  'hero-4',
-];
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })
-  );
-
-  const carouselImages = PlaceHolderImages.filter(p => heroImageIds.includes(p.id));
+  const image = PlaceHolderImages.find(p => p.id === 'hero-1');
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex flex-col justify-between">
-      <Carousel
-        className="absolute inset-0 w-full h-full"
-        plugins={[plugin.current]}
-        opts={{
-          loop: true,
-        }}
-      >
-        <CarouselContent className="h-full">
-          {carouselImages.map((image, index) => (
-            <CarouselItem key={index}>
-              <Image
-                src={image.imageUrl}
-                alt={image.description}
-                fill
-                className="object-cover"
-                priority={index === 0}
-                data-ai-hint={image.imageHint}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
-        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
-      </Carousel>
+      {image && (
+         <Image
+            src={image.imageUrl}
+            alt={image.description}
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint={image.imageHint}
+        />
+      )}
       
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-
       <div className="relative z-10 flex flex-col items-center justify-end flex-grow text-center text-white pb-16">
         <div className="container px-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
