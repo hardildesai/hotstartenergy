@@ -60,9 +60,9 @@ export function Hero() {
       </Carousel>
 
       <div className="absolute inset-0 bg-white/50" />
-      <div className="relative z-10 flex flex-col items-center text-center text-foreground h-full">
+      <div className="relative z-10 flex flex-col items-center text-center text-foreground h-full pt-16 md:pt-0">
         <div className="container px-4 flex flex-col justify-end flex-grow pb-16">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Powering the <span className="text-accent">future</span> with
             precision and control
           </h1>

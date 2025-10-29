@@ -39,7 +39,6 @@ export const MenuItem = ({
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
-          onMouseLeave={() => setActive(null)}
         >
           {active === item && (
             <div
@@ -121,15 +120,17 @@ export const BrandItem = ({
   name,
   href,
   logo,
-  className
+  className,
+  setActive
 }: {
   name: string;
   href: string;
   logo: string;
   className?: string;
+  setActive: (item: string | null) => void;
 }) => {
   return (
-    <Link href={href}>
+    <Link href={href} onClick={() => setActive(null)}>
        <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
          <Image
             src={logo}
