@@ -68,7 +68,7 @@ export const brands: Brand[] = [
     id: 'eaton',
     name: 'Eaton',
     slug: 'eaton',
-    logo: "https://logo.clearbit.com/eaton.com",
+    logo: "/Eaton_Corporation_logo.png",
     short_description: 'Power management company providing energy-efficient solutions.',
     productCount: getProductCount('Eaton'),
     categories: getCategoriesForBrand('Eaton', ['Automation']),
