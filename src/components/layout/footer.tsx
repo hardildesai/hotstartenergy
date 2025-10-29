@@ -57,19 +57,7 @@ export function Footer() {
             </Button>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
-              <li><Link href="/products" className="text-muted-foreground hover:text-primary">Products</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
-              <li><Link href="/career" className="text-muted-foreground hover:text-primary">Careers</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact Us</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Product Categories */}
+          {/* Column 2: Product Categories */}
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Product Categories</h3>
             <ul className="space-y-2 text-sm">
@@ -82,7 +70,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Our Brands */}
+          {/* Column 3: Our Brands */}
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Our Brands</h3>
             <ul className="space-y-2 text-sm">
@@ -93,6 +81,18 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
+              <li><Link href="/products" className="text-muted-foreground hover:text-primary">Products</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
+              <li><Link href="/career" className="text-muted-foreground hover:text-primary">Careers</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact Us</Link></li>
             </ul>
           </div>
         </div>
