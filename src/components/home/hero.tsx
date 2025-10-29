@@ -58,14 +58,14 @@ export function Hero() {
         <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
       </Carousel>
 
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
       <div className="relative z-10 flex flex-col items-center text-center text-white h-full pt-16 md:pt-0">
         <div className="container px-4 flex flex-col justify-end flex-grow pb-16">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.7)' }}>
             Powering the <span className="text-accent">future</span> with
             precision and control
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white/80">
+          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white/90" style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' }}>
             Trust Hotstart Energy to energize industry with reliability,
             technical expertise, and world-class brand partners.
           </p>
