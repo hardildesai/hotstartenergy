@@ -48,7 +48,7 @@ export function Footer() {
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                         <Mail className="h-4 w-4" />
-                        <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
+                        <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hovertext-primary">bhavesh.hotstartenergy@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -57,16 +57,15 @@ export function Footer() {
             </Button>
           </div>
 
-          {/* Column 2: Product Categories */}
+          {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Product Categories</h3>
+            <h3 className="font-semibold text-lg">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/products?category=switchgear" className="text-muted-foreground hover:text-primary">Switchgear & Panels</Link></li>
-              <li><Link href="/products?category=busbar" className="text-muted-foreground hover:text-primary">Busbar Trunking Systems</Link></li>
-              <li><Link href="/products?category=cables" className="text-muted-foreground hover:text-primary">Cables & Wires</Link></li>
-              <li><Link href="/products?category=meters" className="text-muted-foreground hover:text-primary">Energy Meters & Monitoring</Link></li>
-              <li><Link href="/products?category=lighting" className="text-muted-foreground hover:text-primary">Lighting & Accessories</Link></li>
-              <li><Link href="/products?category=automation" className="text-muted-foreground hover:text-primary">Automation & Drives</Link></li>
+              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
+              <li><Link href="/products" className="text-muted-foreground hover:text-primary">Products</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
+              <li><Link href="/career" className="text-muted-foreground hover:text-primary">Careers</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -84,15 +83,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Quick Links */}
+          {/* Column 4: Product Categories */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <h3 className="font-semibold text-lg">Product Categories</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
-              <li><Link href="/products" className="text-muted-foreground hover:text-primary">Products</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
-              <li><Link href="/career" className="text-muted-foreground hover:text-primary">Careers</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact Us</Link></li>
+              <li><Link href="/products?category=switchgear" className="text-muted-foreground hover:text-primary">Switchgear & Panels</Link></li>
+              <li><Link href="/products?category=busbar" className="text-muted-foreground hover:text-primary">Busbar Trunking Systems</Link></li>
+              <li><Link href="/products?category=cables" className="text-muted-foreground hover:text-primary">Cables & Wires</Link></li>
+              <li><Link href="/products?category=meters" className="text-muted-foreground hover:text-primary">Energy Meters & Monitoring</Link></li>
+              <li><Link href="/products?category=lighting" className="text-muted-foreground hover:text-primary">Lighting & Accessories</Link></li>
+              <li><Link href="/products?category=automation" className="text-muted-foreground hover:text-primary">Automation & Drives</Link></li>
             </ul>
           </div>
         </div>
