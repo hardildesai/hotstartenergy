@@ -16,11 +16,11 @@ import Autoplay from 'embla-carousel-autoplay';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import React from 'react';
 
-const heroImages = [
-  'hero-test-1',
-  'hero-test-2',
-  'hero-test-3',
-  'hero-test-4',
+const heroImageIds = [
+  'hero-1',
+  'hero-2',
+  'hero-3',
+  'hero-4',
 ];
 
 export function Hero() {
@@ -28,7 +28,7 @@ export function Hero() {
     Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
-  const carouselImages = PlaceHolderImages.filter(p => heroImages.includes(p.id));
+  const carouselImages = PlaceHolderImages.filter(p => heroImageIds.includes(p.id));
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex flex-col">

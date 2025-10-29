@@ -37,25 +37,25 @@
       "imageHint": "wall socket"
     },
     {
-      "id": "hero-test-1",
+      "id": "hero-1",
       "description": "Custom hero image 1",
       "imageUrl": "/test1.jpg",
       "imageHint": "industrial"
     },
     {
-      "id": "hero-test-2",
+      "id": "hero-2",
       "description": "Custom hero image 2",
       "imageUrl": "/test2.jpg",
       "imageHint": "technology"
     },
     {
-      "id": "hero-test-3",
+      "id": "hero-3",
       "description": "Custom hero image 3",
       "imageUrl": "/test3.jpg",
       "imageHint": "power"
     },
     {
-      "id": "hero-test-4",
+      "id": "hero-4",
       "description": "Custom hero image 4",
       "imageUrl": "/test4.jpg",
       "imageHint": "energy"
