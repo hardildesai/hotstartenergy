@@ -52,41 +52,37 @@ function DesktopNavbar({ className }: { className?: string }) {
           <div onMouseEnter={() => setActive(null)}>
             <HoveredLink href="/about">About Us</HoveredLink>
           </div>
-          <div onMouseEnter={() => setActive(null)}>
-            <MenuItem setActive={setActive} active={active} item="Products">
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                {productCategories.map((category) => {
-                  const image = PlaceHolderImages.find(p => p.id === category.imageId);
-                  return (
-                    <ProductItem
-                      key={category.id}
-                      title={category.title}
-                      href={getProductCategoryHref(category.id)}
-                      src={image?.imageUrl || ''}
-                      description={category.description}
-                      setActive={setActive}
-                    />
-                  )
-                })}
-              </div>
-            </MenuItem>
-          </div>
-          <div onMouseEnter={() => setActive('Brands')}>
-            <MenuItem setActive={setActive} active={active} item="Brands">
-              <div className="grid grid-cols-4 w-[40rem] gap-px overflow-hidden rounded-lg border bg-background shadow-lg">
-                {brands.map((brand) => (
-                  <BrandItem
-                    key={brand.id}
-                    name={brand.name}
-                    href={`/brands/${brand.slug}`}
-                    logo={brand.logo}
-                    className="border-0 rounded-none"
+          <MenuItem setActive={setActive} active={active} item="Products">
+            <div className="text-sm grid grid-cols-2 gap-10 p-4">
+              {productCategories.map((category) => {
+                const image = PlaceHolderImages.find(p => p.id === category.imageId);
+                return (
+                  <ProductItem
+                    key={category.id}
+                    title={category.title}
+                    href={getProductCategoryHref(category.id)}
+                    src={image?.imageUrl || ''}
+                    description={category.description}
                     setActive={setActive}
                   />
-                ))}
-              </div>
-            </MenuItem>
-          </div>
+                )
+              })}
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Brands">
+            <div className="grid grid-cols-4 w-[40rem] gap-px overflow-hidden rounded-lg border bg-background shadow-lg">
+              {brands.map((brand) => (
+                <BrandItem
+                  key={brand.id}
+                  name={brand.name}
+                  href={`/brands/${brand.slug}`}
+                  logo={brand.logo}
+                  className="border-0 rounded-none"
+                  setActive={setActive}
+                />
+              ))}
+            </div>
+          </MenuItem>
           <div onMouseEnter={() => setActive(null)}>
             <HoveredLink href="/career">Career</HoveredLink>
           </div>
@@ -114,7 +110,10 @@ function MobileNavbar() {
   };
 
   return (
-    <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm shadow-md">
+    <div
+      className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md"
+      style={{ backdropFilter: 'url("#container-glass")' }}
+    >
       <div className="container mx-auto px-4 h-16 flex justify-between items-center">
         <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
           <Logo />
