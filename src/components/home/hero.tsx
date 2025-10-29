@@ -17,12 +17,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import React from 'react';
 
 const heroImages = [
-  'hero-carousel-1',
-  'hero-carousel-2',
-  'hero-carousel-3',
-  'hero-carousel-4',
-  'hero-carousel-5',
-  'hero-carousel-6',
+  'hero-test-1',
+  'hero-test-2',
+  'hero-test-3',
+  'hero-test-4',
 ];
 
 export function Hero() {
