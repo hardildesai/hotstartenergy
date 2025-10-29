@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: 'Hotstart Energy',
   description: 'Powering the future with precision and control',
   icons: {
-    icon: '/login_logo.png',
+    icon: '/navbar_logo.png',
   },
 };
 
