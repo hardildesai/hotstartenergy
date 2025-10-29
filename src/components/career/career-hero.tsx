@@ -4,6 +4,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
+import { GlowingButton } from '../ui/glowing-button';
+import { Briefcase, Send } from 'lucide-react';
 
 export function CareerHero() {
   const image = PlaceHolderImages.find((p) => p.id === 'career-hero');
@@ -29,12 +31,12 @@ export function CareerHero() {
           At Hotstart Energy Pvt. Ltd., we’re transforming electrical power distribution and automation through expertise, technology, and teamwork. Be part of a company that powers industries — and your career — to new heights.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg">
-                <Link href="#openings">View Current Openings</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
-                <Link href="mailto:hotstartenergy@gmail.com?subject=Resume Submission">Submit Your Resume</Link>
-            </Button>
+            <Link href="#openings">
+              <GlowingButton icon={<Briefcase />} title="View Current Openings" size="md" />
+            </Link>
+            <a href="mailto:hotstartenergy@gmail.com?subject=Resume Submission">
+              <GlowingButton icon={<Send />} title="Submit Your Resume" size="md" />
+            </a>
         </div>
       </div>
     </section>

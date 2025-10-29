@@ -3,8 +3,9 @@ import { JobOpenings } from '@/components/career/job-openings';
 import { LifeAtHsepl } from '@/components/career/life-at-hsepl';
 import { BrandPartners } from '@/components/home/brand-partners';
 import { Button } from '@/components/ui/button';
+import { GlowingButton } from '@/components/ui/glowing-button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Mail, MapPin } from 'lucide-react';
+import { CheckCircle, Mail, MapPin, Send } from 'lucide-react';
 import Link from 'next/link';
 
 const whyHseplPoints = [
@@ -70,11 +71,9 @@ export default function CareerPage() {
                         We welcome passionate engineering graduates interested in power distribution, control systems, and industrial automation. Our internship and training programs offer real-world exposure to electrical design, project execution, and client interaction.
                     </p>
                     <div className="pt-4">
-                        <Button asChild size="lg">
-                            <Link href="mailto:careers@hotstartenergy.com?subject=Application for Internship">
-                                Apply for Internship
-                            </Link>
-                        </Button>
+                        <Link href="mailto:careers@hotstartenergy.com?subject=Application for Internship">
+                            <GlowingButton icon={<Send />} title="Apply for Internship" size="md" />
+                        </Link>
                     </div>
                 </div>
                  <div className="space-y-6">

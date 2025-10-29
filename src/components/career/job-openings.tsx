@@ -7,7 +7,8 @@ import {
 } from "@/components/ui/accordion"
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { Briefcase, MapPin, Send } from "lucide-react";
+import { GlowingButton } from "../ui/glowing-button";
 
 
 export function JobOpenings() {
@@ -54,15 +55,17 @@ export function JobOpenings() {
                                     </ul>
                                 </div>
                             </div>
-                             <Button asChild className="mt-6">
-                                <Link href={`mailto:careers@hotstartenergy.com?subject=Application for ${job.title}`}>Apply Now</Link>
-                            </Button>
+                            <div className="mt-6">
+                              <Link href={`mailto:careers@hotstartenergy.com?subject=Application for ${job.title}`}>
+                                <GlowingButton icon={<Send />} title="Apply Now" size="md" />
+                              </Link>
+                            </div>
                         </AccordionContent>
                     </AccordionItem>
                 ))}
             </Accordion>
             <div className="text-center mt-12">
-                 <Button variant="outline" size="lg">See More Roles</Button>
+                 <GlowingButton icon={<Briefcase/>} title="See More Roles" size="md" />
             </div>
         </div>
     )
