@@ -82,7 +82,7 @@ export function SocomecPage({ brand }: { brand: Brand }) {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 container px-4 flex flex-col items-center">
-          <Image src={brand.logo} alt={`${brand.name} logo`} width={160} height={60} className="h-20 w-auto mb-6 dark:invert" />
+          <Image src={brand.logo} alt={`${brand.name} logo`} width={160} height={40} className="h-14 w-auto mb-6 dark:invert" />
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Your Power. Our Expertise.
           </h1>
