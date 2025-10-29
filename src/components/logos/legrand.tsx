@@ -1,10 +1,11 @@
+
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 export function LegrandLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="https://www.legrand.com/themes/custom/legrand_ecat/logo.svg"
+      src="/legrand_logo.png"
       alt="Legrand Logo"
       width={120}
       height={30}

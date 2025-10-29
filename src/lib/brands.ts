@@ -32,7 +32,7 @@ export const brands: Brand[] = [
     id: 'legrand',
     name: 'Legrand',
     slug: 'legrand',
-    logo: "https://www.legrand.com/themes/custom/legrand_ecat/logo.svg",
+    logo: "/legrand_logo.png",
     short_description: 'Global leader in electrical infrastructure & busbar systems.',
     productCount: getProductCount('Legrand'),
     categories: getCategoriesForBrand('Legrand', ['Busbar']),
