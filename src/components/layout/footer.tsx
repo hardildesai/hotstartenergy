@@ -4,15 +4,16 @@ import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Linkedin, Instagram, Youtube, Facebook, Phone, Mail } from 'lucide-react';
+import { brands } from '@/lib/brands';
 
 
 export function Footer() {
   return (
     <footer className="footer-container border-t bg-card text-card-foreground">
       <div className="container mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Column 1: Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <Logo />
             <p className="text-sm text-muted-foreground">
               Delivering reliable power distribution, automation & energy-management solutions.
@@ -81,20 +82,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Get in Touch / Social */}
+          {/* Column 4: Our Brands */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Get in Touch</h3>
-            <div>
-                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.148630041248!2d73.7785208759458!3d18.56702606689893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf3ae7c2125f%3A0x1999645377a06416!2sK%20Square!5e0!3m2!1sen!2sin!4v1716301130325!5m2!1sen!2sin"
-                    width="100%"
-                    height="150"
-                    style={{ border: 0, borderRadius: '15px' }}
-                    allowFullScreen={false}
-                    loading="lazy"
-                    title="Google Maps Location of Pune Office"
-                ></iframe>
-            </div>
+            <h3 className="font-semibold text-lg">Our Brands</h3>
+            <ul className="space-y-2 text-sm">
+              {brands.map((brand) => (
+                <li key={brand.id}>
+                  <Link href={`/brands/${brand.slug}`} className="text-muted-foreground hover:text-primary">
+                    {brand.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
