@@ -16,6 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Hotstart Energy',
   description: 'Powering the future with precision and control',
+  icons: {
+    icon: '/login_logo.png',
+  },
 };
 
 const organizationSchema = {
