@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function KeiCablesLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="https://logo.clearbit.com/kei-ind.com"
+      src="/kei_logo.png"
       alt="KEI Cables Logo"
       width={80}
       height={30}

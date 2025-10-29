@@ -50,7 +50,7 @@ export const brands: Brand[] = [
     id: 'kei-cables',
     name: 'KEI Cables',
     slug: 'kei-cables',
-    logo: "https://logo.clearbit.com/kei-ind.com",
+    logo: "/kei_logo.png",
     short_description: 'Leading manufacturer of power and instrumentation cables.',
     productCount: getProductCount('KEI Cables'),
     categories: getCategoriesForBrand('KEI Cables', ['Cables']),
