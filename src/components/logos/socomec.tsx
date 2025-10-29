@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function SocomecLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="/socomec_logo.png"
+      src="/socomecnew_logo.png"
       alt="Socomec Logo"
       width={120}
       height={30}
