@@ -41,7 +41,7 @@ export const brands: Brand[] = [
     id: 'socomec',
     name: 'Socomec',
     slug: 'socomec',
-    logo: "/socomecnew_logo.png",
+    logo: "/socomecc-p-500.png",
     short_description: 'Specialist in low-voltage power switching, monitoring & protection.',
     productCount: getProductCount('Socomec'),
     categories: getCategoriesForBrand('Socomec', ['Metering']),
