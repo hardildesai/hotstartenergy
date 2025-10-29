@@ -8,22 +8,48 @@ import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
 import React from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 export function Hero() {
-  const image = PlaceHolderImages.find(p => p.id === 'hero-1');
+  const images = PlaceHolderImages.filter(p => p.id.startsWith('hero-'));
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  )
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex flex-col justify-between">
-      {image && (
-         <Image
-            src={image.imageUrl}
-            alt={image.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={image.imageHint}
-        />
-      )}
+       <Carousel
+        plugins={[plugin.current]}
+        className="absolute inset-0 w-full h-full"
+        opts={{
+          loop: true,
+        }}
+      >
+        <CarouselContent className="h-full -ml-0">
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="pl-0 h-full">
+               <div className="relative h-full w-full">
+                  <Image
+                    src={image.imageUrl}
+                    alt={image.description}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    data-ai-hint={image.imageHint}
+                  />
+               </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <div className="absolute inset-0 bg-black/60" />
       
       <div className="relative z-10 flex flex-col items-center justify-end flex-grow text-center text-white pb-16">
         <div className="container px-4">
