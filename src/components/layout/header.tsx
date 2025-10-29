@@ -52,23 +52,25 @@ function DesktopNavbar({ className }: { className?: string }) {
           <div onMouseEnter={() => setActive(null)}>
             <HoveredLink href="/about">About Us</HoveredLink>
           </div>
-          <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="text-sm grid grid-cols-2 gap-10 p-4">
-              {productCategories.map((category) => {
-                const image = PlaceHolderImages.find(p => p.id === category.imageId);
-                return (
-                  <ProductItem
-                    key={category.id}
-                    title={category.title}
-                    href={getProductCategoryHref(category.id)}
-                    src={image?.imageUrl || ''}
-                    description={category.description}
-                    setActive={setActive}
-                  />
-                )
-              })}
-            </div>
-          </MenuItem>
+          <HoveredLink href="/products">
+            <MenuItem setActive={setActive} active={active} item="Products">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                {productCategories.map((category) => {
+                  const image = PlaceHolderImages.find(p => p.id === category.imageId);
+                  return (
+                    <ProductItem
+                      key={category.id}
+                      title={category.title}
+                      href={getProductCategoryHref(category.id)}
+                      src={image?.imageUrl || ''}
+                      description={category.description}
+                      setActive={setActive}
+                    />
+                  )
+                })}
+              </div>
+            </MenuItem>
+          </HoveredLink>
           <MenuItem setActive={setActive} active={active} item="Brands">
             <div className="grid grid-cols-4 w-[40rem] gap-px overflow-hidden rounded-lg border bg-background shadow-lg">
               {brands.map((brand) => (
@@ -137,7 +139,9 @@ function MobileNavbar() {
                 <Link href="/about" className="text-lg font-medium" onClick={() => setIsOpen(false)}>About Us</Link>
                  <Accordion type="single" collapsible>
                     <AccordionItem value="products" className="border-b-0">
-                      <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">Products</AccordionTrigger>
+                      <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">
+                        <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
+                      </AccordionTrigger>
                       <AccordionContent className="pl-4">
                         <div className="flex flex-col gap-2">
                           {productCategories.map(category => (
