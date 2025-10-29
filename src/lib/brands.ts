@@ -59,7 +59,7 @@ export const brands: Brand[] = [
     id: 'havells',
     name: 'Havells',
     slug: 'havells',
-    logo: "https://logo.clearbit.com/havells.com",
+    logo: "/havells_logo.png",
     short_description: 'Major power distribution equipment manufacturer.',
     productCount: getProductCount('Havells'),
     categories: getCategoriesForBrand('Havells', ['Lighting']),

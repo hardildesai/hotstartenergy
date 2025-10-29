@@ -1,10 +1,11 @@
+
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 export function HavellsLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="https://logo.clearbit.com/havells.com"
+      src="/havells_logo.png"
       alt="Havells Logo"
       width={120}
       height={30}
