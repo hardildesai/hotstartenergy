@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -57,14 +58,14 @@ export function Hero() {
         <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex" />
       </Carousel>
 
-      <div className="absolute inset-0 bg-white/50" />
-      <div className="relative z-10 flex flex-col items-center text-center text-foreground h-full pt-16 md:pt-0">
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="relative z-10 flex flex-col items-center text-center text-white h-full pt-16 md:pt-0">
         <div className="container px-4 flex flex-col justify-end flex-grow pb-16">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Powering the <span className="text-accent">future</span> with
             precision and control
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
+          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white/80">
             Trust Hotstart Energy to energize industry with reliability,
             technical expertise, and world-class brand partners.
           </p>
