@@ -15,37 +15,44 @@ const productCategories = [
             {
                 title: 'DMX³ ACBs (Air Circuit Breaker)',
                 description: 'Optimized performance from 630A to 6300A with microprocessor-based protection.',
-                imageId: 'prod-circuit-breaker'
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co.in/products/power/air-circuit-breakers-acb/dmx'
             },
             {
                 title: 'DPX³ & DRX MCCBs (Moulded Case Circuit Breakers)',
                 description: 'Comprehensive range from 16A to 1250A with various breaking capacities and protection units.',
-                imageId: 'prod-circuit-breaker'
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co.in/products/power/moulded-case-circuit-breakers-mccb/dpx'
             },
             {
                 title: 'CTX³ Contactors and Mini Contactors',
                 description: 'From 6A to 800A with integrated auxiliary contacts for reliable switching.',
-                imageId: 'cat-switchgear'
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co.in/products/power/contactors/ctx'
             },
             {
                 title: 'RTX³ Thermal Overload Relays',
                 description: 'Thermal protection from 0.1A to 800A with integrated auxiliary contacts.',
-                imageId: 'cat-switchgear'
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co.in/products/power/thermal-overload-relays/rtx'
             },
             {
                 title: 'Alpican Capacitors',
                 description: 'Compact, self-healing resin and gas-filled capacitors for power factor correction.',
-                imageId: 'cat-switchgear'
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co.in/products/power/capacitors/alpican'
             },
             {
                 title: 'PMX Meters',
                 description: 'Digital multifunction meters to track, manage, and enhance energy efficiency.',
-                imageId: 'cat-meters'
+                imageId: 'cat-meters',
+                url: 'https://www.legrand.co.in/products/power/measurement-monitoring-and-supervision/pmx-meters'
             },
             {
                 title: 'Zucchini™ Busbar Trunking System',
                 description: 'Advanced solution for distributing power from 25A to 5000A in any building.',
-                imageId: 'cat-busbar'
+                imageId: 'cat-busbar',
+                url: 'https://www.legrand.co.in/products/busbar-trunking-system/zucchini'
             }
         ]
     },
@@ -55,27 +62,32 @@ const productCategories = [
             {
                 title: 'DX³ MCBs (Miniature Circuit Breakers)',
                 description: '0.5A to 125A capacities with color-coded indication and biconnected terminals.',
-                imageId: 'prod-circuit-breaker'
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co.in/products/protection/miniature-circuit-breakers-mcb/dx'
             },
             {
                 title: 'DX³ RCCBs (Residual Current Circuit Breakers)',
                 description: 'Ensures protection against earth leakage with various sensitivities.',
-                imageId: 'prod-circuit-breaker'
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co.in/products/protection/residual-current-circuit-breakers-rccb/dx'
             },
             {
                 title: 'RCBO & RCD Blocks',
                 description: 'Combined MCB/RCCB for comprehensive protection against overload, short-circuits, and earth leakage.',
-                imageId: 'prod-circuit-breaker'
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co.in/products/protection/rcbo-and-rcd-add-on-blocks/rcbo'
             },
             {
                 title: 'Time Switches',
                 description: 'Digital and analog time switches for precise, programmable control of circuits.',
-                imageId: 'cat-switchgear'
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co.in/products/protection/time-switches'
             },
             {
                 title: 'Surge Protection Devices (SPDs)',
                 description: 'Protection for main distribution boards against lightning and overvoltage.',
-                imageId: 'cat-switchgear'
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co.in/products/protection/surge-protection-devices-spd'
             }
         ]
     },
@@ -85,17 +97,20 @@ const productCategories = [
             {
                 title: 'Ekinoxe³ SPN Distribution Boards',
                 description: 'Elegant and safe DBs for flush or surface mounting, from 4 to 20 ways.',
-                imageId: 'prod-lv-panel'
+                imageId: 'prod-lv-panel',
+                url: 'https://www.legrand.co.in/products/distribution-boards/single-pole-and-neutral-spn-dbs/ekinoxe'
             },
             {
                 title: 'Ekinoxe³ TPN & Phase Selector DBs',
                 description: 'Fully insulated busbars and reversible doors for industrial and commercial use.',
-                imageId: 'prod-lv-panel'
+                imageId: 'prod-lv-panel',
+                url: 'https://www.legrand.co.in/products/distribution-boards/three-pole-and-neutral-tpn-dbs/ekinoxe'
             },
             {
                 title: 'Ekinox Metra Plug & Socket DBs',
                 description: 'Suitable for dedicated protection of appliances like ACs and geysers.',
-                imageId: 'prod-lv-panel'
+                imageId: 'prod-lv-panel',
+                url: 'https://www.legrand.co.in/products/distribution-boards/plug-socket-dbs/ekinox-metra'
             }
         ]
     },
@@ -105,37 +120,44 @@ const productCategories = [
             {
                 title: 'Arteor™',
                 description: 'A versatile range with minimalist design, inspired by modern technology. Available in round & square shapes with a rich choice of cover plates.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/arteor'
             },
             {
                 title: 'Myrius Regular™',
                 description: 'Simple, sleek, and smooth, Myrius offers a classic black and white look with anti-bacterial properties. Ideal for homes, offices, and healthcare environments.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/myrius-regular'
             },
             {
                 title: 'Myrius™',
                 description: 'Inspired by you, crafted by us. The Myrius range combines technology and design aesthetics with myriad patterns, including the Motifs series of plates and switches.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/myrius'
             },
             {
                 title: 'Mylinc™',
                 description: 'Reveals smartness in modular switches with a screw-less finish and alignment perfection for ultimate convenience.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/mylinc'
             },
             {
                 title: 'Lyncus™',
                 description: 'Modern, minimalist, and beveled design that suits any requirement from residential to commercial buildings.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/lyncus'
             },
             {
                 title: 'Allzy™',
                 description: 'The all-rounder switch with a wide range of ergonomics and finishes to satisfy the most demanding customers.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/allzy'
             },
             {
                 title: 'Britzy™',
                 description: 'The "No Problem Switch" that is versatile and suits any requirement in terms of design and function.',
-                imageId: 'prod-legrand-switch'
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co.in/products/wiring-accessories/britzy'
             }
         ]
     },
@@ -145,27 +167,32 @@ const productCategories = [
             {
                 title: 'CABLOFIL® Wire Mesh Cable Trays',
                 description: 'Increase contractor productivity and reduce installation costs. Cablofil creates neat and orderly pathways, ideal for open installations. Available in various materials and sizes.',
-                imageId: 'cat-cables'
+                imageId: 'cat-cables',
+                url: 'https://www.legrand.co.in/products/cable-management/wire-mesh-cable-trays/cablofil'
             },
             {
                 title: 'Pop-Up Boxes',
                 description: 'Equipped with a "push and slide" locking system to avoid accidental opening. Designed to be equipped with Arteor/Myrius socket outlets, available in multiple configurations and elegant finishes.',
-                imageId: 'prod-legrand-socket'
+                imageId: 'prod-legrand-socket',
+                url: 'https://www.legrand.co.in/products/cable-management/pop-up-boxes'
             },
             {
                 title: 'Floor Boxes',
                 description: 'Durable solutions for raised floors, screed, tiles, and marbles. Available in various sizes with options for heavy-duty applications and accessories for fitting wiring accessories.',
-                imageId: 'prod-legrand-socket'
+                imageId: 'prod-legrand-socket',
+                url: 'https://www.legrand.co.in/products/cable-management/floor-boxes'
             },
             {
                 title: 'Raceways and Junction Boxes',
                 description: 'PVC and Galvanized sheet raceways confirming to EN 50 085-2-2, compatible with Cat.6 cabling systems. Supplied in various sizes with matching junction boxes.',
-                imageId: 'cat-busbar'
+                imageId: 'cat-busbar',
+                url: 'https://www.legrand.co.in/products/cable-management/raceways-and-junction-boxes'
             },
             {
                 title: 'DLP U-PVC & Aluminium Trunking Systems',
                 description: 'Flexible trunking systems with base, covers, partitions, and finishing accessories. Suitable for mounting Arteor wiring accessories in a variety of sizes.',
-                imageId: 'cat-busbar'
+                imageId: 'cat-busbar',
+                url: 'https://www.legrand.co.in/products/cable-management/trunking-and-branching/dlp-u-pvc-trunking'
             }
         ]
     },
@@ -175,7 +202,8 @@ const productCategories = [
             {
                 title: 'P-17 Tempra Plug, Sockets',
                 description: 'Built as per IEC 61439-3, these include surface mounting sockets, panel mounted angle sockets, mobile sockets, and straight plugs. Available from 16A to 125A in various frame sizes with IP44 and IP66/67 protection.',
-                imageId: 'prod-legrand-socket'
+                imageId: 'prod-legrand-socket',
+                url: 'https://www.legrand.co.in/products/plugs-sockets/p17-tempra-pro'
             }
         ]
     }
@@ -257,7 +285,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         >
-                            <div className="grid md:grid-cols-2 gap-6 items-center">
+                            <div className="grid md:grid-cols-2 gap-6 items-center flex-grow">
                                 <div className={`text-center ${isLeftCard ? 'md:order-2' : 'md:order-1'}`}>
                                     {image && (
                                         <div className="bg-white p-2 rounded-lg shadow-md inline-block">
@@ -279,9 +307,12 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                     <p className="text-muted-foreground text-sm flex-grow">{product.description}</p>
                                 </div>
                             </div>
-                            <div className="mt-4 text-center">
+                            <div className="mt-4 pt-4 border-t flex items-center justify-center gap-2">
                                 <Button asChild size="sm">
                                     <Link href="/contact">Enquire Now</Link>
+                                </Button>
+                                <Button asChild size="sm" variant="outline">
+                                    <Link href={product.url} target="_blank" rel="noopener noreferrer">Know More</Link>
                                 </Button>
                             </div>
                         </motion.div>
