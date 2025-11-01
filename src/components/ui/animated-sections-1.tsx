@@ -12,6 +12,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 gsap.registerPlugin(SplitText);
 
 interface SectionData {
+  title: string;
   text: string;
   description: string;
   img: string;
@@ -26,32 +27,44 @@ interface AnimatedSectionsProps {
 
 const defaultSections: SectionData[] = [
     {
-      text: 'Powering the Future with Precision and Control',
-      description: 'Trust Hotstart Energy to energize industry with reliability, technical expertise, and world-class brand partners.',
+      title: 'HOTSTART ENERGY PVT. LTD.',
+      text: 'POWER & ENERGY SPECIALISTS',
+      description: 'Wholesale trader of leading electrical products for Indian industry. Trusted by top brands, built for your growth.',
       img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
       primaryAction: { text: 'Contact Us Now', href: '/contact' },
       secondaryAction: { text: 'View Products', href: '/products' },
     },
     {
-      text: 'Your Partner in Electrical & Automation Solutions',
-      description: 'We deliver end-to-end solutions, from switchgear and busbars to advanced industrial automation, powered by global leaders like Legrand and Socomec.',
+      title: 'COMPLETE ELECTRICAL & AUTOMATION SOLUTIONS',
+      text: 'Engineered for your industry, customized for your needs.',
+      description: 'From switchgear to smart controls, cabling to energy management— We deliver quality, speed, and the right solution every time.',
       img: PlaceHolderImages.find(p => p.id === 'hero-2')?.imageUrl || '',
       primaryAction: { text: 'Explore Our Solutions', href: '/products' },
       secondaryAction: { text: 'About Our Company', href: '/about' },
     },
     {
-      text: 'Reliable Cables for Every Application',
-      description: 'As authorized dealers for KEI Cables, we provide high-performance wiring solutions that form the backbone of India’s most demanding projects.',
+      title: 'PARTNERED WITH INDUSTRY LEADERS',
+      text: 'Sourcing only from trusted global brands.',
+      description: 'Legrand, Socomec, KEI, Havells, Eaton, Elmeasure, Selec, Secure and more. Quality that powers your operations—reliability guaranteed.',
       img: PlaceHolderImages.find(p => p.id === 'hero-3')?.imageUrl || '',
-      primaryAction: { text: 'Discover KEI Cables', href: '/brands/kei-cables' },
+      primaryAction: { text: 'Discover Our Brands', href: '/brands' },
       secondaryAction: { text: 'Request a Quote', href: '/quote' },
     },
     {
-      text: 'Innovative & Aesthetically Pleasing Designs',
-      description: 'Experience the best of Legrand\'s innovative and beautifully engineered products. Visit our experience center to find the perfect fit for your project.',
+      title: 'ENERGIZING INDIA’S BIGGEST PROJECTS',
+      text: 'Chosen by Adani, K. Raheja, Atlas Copco, Cipla and more.',
+      description: 'Our solutions drive progress, productivity, and safety. Experience excellence—partner with the best.',
       img: PlaceHolderImages.find(p => p.id === 'hero-4')?.imageUrl || '',
-      primaryAction: { text: 'Visit Our Experience Center', href: '/contact' },
-      secondaryAction: { text: 'See Legrand Products', href: '/brands/legrand' },
+      primaryAction: { text: 'View Our Work', href: '/about' },
+      secondaryAction: { text: 'Our Clients', href: '/about#clients' },
+    },
+    {
+      title: 'READY TO POWER YOUR AMBITIONS?',
+      text: 'The right products. The right partner. Every time.',
+      description: 'Connect with our experts for tailored solutions, fast delivery, and ongoing support.',
+      img: PlaceHolderImages.find(p => p.id === 'career-hero')?.imageUrl || '',
+      primaryAction: { text: 'Request a Quote', href: '/quote' },
+      secondaryAction: { text: 'Contact Us Today', href: '/contact' },
     },
   ];
 
@@ -61,6 +74,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const splitTitlesRef = useRef<SplitText[]>([]);
   const splitHeadingsRef = useRef<SplitText[]>([]);
   const splitDescriptionsRef = useRef<SplitText[]>([]);
   const currentIndexRef = useRef<number>(-1);
@@ -69,6 +83,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   const imagesRefs = useRef<HTMLDivElement[]>([]);
   const outerRefs = useRef<HTMLDivElement[]>([]);
   const innerRefs = useRef<HTMLDivElement[]>([]);
+  const titleRefs = useRef<HTMLHeadingElement[]>([]);
   const headingRefs = useRef<HTMLHeadingElement[]>([]);
   const descriptionRefs = useRef<HTMLParagraphElement[]>([]);
   const buttonsRefs = useRef<HTMLDivElement[]>([]);
@@ -173,6 +188,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         }
     };
     
+    animateText(splitTitlesRef, 0.1);
     animateText(splitHeadingsRef, 0.1);
     animateText(splitDescriptionsRef, 0.05);
 
@@ -256,11 +272,20 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 
     gsap.registerPlugin(SplitText);
 
+    const titles = titleRefs.current;
     const headings = headingRefs.current;
     const descriptions = descriptionRefs.current;
     const outerWrappers = outerRefs.current;
     const innerWrappers = innerRefs.current;
 
+    splitTitlesRef.current = titles.map(
+      (title) =>
+        new SplitText(title, {
+          type: 'lines',
+          linesClass: 'line',
+          mask: 'lines'
+        })
+    );
     splitHeadingsRef.current = headings.map(
       (heading) =>
         new SplitText(heading, {
@@ -295,6 +320,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         timelineRef.current.kill();
         timelineRef.current = null;
       }
+      splitTitlesRef.current.forEach((split) => {
+        if (split && typeof split.revert === 'function') {
+          split.revert();
+        }
+      });
       splitHeadingsRef.current.forEach((split) => {
         if (split && typeof split.revert === 'function') {
           split.revert();
@@ -305,6 +335,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
           split.revert();
         }
       });
+      splitTitlesRef.current = [];
       splitHeadingsRef.current = [];
       splitDescriptionsRef.current = [];
       if (counterCurrentSplitRef.current && typeof counterCurrentSplitRef.current.revert === 'function') {
@@ -375,10 +406,13 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                 }}
               >
                 <div className="z-10 text-center max-w-3xl px-4 normal-case">
-                    <h2 className="section-heading text-white font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
+                    <h3 className="text-white/80 font-bold text-lg sm:text-xl md:text-2xl" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
+                        {section.title}
+                    </h3>
+                    <h2 className="section-heading text-white font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
                         {section.text}
                     </h2>
-                    <p className="mt-6 text-lg md:text-xl text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
+                    <p className="mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
                         {section.description}
                     </p>
                     <div 
@@ -403,3 +437,5 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 };
 
 export default AnimatedSections;
+
+    
