@@ -134,8 +134,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     index = wrap(index);
     animatingRef.current = true;
 
-    const fromTop = direction === -1;
-    const dFactor = fromTop ? -1 : 1;
+    const dFactor = direction;
 
     const tl = gsap.timeline({
       defaults: { duration: 1.25, ease: 'power1.inOut' },
@@ -308,9 +307,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 
     gotoSection(0, 1);
     
+    let autoplayDirection = 1;
     const interval = setInterval(() => {
         if (!animatingRef.current) {
-          gotoSection(currentIndexRef.current + 1, 1);
+          gotoSection(currentIndexRef.current + 1, autoplayDirection);
+          autoplayDirection *= -1; // Alternate direction
         }
     }, 4000);
 
@@ -437,5 +438,3 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 };
 
 export default AnimatedSections;
-
-    
