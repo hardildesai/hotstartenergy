@@ -95,6 +95,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const autoplayDirectionRef = useRef(1);
+  const mouseMoveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let loaded = 0;
@@ -123,6 +124,22 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     });
   }, [sections]);
 
+  const stopAutoplay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+  const startAutoplay = useCallback(() => {
+    stopAutoplay();
+    intervalRef.current = setInterval(() => {
+      if (!animatingRef.current) {
+        gotoSection(currentIndexRef.current + autoplayDirectionRef.current, autoplayDirectionRef.current);
+      }
+    }, 6000);
+  }, [stopAutoplay]);
+
   const gotoSection = useCallback((index: number, direction: number) => {
     if (!containerRef.current || animatingRef.current) return;
 
@@ -136,7 +153,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     index = wrap(index);
     animatingRef.current = true;
 
-    const dFactor = direction;
+    if (direction !== 0) {
+      autoplayDirectionRef.current = direction > 0 ? 1 : -1;
+    }
+
+    const dFactor = autoplayDirectionRef.current;
 
     const tl = gsap.timeline({
       defaults: { duration: 1.25, ease: 'power1.inOut' },
@@ -268,24 +289,15 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     setCurrentIndex(index);
   }, []);
 
-  const startAutoplay = useCallback(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
+  const handleMouseMove = useCallback(() => {
+    stopAutoplay();
+    if (mouseMoveTimeoutRef.current) {
+      clearTimeout(mouseMoveTimeoutRef.current);
     }
-    intervalRef.current = setInterval(() => {
-      if (!animatingRef.current) {
-        gotoSection(currentIndexRef.current + 1, autoplayDirectionRef.current);
-        autoplayDirectionRef.current *= -1; // Alternate direction
-      }
-    }, 6000);
-  }, [gotoSection]);
-
-  const stopAutoplay = useCallback(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  }, []);
+    mouseMoveTimeoutRef.current = setTimeout(() => {
+      startAutoplay();
+    }, 500); // 500ms delay before resuming
+  }, [startAutoplay, stopAutoplay]);
 
 
   useGSAP(() => {
@@ -363,6 +375,9 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         counterNextSplitRef.current.revert();
         counterNextSplitRef.current = null;
       }
+      if (mouseMoveTimeoutRef.current) {
+        clearTimeout(mouseMoveTimeoutRef.current);
+      }
     };
   }, { scope: containerRef, dependencies: [sections.length, imagesLoaded, gotoSection, startAutoplay, stopAutoplay] });
 
@@ -370,6 +385,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     <div 
       ref={containerRef}
       className={`relative h-screen w-full overflow-hidden bg-black text-white font-sans ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => {
+        if (mouseMoveTimeoutRef.current) clearTimeout(mouseMoveTimeoutRef.current);
+        startAutoplay();
+      }}
     >
       <div className="absolute bottom-4 right-6 z-30 flex items-center gap-4">
         <div className="flex gap-2">
@@ -380,6 +400,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
               onClick={() => {
                 if (currentIndex !== i && !animatingRef.current) {
                   const direction = i > currentIndex ? 1 : -1;
+                  stopAutoplay();
                   gotoSection(i, direction);
                   startAutoplay();
                 }
