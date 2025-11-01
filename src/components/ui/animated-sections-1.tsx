@@ -1,15 +1,15 @@
+
 'use client';
 
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
-import { Observer } from 'gsap/Observer';
 import { SplitText } from 'gsap/SplitText';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import { GradientButton } from './gradient-button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-gsap.registerPlugin(Observer, SplitText);
+gsap.registerPlugin(SplitText);
 
 interface SectionData {
   text: string;
@@ -109,11 +109,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   const gotoSection = useCallback((index: number, direction: number) => {
     if (!containerRef.current || animatingRef.current) return;
 
-    const sectionsElements = sectionsRefs.current as Element[];
-    const images = imagesRefs.current as Element[];
-    const outerWrappers = outerRefs.current as Element[];
-    const innerWrappers = innerRefs.current as Element[];
-    const buttons = buttonsRefs.current as Element[];
+    const sectionsElements = sectionsRefs.current;
+    const images = imagesRefs.current;
+    const outerWrappers = outerRefs.current;
+    const innerWrappers = innerRefs.current;
+    const buttons = buttonsRefs.current;
 
     const wrap = gsap.utils.wrap(0, sectionsElements.length);
     index = wrap(index);
@@ -256,10 +256,10 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 
     gsap.registerPlugin(SplitText);
 
-    const headings = headingRefs.current as HTMLElement[];
-    const descriptions = descriptionRefs.current as HTMLElement[];
-    const outerWrappers = outerRefs.current as Element[];
-    const innerWrappers = innerRefs.current as Element[];
+    const headings = headingRefs.current;
+    const descriptions = descriptionRefs.current;
+    const outerWrappers = outerRefs.current;
+    const innerWrappers = innerRefs.current;
 
     splitHeadingsRef.current = headings.map(
       (heading) =>
@@ -321,9 +321,9 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   return (
     <div 
       ref={containerRef}
-      className={`h-screen w-screen overflow-hidden bg-black text-white uppercase font-sans ${className}`}
+      className={`relative h-screen w-full overflow-hidden bg-black text-white font-sans ${className}`}
     >
-      <div className="fixed bottom-4 right-6 z-30 flex items-center gap-4">
+      <div className="absolute bottom-4 right-6 z-30 flex items-center gap-4">
         <div className="flex gap-2">
           {sections.map((section, i) => (
             <div
@@ -362,7 +362,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
       {sections.map((section, i) => (
         <section 
           key={`section-${i}`} 
-          className="fixed top-0 h-full w-full invisible"
+          className="absolute top-0 h-full w-full invisible"
           ref={(el) => { if (el) sectionsRefs.current[i] = el; }}
         >
           <div className="outer w-full h-full overflow-hidden" ref={(el) => { if (el) outerRefs.current[i] = el; }}>
@@ -374,7 +374,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                   backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%), url("${section.img}")`
                 }}
               >
-                <div className="z-10 text-center max-w-3xl normal-case">
+                <div className="z-10 text-center max-w-3xl px-4 normal-case">
                     <h2 className="section-heading text-white font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
                         {section.text}
                     </h2>

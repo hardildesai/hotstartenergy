@@ -1,3 +1,4 @@
+
 import { AboutSection } from '@/components/home/about-section';
 import { ContactSection } from '@/components/home/contact-section';
 import { ProductCategoriesSection } from '@/components/home/product-categories-section';
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <AnimatedSections />
-      <div className="bg-background/80 backdrop-blur-sm py-8 space-y-8">
+      <div className="bg-background py-16 space-y-8">
         <BrandPartners />
         <TrustedBy />
       </div>
