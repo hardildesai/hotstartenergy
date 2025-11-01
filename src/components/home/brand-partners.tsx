@@ -7,20 +7,20 @@ import { brands } from '@/lib/brands';
 export function BrandPartners() {
   const partners = brands;
   return (
-    <section>
-      <h2 className="text-lg font-bold text-center mb-4 text-foreground">Our Brand Partners</h2>
+    <section className="py-8">
+      <h2 className="text-xl font-bold text-center mb-8 text-foreground">Our Brand Partners</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
           <div className="flex animate-scroll group-hover:pause">
-            <div className="flex w-max space-x-16 pr-16 items-center">
+            <div className="flex w-max space-x-24 pr-24 items-center">
               {[...partners, ...partners].map((partner, index) => (
                 <div key={index} className="flex-shrink-0">
                   <Image 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    width={100} 
-                    height={24} 
-                    className="h-6 w-auto object-contain text-gray-500 transition duration-300 hover:text-black dark:invert"
+                    width={180} 
+                    height={40} 
+                    className="h-10 w-auto object-contain text-gray-500 transition duration-300 hover:text-black dark:invert"
                     style={{ color: 'transparent' }}
                   />
                 </div>
