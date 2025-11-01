@@ -241,46 +241,50 @@ export function LegrandPage({ brand }: { brand: Brand }) {
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category.category}</h2>
             </div>
-            <div className="space-y-8">
-                    {category.products.map((product, productIndex) => {
-                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
-                        const isReversed = productIndex % 2 !== 0;
-                        return (
-                            <motion.div 
-                            key={productIndex} 
-                            className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center bg-card p-6 rounded-lg shadow-sm border`}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            >
-                                <div className={`space-y-3 ${isReversed ? 'md:order-2' : ''}`}>
-                                    <h3 className="text-xl font-bold">{product.title}</h3>
-                                    <p className="text-muted-foreground text-sm">{product.description}</p>
-                                    <Button asChild size="sm">
-                                        <Link href="/contact">Enquire Now</Link>
-                                    </Button>
-                                </div>
-                                <div className={`text-center ${isReversed ? 'md:order-1' : ''}`}>
-                                {image && (
-                                    <div className="bg-white p-2 rounded-lg shadow-md inline-block">
-                                        <div className="relative h-48 w-48">
-                                            <Image 
-                                                src={image.imageUrl}
-                                                alt={product.title}
-                                                fill
-                                                className="object-contain"
-                                                sizes="192px"
-                                                data-ai-hint={image.imageHint}
-                                            />
+            <div className="grid md:grid-cols-2 gap-8">
+                {category.products.map((product, productIndex) => {
+                    const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                    const isReversed = productIndex % 2 !== 0;
+                    return (
+                        <motion.div 
+                        key={productIndex} 
+                        className="bg-card p-6 rounded-lg shadow-sm border flex flex-col"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
+                            <div className="grid md:grid-cols-2 gap-6 items-center">
+                                <div className={`text-center ${isReversed ? 'md:order-2' : ''}`}>
+                                    {image && (
+                                        <div className="bg-white p-2 rounded-lg shadow-md inline-block">
+                                            <div className="relative h-40 w-40">
+                                                <Image 
+                                                    src={image.imageUrl}
+                                                    alt={product.title}
+                                                    fill
+                                                    className="object-contain"
+                                                    sizes="160px"
+                                                    data-ai-hint={image.imageHint}
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
                                 </div>
-                            </motion.div>
-                        )
-                    })}
-                </div>
+                                <div className={`space-y-3 ${isReversed ? 'md:order-1' : ''}`}>
+                                    <h3 className="text-lg font-bold">{product.title}</h3>
+                                    <p className="text-muted-foreground text-sm flex-grow">{product.description}</p>
+                                </div>
+                            </div>
+                            <div className="mt-4 text-center">
+                                <Button asChild size="sm">
+                                    <Link href="/contact">Enquire Now</Link>
+                                </Button>
+                            </div>
+                        </motion.div>
+                    )
+                })}
+            </div>
             </div>
         </section>
       ))}
