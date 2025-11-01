@@ -129,15 +129,16 @@ export const BrandItem = ({
   className?: string;
   setActive: (item: string | null) => void;
 }) => {
+  const isLegrand = name === 'Legrand';
   return (
     <Link href={href} onClick={() => setActive(null)}>
        <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
          <Image
             src={logo}
             alt={`${name} logo`}
-            width={120}
-            height={30}
-            className="h-8 w-auto object-contain dark:invert"
+            width={isLegrand ? 150 : 120}
+            height={isLegrand ? 40 : 30}
+            className={cn("w-auto object-contain dark:invert", isLegrand ? "h-12" : "h-8")}
           />
        </Card>
     </Link>
