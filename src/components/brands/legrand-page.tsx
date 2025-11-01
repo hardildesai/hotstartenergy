@@ -7,6 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Brand } from '@/lib/types';
 import { CheckCircle, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 const productCategories = [
     {
@@ -269,11 +270,12 @@ export function LegrandPage({ brand }: { brand: Brand }) {
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category.category}</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className={cn(
+                "grid md:grid-cols-2 gap-8",
+                category.products.length % 2 !== 0 && "md:[&>*:last-child]:col-span-2 md:[&>*:last-child]:justify-self-center md:[&>*:last-child]:w-1/2"
+            )}>
                 {category.products.map((product, productIndex) => {
                     const image = PlaceHolderImages.find(p => p.id === product.imageId);
-                    // For left card (even index), image is on the right (order-2).
-                    // For right card (odd index), image is on the left (order-1).
                     const isLeftCard = productIndex % 2 === 0;
 
                     return (
@@ -366,3 +368,5 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
