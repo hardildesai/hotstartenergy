@@ -93,6 +93,8 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   const counterNextSplitRef = useRef<SplitText | null>(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayDirectionRef = useRef(1);
 
   useEffect(() => {
     let loaded = 0;
@@ -266,6 +268,26 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     setCurrentIndex(index);
   }, []);
 
+  const startAutoplay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      if (!animatingRef.current) {
+        gotoSection(currentIndexRef.current + 1, autoplayDirectionRef.current);
+        autoplayDirectionRef.current *= -1; // Alternate direction
+      }
+    }, 6000);
+  }, [gotoSection]);
+
+  const stopAutoplay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+
   useGSAP(() => {
     if (!containerRef.current || !imagesLoaded) return;
 
@@ -306,17 +328,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     gsap.set(innerWrappers, { xPercent: -100 });
 
     gotoSection(0, 1);
+    startAutoplay();
     
-    let autoplayDirection = 1;
-    const interval = setInterval(() => {
-        if (!animatingRef.current) {
-          gotoSection(currentIndexRef.current + 1, autoplayDirection);
-          autoplayDirection *= -1; // Alternate direction
-        }
-    }, 4000);
 
     return () => {
-      clearInterval(interval);
+      stopAutoplay();
       if (timelineRef.current) {
         timelineRef.current.kill();
         timelineRef.current = null;
@@ -348,7 +364,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         counterNextSplitRef.current = null;
       }
     };
-  }, { scope: containerRef, dependencies: [sections.length, imagesLoaded, gotoSection] });
+  }, { scope: containerRef, dependencies: [sections.length, imagesLoaded, gotoSection, startAutoplay, stopAutoplay] });
 
   return (
     <div 
@@ -365,6 +381,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                 if (currentIndex !== i && !animatingRef.current) {
                   const direction = i > currentIndex ? 1 : -1;
                   gotoSection(i, direction);
+                  startAutoplay();
                 }
               }}
             >
@@ -419,6 +436,8 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                     <div 
                         className="mt-8 flex flex-wrap justify-center gap-4"
                         ref={(el) => { if (el) buttonsRefs.current[i] = el; }}
+                        onMouseEnter={stopAutoplay}
+                        onMouseLeave={startAutoplay}
                     >
                         <GradientButton asChild>
                             <Link href={section.primaryAction.href}>{section.primaryAction.text}</Link>
@@ -438,3 +457,5 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 };
 
 export default AnimatedSections;
+
+    
