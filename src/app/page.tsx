@@ -13,7 +13,7 @@ export default function Home() {
         <AnimatedSections />
       </div>
       <div className="relative z-10 bg-background">
-        <div className="bg-background py-16 space-y-16">
+        <div className="bg-background py-8 space-y-8">
           <BrandPartners />
           <TrustedBy />
         </div>
