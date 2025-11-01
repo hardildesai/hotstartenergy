@@ -410,7 +410,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                     <h2 className="section-heading text-white font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
                         {section.title}
                     </h2>
-                    <h3 className="text-white/80 font-bold text-lg sm:text-xl md:text-2xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
+                    <h3 className="text-white/80 font-bold text-xl sm:text-2xl md:text-3xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
                         {section.text}
                     </h3>
                     <p className="mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
