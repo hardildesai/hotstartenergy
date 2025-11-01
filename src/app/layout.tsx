@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -16,9 +17,6 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Hotstart Energy',
   description: 'Powering the future with precision and control',
-  icons: {
-    icon: '/navbar_logo.png',
-  },
 };
 
 const organizationSchema = {
