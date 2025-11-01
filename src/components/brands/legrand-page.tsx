@@ -244,7 +244,10 @@ export function LegrandPage({ brand }: { brand: Brand }) {
             <div className="grid md:grid-cols-2 gap-8">
                 {category.products.map((product, productIndex) => {
                     const image = PlaceHolderImages.find(p => p.id === product.imageId);
-                    const isReversed = productIndex % 2 !== 0;
+                    // For left card (even index), image is on the right (order-2).
+                    // For right card (odd index), image is on the left (order-1).
+                    const isLeftCard = productIndex % 2 === 0;
+
                     return (
                         <motion.div 
                         key={productIndex} 
@@ -255,7 +258,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         >
                             <div className="grid md:grid-cols-2 gap-6 items-center">
-                                <div className={`text-center ${isReversed ? 'md:order-2' : ''}`}>
+                                <div className={`text-center ${isLeftCard ? 'md:order-2' : 'md:order-1'}`}>
                                     {image && (
                                         <div className="bg-white p-2 rounded-lg shadow-md inline-block">
                                             <div className="relative h-40 w-40">
@@ -271,7 +274,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                         </div>
                                     )}
                                 </div>
-                                <div className={`space-y-3 ${isReversed ? 'md:order-1' : ''}`}>
+                                <div className={`space-y-3 ${isLeftCard ? 'md:order-1' : 'md:order-2'}`}>
                                     <h3 className="text-lg font-bold">{product.title}</h3>
                                     <p className="text-muted-foreground text-sm flex-grow">{product.description}</p>
                                 </div>
