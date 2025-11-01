@@ -8,15 +8,19 @@ import { TrustedBy } from '@/components/home/trusted-by';
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      <AnimatedSections />
-      <div className="bg-background py-16 space-y-8">
-        <BrandPartners />
-        <TrustedBy />
+    <div className="relative">
+      <div className="sticky top-0 h-screen w-full z-0">
+        <AnimatedSections />
       </div>
-      <AboutSection />
-      <ProductCategoriesSection />
-      <ContactSection />
+      <div className="relative z-10 bg-background">
+        <div className="py-16 space-y-8">
+          <BrandPartners />
+          <TrustedBy />
+        </div>
+        <AboutSection />
+        <ProductCategoriesSection />
+        <ContactSection />
+      </div>
     </div>
   );
 }
