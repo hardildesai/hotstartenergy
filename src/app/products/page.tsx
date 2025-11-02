@@ -7,11 +7,14 @@ import { ArrowRight } from 'lucide-react';
 import { ProductGrid } from '@/components/products/product-grid';
 import Image from 'next/image';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
+import { Suspense } from 'react';
 
 export default function ProductsPage() {
   return (
     <>
-      <SmoothScrollToAnchor />
+      <Suspense fallback={null}>
+        <SmoothScrollToAnchor />
+      </Suspense>
       <div className="container mx-auto px-4 py-12 pt-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight">Our Products</h1>

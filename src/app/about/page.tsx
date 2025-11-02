@@ -10,6 +10,7 @@ import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
     title: "About Us | Hotstart Energy Pvt. Ltd. - Electrical, Automation & Power Solutions",
@@ -33,7 +34,9 @@ const projectHighlights = [
 export default function AboutPage() {
   return (
     <div>
-      <SmoothScrollToAnchor />
+      <Suspense fallback={null}>
+        <SmoothScrollToAnchor />
+      </Suspense>
       <AboutHero />
       <OurStory />
       <Milestones />

@@ -7,6 +7,7 @@ import { BrandPartners } from '@/components/home/brand-partners';
 import { TrustedBy } from '@/components/home/trusted-by';
 import type { Metadata } from 'next';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: "Hotstart Energy Pvt. Ltd. | Electrical, Automation & Power Solutions",
@@ -16,7 +17,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative">
-      <SmoothScrollToAnchor />
+      <Suspense fallback={null}>
+        <SmoothScrollToAnchor />
+      </Suspense>
       <div className="sticky top-0 h-screen w-full z-0">
         <AnimatedSections />
       </div>
