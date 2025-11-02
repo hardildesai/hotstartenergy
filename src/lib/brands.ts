@@ -11,12 +11,25 @@ const getCategoriesForBrand = (brandName: string, staticCategories: string[] = [
     const categoryMap: Record<string, string> = {
         'Switchgear': 'Switchgear',
         'Home Solution': 'Home Automation',
+        'Cables & Wires': 'Cables & Wires',
+        'Power': 'Power',
+        'Protection': 'Protection',
+        'Distribution Boards': 'Distribution Boards',
+        'Wiring Accessories': 'Wiring Accessories',
+        'Cable Management': 'Cable Management',
+        'Plugs & Socket': 'Plugs & Sockets',
+        'Panel Meters & Energy Meters': 'Metering',
+        'Changeovers & Automatic Transfer Switches': 'Switchgear',
     };
 
     const displayCategories = new Set<string>();
-    categories.forEach(cat => {
-        if (categoryMap[cat]) {
-            displayCategories.add(categoryMap[cat]);
+    brandProducts.forEach(p => {
+        const mappedCategory = categoryMap[p.category];
+        if (mappedCategory) {
+            displayCategories.add(mappedCategory);
+        } else {
+            // Fallback for categories not in the map
+            if (p.category.includes('Cable')) displayCategories.add('Cables & Wires');
         }
     });
 

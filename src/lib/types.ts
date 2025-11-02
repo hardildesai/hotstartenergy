@@ -1,12 +1,14 @@
 
+
 export interface Product {
   id: string;
   name: string;
   brand: string;
   description: string;
-  category: 'Switchgear' | 'Home Solution';
+  category: string;
   specifications: Record<string, string>;
   imageId: string;
+  url?: string;
 }
 
 export interface ProductCategory {

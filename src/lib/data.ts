@@ -3,6 +3,58 @@ import type { Product, ProductCategory, JobOpening } from './types';
 
 export const products: Product[] = [
   {
+    id: 'legrand-dmx3-acb',
+    name: 'DMX³ ACB (Air Circuit Breaker)',
+    brand: 'Legrand',
+    category: 'Power',
+    description: 'Optimized performance from 630A to 6300A with microprocessor-based protection.',
+    imageId: 'prod-circuit-breaker',
+    specifications: {
+        "Current Range": "630A to 6300A",
+        "Protection": "Microprocessor-based",
+        "Type": "Air Circuit Breaker"
+    },
+    url: 'https://www.legrand.co.in/products/power/air-circuit-breakers-acb/dmx'
+  },
+  {
+    id: 'legrand-dpx3-drx-mccb',
+    name: 'DPX³ & DRX MCCBs',
+    brand: 'Legrand',
+    category: 'Power',
+    description: 'Comprehensive range from 16A to 1250A with various breaking capacities and protection units.',
+    imageId: 'prod-circuit-breaker',
+    specifications: {
+        "Current Range": "16A to 1250A",
+        "Type": "Moulded Case Circuit Breakers",
+    },
+    url: 'https://www.legrand.co.in/products/power/moulded-case-circuit-breakers-mccb/dpx'
+  },
+  {
+    id: 'kei-hv-cable',
+    name: 'HV Power Cable',
+    brand: 'KEI Cables',
+    category: 'Cables & Wires',
+    description: 'Built for high performance, KEI HV wire ensures safe and efficient power transmission.',
+    imageId: 'kei-hv-cable',
+    specifications: {
+        "Voltage": "High Voltage",
+        "Application": "Industrial, Commercial",
+    },
+  },
+  {
+    id: 'socomec-countis-meter',
+    name: 'Countis Energy Meter',
+    brand: 'Socomec',
+    category: 'Panel Meters & Energy Meters',
+    description: 'Displays energy and power consumed (kWh and kW). Suitable for single-phase load metering.',
+    imageId: 'socomec-countis-meter',
+    specifications: {
+        "Measures": "kWh, kW",
+        "Phase": "Single-phase",
+        "Max Current": "80A",
+    },
+  },
+  {
     id: 'mv-switchgear-01',
     name: 'Medium Voltage Air-Insulated Switchgear',
     brand: 'Generic Electric',
