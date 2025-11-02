@@ -342,7 +342,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
         ))}
 
         <DialogContent 
-            className="sm:max-w-[425px]"
+            className="sm:max-w-[425px] bg-background"
             onCloseAutoFocus={(e) => e.preventDefault()}
         >
             <DialogHeader>
@@ -410,6 +410,8 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
 
     
 
