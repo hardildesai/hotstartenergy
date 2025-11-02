@@ -218,30 +218,17 @@ export function ProductRevealCard({
         variants={overlayVariants}
         className="absolute inset-0 bg-background/96 backdrop-blur-xl flex flex-col"
       >
-        <div className="p-4 pt-3 flex-grow overflow-y-auto space-y-3">
+        <div className="p-4 pt-3 flex-grow flex flex-col overflow-hidden space-y-3">
           <motion.div variants={contentVariants}>
             <h3 className="font-bold text-lg">{name}</h3>
           </motion.div>
           
-          <motion.div variants={contentVariants} className="overflow-y-auto max-h-[140px] pr-2">
+          <motion.div variants={contentVariants} className="flex-grow overflow-y-auto pr-2">
             <h4 className="font-semibold mb-1 text-sm">Product Details</h4>
             <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-wrap">
               {description}
             </p>
           </motion.div>
-
-          {features && (
-            <motion.div variants={contentVariants}>
-              <div className="grid grid-cols-2 gap-2 text-xs">
-                {features.map(feature => (
-                  <div key={feature.title} className="bg-muted/50 rounded-md p-2 text-center">
-                    <div className="font-semibold">{feature.title}</div>
-                    <div className="text-muted-foreground">{feature.subtitle}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
         </div>
 
         <div className="p-4 pt-0 mt-auto border-t border-border/20 bg-background/90">
