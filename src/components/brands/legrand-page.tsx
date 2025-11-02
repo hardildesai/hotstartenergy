@@ -344,7 +344,10 @@ export function LegrandPage({ brand }: { brand: Brand }) {
             </section>
         ))}
 
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent 
+            className="sm:max-w-[425px]"
+            onCloseAutoFocus={(e) => e.preventDefault()}
+        >
             <DialogHeader>
             <DialogTitle>{selectedProduct?.title}</DialogTitle>
             <DialogDescription>
@@ -410,3 +413,5 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
