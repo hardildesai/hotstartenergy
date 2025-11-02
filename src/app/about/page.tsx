@@ -7,7 +7,13 @@ import { BrandPartners } from '@/components/home/brand-partners';
 import { TrustedBy } from '@/components/home/trusted-by';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { CheckCircle } from 'lucide-react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: "About Us | Hotstart Energy Pvt. Ltd. - Electrical, Automation & Power Solutions",
+    description: "Learn about Hotstart Energy's journey, expertise, and commitment to delivering high-quality electrical, automation, and power distribution solutions across India. Discover our mission, vision, and the values that drive our progress."
+}
 
 const coreExpertise = [
   'Electrical Power and Control Systems',
