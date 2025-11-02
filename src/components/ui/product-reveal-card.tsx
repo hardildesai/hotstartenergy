@@ -231,7 +231,7 @@ export function ProductRevealCard({
           </motion.div>
         </div>
 
-        <div className="p-4 pt-0 mt-auto border-t border-border/20 bg-background/90">
+        <div className="p-4 pt-0 mt-auto">
             <motion.div variants={contentVariants} className="flex items-center gap-2">
                 <motion.button
                 onClick={handleAddToCart}
