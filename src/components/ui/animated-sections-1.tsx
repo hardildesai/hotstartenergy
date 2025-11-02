@@ -403,8 +403,8 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         startAutoplay();
       }}
     >
-      <div className="absolute bottom-4 right-6 z-30 flex items-center gap-4">
-        <div className="flex gap-2">
+      <div className="absolute bottom-4 right-4 sm:right-6 z-30 flex items-center gap-2 sm:gap-4">
+        <div className="hidden sm:flex gap-2">
           {sections.map((section, i) => (
             <div
               key={`thumb-${i}`}
@@ -457,17 +457,17 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                 }}
               >
                 <div className="z-10 text-center max-w-3xl px-4 normal-case">
-                    <h2 className="section-heading text-white font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
+                    <h2 className="section-heading text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
                         {section.title}
                     </h2>
-                    <h3 className="text-white/80 font-bold text-xl sm:text-2xl md:text-3xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
+                    <h3 className="text-white/80 font-bold text-lg sm:text-xl md:text-2xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
                         {section.text}
                     </h3>
-                    <p className="mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
+                    <p className="mt-4 sm:mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
                         {section.description}
                     </p>
                     <div 
-                        className="mt-8 flex flex-wrap justify-center gap-4"
+                        className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
                         ref={(el) => { if (el) buttonsRefs.current[i] = el; }}
                         onMouseEnter={stopAutoplay}
                         onMouseLeave={startAutoplay}

@@ -19,7 +19,7 @@ export function AboutSection() {
     const image = PlaceHolderImages.find(p => p.id === 'prod-mv-switchgear');
 
     return (
-        <section id="about-us" className="w-full bg-gray-50/50 dark:bg-gray-900/20 py-16 md:py-24">
+        <section id="about-us" className="w-full bg-gray-50/50 dark:bg-gray-900/20 py-16 md:py-24 scroll-mt-20">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div 

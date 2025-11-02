@@ -52,9 +52,11 @@ export function Footer() {
                     </div>
                 </div>
             </div>
-            <Button asChild>
-              <Link href="/contact"><Phone className="mr-2 h-4 w-4" /> Request Quote / Contact Sales</Link>
-            </Button>
+            <div className="pt-2">
+                <Button asChild>
+                  <Link href="/contact"><Phone className="mr-2 h-4 w-4" /> Request Quote / Contact Sales</Link>
+                </Button>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}

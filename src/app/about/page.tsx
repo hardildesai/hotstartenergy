@@ -38,9 +38,9 @@ export default function AboutPage() {
       <OurStory />
       <Milestones />
 
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div className="space-y-6">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                         Powering Industries with Smart Solutions
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="clients" className="py-16 md:py-24 bg-gray-50/50 dark:bg-gray-900/20 scroll-mt-20">
+      <section id="clients" className="py-12 md:py-24 bg-gray-50/50 dark:bg-gray-900/20 scroll-mt-20">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Trusted by the Industry’s Leaders</h2>
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
       <OurValues />
 
-        <section className="py-16 md:py-24 text-center bg-background">
+        <section className="py-12 md:py-24 text-center bg-background">
             <div className="container mx-auto px-4">
                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
                     Driving the Energy Future

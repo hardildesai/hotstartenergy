@@ -7,7 +7,7 @@ export function AboutHero() {
   const image = PlaceHolderImages.find((p) => p.id === 'about-hero');
 
   return (
-    <section className="relative h-[500px] w-full flex items-center justify-center text-center text-white">
+    <section className="relative h-[440px] md:h-[500px] w-full flex items-center justify-center text-center text-white">
       {image && (
         <Image
           src={image.imageUrl}
