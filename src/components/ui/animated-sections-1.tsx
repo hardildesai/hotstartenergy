@@ -96,6 +96,8 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const autoplayDirectionRef = useRef(1);
   const mouseMoveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastMousePosition = useRef({ x: 0, y: 0 });
+  const MOVEMENT_THRESHOLD = 50; // Pixels
 
   useEffect(() => {
     let loaded = 0;
@@ -289,14 +291,24 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     setCurrentIndex(index);
   }, []);
 
-  const handleMouseMove = useCallback(() => {
-    stopAutoplay();
-    if (mouseMoveTimeoutRef.current) {
-      clearTimeout(mouseMoveTimeoutRef.current);
+  const handleMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const { clientX, clientY } = event;
+    const { x, y } = lastMousePosition.current;
+    
+    const deltaX = clientX - x;
+    const deltaY = clientY - y;
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+    if (distance > MOVEMENT_THRESHOLD) {
+      stopAutoplay();
+      if (mouseMoveTimeoutRef.current) {
+        clearTimeout(mouseMoveTimeoutRef.current);
+      }
+      mouseMoveTimeoutRef.current = setTimeout(() => {
+        startAutoplay();
+      }, 2000); // Resume after 2 seconds of inactivity
+      lastMousePosition.current = { x: clientX, y: clientY };
     }
-    mouseMoveTimeoutRef.current = setTimeout(() => {
-      startAutoplay();
-    }, 500); // 500ms delay before resuming
   }, [startAutoplay, stopAutoplay]);
 
 
