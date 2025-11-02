@@ -245,7 +245,7 @@ export function ProductRevealCard({
         </div>
 
         <div className="p-4 pt-0 mt-auto border-t border-border/20 bg-background/90">
-            <motion.div variants={contentVariants} className="space-y-2">
+            <motion.div variants={contentVariants} className="flex items-center gap-2">
                 <motion.button
                 onClick={handleAddToCart}
                 variants={buttonVariants_motion}
@@ -253,7 +253,7 @@ export function ProductRevealCard({
                 whileHover="hover"
                 whileTap="tap"
                 className={cn(
-                    buttonVariants({ variant: "default" }), 
+                    buttonVariants({ variant: "default", size: "sm" }), 
                     "w-full h-9 font-medium text-sm",
                     "bg-gradient-to-r from-primary to-primary/90",
                     "hover:from-primary/90 hover:to-primary",
@@ -261,7 +261,7 @@ export function ProductRevealCard({
                 )}
                 >
                 <ShoppingCart className="w-4 h-4 mr-2" />
-                Enquire Now
+                Enquire
                 </motion.button>
                 
                 <DialogTrigger asChild>
@@ -272,12 +272,12 @@ export function ProductRevealCard({
                     whileHover="hover"
                     whileTap="tap"
                     className={cn(
-                        buttonVariants({ variant: "outline" }), 
+                        buttonVariants({ variant: "outline", size: "sm" }), 
                         "w-full h-9 font-medium text-sm"
                     )}
                     >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    View Details
+                    Details
                     </motion.button>
                 </DialogTrigger>
             </motion.div>
