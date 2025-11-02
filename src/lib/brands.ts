@@ -39,6 +39,11 @@ const getCategoriesForBrand = (brandName: string, staticCategories: string[] = [
     return Array.from(displayCategories);
 };
 
+// Manual counts for brands with products defined on their own pages
+const legrandProductCount = 29;
+const socomecProductCount = 7;
+const keiProductCount = 9;
+
 
 export const brands: Brand[] = [
   {
@@ -47,7 +52,7 @@ export const brands: Brand[] = [
     slug: 'legrand',
     logo: "/legrand_logo.png",
     short_description: 'Global leader in electrical infrastructure & busbar systems.',
-    productCount: getProductCount('Legrand'),
+    productCount: legrandProductCount,
     categories: getCategoriesForBrand('Legrand', ['Busbar']),
   },
   {
@@ -56,7 +61,7 @@ export const brands: Brand[] = [
     slug: 'socomec',
     logo: "/socomecc-p-500.png",
     short_description: 'Specialist in low-voltage power switching, monitoring & protection.',
-    productCount: getProductCount('Socomec'),
+    productCount: socomecProductCount,
     categories: getCategoriesForBrand('Socomec', ['Metering']),
   },
   {
@@ -65,7 +70,7 @@ export const brands: Brand[] = [
     slug: 'kei-cables',
     logo: "/kei_logo.png",
     short_description: 'Leading manufacturer of power and instrumentation cables.',
-    productCount: getProductCount('KEI Cables'),
+    productCount: keiProductCount,
     categories: getCategoriesForBrand('KEI Cables', ['Cables']),
   },
   {
