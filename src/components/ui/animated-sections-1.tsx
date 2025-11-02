@@ -47,7 +47,7 @@ const defaultSections: SectionData[] = [
       text: 'Sourcing only from trusted global brands.',
       description: 'Legrand, Socomec, KEI, Havells, Eaton, Elmeasure, Selec, Secure and more. Quality that powers your operations—reliability guaranteed.',
       img: PlaceHolderImages.find(p => p.id === 'hero-3')?.imageUrl || '',
-      primaryAction: { text: 'Discover Our Brands', href: '/brands' },
+      primaryAction: { text: 'Discover Our Brands', href: '/products#brands' },
       secondaryAction: { text: 'Request a Quote', href: '/quote' },
     },
     {
