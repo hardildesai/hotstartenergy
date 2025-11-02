@@ -150,7 +150,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
       autoplayDirectionRef.current = direction > 0 ? 1 : -1;
     }
 
-    const dFactor = autoplayDirectionRef.current;
+    const dFactor = direction;
 
     const tl = gsap.timeline({
       defaults: { duration: 1.25, ease: 'power1.inOut' },
