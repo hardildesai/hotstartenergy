@@ -430,7 +430,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category.category}</h2>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 justify-center">
                     {category.products.map((product, productIndex) => {
                         const image = PlaceHolderImages.find(p => p.id === product.imageId);
                         
