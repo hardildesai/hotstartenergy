@@ -473,7 +473,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                         onMouseLeave={startAutoplay}
                     >
                         <GradientButton asChild>
-                            <Link href={section.primaryAction.href}>{section.primaryAction.text}</Link>
+                            <Link href={section.primaryAction.href} scroll={false}>{section.primaryAction.text}</Link>
                         </GradientButton>
                         <GradientButton asChild variant="variant">
                             <Link href={section.secondaryAction.href}>{section.secondaryAction.text}</Link>
