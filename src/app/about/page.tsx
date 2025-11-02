@@ -6,6 +6,7 @@ import { OurValues } from '@/components/about/our-values';
 import { BrandPartners } from '@/components/home/brand-partners';
 import { TrustedBy } from '@/components/home/trusted-by';
 import { GradientButton } from '@/components/ui/gradient-button';
+import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -32,6 +33,7 @@ const projectHighlights = [
 export default function AboutPage() {
   return (
     <div>
+      <SmoothScrollToAnchor />
       <AboutHero />
       <OurStory />
       <Milestones />
@@ -62,7 +64,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-gray-50/50 dark:bg-gray-900/20">
+      <section id="clients" className="py-16 md:py-24 bg-gray-50/50 dark:bg-gray-900/20 scroll-mt-20">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Trusted by the Industry’s Leaders</h2>
