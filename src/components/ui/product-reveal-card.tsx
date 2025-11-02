@@ -104,7 +104,7 @@ export function ProductRevealCard({
         stiffness: 400,
         damping: 28,
         mass: 0.6,
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
         delayChildren: 0.1,
       },
     },
@@ -216,16 +216,16 @@ export function ProductRevealCard({
       {/* Reveal Overlay */}
       <motion.div
         variants={overlayVariants}
-        className="absolute inset-0 bg-background/96 backdrop-blur-xl flex flex-col justify-between"
+        className="absolute inset-0 bg-background/96 backdrop-blur-xl flex flex-col"
       >
-        <div className="p-4 space-y-3">
+        <div className="p-4 pt-3 flex-grow overflow-y-auto space-y-3">
           <motion.div variants={contentVariants}>
             <h3 className="font-bold text-lg">{name}</h3>
           </motion.div>
           
-          <motion.div variants={contentVariants}>
+          <motion.div variants={contentVariants} className="overflow-y-auto max-h-[140px] pr-2">
             <h4 className="font-semibold mb-1 text-sm">Product Details</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
+            <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-wrap">
               {description}
             </p>
           </motion.div>
@@ -242,45 +242,46 @@ export function ProductRevealCard({
               </div>
             </motion.div>
           )}
-
         </div>
 
-        <motion.div variants={contentVariants} className="p-4 pt-0 space-y-2">
-            <motion.button
-              onClick={handleAddToCart}
-              variants={buttonVariants_motion}
-              initial="rest"
-              whileHover="hover"
-              whileTap="tap"
-              className={cn(
-                buttonVariants({ variant: "default" }), 
-                "w-full h-10 font-medium",
-                "bg-gradient-to-r from-primary to-primary/90",
-                "hover:from-primary/90 hover:to-primary",
-                "shadow-lg shadow-primary/25"
-              )}
-            >
-              <ShoppingCart className="w-4 h-4 mr-2" />
-              Enquire Now
-            </motion.button>
-            
-             <DialogTrigger asChild>
+        <div className="p-4 pt-0 mt-auto border-t border-border/20 bg-background/90">
+            <motion.div variants={contentVariants} className="space-y-2">
                 <motion.button
-                onClick={handleViewDetails}
+                onClick={handleAddToCart}
                 variants={buttonVariants_motion}
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
                 className={cn(
-                    buttonVariants({ variant: "outline" }), 
-                    "w-full h-10 font-medium"
+                    buttonVariants({ variant: "default" }), 
+                    "w-full h-9 font-medium text-sm",
+                    "bg-gradient-to-r from-primary to-primary/90",
+                    "hover:from-primary/90 hover:to-primary",
+                    "shadow-lg shadow-primary/25"
                 )}
                 >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Details
+                <ShoppingCart className="w-4 h-4 mr-2" />
+                Enquire Now
                 </motion.button>
-            </DialogTrigger>
-          </motion.div>
+                
+                <DialogTrigger asChild>
+                    <motion.button
+                    onClick={handleViewDetails}
+                    variants={buttonVariants_motion}
+                    initial="rest"
+                    whileHover="hover"
+                    whileTap="tap"
+                    className={cn(
+                        buttonVariants({ variant: "outline" }), 
+                        "w-full h-9 font-medium text-sm"
+                    )}
+                    >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Details
+                    </motion.button>
+                </DialogTrigger>
+            </motion.div>
+        </div>
       </motion.div>
     </motion.div>
   )
