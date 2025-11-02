@@ -133,15 +133,6 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     }
   }, []);
 
-  const startAutoplay = useCallback(() => {
-    stopAutoplay();
-    intervalRef.current = setInterval(() => {
-      if (!animatingRef.current) {
-        gotoSection(currentIndexRef.current + autoplayDirectionRef.current, autoplayDirectionRef.current);
-      }
-    }, 6000);
-  }, [stopAutoplay]);
-
   const gotoSection = useCallback((index: number, direction: number) => {
     if (!containerRef.current || animatingRef.current) return;
 
@@ -290,6 +281,15 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     currentIndexRef.current = index;
     setCurrentIndex(index);
   }, []);
+
+  const startAutoplay = useCallback(() => {
+    stopAutoplay();
+    intervalRef.current = setInterval(() => {
+      if (!animatingRef.current) {
+        gotoSection(currentIndexRef.current + autoplayDirectionRef.current, autoplayDirectionRef.current);
+      }
+    }, 6000);
+  }, [stopAutoplay, gotoSection]);
 
   const handleMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { clientX, clientY } = event;
