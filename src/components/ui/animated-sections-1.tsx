@@ -39,7 +39,7 @@ const defaultSections: SectionData[] = [
       text: 'Engineered for your industry, customized for your needs.',
       description: 'From switchgear to smart controls, cabling to energy management— We deliver quality, speed, and the right solution every time.',
       img: PlaceHolderImages.find(p => p.id === 'hero-2')?.imageUrl || '',
-      primaryAction: { text: 'Explore Our Solutions', href: '/products' },
+      primaryAction: { text: 'Explore Our Solutions', href: '/#products-solutions' },
       secondaryAction: { text: 'About Our Company', href: '/about' },
     },
     {
