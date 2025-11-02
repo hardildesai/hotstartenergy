@@ -154,7 +154,7 @@ export function SocomecPage({ brand }: { brand: Brand }) {
                                 description={product.description}
                                 category={category.category}
                                 onAdd={handleEnquire}
-                                onViewDetails={(e) => { e.preventDefault(); handleViewDetails({...product, category: category.category})}}
+                                onViewDetails={() => handleViewDetails({...product, category: category.category})}
                                 className="w-full h-full"
                            />
                         )
@@ -251,5 +251,7 @@ export function SocomecPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
 
     
