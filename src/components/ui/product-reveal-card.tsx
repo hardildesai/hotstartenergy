@@ -19,7 +19,7 @@ interface ProductRevealCardProps {
   reviewCount?: number
   onAdd?: () => void
   onFavorite?: () => void
-  onViewDetails?: () => void;
+  onViewDetails?: (e: React.MouseEvent) => void;
   enableAnimations?: boolean
   className?: string
   features?: { title: string; subtitle: string }[];
@@ -61,8 +61,8 @@ export function ProductRevealCard({
   
   const handleViewDetails = (e: React.MouseEvent) => {
     e.stopPropagation();
-    e.preventDefault();
-    onViewDetails?.();
+    // We don't prevent default here to allow the dialog trigger to work
+    onViewDetails?.(e);
   }
 
 
@@ -225,7 +225,6 @@ export function ProductRevealCard({
           </motion.div>
           
           <motion.div variants={contentVariants} className="flex-grow overflow-y-auto pr-2">
-            <h4 className="font-semibold mb-1 text-sm">Product Details</h4>
             <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-wrap">
               {description}
             </p>
@@ -274,5 +273,3 @@ export function ProductRevealCard({
     </motion.div>
   )
 }
-
-    

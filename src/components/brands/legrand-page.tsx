@@ -267,8 +267,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     window.location.href = '/contact';
   };
   
-  const handleViewDetails = (e: React.MouseEvent, product: Product) => {
-    e.preventDefault();
+  const handleViewDetails = (product: Product) => {
     setSelectedProduct(product);
   };
 
@@ -335,7 +334,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                 description={product.details}
                                 category={category.category}
                                 onAdd={handleEnquire}
-                                onViewDetails={(e) => handleViewDetails(e, product)}
+                                onViewDetails={() => handleViewDetails(product)}
                                 className="w-full h-full"
                            />
                         )
@@ -411,7 +410,3 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
-
-    
-
-    
