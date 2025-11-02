@@ -311,7 +311,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
       </section>
       
       {/* Product Portfolio */}
-      <Dialog>
+      <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
         {productCategories.map((category, categoryIndex) => (
             <section key={categoryIndex} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-gray-50/50 dark:bg-gray-900/20' : 'bg-background'}`}>
                 <div className="container mx-auto px-4">
@@ -406,3 +406,5 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
