@@ -7,19 +7,16 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Brand } from '@/lib/types';
 import { CheckCircle, Zap, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import React from 'react';
+import { ProductRevealCard } from '../ui/product-reveal-card';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogFooter,
 } from "@/components/ui/dialog"
-import React from 'react';
-import { ProductRevealCard } from '../ui/product-reveal-card';
 
 const productCategories = [
     {
@@ -354,7 +351,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                 {selectedProduct?.description}
             </DialogDescription>
             </DialogHeader>
-            <div className="py-4 whitespace-pre-wrap text-sm text-muted-foreground">
+            <div className="py-4 whitespace-pre-wrap text-sm text-foreground">
                 {selectedProduct?.details}
             </div>
             <DialogFooter>
@@ -413,5 +410,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
 
     
