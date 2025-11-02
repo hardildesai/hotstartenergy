@@ -1,17 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FlowButton } from '../ui/flow-button';
 import { motion } from 'framer-motion';
+import { Badge } from '../ui/badge';
 
-const highlights = [
-    'Authorized Channel Partner for Global Electrical Brands',
-    'End-to-End Power Distribution & Automation Solutions',
-    'Serving Industrial, Commercial & Infrastructure Projects',
+const expertiseList = [
+    'Power distribution systems and advanced switchgear',
+    'Busbar trunking solutions for scalable, efficient installations',
+    'Industrial automation and control engineering',
+    'Customizable solutions—from design consultation to on-site implementation'
 ];
 
 export function AboutSection() {
@@ -41,25 +41,26 @@ export function AboutSection() {
                         )}
                     </motion.div>
                     <div className="space-y-6">
+                        <Badge variant="outline">Inside Hotstart Energy</Badge>
                         <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
-                            Powering Progress Together
+                           Powering Reliable Electrical Solutions for Every Industry
                         </h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                             <p>
-                                Hotstart Energy Pvt. Ltd. is an authorized channel partner for leading global brands like Legrand, Socomec, KEI, Havells, Selec, and Eaton. We deliver reliable electrical products and integrated energy solutions tailored to modern industrial, commercial, and infrastructure needs.
-                            </p>
-                            <p>
-                                Our expertise spans power distribution, switchgear, busbar trunking systems, and automation, ensuring efficiency, safety, and innovation at every step — from design to delivery.
+                                Hotstart Energy Pvt. Ltd. stands at the forefront of industrial progress as an authorized channel partner for global leaders such as Legrand, Socomec, KEI, Havells, Selec, and Eaton. We deliver best-in-class electrical products and integrated energy solutions, purpose-built for today’s industrial, commercial, and infrastructure environments.
                             </p>
                         </div>
-                        <ul className="space-y-3 pt-2">
-                            {highlights.map((highlight, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                    <CheckCircle className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                                    <span className="text-muted-foreground">{highlight}</span>
-                                </li>
-                            ))}
-                        </ul>
+                         <div className="space-y-3 pt-2">
+                            <p className="font-semibold text-foreground">Our team’s expertise spans:</p>
+                            <ul className="space-y-3">
+                                {expertiseList.map((item, index) => (
+                                    <li key={index} className="flex items-start gap-3">
+                                        <CheckCircle className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
+                                        <span className="text-muted-foreground">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                         <div className="pt-4">
                             <FlowButton text="Learn More About Us" href="/about" />
                         </div>
