@@ -42,7 +42,7 @@ export function AboutSection() {
                     </motion.div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
-                            Powering Reliable Electrical Solutions for Every Industry
+                            Powering Progress Together
                         </h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                             <p>
