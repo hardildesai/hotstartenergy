@@ -404,3 +404,5 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
+
+    
