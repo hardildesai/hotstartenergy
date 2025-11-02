@@ -351,12 +351,14 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                 {selectedProduct?.details}
             </div>
             <DialogFooter>
-                <Button asChild>
-                    <Link href={selectedProduct?.url || '/'} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Visit Legrand Website
-                    </Link>
-                </Button>
+               {selectedProduct?.url && (
+                    <Button asChild>
+                        <Link href={selectedProduct.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Visit Legrand Website
+                        </Link>
+                    </Button>
+                )}
             </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -404,7 +406,3 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     </div>
   );
 }
-
-    
-
-    
