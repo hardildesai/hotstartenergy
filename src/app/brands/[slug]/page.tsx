@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { KeiCablesPage } from '@/components/brands/kei-cables-page';
 import { LegrandPage } from '@/components/brands/legrand-page';
 import { SocomecPage } from '@/components/brands/socomec-page';
+import { Clock } from 'lucide-react';
 
 export function generateStaticParams() {
   return brands.map((brand) => ({
@@ -41,9 +42,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
     return <SocomecPage brand={brand} />;
   }
 
-  // Default page for other brands
-  const brandProducts = products.filter(p => p.brand === brand.name);
-
+  // "Coming Soon" page for other brands
   return (
     <div className="container mx-auto px-4 py-12 pt-32">
       <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
@@ -56,45 +55,16 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
       
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {brandProducts.map((product) => {
-          const image = PlaceHolderImages.find((p) => p.id === product.imageId);
-          return (
-            <Card key={product.id} className="flex flex-col overflow-hidden transition-all hover:shadow-lg">
-              {image && (
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={image.imageUrl}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    data-ai-hint={image.imageHint}
-                  />
-                </div>
-              )}
-              <CardHeader>
-                <CardTitle>{product.name}</CardTitle>
-                <CardDescription>{product.brand} - {product.category}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
-              </CardContent>
-              <div className="p-6 pt-0">
-                <Button asChild variant="outline" className="w-full">
-                  <Link href={`/products/${product.id}`}>View Details</Link>
-                </Button>
-              </div>
-            </Card>
-          );
-        })}
-      </div>
-      {brandProducts.length === 0 && (
-        <div className="text-center col-span-full py-16">
-            <p className="text-muted-foreground">No products found for this brand.</p>
+      <div className="text-center col-span-full py-16 bg-card border rounded-lg">
+        <Clock className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+        <h2 className="text-2xl font-semibold">Coming Soon</h2>
+        <p className="text-muted-foreground mt-2">Products for {brand.name} will be available shortly.</p>
+        <div className="mt-6">
+          <Button asChild>
+            <Link href="/brands">Explore Other Brands</Link>
+          </Button>
         </div>
-      )}
-
+      </div>
     </div>
   );
 }
