@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -7,7 +8,7 @@ import { brands } from '@/lib/brands';
 export function BrandPartners() {
   const partners = brands;
   return (
-    <section className="py-8">
+    <section className="py-8 overflow-hidden">
       <h2 className="text-xl font-bold text-center mb-8 text-foreground">Our Brand Partners</h2>
       <div className="relative">
         <div className="overflow-x-auto scrolling-touch">
