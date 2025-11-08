@@ -4,47 +4,49 @@
 import React from 'react';
 import Image from 'next/image';
 import { brands } from '@/lib/brands';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 import { cn } from '@/lib/utils';
 
 export function BrandPartners() {
   const partners = brands;
 
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
+  )
+
   return (
-    <section className="py-8">
+    <section className="py-8 w-full">
       <h2 className="text-xl font-bold text-center mb-8 text-foreground">Our Brand Partners</h2>
-      <div
-        className={cn(
-          "relative w-full overflow-hidden",
-          "[mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
-        )}
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full max-w-6xl mx-auto"
+        opts={{
+          align: "start",
+          loop: true,
+        }}
       >
-        <div className="flex w-max animate-scroll group-hover:pause">
-            {[...partners, ...partners].map((partner, index) => (
-              <div key={index} className="flex-shrink-0 px-12">
+        <CarouselContent className="-ml-8">
+          {partners.map((partner, index) => (
+            <CarouselItem key={index} className="pl-8 basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <div className="h-16 flex items-center justify-center p-4">
                 <Image 
                   src={partner.logo} 
                   alt={`${partner.name} logo`}
-                  width={180} 
+                  width={150} 
                   height={40} 
-                  className="h-10 w-auto object-contain text-gray-500 transition duration-300 hover:text-black dark:invert"
+                  className="h-10 w-auto object-contain text-gray-500 dark:invert"
                   style={{ color: 'transparent' }}
                 />
               </div>
-            ))}
-        </div>
-      </div>
-       <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-        .group-hover\\:pause:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }
