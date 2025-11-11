@@ -84,11 +84,13 @@ export function SocomecPage({ brand }: { brand: Brand }) {
   const heroImage = PlaceHolderImages.find(p => p.id === 'socomec-hero');
   const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
 
-  const handleEnquire = () => {
+  const handleEnquire = (e: React.MouseEvent) => {
+    e.stopPropagation();
     window.location.href = '/contact';
   };
   
-  const handleViewDetails = (product: Product) => {
+  const handleViewDetails = (e: React.MouseEvent, product: Product) => {
+    e.stopPropagation();
     setSelectedProduct(product);
   };
 
@@ -154,7 +156,7 @@ export function SocomecPage({ brand }: { brand: Brand }) {
                                 description={product.description}
                                 category={category.category}
                                 onAdd={handleEnquire}
-                                onViewDetails={() => handleViewDetails({...product, category: category.category})}
+                                onViewDetails={(e) => handleViewDetails(e, {...product, category: category.category})}
                                 className="w-full h-full"
                            />
                         )

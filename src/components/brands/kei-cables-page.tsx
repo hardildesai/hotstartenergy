@@ -105,11 +105,13 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
   const heroImage = PlaceHolderImages.find(p => p.id === 'kei-hero');
   const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
 
-  const handleEnquire = () => {
+  const handleEnquire = (e: React.MouseEvent) => {
+    e.stopPropagation();
     window.location.href = '/contact';
   };
   
-  const handleViewDetails = (product: Product) => {
+  const handleViewDetails = (e: React.MouseEvent, product: Product) => {
+    e.stopPropagation();
     setSelectedProduct(product);
   };
 
@@ -139,7 +141,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
             Quality Cables for Every Application
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white/80">
-            Hotstart Energy is your authorized dealer for KEI Cables, delivering performance and reliability for India’s most demanding projects.
+            Hotstart Energy is your authorized partner for KEI Cables, delivering performance and reliability for India’s most demanding projects.
           </p>
         </div>
       </section>
@@ -151,7 +153,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
             Your Trusted Partner for KEI Wires & Cables
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            As a leading distributor, Hotstart Energy provides access to KEI’s extensive range of high-quality cables. We ensure authentic products, technical support, and competitive pricing for all your project needs.
+            As a leading solutions provider, Hotstart Energy provides access to KEI’s extensive range of high-quality cables. We ensure authentic products, technical support, and competitive pricing for all your project needs.
           </p>
         </div>
       </section>
@@ -176,7 +178,7 @@ export function KeiCablesPage({ brand }: { brand: Brand }) {
                                 description={product.description}
                                 category={category.category}
                                 onAdd={handleEnquire}
-                                onViewDetails={() => handleViewDetails({...product, category: category.category})}
+                                onViewDetails={(e) => handleViewDetails(e, {...product, category: category.category})}
                                 className="w-full h-full"
                            />
                         )
