@@ -29,7 +29,7 @@ const defaultSections: SectionData[] = [
     {
       title: 'HOTSTART ENERGY PVT. LTD.',
       text: 'POWER & ENERGY SPECIALISTS',
-      description: 'Wholesale trader of leading electrical products for Indian industry. Trusted by top brands, built for your growth.',
+      description: 'Leading provider of premier electrical products for Indian industry. Trusted by top brands, built for your growth.',
       img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
       primaryAction: { text: 'Contact Us Now', href: '/contact' },
       secondaryAction: { text: 'View Products', href: '/products' },
