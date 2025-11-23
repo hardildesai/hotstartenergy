@@ -12,7 +12,7 @@ export function ProductCategoriesSection() {
     if (categoryId === 'cables-wires') {
       router.push('/brands/kei-cables');
     } else if (categoryId === 'lighting-accessories') {
-        router.push('/brands/havells');
+      router.push('/brands/havells');
     }
     else {
       router.push(`/products?category=${categoryId}`);

@@ -39,25 +39,25 @@
     {
       "id": "hero-1",
       "description": "Custom hero image 1",
-      "imageUrl": "/test1.jpg",
+      "imageUrl": "/test1.png",
       "imageHint": "industrial"
     },
     {
       "id": "hero-2",
       "description": "Custom hero image 2",
-      "imageUrl": "/test2.jpg",
+      "imageUrl": "/test2.png",
       "imageHint": "technology"
     },
     {
       "id": "hero-3",
       "description": "Custom hero image 3",
-      "imageUrl": "/test3.jpg",
+      "imageUrl": "/test3.png",
       "imageHint": "power"
     },
     {
       "id": "hero-4",
       "description": "Custom hero image 4",
-      "imageUrl": "/test4.jpg",
+      "imageUrl": "/test4.png",
       "imageHint": "energy"
     },
     {

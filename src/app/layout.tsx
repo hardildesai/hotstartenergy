@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -8,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Space_Grotesk } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Preloader } from '@/components/ui/preloader';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -99,7 +99,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -109,6 +109,7 @@ export default function RootLayout({
         className={cn("font-body antialiased", spaceGrotesk.variable)}
         suppressHydrationWarning
       >
+        <Preloader />
         <GlassFilter />
         <Header />
         <main>{children}</main>

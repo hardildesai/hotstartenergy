@@ -5,38 +5,38 @@ import { products } from './data';
 const getProductCount = (brandName: string) => products.filter(p => p.brand === brandName).length;
 
 const getCategoriesForBrand = (brandName: string, staticCategories: string[] = []): string[] => {
-    const brandProducts = products.filter(p => p.brand === brandName);
-    const categories = new Set(brandProducts.map(p => p.category));
-    
-    const categoryMap: Record<string, string> = {
-        'Switchgear': 'Switchgear',
-        'Home Solution': 'Home Automation',
-        'Cables & Wires': 'Cables & Wires',
-        'Power': 'Power',
-        'Protection': 'Protection',
-        'Distribution Boards': 'Distribution Boards',
-        'Wiring Accessories': 'Wiring Accessories',
-        'Cable Management': 'Cable Management',
-        'Plugs & Socket': 'Plugs & Sockets',
-        'Panel Meters & Energy Meters': 'Metering',
-        'Changeovers & Automatic Transfer Switches': 'Switchgear',
-    };
+  const brandProducts = products.filter(p => p.brand === brandName);
+  const categories = new Set(brandProducts.map(p => p.category));
 
-    const displayCategories = new Set<string>();
-    brandProducts.forEach(p => {
-        const mappedCategory = categoryMap[p.category];
-        if (mappedCategory) {
-            displayCategories.add(mappedCategory);
-        } else {
-            // Fallback for categories not in the map
-            if (p.category.includes('Cable')) displayCategories.add('Cables & Wires');
-        }
-    });
+  const categoryMap: Record<string, string> = {
+    'Switchgear': 'Switchgear',
+    'Home Solution': 'Home Automation',
+    'Cables & Wires': 'Cables & Wires',
+    'Power': 'Power',
+    'Protection': 'Protection',
+    'Distribution Boards': 'Distribution Boards',
+    'Wiring Accessories': 'Wiring Accessories',
+    'Cable Management': 'Cable Management',
+    'Plugs & Socket': 'Plugs & Sockets',
+    'Panel Meters & Energy Meters': 'Metering',
+    'Changeovers & Automatic Transfer Switches': 'Switchgear',
+  };
 
-    // Add categories from the brand's static definition as well
-    staticCategories.forEach(c => displayCategories.add(c));
+  const displayCategories = new Set<string>();
+  brandProducts.forEach(p => {
+    const mappedCategory = categoryMap[p.category];
+    if (mappedCategory) {
+      displayCategories.add(mappedCategory);
+    } else {
+      // Fallback for categories not in the map
+      if (p.category.includes('Cable')) displayCategories.add('Cables & Wires');
+    }
+  });
 
-    return Array.from(displayCategories);
+  // Add categories from the brand's static definition as well
+  staticCategories.forEach(c => displayCategories.add(c));
+
+  return Array.from(displayCategories);
 };
 
 // Manual counts for brands with products defined on their own pages
@@ -86,11 +86,10 @@ export const brands: Brand[] = [
     id: 'elmeasure',
     name: 'Elmeasure',
     slug: 'elmeasure',
-    logo: 'https://logo.clearbit.com/elmeasure.com',
+    logo: '/Elmeasure_logo.png',
     short_description: 'Innovator in energy management and smart metering solutions.',
     productCount: getProductCount('Elmeasure'),
     categories: getCategoriesForBrand('Elmeasure', ['Metering']),
   },
 ];
 
-    

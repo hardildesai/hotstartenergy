@@ -90,7 +90,7 @@ function DesktopNavbar({ className }: { className?: string }) {
           </div>
         </div>
         <div onMouseEnter={() => setActive(null)}>
-            <FlowButton text="Contact Us" href="/contact" />
+          <FlowButton text="Contact Us" href="/contact" />
         </div>
       </nav>
     </div>
@@ -129,7 +129,7 @@ function MobileNavbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[340px] p-0">
             <SheetHeader className="p-4 border-b">
-               <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
                 <Logo />
               </Link>
             </SheetHeader>
@@ -137,29 +137,29 @@ function MobileNavbar() {
               <nav className="flex flex-col gap-4">
                 <Link href="/" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Home</Link>
                 <Link href="/about" className="text-lg font-medium" onClick={() => setIsOpen(false)}>About Us</Link>
-                 <Accordion type="single" collapsible>
-                    <AccordionItem value="products" className="border-b-0">
-                      <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">
-                        <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
-                      </AccordionTrigger>
-                      <AccordionContent className="pl-4">
-                        <div className="flex flex-col gap-2">
-                          {productCategories.map(category => (
-                            <Link key={category.id} href={getProductCategoryHref(category.id)} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>{category.title}</Link>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem value="brands" className="border-b-0">
-                      <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">Brands</AccordionTrigger>
-                      <AccordionContent className="pl-4">
-                        <div className="flex flex-col gap-2">
-                          {brands.map(brand => (
-                            <Link key={brand.id} href={`/brands/${brand.slug}`} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>{brand.name}</Link>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="products" className="border-b-0">
+                    <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">
+                      <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
+                    </AccordionTrigger>
+                    <AccordionContent className="pl-4">
+                      <div className="flex flex-col gap-2">
+                        {productCategories.map(category => (
+                          <Link key={category.id} href={getProductCategoryHref(category.id)} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>{category.title}</Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="brands" className="border-b-0">
+                    <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">Brands</AccordionTrigger>
+                    <AccordionContent className="pl-4">
+                      <div className="flex flex-col gap-2">
+                        {brands.map(brand => (
+                          <Link key={brand.id} href={`/brands/${brand.slug}`} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>{brand.name}</Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
                 </Accordion>
                 <Link href="/career" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Career</Link>
                 <Link href="/contact" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Contact</Link>

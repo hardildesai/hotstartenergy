@@ -8,6 +8,7 @@ import { TrustedBy } from '@/components/home/trusted-by';
 import type { Metadata } from 'next';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { Suspense } from 'react';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 export const metadata: Metadata = {
   title: "Hotstart Energy Pvt. Ltd. | Electrical, Automation & Power Solutions",
@@ -24,13 +25,19 @@ export default function Home() {
         <AnimatedSections />
       </div>
       <div className="relative z-10 bg-background">
-        <div className="bg-background py-4 space-y-4">
+        <ScrollReveal className="bg-background py-4 space-y-4">
           <BrandPartners />
           <TrustedBy />
-        </div>
-        <AboutSection />
-        <ProductCategoriesSection />
-        <ContactSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ProductCategoriesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
       </div>
     </div>
   );
