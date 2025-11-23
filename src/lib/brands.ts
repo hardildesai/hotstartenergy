@@ -78,18 +78,9 @@ export const brands: Brand[] = [
     name: 'Havells',
     slug: 'havells',
     logo: "/havells_logo.png",
-    short_description: 'A leading brand in power distribution and lighting solutions.',
+    short_description: 'A leading provider of power distribution and lighting solutions.',
     productCount: getProductCount('Havells'),
     categories: getCategoriesForBrand('Havells', ['Lighting']),
-  },
-  {
-    id: 'eaton',
-    name: 'Eaton',
-    slug: 'eaton',
-    logo: "/Eaton_Corporation_logo.png",
-    short_description: 'Global power management company providing energy-efficient solutions.',
-    productCount: getProductCount('Eaton'),
-    categories: getCategoriesForBrand('Eaton', ['Automation']),
   },
   {
     id: 'elmeasure',
@@ -100,22 +91,6 @@ export const brands: Brand[] = [
     productCount: getProductCount('Elmeasure'),
     categories: getCategoriesForBrand('Elmeasure', ['Metering']),
   },
-  {
-    id: 'selec-controls',
-    name: 'Selec Controls',
-    slug: 'selec-controls',
-    logo: 'https://logo.clearbit.com/selec.com',
-    short_description: 'Provider of industrial control, measurement, and protection devices.',
-    productCount: getProductCount('Selec Controls'),
-    categories: getCategoriesForBrand('Selec Controls', ['Automation']),
-  },
-  {
-    id: 'secure-meters',
-    name: 'Secure Meters',
-    slug: 'secure-meters',
-    logo: 'https://logo.clearbit.com/securemeters.com',
-    short_description: 'Global provider of smart metering solutions for electricity, gas, and water.',
-    productCount: getProductCount('Secure Meters'),
-    categories: getCategoriesForBrand('Secure Meters', ['Metering']),
-  },
 ];
+
+    

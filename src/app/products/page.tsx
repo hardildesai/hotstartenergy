@@ -28,7 +28,7 @@ export default function ProductsPage() {
         <div id="brands" className="text-center my-16 md:my-24 scroll-mt-20">
           <h2 className="text-3xl font-bold tracking-tight">Explore by Brand</h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Find official products from Legrand, Socomec, KEI, Havells, Eaton and more — filter by category, voltage and application.
+            Find official products from Legrand, Socomec, KEI, and Havells — filter by category, voltage and application.
           </p>
         </div>
 
@@ -64,3 +64,5 @@ export default function ProductsPage() {
     </>
   );
 }
+
+    

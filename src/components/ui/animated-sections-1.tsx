@@ -28,7 +28,7 @@ interface AnimatedSectionsProps {
 const defaultSections: SectionData[] = [
     {
       title: 'HOTSTART ENERGY PVT. LTD.',
-      text: 'POWER & ENERGY SPECIALISTS',
+      text: 'LEADING PROVIDER OF POWER & ENERGY SOLUTIONS',
       description: 'Leading provider of premier electrical products for Indian industry. Trusted by top brands, built for your growth.',
       img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
       primaryAction: { text: 'Contact Us Now', href: '/contact' },
@@ -45,7 +45,7 @@ const defaultSections: SectionData[] = [
     {
       title: 'PARTNERED WITH INDUSTRY LEADERS',
       text: 'Sourcing only from trusted global brands.',
-      description: 'Legrand, Socomec, KEI, Havells, Eaton, Elmeasure, Selec, Secure and more. Quality that powers your operations—reliability guaranteed.',
+      description: 'Legrand, Socomec, KEI, Havells, and more. Quality that powers your operations—reliability guaranteed.',
       img: PlaceHolderImages.find(p => p.id === 'hero-3')?.imageUrl || '',
       primaryAction: { text: 'Discover Our Brands', href: '/products#brands' },
       secondaryAction: { text: 'Request a Quote', href: '/quote' },
@@ -490,5 +490,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 };
 
 export default AnimatedSections;
+
+    
 
     

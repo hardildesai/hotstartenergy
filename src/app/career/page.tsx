@@ -31,7 +31,7 @@ export default function CareerPage() {
                   At HSEPL, we believe that excellence begins with people. Our team of skilled engineers, technical specialists, and project professionals work collaboratively to deliver high-performance power and automation solutions across India.
                 </p>
                 <p>
-                  Whether you’re in design, integration, logistics, or operations, we offer an environment where innovation meets opportunity — backed by our partnerships with industry leaders like Legrand, Socomec, KEI, Secure Meters, and more.
+                  Whether you’re in design, integration, logistics, or operations, we offer an environment where innovation meets opportunity — backed by our partnerships with industry leaders like Legrand, Socomec, KEI, and Havells.
                 </p>
               </div>
               <ul className="space-y-3 pt-2">
@@ -122,3 +122,5 @@ export default function CareerPage() {
     </div>
   );
 }
+
+    
