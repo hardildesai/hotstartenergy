@@ -1,3 +1,4 @@
+
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -5,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card } from "./card";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -96,25 +98,29 @@ export const ProductItem = ({
   src: string;
   setActive: (item: string | null) => void;
 }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    setActive(null);
+    router.push(href);
+  };
+
   return (
-    <div className="flex space-x-2">
-      <Link href={href} className="flex space-x-2" onClick={() => setActive(null)}>
-        <Image
-          src={src}
-          width={60}
-          height={60}
-          alt={title}
-          className="flex-shrink-0 rounded-md shadow-2xl object-cover"
-        />
-        <div>
-          <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-            {title}
-          </h4>
-          <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
-            {description}
-          </p>
-        </div>
-      </Link>
+    <div className="flex space-x-2 cursor-pointer" onClick={handleClick}>
+      <Image
+        src={src}
+        width={60}
+        height={60}
+        alt={title}
+        className="flex-shrink-0 rounded-md shadow-2xl object-cover"
+      />
+      <div>
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+          {title}
+        </h4>
+        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };

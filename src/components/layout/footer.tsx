@@ -16,7 +16,7 @@ export function Footer() {
           <div className="space-y-4 lg:col-span-2">
             <Logo />
             <p className="text-sm text-muted-foreground">
-              Delivering reliable power distribution, automation & energy-management solutions.
+              Your trusted partner for reliable power distribution, automation, and energy management solutions.
             </p>
              <div className="space-y-4 text-sm">
                 <div className="space-y-1">

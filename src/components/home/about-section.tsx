@@ -47,7 +47,7 @@ export function AboutSection() {
                         </h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                             <p>
-                                Hotstart Energy Pvt. Ltd. stands at the forefront of industrial progress as an authorized channel partner for global leaders such as Legrand, Socomec, KEI, Havells, Selec, and Eaton. We deliver best-in-class electrical products and integrated energy solutions, purpose-built for today’s industrial, commercial, and infrastructure environments.
+                                Hotstart Energy Pvt. Ltd. stands at the forefront of industrial progress as an authorized partner for global leaders such as Legrand, Socomec, KEI, and Havells. We deliver best-in-class electrical products and integrated energy solutions, purpose-built for today’s industrial, commercial, and infrastructure environments.
                             </p>
                         </div>
                          <div className="space-y-3 pt-2">
