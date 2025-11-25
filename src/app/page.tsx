@@ -3,8 +3,8 @@ import { AboutSection } from '@/components/home/about-section';
 import { ContactSection } from '@/components/home/contact-section';
 import { ProductCategoriesSection } from '@/components/home/product-categories-section';
 import AnimatedSections from '@/components/ui/animated-sections-1';
-import { BrandPartners } from '@/components/home/brand-partners';
-import { TrustedBy } from '@/components/home/trusted-by';
+import { BrandReveal } from '@/components/home/brand-reveal';
+import { TrustedByReveal } from '@/components/home/trusted-by-reveal';
 import type { Metadata } from 'next';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { Suspense } from 'react';
@@ -26,8 +26,8 @@ export default function Home() {
       </div>
       <div className="relative z-10 bg-background">
         <ScrollReveal className="bg-background py-4 space-y-4">
-          <BrandPartners />
-          <TrustedBy />
+          <BrandReveal />
+          <TrustedByReveal />
         </ScrollReveal>
         <ScrollReveal>
           <AboutSection />

@@ -21,7 +21,7 @@ export function BrandPartners() {
                     alt={`${partner.name} logo`}
                     width={150}
                     height={40}
-                    className="h-12 w-auto object-contain"
+                    className={`${partner.id === 'kei-cables' ? 'w-[250px] h-1 object-fill' : 'w-auto h-16 object-contain'}`}
                     style={{ color: 'transparent' }}
                   />
                 </div>

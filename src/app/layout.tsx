@@ -4,14 +4,15 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 import { Toaster } from "@/components/ui/toaster"
-import { Space_Grotesk } from 'next/font/google';
+import { Titillium_Web } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Preloader } from '@/components/ui/preloader';
 
-const spaceGrotesk = Space_Grotesk({
+const titilliumWeb = Titillium_Web({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  weight: ['200', '300', '400', '600', '700', '900'],
+  variable: '--font-titillium-web',
 });
 
 export const metadata: Metadata = {
@@ -106,7 +107,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={cn("font-body antialiased", spaceGrotesk.variable)}
+        className={cn("font-body antialiased", titilliumWeb.variable)}
         suppressHydrationWarning
       >
         <Preloader />
