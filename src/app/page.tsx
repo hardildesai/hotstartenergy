@@ -1,6 +1,6 @@
 
 import { AboutSection } from '@/components/home/about-section';
-import { ContactSection } from '@/components/home/contact-section';
+
 import { ProductCategoriesSection } from '@/components/home/product-categories-section';
 import AnimatedSections from '@/components/ui/animated-sections-1';
 import { BrandReveal } from '@/components/home/brand-reveal';
@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { Suspense } from 'react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { ContactSection } from '@/components/home/contact-section';
 
 export const metadata: Metadata = {
   title: "Hotstart Energy Pvt. Ltd. | Electrical, Automation & Power Solutions",

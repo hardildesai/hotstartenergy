@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Mail, Building, Phone } from 'lucide-react';
 import Link from 'next/link';
 
+import { OfficeMap } from '@/components/ui/office-map';
+
 const contactMethods = [
   {
     icon: Mail,
@@ -72,7 +74,10 @@ export function ContactSection() {
             </div>
           ))}
         </div>
+
+        <OfficeMap />
       </div>
     </section>
   );
 }
+

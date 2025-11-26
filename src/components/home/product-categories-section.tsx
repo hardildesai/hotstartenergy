@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { productCategories } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { TravelCard } from '@/components/ui/card-7';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 export function ProductCategoriesSection() {
   const router = useRouter();
@@ -32,24 +33,25 @@ export function ProductCategoriesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {productCategories.map((category) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          {productCategories.map((category, index) => {
             const image = PlaceHolderImages.find(
               (p) => p.id === category.imageId
             );
             return (
-              <TravelCard
-                key={category.id}
-                imageUrl={image?.imageUrl || ''}
-                imageAlt={category.title}
-                title={category.title}
-                location="Global Shipping"
-                overview={category.description}
-                price={0} // Mock price, can be dynamic
-                pricePeriod="Request Quote"
-                onBookNow={() => handleCardClick(category.id)}
-                aria-label={`View products in ${category.title}`}
-              />
+              <ScrollReveal key={category.id} delay={index * 0.1} duration={0.8}>
+                <TravelCard
+                  imageUrl={image?.imageUrl || ''}
+                  imageAlt={category.title}
+                  title={category.title}
+                  location="Global Shipping"
+                  overview={category.description}
+                  price={0} // Mock price, can be dynamic
+                  pricePeriod="Request Quote"
+                  onBookNow={() => handleCardClick(category.id)}
+                  aria-label={`View products in ${category.title}`}
+                />
+              </ScrollReveal>
             );
           })}
         </div>

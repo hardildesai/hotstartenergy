@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Titillium_Web } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Preloader } from '@/components/ui/preloader';
+
 
 const titilliumWeb = Titillium_Web({
   subsets: ['latin'],
@@ -93,6 +93,8 @@ function GlassFilter() {
   );
 }
 
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -110,7 +112,7 @@ export default function RootLayout({
         className={cn("font-body antialiased", titilliumWeb.variable)}
         suppressHydrationWarning
       >
-        <Preloader />
+        <ScrollToTop />
         <GlassFilter />
         <Header />
         <main>{children}</main>

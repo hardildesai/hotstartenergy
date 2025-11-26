@@ -71,7 +71,7 @@ function DesktopNavbar({ className }: { className?: string }) {
               </div>
             </MenuItem>
           </HoveredLink>
-          <MenuItem setActive={setActive} active={active} item="Brands">
+          <MenuItem setActive={setActive} active={active} item={<Link href="/products?section=brands">Brands</Link>} itemKey="Brands">
             <div className="grid grid-cols-4 w-[40rem] gap-px overflow-hidden rounded-lg border bg-background shadow-lg">
               {brands.map((brand) => (
                 <BrandItem

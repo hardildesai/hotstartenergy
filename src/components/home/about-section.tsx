@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { CheckCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FlowButton } from '../ui/flow-button';
-import { motion } from 'framer-motion';
+import { ScrollReveal } from '../ui/scroll-reveal';
 import { Badge } from '../ui/badge';
 
 const expertiseList = [
@@ -22,12 +22,10 @@ export function AboutSection() {
         <section id="about-us" className="w-full bg-gray-50/50 dark:bg-gray-900/20 py-16 md:py-24 scroll-mt-20">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <motion.div 
+                    <ScrollReveal
                         className="relative aspect-square md:aspect-[4/3] rounded-lg shadow-md overflow-hidden"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        direction="right"
+                        duration={0.8}
                     >
                         {image && (
                             <Image
@@ -39,18 +37,18 @@ export function AboutSection() {
                                 data-ai-hint={image.imageHint}
                             />
                         )}
-                    </motion.div>
+                    </ScrollReveal>
                     <div className="space-y-6">
                         <Badge variant="outline">Inside Hotstart Energy</Badge>
                         <h2 className="text-3xl md:text-4xl font-semibold text-foreground/90">
-                           Powering Reliable Electrical Solutions for Every Industry
+                            Powering Reliable Electrical Solutions for Every Industry
                         </h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                             <p>
                                 Hotstart Energy Pvt. Ltd. stands at the forefront of industrial progress as an authorized partner for global leaders such as Legrand, Socomec, KEI, and Havells. We deliver best-in-class electrical products and integrated energy solutions, purpose-built for today’s industrial, commercial, and infrastructure environments.
                             </p>
                         </div>
-                         <div className="space-y-3 pt-2">
+                        <div className="space-y-3 pt-2">
                             <p className="font-semibold text-foreground">Our team’s expertise spans:</p>
                             <ul className="space-y-3">
                                 {expertiseList.map((item, index) => (

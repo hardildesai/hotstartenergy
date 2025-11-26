@@ -1,43 +1,84 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
-import { motion, useInView, UseInViewOptions, Variants } from 'framer-motion';
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollRevealProps {
     children: React.ReactNode;
     className?: string;
-    variants?: Variants;
+    direction?: "up" | "down" | "left" | "right";
     delay?: number;
     duration?: number;
-    viewport?: UseInViewOptions;
+    stagger?: number;
 }
 
 export function ScrollReveal({
     children,
-    className,
-    variants,
+    className = "",
+    direction = "up",
     delay = 0,
-    duration = 0.5,
-    viewport = { once: true, margin: "-100px" },
+    duration = 1,
+    stagger = 0,
 }: ScrollRevealProps) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, viewport);
+    const ref = useRef<HTMLDivElement>(null);
 
-    const defaultVariants: Variants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 },
-    };
+    useGSAP(
+        () => {
+            const el = ref.current;
+            if (!el) return;
+
+            let x = 0;
+            let y = 0;
+
+            switch (direction) {
+                case "up":
+                    y = 50;
+                    break;
+                case "down":
+                    y = -50;
+                    break;
+                case "left":
+                    x = 50;
+                    break;
+                case "right":
+                    x = -50;
+                    break;
+            }
+
+            gsap.fromTo(
+                el.children,
+                {
+                    opacity: 0,
+                    x,
+                    y,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    duration: duration,
+                    stagger: stagger,
+                    delay: delay,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse",
+                    },
+                }
+            );
+        },
+        { scope: ref }
+    );
 
     return (
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={variants || defaultVariants}
-            transition={{ duration, delay, ease: "easeOut" }}
-            className={className}
-        >
+        <div ref={ref} className={className}>
             {children}
-        </motion.div>
+        </div>
     );
 }
+

@@ -21,15 +21,19 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  itemKey,
   children,
 }: {
   setActive: (item: string | null) => void;
   active: string | null;
-  item: string;
+  item: React.ReactNode | string;
+  itemKey?: string;
   children?: React.ReactNode;
 }) => {
+  const key = itemKey || (typeof item === 'string' ? item : '');
+
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative">
+    <div onMouseEnter={() => setActive(key)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
@@ -42,7 +46,7 @@ export const MenuItem = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
         >
-          {active === item && (
+          {active === key && (
             <div
               className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4"
               onMouseLeave={() => setActive(null)}
@@ -141,15 +145,15 @@ export const BrandItem = ({
   const isLegrand = name === 'Legrand';
   return (
     <Link href={href} onClick={() => setActive(null)}>
-       <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
-         <Image
-            src={logo}
-            alt={`${name} logo`}
-            width={isLegrand ? 150 : 120}
-            height={isLegrand ? 40 : 30}
-            className={cn("w-auto object-contain dark:invert", isLegrand ? "h-12" : "h-8")}
-          />
-       </Card>
+      <Card className={cn("flex items-center justify-center p-6 h-full w-full bg-background hover:bg-secondary/80 dark:bg-secondary/30 dark:hover:bg-secondary/50 transition-colors", className)}>
+        <Image
+          src={logo}
+          alt={`${name} logo`}
+          width={isLegrand ? 150 : 120}
+          height={isLegrand ? 40 : 30}
+          className={cn("w-auto object-contain dark:invert", isLegrand ? "h-12" : "h-8")}
+        />
+      </Card>
     </Link>
   );
 };
