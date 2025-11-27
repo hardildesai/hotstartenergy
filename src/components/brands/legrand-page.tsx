@@ -342,18 +342,88 @@ const productCategories = [
         ]
     },
 
-    // --- Existing Sections ---
+    // --- BBT (Busbar Trunking Systems) ---
     {
-        group: 'BBT',
-        category: 'BBT',
+        group: 'Industry (Power Distribution)',
+        category: 'Zucchini SCP (Super Compact)',
         products: [
             {
-                title: 'Zucchini™ Busbar Trunking System',
-                description: 'Advanced solution for distributing power from 25A to 5000A in any building.',
-                details: 'Most advanced solution for distributing Low-Medium-Large Power within a building in order to supply the power for the operation of the Light Fittings in Warehouses, Exhibition Halls and wherever speed of installation is required. Available from 25A to 5000A with Electrolytic Copper & Galvanized Aluminum, comes in Air Insulated and Sandwiched with IP 55 protection.',
+                title: 'Zucchini SCP',
+                description: 'Super Compact busbar for high power distribution.',
+                details: 'Sandwich Construction, 630A-6300A, Horizontal Run. Ideal for industrial power distribution.',
                 imageId: 'cat-busbar',
                 url: 'https://www.legrand.co_in/products/busbar-trunking-system/zucchini',
-                attributes: ['25A-5000A', 'Copper/Aluminium', 'IP55']
+                attributes: ['Sandwich Construction', '630A-6300A', 'Horizontal Run']
+            }
+        ]
+    },
+    {
+        group: 'Industry (Power Distribution)',
+        category: 'Zucchini XCP (High Performance)',
+        products: [
+            {
+                title: 'Zucchini XCP',
+                description: 'High performance busbar for heavy industry applications.',
+                details: 'Fire Resistant (IEC 60331), IP65 protection. Designed for demanding environments.',
+                imageId: 'cat-busbar',
+                url: '#',
+                attributes: ['Heavy Industry', 'Fire Resistant', 'IP65']
+            }
+        ]
+    },
+    {
+        group: 'Industry (Power Distribution)',
+        category: 'Zucchini MS (Medium Power)',
+        products: [
+            {
+                title: 'Zucchini MS',
+                description: 'Medium power busbar for decentralized distribution.',
+                details: 'Rating: 63A-160A. Flexible solution for medium power requirements.',
+                imageId: 'cat-busbar',
+                url: '#',
+                attributes: ['63A-160A', 'Decentralized']
+            }
+        ]
+    },
+    {
+        group: 'Building (Rising Mains)',
+        category: 'Zucchini MR (Medium Rating)',
+        products: [
+            {
+                title: 'Zucchini MR',
+                description: 'Vertical riser specific busbar with tap-offs.',
+                details: 'Rating: 160A-1000A. Perfect for rising mains in commercial buildings.',
+                imageId: 'cat-busbar',
+                url: '#',
+                attributes: ['160A-1000A', 'Vertical Riser', 'Tap-offs']
+            }
+        ]
+    },
+    {
+        group: 'Lighting Distribution',
+        category: 'LB Plus',
+        products: [
+            {
+                title: 'LB Plus',
+                description: 'Busbar system for lighting distribution with plug-in tap-offs.',
+                details: 'Rating: 25A-63A. Efficient power distribution for lighting systems.',
+                imageId: 'cat-busbar',
+                url: '#',
+                attributes: ['25A-63A', 'Lighting', 'Plug-in Tap-offs']
+            }
+        ]
+    },
+    {
+        group: 'Transformers',
+        category: 'Cast Resin Transformers',
+        products: [
+            {
+                title: 'Green T.HE Transformers',
+                description: 'High efficiency cast resin transformers.',
+                details: 'Rating: 160kVA - 16MVA. Eco-friendly and reliable power transformation.',
+                imageId: 'cat-switchgear',
+                url: '#',
+                attributes: ['160kVA - 16MVA', 'Cast Resin', 'Green T.HE']
             }
         ]
     },
@@ -400,9 +470,14 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     }
 
     const filteredCategories = productCategories.filter(category => {
-        if (activeSection === 'BBT') return category.category === 'BBT';
-        if (activeSection === 'TTA Panels') return category.category === 'TTA Panels';
-        return category.category !== 'BBT' && category.category !== 'TTA Panels';
+        const bbtGroups = ['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers'];
+        const ttaGroups = ['TTA Panels'];
+
+        if (activeSection === 'BBT') return bbtGroups.includes(category.group || '');
+        if (activeSection === 'TTA Panels') return ttaGroups.includes(category.group || '');
+
+        // Default to Components
+        return !bbtGroups.includes(category.group || '') && !ttaGroups.includes(category.group || '');
     });
 
     return (
@@ -465,8 +540,8 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
                     >
-                        {activeSection === 'Components' ? (
-                            // Grouped rendering for Components
+                        {activeSection === 'Components' || activeSection === 'BBT' ? (
+                            // Grouped rendering for Components and BBT
                             Object.entries(filteredCategories.reduce((acc, category) => {
                                 const group = category.group || 'Other';
                                 if (!acc[group]) acc[group] = [];

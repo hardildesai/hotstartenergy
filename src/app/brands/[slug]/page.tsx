@@ -13,8 +13,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BrandPage({ params }: { params: { slug: string } }) {
-  const brand = brands.find((b) => b.slug === params.slug);
+export default async function BrandPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const brand = brands.find((b) => b.slug === slug);
 
   if (!brand) {
     notFound();
