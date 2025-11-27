@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { productCategories } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { TravelCard } from '@/components/ui/card-7';
-import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { motion } from 'framer-motion';
 
 export function ProductCategoriesSection() {
   const router = useRouter();
@@ -39,7 +39,13 @@ export function ProductCategoriesSection() {
               (p) => p.id === category.imageId
             );
             return (
-              <ScrollReveal key={category.id} delay={index * 0.1} duration={0.8}>
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <TravelCard
                   imageUrl={image?.imageUrl || ''}
                   imageAlt={category.title}
@@ -51,7 +57,7 @@ export function ProductCategoriesSection() {
                   onBookNow={() => handleCardClick(category.id)}
                   aria-label={`View products in ${category.title}`}
                 />
-              </ScrollReveal>
+              </motion.div>
             );
           })}
         </div>

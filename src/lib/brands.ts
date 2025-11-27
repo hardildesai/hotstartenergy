@@ -56,15 +56,6 @@ export const brands: Brand[] = [
     categories: getCategoriesForBrand('Legrand', ['Busbar']),
   },
   {
-    id: 'socomec',
-    name: 'Socomec',
-    slug: 'socomec',
-    logo: "/socomecc-p-500.png",
-    short_description: 'Expert in low-voltage power switching, monitoring & protection.',
-    productCount: socomecProductCount,
-    categories: getCategoriesForBrand('Socomec', ['Metering']),
-  },
-  {
     id: 'kei-cables',
     name: 'KEI Cables',
     slug: 'kei-cables',
@@ -74,13 +65,13 @@ export const brands: Brand[] = [
     categories: getCategoriesForBrand('KEI Cables', ['Cables']),
   },
   {
-    id: 'havells',
-    name: 'Havells',
-    slug: 'havells',
-    logo: "/havells_logo.png",
-    short_description: 'A leading provider of power distribution and lighting solutions.',
-    productCount: getProductCount('Havells'),
-    categories: getCategoriesForBrand('Havells', ['Lighting']),
+    id: 'socomec',
+    name: 'Socomec',
+    slug: 'socomec',
+    logo: "/socomecc-p-500.png",
+    short_description: 'Expert in low-voltage power switching, monitoring & protection.',
+    productCount: socomecProductCount,
+    categories: getCategoriesForBrand('Socomec', ['Metering']),
   },
   {
     id: 'elmeasure',
@@ -90,6 +81,15 @@ export const brands: Brand[] = [
     short_description: 'Innovator in energy management and smart metering solutions.',
     productCount: getProductCount('Elmeasure'),
     categories: getCategoriesForBrand('Elmeasure', ['Metering']),
+  },
+  {
+    id: 'havells',
+    name: 'Havells',
+    slug: 'havells',
+    logo: "/havells_logo.png",
+    short_description: 'A leading provider of power distribution and lighting solutions.',
+    productCount: getProductCount('Havells'),
+    categories: getCategoriesForBrand('Havells', ['Lighting']),
   },
 ];
 

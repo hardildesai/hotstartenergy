@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { KeiCablesPage } from '@/components/brands/kei-cables-page';
 import { LegrandPage } from '@/components/brands/legrand-page';
 import { SocomecPage } from '@/components/brands/socomec-page';
+import { ElmeasurePage } from '@/components/brands/elmeasure-page';
 import { ComingSoon } from '@/components/ui/coming-soon';
 
 export function generateStaticParams() {
@@ -32,6 +33,11 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   // Special page for Socomec
   if (brand.slug === 'socomec') {
     return <SocomecPage brand={brand} />;
+  }
+
+  // Special page for Elmeasure
+  if (brand.slug === 'elmeasure') {
+    return <ElmeasurePage brand={brand} />;
   }
 
   // "Coming Soon" page for other brands

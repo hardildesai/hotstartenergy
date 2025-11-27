@@ -94,6 +94,7 @@ function GlassFilter() {
 }
 
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
 
 export default function RootLayout({
   children,
@@ -120,6 +121,7 @@ export default function RootLayout({
         <Toaster />
         <SonnerToaster richColors />
         <SpeedInsights />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

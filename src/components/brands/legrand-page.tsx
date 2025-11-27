@@ -10,426 +10,639 @@ import { CheckCircle, Zap, ExternalLink, Download, ArrowRight } from 'lucide-rea
 import React from 'react';
 import { ProductRevealCard } from '../ui/product-reveal-card';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
 } from "@/components/ui/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from '../ui/badge';
+import { BrandPageLayout } from './brand-page-layout';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const productCategories = [
+    // --- Industrial Switchgear ---
     {
-        category: 'Power',
+        group: 'Industrial Switchgear',
+        category: 'Air Circuit Breakers (ACB)',
         products: [
             {
-                title: 'DMX³ ACBs (Air Circuit Breaker)',
-                description: 'Optimized performance from 630A to 6300A with microprocessor-based protection.',
-                details: 'DMX3 ACBs from 630A to 6300A with trip free switches (fixed and draw out versions), microprocessor based protection unit & accessories, Rear terminals and transformation kit and auxiliaries and accessories.',
+                title: 'DMX³ (630A - 6300A)',
+                description: 'High-performance ACBs for efficient power distribution and protection.',
+                details: 'Frame Size: 3, Poles: 3P/4P, Breaking Capacity: 50kA - 100kA, Mounting: Fixed/Draw-out.',
                 imageId: 'prod-circuit-breaker',
                 url: 'https://www.legrand.co.in/products/power/air-circuit-breakers-acb/dmx',
+                attributes: ['Frame Size', 'Poles: 3P/4P', '50-100kA', 'Fixed/Draw-out']
             },
             {
-                title: 'DPX³ & DRX MCCBs (Moulded Case Circuit Breakers)',
-                description: 'Comprehensive range from 16A to 1250A with various breaking capacities and protection units.',
-                details: 'DRX MCCBs from 63A, 75A and 100A in TP and FP frame sizes with 10 KA breaking capacity.\nDPX3 MCCBs from 16A to 1250A in TP and FP frame sizes with 16 KA, 25 KA, 36 KA, 50 KA and 70 KA breaking capacities. Available in TMD, TMA, TMF, Microprocessor based versions with Earth Leakage Modules, Residual Current Relay and Coils.',
+                title: 'DMX SP (Standard)',
+                description: 'Standard range ACBs optimized for essential protection needs.',
+                details: 'Reliable protection for standard applications. Available in various frame sizes and breaking capacities.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Standard Range', 'Reliable Protection']
+            },
+            {
+                title: 'ACB Accessories',
+                description: 'Comprehensive range of accessories including coils and motors.',
+                details: 'Enhance ACB functionality with shunt trips, closing coils, undervoltage releases, and motor operators.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Coils', 'Motors', 'Auxiliaries']
+            }
+        ]
+    },
+    {
+        group: 'Industrial Switchgear',
+        category: 'Moulded Case Breakers (MCCB)',
+        products: [
+            {
+                title: 'DPX³ Electronic (Metering)',
+                description: 'Smart MCCBs with integrated metering and advanced protection.',
+                details: 'Rating: 16A - 1600A. Features built-in measurement of voltage, current, and power.',
                 imageId: 'prod-circuit-breaker',
                 url: 'https://www.legrand.co.in/products/power/moulded-case-circuit-breakers-mccb/dpx',
+                attributes: ['16-1600A', 'Integrated Metering', 'Electronic Trip Unit']
             },
             {
-                title: 'CTX³ Contactors and Mini Contactors',
-                description: 'From 6A to 800A with integrated auxiliary contacts for reliable switching.',
-                details: '• 6A to 800A in TP and FP frame sizes\n• Integrated auxiliary contacts with screw terminals',
+                title: 'DPX³ Thermal-Mag',
+                description: 'Robust thermal-magnetic MCCBs for reliable circuit protection.',
+                details: 'Adjustable thermal and magnetic settings. Suitable for distribution and motor protection.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Thermal-Magnetic', 'Adjustable Settings']
+            },
+            {
+                title: 'DRX (Fixed/Standard)',
+                description: 'Compact and economical MCCBs for standard applications.',
+                details: 'Fixed thermal and magnetic settings. Ideal for building and standard industrial applications.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Fixed Settings', 'Compact', 'Economical']
+            }
+        ]
+    },
+    {
+        group: 'Industrial Switchgear',
+        category: 'Motor Control & Protection',
+        products: [
+            {
+                title: 'CTX³ Contactors',
+                description: '3-pole and 4-pole contactors for motor control and switching.',
+                details: 'AC-3 Rating up to 800A. Wide range of coil voltages available.',
                 imageId: 'cat-switchgear',
                 url: 'https://www.legrand.co_in/products/power/contactors/ctx',
+                attributes: ['AC-3 Rating', 'Various Coil Voltages', '3P/4P']
             },
             {
-                title: 'RTX³ Thermal Overload Relays',
-                description: 'Thermal protection from 0.1A to 800A with integrated auxiliary contacts.',
-                details: '• 0.1A to 800A\n• Integrated auxiliary contacts with screw terminals\n• Connection plates for bars or lugs\n• DIN Rail mounting option',
+                title: 'RTX³ Overload Relays',
+                description: 'Thermal overload relays for precise motor protection.',
+                details: 'Direct mounting on CTX3 contactors. Class 10A tripping class.',
                 imageId: 'cat-switchgear',
                 url: 'https://www.legrand.co_in/products/power/thermal-overload-relays/rtx',
+                attributes: ['Thermal Protection', 'Direct Mounting']
             },
             {
-                title: 'Alpican Capacitors',
-                description: 'Compact, self-healing resin and gas-filled capacitors for power factor correction.',
-                details: '• ALPX³ resin filled Capacitors standard and heavy duty 440V, 480V & 525V\n• Alpican gas filled Capacitors heavy duty 440V\n• ALPX³ box type Capacitors standard and heavy duty 440V Reactors 7 % duty\n• Compact Design\n• Self healing metallized polypropylene film\n• Over pressure device for disconnection\n• Low energy losses\n• Resistance to high temperature',
+                title: 'MPX³ MPCB',
+                description: 'Motor Protection Circuit Breakers for switching and protection.',
+                details: 'Combines motor control, disconnect, and overload/short-circuit protection in one device.',
                 imageId: 'cat-switchgear',
-                url: 'https://www.legrand.co_in/products/power/capacitors/alpican',
-            },
+                url: '#',
+                attributes: ['Motor Protection', 'High Breaking Capacity']
+            }
+        ]
+    },
+    {
+        group: 'Industrial Switchgear',
+        category: 'Power Quality & Metering',
+        products: [
             {
-                title: 'PMX Meters',
-                description: 'Digital multifunction meters to track, manage, and enhance energy efficiency.',
-                details: 'PMX meters can track and manage energy consumption of your facility and by accurate monitoring, enhance their efficiencies. The digital meters are manufactured to the organization closer to an energy efficient future.',
+                title: 'PMX Panel Meters',
+                description: 'Digital multifunction meters and VAF meters for panel mounting.',
+                details: 'Measure and monitor electrical parameters with high accuracy. RS485 communication option.',
                 imageId: 'cat-meters',
                 url: 'https://www.legrand.co_in/products/power/measurement-monitoring-and-supervision/pmx-meters',
+                attributes: ['MFM', 'VAF', 'RS485']
             },
+            {
+                title: 'ALPX Capacitors',
+                description: 'Cylindrical and box-type capacitors for power factor correction.',
+                details: 'High-quality capacitors for improving system efficiency and reducing energy costs.',
+                imageId: 'cat-switchgear',
+                url: 'https://www.legrand.co_in/products/power/capacitors/alpican',
+                attributes: ['Cylindrical/Box', 'PFC', 'Various KVAR']
+            },
+            {
+                title: 'APFC Controllers',
+                description: 'Automatic Power Factor Correction controllers.',
+                details: 'Intelligent control of capacitor banks to maintain desired power factor.',
+                imageId: 'cat-switchgear',
+                url: '#',
+                attributes: ['Automatic Control', 'Digital Display']
+            }
+        ]
+    },
+
+    // --- Modular Protection (MCB-DB) ---
+    {
+        group: 'Modular Protection (MCB-DB)',
+        category: 'Modular Devices',
+        products: [
+            {
+                title: 'MCB DX³ (10kA+)',
+                description: 'High-performance MCBs for industrial and commercial applications.',
+                details: 'Breaking capacity 10kA and above. Available in B, C, and D curves.',
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co_in/products/protection/miniature-circuit-breakers-mcb/dx',
+                attributes: ['10kA+', 'B/C/D Curves', '1P-4P']
+            },
+            {
+                title: 'MCB RX³ (Resi 6kA)',
+                description: 'Reliable MCBs designed specifically for residential protection.',
+                details: '6kA breaking capacity. C curve protection for household circuits.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Residential', '6kA', 'C Curve']
+            },
+            {
+                title: 'RCCB / ELCB',
+                description: 'Residual Current Circuit Breakers for earth leakage protection.',
+                details: 'Sensitivity: 30mA, 100mA, 300mA. Protects against electric shock and fire hazards.',
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co_in/products/protection/residual-current-circuit-breakers-rccb/dx',
+                attributes: ['30mA/100mA/300mA', 'Earth Leakage']
+            },
+            {
+                title: 'RCBO (Combo)',
+                description: 'Combined MCB and RCCB for comprehensive circuit protection.',
+                details: 'Overload, short-circuit, and earth leakage protection in a single device.',
+                imageId: 'prod-circuit-breaker',
+                url: 'https://www.legrand.co_in/products/protection/rcbo-and-rcd-add-on-blocks/rcbo',
+                attributes: ['Combo Protection', 'Compact']
+            },
+            {
+                title: 'Isolators',
+                description: 'Switch disconnectors for safe circuit isolation.',
+                details: 'Used for isolating circuits during maintenance. Available in various pole configurations.',
+                imageId: 'prod-circuit-breaker',
+                url: '#',
+                attributes: ['Isolation', 'Safety']
+            }
+        ]
+    },
+    {
+        group: 'Modular Protection (MCB-DB)',
+        category: 'Distribution Boards',
+        products: [
+            {
+                title: 'Ekinox³ SPN DB',
+                description: 'Single Pole & Neutral distribution boards for residential use.',
+                details: 'Elegant design, easy installation. Available in various way configurations.',
+                imageId: 'prod-lv-panel',
+                url: 'https://www.legrand.co_in/products/distribution-boards/single-pole-and-neutral-spn-dbs/ekinoxe',
+                attributes: ['SPN', 'Residential', 'Metal/Glazed Door']
+            },
+            {
+                title: 'Ekinox³ TPN DB',
+                description: 'Three Pole & Neutral DBs for commercial and industrial distribution.',
+                details: 'Robust construction with ample wiring space. IP43/IP54 options.',
+                imageId: 'prod-lv-panel',
+                url: 'https://www.legrand.co_in/products/distribution-boards/three-pole-and-neutral-tpn-dbs/ekinoxe',
+                attributes: ['TPN', 'Commercial', 'IP43/IP54']
+            },
+            {
+                title: 'Ekinox³ VTPN DB',
+                description: 'Vertical TPN DBs for high-density distribution requirements.',
+                details: 'Vertical arrangement of MCBs for space saving and organized wiring.',
+                imageId: 'prod-lv-panel',
+                url: '#',
+                attributes: ['Vertical TPN', 'High Density']
+            },
+            {
+                title: 'Flexy DB',
+                description: 'Flexible distribution boards for versatile mounting and configuration.',
+                details: 'Adaptable design for various site conditions and requirements.',
+                imageId: 'prod-lv-panel',
+                url: '#',
+                attributes: ['Flexible', 'Versatile']
+            },
+            {
+                title: 'Metal/Plastic Enclosures',
+                description: 'Robust enclosures for standalone modular devices.',
+                details: 'Available in metal and plastic versions with different IP ratings.',
+                imageId: 'prod-lv-panel',
+                url: '#',
+                attributes: ['Enclosure', 'IP Rated']
+            }
+        ]
+    },
+    {
+        group: 'Modular Protection (MCB-DB)',
+        category: 'Industrial Plugs & Sockets',
+        products: [
+            {
+                title: 'P17 Tempra Pro',
+                description: 'Industrial plugs and sockets for demanding environments.',
+                details: 'IP44 (Splash-proof) and IP66/67 (Watertight) options. Amperage: 16A, 32A, 63A, 125A.',
+                imageId: 'prod-legrand-socket',
+                url: 'https://www.legrand.co_in/products/plugs-sockets/p17-tempra-pro',
+                attributes: ['IP44/IP66/IP67', '16A-125A', '2P+E to 3P+N+E']
+            },
+            {
+                title: 'Hypra Series',
+                description: 'Heavy-duty plugs and sockets for extreme conditions.',
+                details: 'Rubber and plastic material options. Designed for high impact resistance.',
+                imageId: 'prod-legrand-socket',
+                url: '#',
+                attributes: ['Heavy Duty', 'Rubber/Plastic']
+            }
+        ]
+    },
+
+    // --- Wiring Devices (Switches) ---
+    {
+        group: 'Wiring Devices (Switches)',
+        category: 'Eco / Economy',
+        products: [
+            {
+                title: 'Allzy (Matte / All-rounder)',
+                description: 'Versatile switches with a modern matte finish.',
+                details: 'The all-rounder switch range. Available in White and Matt Black.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/allzy',
+                attributes: ['Matte Finish', 'Economy', 'White/Black']
+            },
+            {
+                title: 'Britzy (Glossy / Budget)',
+                description: 'Glossy finish switches offering value and reliability.',
+                details: 'The "No Problem Switch". Simple, durable, and budget-friendly.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/britzy',
+                attributes: ['Glossy', 'Budget', 'Reliable']
+            }
+        ]
+    },
+    {
+        group: 'Wiring Devices (Switches)',
+        category: 'Mid-Segment',
+        products: [
+            {
+                title: 'Lyncus (Curved / Sleek)',
+                description: 'Sleek switches with a distinct curved design.',
+                details: 'Minimalist and beveled design. Available in White and Chic Grey.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/lyncus',
+                attributes: ['Curved', 'Sleek', 'White/Grey']
+            },
+            {
+                title: 'Mylinc (Standard Modular)',
+                description: 'Smart modular switches with screw-less finish.',
+                details: 'Alignment perfection and safety. A standard for modern homes.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/mylinc',
+                attributes: ['Modular', 'Screw-less', 'Standard']
+            }
+        ]
+    },
+    {
+        group: 'Wiring Devices (Switches)',
+        category: 'High-End / Premium',
+        products: [
+            {
+                title: 'Arteor (Luxury / Materials)',
+                description: 'Luxury switches with premium materials and finishes.',
+                details: 'Available in wood, leather, mirror, and metal finishes. Round and square shapes.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/arteor',
+                attributes: ['Luxury', 'Premium Materials', 'Round/Square']
+            },
+            {
+                title: 'Myrius NextGen (Patterned)',
+                description: 'Designer switches with unique patterns and motifs.',
+                details: 'IMD technology for long-lasting patterns. Anti-bacterial options available.',
+                imageId: 'prod-legrand-switch',
+                url: 'https://www.legrand.co_in/products/wiring-accessories/myrius',
+                attributes: ['Patterned', 'Motifs', 'Anti-bacterial']
+            }
+        ]
+    },
+    {
+        group: 'Wiring Devices (Switches)',
+        category: 'IoT / Smart Home',
+        products: [
+            {
+                title: 'Living Now (Full Touch / Netatmo)',
+                description: 'Revolutionary full-touch switches with smart connectivity.',
+                details: 'Connected functions for light, shutter, and power control. Works with Netatmo.',
+                imageId: 'prod-legrand-switch',
+                url: '#',
+                attributes: ['Full Touch', 'IoT', 'Netatmo', 'Smart Home']
+            }
+        ]
+    },
+
+    // --- Existing Sections ---
+    {
+        group: 'BBT',
+        category: 'BBT',
+        products: [
             {
                 title: 'Zucchini™ Busbar Trunking System',
                 description: 'Advanced solution for distributing power from 25A to 5000A in any building.',
                 details: 'Most advanced solution for distributing Low-Medium-Large Power within a building in order to supply the power for the operation of the Light Fittings in Warehouses, Exhibition Halls and wherever speed of installation is required. Available from 25A to 5000A with Electrolytic Copper & Galvanized Aluminum, comes in Air Insulated and Sandwiched with IP 55 protection.',
                 imageId: 'cat-busbar',
                 url: 'https://www.legrand.co_in/products/busbar-trunking-system/zucchini',
+                attributes: ['25A-5000A', 'Copper/Aluminium', 'IP55']
             }
         ]
     },
     {
-        category: 'Protection',
+        group: 'TTA Panels',
+        category: 'TTA Panels',
         products: [
             {
-                title: 'DX³ MCBs (Miniature Circuit Breakers)',
-                description: '0.5A to 125A capacities with color-coded indication and biconnected terminals.',
-                details: '• Integrated label holder\n• Color coded On/Off indication on dolly\n• Biconnected lower terminals\n• IP 20 protected terminals\n• 0.5A to 125A Capacities\n• SP, SPN, DP, TP, TPN and FP frame sizes',
-                imageId: 'prod-circuit-breaker',
-                url: 'https://www.legrand.co_in/products/protection/miniature-circuit-breakers-mcb/dx',
-            },
-            {
-                title: 'DX³ RCCBs (Residual Current Circuit Breakers)',
-                description: 'Ensures protection against earth leakage with various sensitivities.',
-                details: '• Integrated label holder\n• Color coded on/off indication on dolly\n• IP protected terminal\n• 25A, 40A & 63A Capacity\n• DP & FP frame sizes\n• 30, 100 and 30 mA breaking capacities',
-                imageId: 'prod-circuit-breaker',
-                url: 'https://www.legrand.co_in/products/protection/residual-current-circuit-breakers-rccb/dx',
-            },
-            {
-                title: 'RCBO & RCD Blocks',
-                description: 'Combined MCB/RCCB for comprehensive protection against overload, short-circuits, and earth leakage.',
-                details: '• Integrated label holder\n• Color coded on/off indication on dolly\n• Front face indicator for earth leakage fault\n• IP 20 protected terminals.\n• 6-63A Capacities\n• 125A Capacity with RCD block\n• DP and FP frame sizes\n• 30, 100 and 300 mA breaking capacities',
-                imageId: 'prod-circuit-breaker',
-                url: 'https://www.legrand.co_in/products/protection/rcbo-and-rcd-add-on-blocks/rcbo',
-            },
-            {
-                title: 'Time Switches',
-                description: 'Digital and analog time switches for precise, programmable control of circuits.',
-                details: '• Programming with precision to the second\n• Switch times visibility\n• Digital and Analog\n• Daily and weekly programmable',
-                imageId: 'cat-switchgear',
-                url: 'https://www.legrand.co_in/products/protection/time-switches',
-            },
-            {
-                title: 'Surge Protection Devices (SPDs)',
-                description: 'Protection for main distribution boards against lightning and overvoltage.',
-                details: 'Conforms to EN/IEC 61643-11\n• T1+T2, T1 and T2 Frame sizes\n• SP, SPN, DP, TP, TPN and FP frame sizes\n• Status indicator and remote monitoring of information\nProtection for lightening and over voltage',
-                imageId: 'cat-switchgear',
-                url: 'https://www.legrand.co_in/products/protection/surge-protection-devices-spd',
-            }
-        ]
-    },
-    {
-        category: 'Distribution Boards',
-        products: [
-            {
-                title: 'Ekinoxe³ SPN Distribution Boards',
-                description: 'Elegant and safe DBs for flush or surface mounting, from 4 to 20 ways.',
-                details: 'Built as per IEC 61439-3\nSuitable for Flush Mounting and Surface Mounting With 100A Copper Busbar\nWith Neutral bar, Earthbar and Cable ties for Cable management\nFully shrouded Neutral bars\nPrefitted masking sheet\nReversible Door for IP 43 & IP 54 DBs\nIP30, IP43 & IP54 degree of Protection\nIK 08/IK 09 protection against mechanical impact\nOptimum Protection, elegant design\nAvailable in 4, 8, 12, 16, 18 and 20 Ways\nAvailable in Single Door, Double Door – Metal and Acrylic\nColor – Ivory RAL-9016',
+                title: 'XL³ Low Voltage Panels',
+                description: 'Type Tested Assemblies (TTA) for safe and reliable power distribution.',
+                details: 'Fully tested switchboard systems ensuring maximum safety and continuity of service. Compliant with IEC 61439 standards.',
                 imageId: 'prod-lv-panel',
-                url: 'https://www.legrand.co_in/products/distribution-boards/single-pole-and-neutral-spn-dbs/ekinoxe',
-            },
-            {
-                title: 'Ekinoxe³ TPN & Phase Selector DBs',
-                description: 'Fully insulated busbars and reversible doors for industrial and commercial use.',
-                details: 'Built as per IEC 61439-3\nSuitable for Flush Mounting and Surface Mounting\nWith 100A Copper Busbar for each phase\nWith Neutral bar, Earthbar and Cable ties for Cable management\nFully insulated busbar and shrouded Neutral bars\nPrefitted masking sheet\nReversible Door for IP 43 & IP 54 DB\'s\nSupplied with wire set\nIP30, IP43 & IP54 degree of Protection\nIK 08/IK 09 protection against mechanical impact\nOptimum Protection, elegant design\nAvailable in 4, 6, 8 and 12 Ways\nAvailable in Single Door, Double Door – Metal and Acrylic\nColor – Ivory RAL-9016.',
-                imageId: 'prod-lv-panel',
-                url: 'https://www.legrand.co_in/products/distribution-boards/three-pole-and-neutral-tpn-dbs/ekinoxe',
-            },
-            {
-                title: 'Ekinox Metra Plug & Socket DBs',
-                description: 'Suitable for dedicated protection of appliances like ACs and geysers.',
-                details: 'Built as per IEC 61439-3\nSuitable for Flush Mounting and Surface Mounting\nSuitable for protection of appliances like AC, Geyser, etc.\nSupplied with Neutral Links\nProvision for mounting modular devices\nRange: 10A, 20A and 32A\nAvailable in SP, DP, TP and FP frame sizes',
-                imageId: 'prod-lv-panel',
-                url: 'https://www.legrand.co_in/products/distribution-boards/plug-socket-dbs/ekinox-metra',
-            }
-        ]
-    },
-    {
-        category: 'Wiring Accessories',
-        products: [
-            {
-                title: 'Arteor™',
-                description: 'A versatile range with minimalist design, inspired by modern technology. Available in round & square shapes with a rich choice of cover plates.',
-                details: 'Arteor offers a wide range of ergonomics and finishes to satisfy the most demanding customers, its minimalist and beveled design is inspired by the most modern technological devices such as flat screens or digital photo frames, creating the impression that the device is floating on the wall. Arteor suits any requirement in terms of design and function for every kind of building from residential to commercial, to the entrance of the hotel room to the bedside table. It is available in two shapes of rockers – Round & Square and in three colors – White, Magnesium & Champagne and with a Rich Choice of Color Cover Plates both in Square and Round with the ranges with following ranges:\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, USB, Information Outlets, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Keycode, Time Switch, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Micro Switches, Splitters & Access Points, Square & Round Cover Plates, Plastic Surface Boxes, Metal Flush Boxes, IP 55 Plexo Boxes & Accessories.',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/arteor',
-            },
-            {
-                title: 'Myrius Regular™',
-                description: 'Simple, sleek, and smooth, Myrius offers a classic black and white look with anti-bacterial properties. Ideal for homes, offices, and healthcare environments.',
-                details: 'Simple, Sleek & Smooth, Myrius with its curved edges gives it a distinct and appealing look. Moreover, its minimalistic design makes it look absolutely stunning and desirable. But what makes Myrius truly beautiful is a classic black and white shade that offers an aura of comfort and timelessness. Myrius is also comes in ANTI-BACTERIAL - Ag+ions eliminates the proliferation of bacteria on contact and the smooth design facilitates in reducing dust accumulation, Ideal for agri-food premises and health-care environments. Myrius is available in Two Colors – White & Black Mechanisms with following ranges:\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, Information Outlets, USB, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Micro Switches, Splitters & Access Points, Cover Plates, Plastic Surface Boxes, Metal Flush Boxes & Antibacterial Switches + Accessories.',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/myrius-regular',
-            },
-            {
-                title: 'Myrius™',
-                description: 'Inspired by you, crafted by us. The Myrius range combines technology and design aesthetics with myriad patterns, including the Motifs series of plates and switches.',
-                details: 'Designed with your convenience at the heart, we\'ve combined the best of technology and design aesthetics to create the Myrius range. Explore myriad patterns and designs crafted meticulously, in the Motifs series of plates and switches. Myrius is also comes in ANTI-BACTERIAL - Ag+ions eliminates the proliferation of bacteria on contact and the smooth design facilitates in reducing dust accumulation, Ideal for agri-food premises and health-care environments. Myrius is available in Ten different finishes – Luminar, Sonic Silver, Trinity, Interlude, Stellar, Sonic Silver, Pearl Champagne, Dark Fade, Ice White, Ice Black, Classic White and Two Mechanisms White and Black with following ranges:\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, Information Outlets, USB, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Micro Switches, Splitters & Access Points, Cover Plates, Plastic Surface Boxes, Metal Flush Boxes..',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/myrius',
-            },
-            {
-                title: 'Mylinc™',
-                description: 'Reveals smartness in modular switches with a screw-less finish and alignment perfection for ultimate convenience.',
-                details: 'Mylinc reveals smartness in modular switches. The Mylinc range incorporates elements of smart design in the minutest of details, like screw-less finish, alignment perfection and various aspects of safety, reliability and convenience. Mylinc Switches available in White color and Plastic Cover Plates available in White, Pearl, Grey, Bronze & Wood finish with following ranges:\n\nSwitches, Dimmers, Energy Sockets, Power Units, TV, RJ11 Telephone Sockets & Accessories, Modular Plates - White & color and surrounds, Flush & Surface Boxes.',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/mylinc',
-            },
-            {
-                title: 'Lyncus™',
-                description: 'Modern, minimalist, and beveled design that suits any requirement from residential to commercial buildings.',
-                details: 'Lyncus offers a wide range of ergonomics and finishes to satisfy the most demanding customers, its minimalist and beveled design is inspired by the most modern technological devices such as flat screens or digital photo frames, creating the impression that the device is floating on the wall. Lyncus suits any requirement in terms of design and function for every kind of building from residential to commercial, to the entrance of the hotel room to the bedside table. It is available in two colors – White & Chic Grey and with a Rich Choice of Color Cover Plates.\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, Information Outlets, USB, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Micro Switches, Splitters & Access Points, Cover Plates, Plastic Surface Boxes, Metal Flush Boxes..',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/lyncus',
-            },
-            {
-                title: 'Allzy™',
-                description: 'The all-rounder switch with a wide range of ergonomics and finishes to satisfy the most demanding customers.',
-                details: 'Allzy offers a wide range of ergonomics and finishes to satisfy the most demanding customers, its minimalist and beveled design is inspired by the most modern technological devices such as flat screens or digital photo frames, creating the impression that the device is floating on the wall. Allzy suits any requirement in terms of design and function for every kind of building from residential to commercial, to the entrance of the hotel room to the bedside table. It is available in two colors – White & Matt Black and with a Rich Choice of Color Cover Plates.\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, Information Outlets, USB, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Micro Switches, Splitters & Access Points, Cover Plates, Plastic Surface Boxes, Metal Flush Boxes..',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/allzy',
-            },
-            {
-                title: 'Britzy™',
-                description: 'The "No Problem Switch" that is versatile and suits any requirement in terms of design and function.',
-                details: 'Britzy offers a wide range of ergonomics and finishes to satisfy the most demanding customers, its minimalist and beveled design is inspired by the most modern technological devices such as flat screens or digital photo frames, creating the impression that the device is floating on the wall. Britzy suits any requirement in terms of design and function for every kind of building from residential to commercial, to the entrance of the hotel room to the bedside table. It is available in One color– White and with a Rich Choice of Color Cover Plates.\n\nSwitches, Push Buttons & Accessories, Dimmers, Fan Regulators & Indian Standard Sockets, Information Outlets, TV Sockets, Skirting Light and Power Strips, Hotel DND & MMR, Keycard, Shaver Socket, Infrared Sensors, Clockcon, Keycode, Time Switch, Audio-Video Sockets, Gas & Flood detector and accessories, Electronic Dimmers, Access Points, Cover Plates, Plastic Surface Boxes, Metal Flush Boxes & Accessories.',
-                imageId: 'prod-legrand-switch',
-                url: 'https://www.legrand.co_in/products/wiring-accessories/britzy',
-            }
-        ]
-    },
-    {
-        category: 'Cable Management',
-        products: [
-            {
-                title: 'CABLOFIL® Wire Mesh Cable Trays',
-                description: 'Increase contractor productivity and reduce installation costs. Cablofil creates neat and orderly pathways, ideal for open installations. Available in various materials and sizes.',
-                details: 'Increase Contractor productivity; reduce installation costs- with Cablofil. Be it above the Ceiling, on the wall, or under the floor, our components make any installation a snap. Creates neat and orderly pathways, ideal for open installations.\nAvailable in Electro-zinc Plated, Hot Dip Galvanized and Stainless Steel material\n50 x 54 mm, 100 x 54 mm, 150 x 54 mm, 200 x 54 mm, 300 x 54 mm, 400 x 54 mm, 500 x 54 mm, 600 x 54 mm\n50 x 105 mm, 100 x 105 mm, 150 x 105 mm, 200 x 105 mm, 300 x 105 mm, 400 x 105 mm, 500 x 105 mm, 600 x 105 mm\nVDI Structured Cabling\nLCS2, Cat6A, 6, 5e Patch Panels, Cables & Cords, Zone Distribution Boxes, RJ 45 Sockets, LCS2, Modular Panels, Doubler Sockets, Telephone Panels, Wi-Fi Solution, LCS2 Fibre Optic, Audio & Video Sockets, HD 15 Amplifiers, Enclosures& Cabinets',
-                imageId: 'cat-cables',
-                url: 'https://www.legrand.co_in/products/cable-management/wire-mesh-cable-trays/cablofil',
-            },
-            {
-                title: 'Pop-Up Boxes',
-                description: 'Equipped with a "push and slide" locking system to avoid accidental opening. Designed to be equipped with Arteor/Myrius socket outlets, available in multiple configurations and elegant finishes.',
-                details: 'Equipped with "push and slide" locking system to avoid accidental opening by feet\nTo be equipped with Arteor/Myrius socket outlets\nFlush-mounting boxes for concrete floors or the kits for raised access floors\nAvailable in 3M, 4M, 6M and 8M configurations\nVariables: Aluminum Matt Finish, Brushed Brass, Brushed Stainless Steel finish, Matt Black, Glossy White.',
-                imageId: 'prod-legrand-socket',
-                url: 'https://www.legrand.co_in/products/cable-management/pop-up-boxes',
-            },
-            {
-                title: 'Floor Boxes',
-                description: 'Durable solutions for raised floors, screed, tiles, and marbles. Available in various sizes with options for heavy-duty applications and accessories for fitting wiring accessories.',
-                details: 'For raised floor, screed floor, tiles and marbles\nSize: 225 x 225 mm and 265 x 265 mm Boxes\nHeavy duty floor applications also available\nAccessories for fitting Wiring Accessories.',
-                imageId: 'prod-legrand-socket',
-                url: 'https://www.legrand.co_in/products/cable-management/floor-boxes',
-            },
-            {
-                title: 'Raceways and Junction Boxes',
-                description: 'PVC and Galvanized sheet raceways confirming to EN 50 085-2-2, compatible with Cat.6 cabling systems. Supplied in various sizes with matching junction boxes.',
-                details: 'Confirms to EN 50 085 - 2 - 2\nRaceways are made from PVC and Galvanized sheet.\nCompatible with Cat.6 structured cabling system.\nSizes: 50, 75, 100, 150, 225 and 300 mm width – 25 mm and 38 mm height\nSupplied in 2.44m length size\nJunction Boxes size:\n150 x 150 x 65-90 mm, 225 x 225 x 65-90 mm, 300 x 300 x 65-90 mm, 400 x 400 x 65-90 mm\nSupplied with Base and Cover Plate',
-                imageId: 'cat-busbar',
-                url: 'https://www.legrand.co_in/products/cable-management/raceways-and-junction-boxes',
-            },
-            {
-                title: 'DLP U-PVC & Aluminium Trunking Systems',
-                description: 'Flexible trunking systems with base, covers, partitions, and finishing accessories. Suitable for mounting Arteor wiring accessories in a variety of sizes.',
-                details: 'DLP U-PVC Trunking System\nBase, Covers, Partitions, Finishing accessories and mounting wiring accessories\nSuitable for mounting Arteor Wiring Accessories\nSizes: 32 x 12.5 mm, 32 x 16 mm, 32 x 20 mm, 80 x 50 mm, 100 x 50 mm, 105 x 50 mm, 150 x 50 mm, 190 x 50 mm\n\nDLP Aluminium Trunking System\nBase, Covers, Partitions, Finishing accessories and mounting wiring accessories\nSuitable for mounting Arteor Wiring Accessories\nSizes: 100 x 50 mm, 105 x 50 mm, 150 x 50 mm, 190 x 50 mm',
-                imageId: 'cat-busbar',
-                url: 'https://www.legrand.co_in/products/cable-management/trunking-and-branching/dlp-u-pvc-trunking',
-            }
-        ]
-    },
-     {
-        category: 'Plugs & Socket',
-        products: [
-            {
-                title: 'P-17 Tempra Plug, Sockets',
-                description: 'Built as per IEC 61439-3, these include surface mounting sockets, panel mounted angle sockets, mobile sockets, and straight plugs. Available from 16A to 125A in various frame sizes with IP44 and IP66/67 protection.',
-                details: 'Built as per IEC 61439-3\nSurface mounting sockets\nPanel mounted angle sockets\nMobile sockets\nStraight plugs\nRange: 16A, 32A, 63A and 125A\nAvailable in DP, TP and FP frame sizes\nIP44 and IP66/67 degree of Protection',
-                imageId: 'prod-legrand-socket',
-                url: 'https://www.legrand.co_in/products/plugs-sockets/p17-tempra-pro',
+                url: '#',
+                attributes: ['TTA', 'IEC 61439', 'Safe']
             }
         ]
     }
 ];
 
-type Product = typeof productCategories[0]['products'][0] & { category: string };
+type Product = typeof productCategories[0]['products'][0] & { category: string, attributes?: string[] };
 
 const whyLegrand = [
-  'Global specialist in electrical and digital building infrastructures.',
-  'Pioneer of Miniature Circuit Breakers in India.',
-  'Solutions that offer superior technology and high aesthetic value.',
-  'Wide range of products for residential, commercial, and industrial sectors.',
+    'Global specialist in electrical and digital building infrastructures.',
+    'Pioneer of Miniature Circuit Breakers in India.',
+    'Solutions that offer superior technology and high aesthetic value.',
+    'Wide range of products for residential, commercial, and industrial sectors.',
 ];
 
 export function LegrandPage({ brand }: { brand: Brand }) {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'legrand-hero');
-  const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
+    const heroImage = PlaceHolderImages.find(p => p.id === 'legrand-hero');
+    const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
+    const [activeSection, setActiveSection] = React.useState<'Components' | 'BBT' | 'TTA Panels'>('Components');
 
-  const handleEnquire = () => {
-    window.location.href = '/contact';
-  };
-  
-  const handleViewDetails = (product: Product) => {
-    setSelectedProduct(product);
-  };
+    const handleEnquire = () => {
+        window.location.href = '/contact';
+    };
 
-  const getProductImage = (product: Product) => {
-      return PlaceHolderImages.find(p => p.id === product.imageId)?.imageUrl || '/placeholder.svg'
-  }
+    const handleViewDetails = (product: Product) => {
+        setSelectedProduct(product);
+    };
 
-  return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[500px] w-full flex items-center justify-center text-center text-white">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt="Legrand smart home solutions"
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 container px-4 flex flex-col items-center">
-          <Image src={brand.logo} alt={`${brand.name} logo`} width={160} height={60} className="h-20 w-auto mb-6 dark:invert" />
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Excellence in Innovation, Aesthetics, and Engineering
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-white/80">
-            Global specialist in electrical and digital building infrastructures, offering innovative, high-quality solutions for all sectors.
-          </p>
-        </div>
-      </section>
+    const getProductImage = (product: Product) => {
+        return PlaceHolderImages.find(p => p.id === product.imageId)?.imageUrl || '/placeholder.svg'
+    }
 
-      {/* Intro Section */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            The Legrand Experience Center
-          </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            We invite you to visit our Legrand Experience Center to witness the best of Legrand. This helps you choose the right products by experiencing them firsthand, appreciating the innovation, aesthetics, and engineering that define the Legrand Group.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="outline">
-                <Link href="/contact">Contact Us to Visit</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-      
-      {/* Product Portfolio */}
-      <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
-        {productCategories.map((category, categoryIndex) => (
-            <section key={categoryIndex} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-gray-50/50 dark:bg-gray-900/20' : 'bg-background'}`}>
-                <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category.category}</h2>
-                </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                    {category.products.map((product, productIndex) => {
-                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
-                        
-                        return (
-                           <ProductRevealCard
-                                key={productIndex}
-                                name={product.title}
-                                image={image?.imageUrl}
-                                description={product.description}
-                                category={category.category}
-                                onAdd={handleEnquire}
-                                onViewDetails={() => handleViewDetails({...product, category: category.category})}
-                                className="w-full h-full"
-                           />
-                        )
-                    })}
-                </div>
+    const filteredCategories = productCategories.filter(category => {
+        if (activeSection === 'BBT') return category.category === 'BBT';
+        if (activeSection === 'TTA Panels') return category.category === 'TTA Panels';
+        return category.category !== 'BBT' && category.category !== 'TTA Panels';
+    });
+
+    return (
+        <BrandPageLayout
+            brand={{
+                name: "Excellence in Innovation, Aesthetics, and Engineering",
+                logo: brand.logo,
+                description: "Global specialist in electrical and digital building infrastructures, offering innovative, high-quality solutions for all sectors."
+            }}
+            heroImage={heroImage}
+        >
+            {/* Intro Section */}
+            <section className="py-16 md:py-24 bg-background">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+                        The Legrand Experience Center
+                    </h2>
+                    <p className="max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed mb-8">
+                        We invite you to visit our Legrand Experience Center to witness the best of Legrand. This helps you choose the right products by experiencing them firsthand, appreciating the innovation, aesthetics, and engineering that define the Legrand Group.
+                    </p>
+                    <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white transition-colors">
+                        <Link href="/contact">Contact Us to Visit</Link>
+                    </Button>
                 </div>
             </section>
-        ))}
 
-        <DialogContent 
-            className="sm:max-w-4xl bg-background p-0"
-            onCloseAutoFocus={(e) => e.preventDefault()}
-        >
-          {selectedProduct && (
-            <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="relative h-64 md:h-full">
-                     <Image
-                        src={getProductImage(selectedProduct)}
-                        alt={selectedProduct.title}
-                        fill
-                        className="object-cover rounded-l-lg"
-                    />
-                </div>
-                <div className="p-8 flex flex-col">
-                    <Badge variant="secondary" className="w-fit">{selectedProduct.category}</Badge>
-                    <h2 className="text-2xl font-bold mt-2">{selectedProduct.title}</h2>
-                    <p className="text-muted-foreground mt-2 text-sm">{selectedProduct.description}</p>
-                    
-                    <div className="flex gap-4 my-6">
-                        <Button variant="outline"><Download className="w-4 h-4 mr-2" /> Download PDF</Button>
-                        <Button asChild>
-                            <Link href="/quote">Get a Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
-                        </Button>
+            {/* Filter Section */}
+            <section className="py-8 bg-background sticky top-[64px] z-30 border-b backdrop-blur-md bg-background/80">
+                <div className="container mx-auto px-4 flex justify-center gap-4">
+                    <div className="flex p-1 bg-secondary/30 rounded-xl">
+                        {(['Components', 'BBT', 'TTA Panels'] as const).map((section) => (
+                            <button
+                                key={section}
+                                onClick={() => setActiveSection(section)}
+                                className={`relative px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${activeSection === section ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+                                    }`}
+                            >
+                                {activeSection === section && (
+                                    <motion.div
+                                        layoutId="activeSection"
+                                        className="absolute inset-0 bg-primary rounded-lg shadow-sm"
+                                        initial={false}
+                                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                                    />
+                                )}
+                                <span className="relative z-10">{section}</span>
+                            </button>
+                        ))}
                     </div>
-
-                    <Tabs defaultValue="description" className="w-full flex-grow">
-                        <TabsList>
-                            <TabsTrigger value="description">Description</TabsTrigger>
-                            <TabsTrigger value="specifications">Specifications</TabsTrigger>
-                        </TabsList>
-                        <TabsContent value="description" className="text-sm text-foreground/80 mt-4 h-48 overflow-y-auto">
-                           {selectedProduct.details}
-                        </TabsContent>
-                        <TabsContent value="specifications" className="text-sm text-foreground/80 mt-4 h-48 overflow-y-auto">
-                           {selectedProduct.details}
-                        </TabsContent>
-                    </Tabs>
                 </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+            </section>
+
+            {/* Product Portfolio */}
+            <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeSection}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        {activeSection === 'Components' ? (
+                            // Grouped rendering for Components
+                            Object.entries(filteredCategories.reduce((acc, category) => {
+                                const group = category.group || 'Other';
+                                if (!acc[group]) acc[group] = [];
+                                acc[group].push(category);
+                                return acc;
+                            }, {} as Record<string, typeof filteredCategories>)).map(([group, categories], groupIndex) => (
+                                <div key={group} className="mb-16">
+                                    <div className="container mx-auto px-4 mb-8">
+                                        <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
+                                    </div>
+                                    {categories.map((category, categoryIndex) => (
+                                        <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
+                                            <div className="container mx-auto px-4">
+                                                <div className="text-center mb-10">
+                                                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
+                                                </div>
+                                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                                    {category.products.map((product, productIndex) => {
+                                                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
+
+                                                        return (
+                                                            <motion.div
+                                                                key={product.title}
+                                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                                animate={{ opacity: 1, scale: 1 }}
+                                                                transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                                className="h-full"
+                                                            >
+                                                                <ProductRevealCard
+                                                                    name={product.title}
+                                                                    image={image?.imageUrl}
+                                                                    description={product.description}
+                                                                    category={category.category}
+                                                                    onAdd={handleEnquire}
+                                                                    onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                                    className="w-full h-full"
+                                                                />
+                                                            </motion.div>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </section>
+                                    ))}
+                                </div>
+                            ))
+                        ) : (
+                            // Standard rendering for BBT and TTA Panels
+                            filteredCategories.map((category, categoryIndex) => (
+                                <section key={category.category} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-secondary/30' : 'bg-background'}`}>
+                                    <div className="container mx-auto px-4">
+                                        <div className="text-center mb-16">
+                                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight inline-block border-b-4 border-primary pb-2">{category.category}</h2>
+                                        </div>
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                            {category.products.map((product, productIndex) => {
+                                                const image = PlaceHolderImages.find(p => p.id === product.imageId);
+
+                                                return (
+                                                    <motion.div
+                                                        key={product.title}
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                        className="h-full"
+                                                    >
+                                                        <ProductRevealCard
+                                                            name={product.title}
+                                                            image={image?.imageUrl}
+                                                            description={product.description}
+                                                            category={category.category}
+                                                            onAdd={handleEnquire}
+                                                            onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                            className="w-full h-full"
+                                                        />
+                                                    </motion.div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                </section>
+                            ))
+                        )}
+                    </motion.div>
+                </AnimatePresence>
+
+                <DialogContent
+                    className="sm:max-w-4xl bg-background p-0 overflow-hidden"
+                    onCloseAutoFocus={(e) => e.preventDefault()}
+                >
+                    {selectedProduct && (
+                        <div className="grid grid-cols-1 md:grid-cols-2">
+                            <div className="relative h-64 md:h-full bg-muted">
+                                <Image
+                                    src={getProductImage(selectedProduct)}
+                                    alt={selectedProduct.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="p-8 flex flex-col h-full">
+                                <Badge variant="secondary" className="w-fit mb-4">{selectedProduct.category}</Badge>
+                                <h2 className="text-2xl font-bold mb-2">{selectedProduct.title}</h2>
+                                <p className="text-muted-foreground mb-6 text-sm flex-grow">{selectedProduct.description}</p>
+
+                                {selectedProduct.attributes && (
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                        {selectedProduct.attributes.map((attr, i) => (
+                                            <Badge key={i} variant="outline" className="text-xs">{attr}</Badge>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <div className="flex gap-4 mb-6">
+                                    <Button variant="outline" className="flex-1"><Download className="w-4 h-4 mr-2" /> Datasheet</Button>
+                                    <Button asChild className="flex-1">
+                                        <Link href="/quote">Get Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
+                                    </Button>
+                                </div>
+
+                                <Tabs defaultValue="description" className="w-full">
+                                    <TabsList className="w-full grid grid-cols-2">
+                                        <TabsTrigger value="description">Description</TabsTrigger>
+                                        <TabsTrigger value="specifications">Specs</TabsTrigger>
+                                    </TabsList>
+                                    <TabsContent value="description" className="text-sm text-foreground/80 mt-4 h-40 overflow-y-auto pr-2 custom-scrollbar">
+                                        {selectedProduct.details}
+                                    </TabsContent>
+                                    <TabsContent value="specifications" className="text-sm text-foreground/80 mt-4 h-40 overflow-y-auto pr-2 custom-scrollbar">
+                                        {selectedProduct.details}
+                                    </TabsContent>
+                                </Tabs>
+                            </div>
+                        </div>
+                    )}
+                </DialogContent>
+            </Dialog>
 
 
-      {/* Why Choose Legrand */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Why Choose Legrand?
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                    For decades, Legrand has been at the forefront of the electrical industry. Their enriched understanding of customer needs helps them design products that deliver superior technology and meet high aesthetic standards.
-                </p>
-                <ul className="space-y-3 pt-2 inline-grid sm:grid-cols-2 gap-x-12 gap-y-3 text-left">
-                {whyLegrand.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                    </li>
-                ))}
-                </ul>
-            </div>
-        </div>
-      </section>
+            {/* Why Choose Legrand */}
+            <section className="py-16 md:py-24 bg-background">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-4xl mx-auto text-center space-y-8">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                            Why Choose Legrand?
+                        </h2>
+                        <p className="text-muted-foreground leading-relaxed text-lg">
+                            For decades, Legrand has been at the forefront of the electrical industry. Their enriched understanding of customer needs helps them design products that deliver superior technology and meet high aesthetic standards.
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-6 text-left pt-4">
+                            {whyLegrand.map((item, index) => (
+                                <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-secondary/20 border border-secondary/50">
+                                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                                    <span className="text-foreground/90 font-medium">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      {/* CTA Section */}
-        <section className="py-16 md:py-24 text-center bg-gray-50/50 dark:bg-gray-900/20 border-t">
-            <div className="container mx-auto px-4">
-                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                    Get a Quote for Legrand Products
-                </h2>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-                    As authorized partners, we provide competitive pricing and expert support for the entire Legrand portfolio. Contact us for your project requirements.
-                </p>
-                 <div className="mt-8">
-                    <Button asChild size="lg">
+            {/* CTA Section */}
+            <section className="py-20 md:py-32 text-center bg-primary text-primary-foreground relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+                <div className="container mx-auto px-4 relative z-10">
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                        Get a Quote for Legrand Products
+                    </h2>
+                    <p className="max-w-2xl mx-auto text-xl text-primary-foreground/80 mb-10">
+                        As authorized partners, we provide competitive pricing and expert support for the entire Legrand portfolio. Contact us for your project requirements.
+                    </p>
+                    <Button asChild size="lg" variant="secondary" className="text-primary font-bold text-lg px-8 py-6 h-auto shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
                         <Link href="/quote?product=legrand">Request a Quote</Link>
                     </Button>
                 </div>
-            </div>
-        </section>
-
-    </div>
-  );
+            </section>
+        </BrandPageLayout>
+    );
 }
