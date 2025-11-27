@@ -465,20 +465,46 @@ export function LegrandPage({ brand }: { brand: Brand }) {
         setSelectedProduct(product);
     };
 
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['components', 'bbt', 'tta-panels'];
+            // Trigger point: when the section hits the top third of the viewport
+            const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+            const sectionNameMap: Record<string, 'Components' | 'BBT' | 'TTA Panels'> = {
+                'components': 'Components',
+                'bbt': 'BBT',
+                'tta-panels': 'TTA Panels'
+            };
+
+            let currentSection: 'Components' | 'BBT' | 'TTA Panels' = 'Components';
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const { top } = element.getBoundingClientRect();
+                    const absoluteTop = top + window.scrollY;
+
+                    if (scrollPosition >= absoluteTop) {
+                        currentSection = sectionNameMap[section];
+                    }
+                }
+            }
+
+            setActiveSection(currentSection);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Initial check
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const getProductImage = (product: Product) => {
         return PlaceHolderImages.find(p => p.id === product.imageId)?.imageUrl || '/placeholder.svg'
     }
 
-    const filteredCategories = productCategories.filter(category => {
-        const bbtGroups = ['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers'];
-        const ttaGroups = ['TTA Panels'];
 
-        if (activeSection === 'BBT') return bbtGroups.includes(category.group || '');
-        if (activeSection === 'TTA Panels') return ttaGroups.includes(category.group || '');
-
-        // Default to Components
-        return !bbtGroups.includes(category.group || '') && !ttaGroups.includes(category.group || '');
-    });
 
     return (
         <BrandPageLayout
@@ -504,97 +530,61 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                 </div>
             </section>
 
-            {/* Filter Section */}
-            <section className="py-8 bg-background sticky top-[64px] z-30 border-b backdrop-blur-md bg-background/80">
-                <div className="container mx-auto px-4 flex justify-center gap-4">
-                    <div className="flex p-1 bg-secondary/30 rounded-xl">
-                        {(['Components', 'BBT', 'TTA Panels'] as const).map((section) => (
-                            <button
-                                key={section}
-                                onClick={() => setActiveSection(section)}
-                                className={`relative px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${activeSection === section ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
-                                    }`}
-                            >
-                                {activeSection === section && (
-                                    <motion.div
-                                        layoutId="activeSection"
-                                        className="absolute inset-0 bg-primary rounded-lg shadow-sm"
-                                        initial={false}
-                                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                                    />
-                                )}
-                                <span className="relative z-10">{section}</span>
-                            </button>
-                        ))}
+            {/* Wrapper for sticky context */}
+            <div className="relative">
+                {/* Navigation Bar */}
+                <section className="pt-28 pb-4 sticky top-0 z-30 border-b backdrop-blur-md bg-background/80">
+                    <div className="container mx-auto px-4 flex justify-center gap-4">
+                        <div className="flex p-1 bg-secondary/30 rounded-xl">
+                            {(['Components', 'BBT', 'TTA Panels'] as const).map((section) => (
+                                <button
+                                    key={section}
+                                    onClick={() => {
+                                        const element = document.getElementById(section.toLowerCase().replace(' ', '-'));
+                                        if (element) {
+                                            const offset = 180; // Adjust for sticky header
+                                            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                                            window.scrollTo({
+                                                top: elementPosition - offset,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                    }}
+                                    className={`relative px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${activeSection === section ? 'text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+                                        }`}
+                                >
+                                    {activeSection === section && (
+                                        <motion.div
+                                            layoutId="activeSection"
+                                            className="absolute inset-0 bg-primary rounded-lg shadow-sm"
+                                            initial={false}
+                                            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{section}</span>
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Product Portfolio */}
-            <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeSection}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        {activeSection === 'Components' || activeSection === 'BBT' ? (
-                            // Grouped rendering for Components and BBT
-                            Object.entries(filteredCategories.reduce((acc, category) => {
-                                const group = category.group || 'Other';
-                                if (!acc[group]) acc[group] = [];
-                                acc[group].push(category);
-                                return acc;
-                            }, {} as Record<string, typeof filteredCategories>)).map(([group, categories], groupIndex) => (
-                                <div key={group} className="mb-16">
-                                    <div className="container mx-auto px-4 mb-8">
-                                        <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
-                                    </div>
-                                    {categories.map((category, categoryIndex) => (
-                                        <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
-                                            <div className="container mx-auto px-4">
-                                                <div className="text-center mb-10">
-                                                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
-                                                </div>
-                                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                                                    {category.products.map((product, productIndex) => {
-                                                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
-
-                                                        return (
-                                                            <motion.div
-                                                                key={product.title}
-                                                                initial={{ opacity: 0, scale: 0.9 }}
-                                                                animate={{ opacity: 1, scale: 1 }}
-                                                                transition={{ duration: 0.4, delay: productIndex * 0.1 }}
-                                                                className="h-full"
-                                                            >
-                                                                <ProductRevealCard
-                                                                    name={product.title}
-                                                                    image={image?.imageUrl}
-                                                                    description={product.description}
-                                                                    category={category.category}
-                                                                    onAdd={handleEnquire}
-                                                                    onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
-                                                                    className="w-full h-full"
-                                                                />
-                                                            </motion.div>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </div>
-                                        </section>
-                                    ))}
-                                </div>
-                            ))
-                        ) : (
-                            // Standard rendering for BBT and TTA Panels
-                            filteredCategories.map((category, categoryIndex) => (
-                                <section key={category.category} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-secondary/30' : 'bg-background'}`}>
+                {/* Components Section */}
+                <div id="components" className="scroll-mt-40">
+                    {Object.entries(productCategories.filter(c => !['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers', 'TTA Panels'].includes(c.group || '')).reduce((acc, category) => {
+                        const group = category.group || 'Other';
+                        if (!acc[group]) acc[group] = [];
+                        acc[group].push(category);
+                        return acc;
+                    }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
+                        <div key={group} className="mb-16 pt-16">
+                            <div className="container mx-auto px-4 mb-8">
+                                <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
+                            </div>
+                            {categories.map((category, categoryIndex) => (
+                                <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
                                     <div className="container mx-auto px-4">
-                                        <div className="text-center mb-16">
-                                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight inline-block border-b-4 border-primary pb-2">{category.category}</h2>
+                                        <div className="text-center mb-10">
+                                            <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
                                         </div>
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                                             {category.products.map((product, productIndex) => {
@@ -604,7 +594,8 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                                     <motion.div
                                                         key={product.title}
                                                         initial={{ opacity: 0, scale: 0.9 }}
-                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true }}
                                                         transition={{ duration: 0.4, delay: productIndex * 0.1 }}
                                                         className="h-full"
                                                     >
@@ -623,11 +614,104 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                         </div>
                                     </div>
                                 </section>
-                            ))
-                        )}
-                    </motion.div>
-                </AnimatePresence>
+                            ))}
+                        </div>
+                    ))}
+                </div>
 
+                {/* BBT Section */}
+                <div id="bbt" className="scroll-mt-40">
+                    {Object.entries(productCategories.filter(c => ['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers'].includes(c.group || '')).reduce((acc, category) => {
+                        const group = category.group || 'Other';
+                        if (!acc[group]) acc[group] = [];
+                        acc[group].push(category);
+                        return acc;
+                    }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
+                        <div key={group} className="mb-16 pt-16">
+                            <div className="container mx-auto px-4 mb-8">
+                                <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
+                            </div>
+                            {categories.map((category, categoryIndex) => (
+                                <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
+                                    <div className="container mx-auto px-4">
+                                        <div className="text-center mb-10">
+                                            <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
+                                        </div>
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                            {category.products.map((product, productIndex) => {
+                                                const image = PlaceHolderImages.find(p => p.id === product.imageId);
+
+                                                return (
+                                                    <motion.div
+                                                        key={product.title}
+                                                        initial={{ opacity: 0, scale: 0.9 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                        className="h-full"
+                                                    >
+                                                        <ProductRevealCard
+                                                            name={product.title}
+                                                            image={image?.imageUrl}
+                                                            description={product.description}
+                                                            category={category.category}
+                                                            onAdd={handleEnquire}
+                                                            onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                            className="w-full h-full"
+                                                        />
+                                                    </motion.div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                </section>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+
+                {/* TTA Panels Section */}
+                <div id="tta-panels" className="scroll-mt-40 mb-24">
+                    {productCategories.filter(c => c.category === 'TTA Panels').map((category, categoryIndex) => (
+                        <section key={category.category} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-secondary/30' : 'bg-background'}`}>
+                            <div className="container mx-auto px-4">
+                                <div className="text-center mb-16">
+                                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight inline-block border-b-4 border-primary pb-2">{category.category}</h2>
+                                </div>
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                    {category.products.map((product, productIndex) => {
+                                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
+
+                                        return (
+                                            <motion.div
+                                                key={product.title}
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                whileInView={{ opacity: 1, scale: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                className="h-full"
+                                            >
+                                                <ProductRevealCard
+                                                    name={product.title}
+                                                    image={image?.imageUrl}
+                                                    description={product.description}
+                                                    category={category.category}
+                                                    onAdd={handleEnquire}
+                                                    onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                    className="w-full h-full"
+                                                />
+                                            </motion.div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </section>
+                    ))}
+                </div>
+            </div>
+
+            {/* Product Details Dialog */}
+            <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
                 <DialogContent
                     className="sm:max-w-4xl bg-background p-0 overflow-hidden"
                     onCloseAutoFocus={(e) => e.preventDefault()}

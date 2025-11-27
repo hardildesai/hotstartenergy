@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { ShoppingCart, Star, Heart, ExternalLink } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
-import { DialogTrigger } from "./dialog"
+
 import Link from "next/link"
 
 interface ProductRevealCardProps {
@@ -58,7 +58,7 @@ export function ProductRevealCard({
     e.preventDefault();
     onAdd?.();
   }
-  
+
   const handleViewDetails = (e: React.MouseEvent) => {
     e.stopPropagation();
     // We don't prevent default here to allow the dialog trigger to work
@@ -67,18 +67,18 @@ export function ProductRevealCard({
 
 
   const containerVariants = {
-    rest: { 
+    rest: {
       scale: 1,
       y: 0,
       filter: "blur(0px)",
     },
-    hover: shouldAnimate ? { 
-      scale: 1.03, 
+    hover: shouldAnimate ? {
+      scale: 1.03,
       y: -8,
       filter: "blur(0px)",
-      transition: { 
-        type: "spring", 
-        stiffness: 300, 
+      transition: {
+        type: "spring",
+        stiffness: 300,
         damping: 30,
         mass: 0.8,
       }
@@ -91,13 +91,13 @@ export function ProductRevealCard({
   }
 
   const overlayVariants = {
-    rest: { 
-      y: "100%", 
+    rest: {
+      y: "100%",
       opacity: 0,
       filter: "blur(4px)",
     },
-    hover: { 
-      y: "0%", 
+    hover: {
+      y: "0%",
       opacity: 1,
       filter: "blur(0px)",
       transition: {
@@ -112,13 +112,13 @@ export function ProductRevealCard({
   }
 
   const contentVariants = {
-    rest: { 
-      opacity: 0, 
+    rest: {
+      opacity: 0,
       y: 20,
       scale: 0.95,
     },
-    hover: { 
-      opacity: 1, 
+    hover: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
@@ -132,13 +132,13 @@ export function ProductRevealCard({
 
   const buttonVariants_motion = {
     rest: { scale: 1, y: 0 },
-    hover: shouldAnimate ? { 
-      scale: 1.05, 
+    hover: shouldAnimate ? {
+      scale: 1.05,
       y: -2,
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 25 
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 25
       }
     } : {},
     tap: shouldAnimate ? { scale: 0.95 } : {},
@@ -146,10 +146,10 @@ export function ProductRevealCard({
 
   const favoriteVariants = {
     rest: { scale: 1, rotate: 0 },
-    favorite: { 
-      scale: [1, 1.3, 1], 
+    favorite: {
+      scale: [1, 1.3, 1],
       rotate: [0, 10, -10, 0],
-      transition: { 
+      transition: {
         duration: 0.5,
         ease: "easeInOut"
       }
@@ -178,7 +178,7 @@ export function ProductRevealCard({
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        
+
         {/* Favorite Button */}
         <motion.button
           onClick={handleFavorite}
@@ -186,8 +186,8 @@ export function ProductRevealCard({
           animate={isFavorite ? "favorite" : "rest"}
           className={cn(
             "absolute top-4 right-4 p-2 rounded-full backdrop-blur-sm border border-white/20",
-            isFavorite 
-              ? "bg-red-500 text-white" 
+            isFavorite
+              ? "bg-red-500 text-white"
               : "bg-white/20 text-white hover:bg-white/30"
           )}
         >
@@ -202,7 +202,7 @@ export function ProductRevealCard({
 
         {/* Product Info */}
         <div className="space-y-1">
-          <motion.h3 
+          <motion.h3
             className="text-md font-bold leading-tight tracking-tight line-clamp-2"
             initial={{ opacity: 0.9 }}
             whileHover={{ opacity: 1 }}
@@ -210,7 +210,7 @@ export function ProductRevealCard({
           >
             {name}
           </motion.h3>
-          
+
         </div>
       </div>
 
@@ -223,7 +223,7 @@ export function ProductRevealCard({
           <motion.div variants={contentVariants}>
             <h3 className="font-bold text-lg">{name}</h3>
           </motion.div>
-          
+
           <motion.div variants={contentVariants} className="flex-grow overflow-y-auto pr-2">
             <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-wrap">
               {description}
@@ -232,42 +232,40 @@ export function ProductRevealCard({
         </div>
 
         <div className="p-4 pt-0 mt-auto">
-            <motion.div variants={contentVariants} className="flex items-center gap-2">
-                <motion.button
-                onClick={handleAddToCart}
-                variants={buttonVariants_motion}
-                initial="rest"
-                whileHover="hover"
-                whileTap="tap"
-                className={cn(
-                    buttonVariants({ variant: "default", size: "sm" }), 
-                    "w-full h-9 font-medium text-sm",
-                    "bg-gradient-to-r from-primary to-primary/90",
-                    "hover:from-primary/90 hover:to-primary",
-                    "shadow-lg shadow-primary/25"
-                )}
-                >
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Enquire
-                </motion.button>
-                
-                <DialogTrigger asChild>
-                    <motion.button
-                    onClick={handleViewDetails}
-                    variants={buttonVariants_motion}
-                    initial="rest"
-                    whileHover="hover"
-                    whileTap="tap"
-                    className={cn(
-                        buttonVariants({ variant: "outline", size: "sm" }), 
-                        "w-full h-9 font-medium text-sm"
-                    )}
-                    >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Details
-                    </motion.button>
-                </DialogTrigger>
-            </motion.div>
+          <motion.div variants={contentVariants} className="flex items-center gap-2">
+            <motion.button
+              onClick={handleAddToCart}
+              variants={buttonVariants_motion}
+              initial="rest"
+              whileHover="hover"
+              whileTap="tap"
+              className={cn(
+                buttonVariants({ variant: "default", size: "sm" }),
+                "w-full h-9 font-medium text-sm",
+                "bg-gradient-to-r from-primary to-primary/90",
+                "hover:from-primary/90 hover:to-primary",
+                "shadow-lg shadow-primary/25"
+              )}
+            >
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              Enquire
+            </motion.button>
+
+            <motion.button
+              onClick={handleViewDetails}
+              variants={buttonVariants_motion}
+              initial="rest"
+              whileHover="hover"
+              whileTap="tap"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "w-full h-9 font-medium text-sm"
+              )}
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Details
+            </motion.button>
+          </motion.div>
         </div>
       </motion.div>
     </motion.div>
