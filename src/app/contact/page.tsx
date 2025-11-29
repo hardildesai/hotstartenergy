@@ -16,7 +16,7 @@ export default function ContactPage() {
             <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Get in Touch</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    We'd love to hear from you. Reach out to us through any of the channels below.
+                    We&apos;d love to hear from you. Reach out to us through any of the channels below.
                 </p>
             </div>
 
@@ -43,6 +43,7 @@ export default function ContactPage() {
                                             </div>
                                             <div className="flex items-center gap-2 text-muted-foreground">
                                                 <Mail className="h-4 w-4 text-accent" />
+                                                {/* eslint-disable-next-line */}
                                                 <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
                                             </div>
                                         </div>
@@ -62,10 +63,12 @@ export default function ContactPage() {
                                             </div>
                                             <div className="flex items-center gap-2 text-muted-foreground">
                                                 <Mail className="h-4 w-4 text-accent" />
+                                                {/* eslint-disable-next-line */}
                                                 <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
                                             </div>
                                             <div className="flex items-center gap-2 text-muted-foreground">
                                                 <Mail className="h-4 w-4 text-accent" />
+                                                {/* eslint-disable-next-line */}
                                                 <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
                                             </div>
                                         </div>

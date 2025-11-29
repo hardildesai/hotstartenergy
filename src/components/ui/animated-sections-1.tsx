@@ -26,47 +26,47 @@ interface AnimatedSectionsProps {
 }
 
 const defaultSections: SectionData[] = [
-    {
-      title: 'HOTSTART ENERGY PVT. LTD.',
-      text: 'LEADING PROVIDER OF POWER & ENERGY SOLUTIONS',
-      description: 'Leading provider of premier electrical products for Indian industry. Trusted by top brands, built for your growth.',
-      img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
-      primaryAction: { text: 'Contact Us Now', href: '/contact' },
-      secondaryAction: { text: 'View Products', href: '/products' },
-    },
-    {
-      title: 'COMPLETE ELECTRICAL & AUTOMATION SOLUTIONS',
-      text: 'Engineered for your industry, customized for your needs.',
-      description: 'From switchgear to smart controls, cabling to energy management— We deliver quality, speed, and the right solution every time.',
-      img: PlaceHolderImages.find(p => p.id === 'hero-2')?.imageUrl || '',
-      primaryAction: { text: 'Explore Our Solutions', href: '/#products-solutions' },
-      secondaryAction: { text: 'About Our Company', href: '/#about-us' },
-    },
-    {
-      title: 'PARTNERED WITH INDUSTRY LEADERS',
-      text: 'Sourcing only from trusted global brands.',
-      description: 'Legrand, Socomec, KEI, Havells, and more. Quality that powers your operations—reliability guaranteed.',
-      img: PlaceHolderImages.find(p => p.id === 'hero-3')?.imageUrl || '',
-      primaryAction: { text: 'Discover Our Brands', href: '/products#brands' },
-      secondaryAction: { text: 'Request a Quote', href: '/quote' },
-    },
-    {
-      title: 'ENERGIZING INDIA’S BIGGEST PROJECTS',
-      text: 'Chosen by Adani, K. Raheja, Atlas Copco, Cipla and more.',
-      description: 'Our solutions drive progress, productivity, and safety. Experience excellence—partner with the best.',
-      img: PlaceHolderImages.find(p => p.id === 'hero-4')?.imageUrl || '',
-      primaryAction: { text: 'View Our Work', href: '/about' },
-      secondaryAction: { text: 'Our Clients', href: '/about#clients' },
-    },
-    {
-      title: 'READY TO POWER YOUR AMBITIONS?',
-      text: 'The right products. The right partner. Every time.',
-      description: 'Connect with our experts for tailored solutions, fast delivery, and ongoing support.',
-      img: PlaceHolderImages.find(p => p.id === 'career-hero')?.imageUrl || '',
-      primaryAction: { text: 'Request a Quote', href: '/quote' },
-      secondaryAction: { text: 'Contact Us Today', href: '/contact' },
-    },
-  ];
+  {
+    title: 'HOTSTART ENERGY PVT. LTD.',
+    text: 'LEADING PROVIDER OF POWER & ENERGY SOLUTIONS',
+    description: 'Leading provider of premier electrical products for Indian industry. Trusted by top brands, built for your growth.',
+    img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
+    primaryAction: { text: 'Contact Us Now', href: '/contact' },
+    secondaryAction: { text: 'View Products', href: '/products' },
+  },
+  {
+    title: 'COMPLETE ELECTRICAL & AUTOMATION SOLUTIONS',
+    text: 'Engineered for your industry, customized for your needs.',
+    description: 'From switchgear to smart controls, cabling to energy management— We deliver quality, speed, and the right solution every time.',
+    img: PlaceHolderImages.find(p => p.id === 'hero-2')?.imageUrl || '',
+    primaryAction: { text: 'Explore Our Solutions', href: '/#products-solutions' },
+    secondaryAction: { text: 'About Our Company', href: '/#about-us' },
+  },
+  {
+    title: 'PARTNERED WITH INDUSTRY LEADERS',
+    text: 'Sourcing only from trusted global brands.',
+    description: 'Legrand, Socomec, KEI, Havells, and more. Quality that powers your operations—reliability guaranteed.',
+    img: PlaceHolderImages.find(p => p.id === 'hero-3')?.imageUrl || '',
+    primaryAction: { text: 'Discover Our Brands', href: '/products#brands' },
+    secondaryAction: { text: 'Request a Quote', href: '/quote' },
+  },
+  {
+    title: 'ENERGIZING INDIA’S BIGGEST PROJECTS',
+    text: 'Chosen by Adani, K. Raheja, Atlas Copco, Cipla and more.',
+    description: 'Our solutions drive progress, productivity, and safety. Experience excellence—partner with the best.',
+    img: PlaceHolderImages.find(p => p.id === 'hero-4')?.imageUrl || '',
+    primaryAction: { text: 'View Our Work', href: '/about' },
+    secondaryAction: { text: 'Our Clients', href: '/about#clients' },
+  },
+  {
+    title: 'READY TO POWER YOUR AMBITIONS?',
+    text: 'The right products. The right partner. Every time.',
+    description: 'Connect with our experts for tailored solutions, fast delivery, and ongoing support.',
+    img: PlaceHolderImages.find(p => p.id === 'career-hero')?.imageUrl || '',
+    primaryAction: { text: 'Request a Quote', href: '/quote' },
+    secondaryAction: { text: 'Contact Us Today', href: '/contact' },
+  },
+];
 
 const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   sections = defaultSections,
@@ -103,11 +103,11 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     let loaded = 0;
     sections.forEach((section) => {
       if (!section.img) {
-          loaded++;
-          if (loaded === sections.length) {
-            setImagesLoaded(true);
-          }
-          return;
+        loaded++;
+        if (loaded === sections.length) {
+          setImagesLoaded(true);
+        }
+        return;
       }
       const img = new Image();
       img.src = section.img;
@@ -186,30 +186,30 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
       );
 
     const animateText = (splitRef: React.MutableRefObject<SplitText[]>, stagger: number) => {
-        if (splitRef.current[index] && splitRef.current[index].lines) {
-            const lines = splitRef.current[index].lines;
-            gsap.set(lines, { opacity: 0, yPercent: 100 });
-            tl.to(
-                lines,
-                {
-                    opacity: 1,
-                    yPercent: 0,
-                    duration: 0.8,
-                    ease: 'power2.out',
-                    stagger: { each: stagger, from: 'start' }
-                },
-                0.4
-            );
-        }
+      if (splitRef.current[index] && splitRef.current[index].lines) {
+        const lines = splitRef.current[index].lines;
+        gsap.set(lines, { opacity: 0, yPercent: 100 });
+        tl.to(
+          lines,
+          {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            stagger: { each: stagger, from: 'start' }
+          },
+          0.4
+        );
+      }
     };
-    
+
     animateText(splitTitlesRef, 0.1);
     animateText(splitHeadingsRef, 0.1);
     animateText(splitDescriptionsRef, 0.05);
 
     if (buttons[index]) {
-        gsap.set(buttons[index], { opacity: 0, y: 20 });
-        tl.to(buttons[index], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.8);
+      gsap.set(buttons[index], { opacity: 0, y: 20 });
+      tl.to(buttons[index], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 0.8);
     }
 
 
@@ -286,15 +286,26 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
     stopAutoplay();
     intervalRef.current = setInterval(() => {
       if (!animatingRef.current) {
-        gotoSection(currentIndexRef.current + autoplayDirectionRef.current, autoplayDirectionRef.current);
+        let nextIndex = currentIndexRef.current + autoplayDirectionRef.current;
+
+        // Bounce logic
+        if (nextIndex >= sections.length) {
+          autoplayDirectionRef.current = -1;
+          nextIndex = sections.length - 2; // Go to the one before last
+        } else if (nextIndex < 0) {
+          autoplayDirectionRef.current = 1;
+          nextIndex = 1; // Go to the second one
+        }
+
+        gotoSection(nextIndex, autoplayDirectionRef.current);
       }
     }, 6000);
-  }, [stopAutoplay, gotoSection]);
+  }, [stopAutoplay, gotoSection, sections.length]);
 
   const handleMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { clientX, clientY } = event;
     const { x, y } = lastMousePosition.current;
-    
+
     const deltaX = clientX - x;
     const deltaY = clientY - y;
     const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
@@ -313,7 +324,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 
 
   useGSAP(() => {
-    if (!containerRef.current || !imagesLoaded) return;
+    if (!containerRef.current) return; // Removed imagesLoaded check to allow instant render
 
     gsap.registerPlugin(SplitText);
 
@@ -348,12 +359,54 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
         })
     );
 
-    gsap.set(outerWrappers, { xPercent: 100 });
-    gsap.set(innerWrappers, { xPercent: -100 });
+    // Initial setup for all sections EXCEPT the first one which is already visible
+    outerWrappers.forEach((el, i) => {
+      if (i !== 0) {
+        gsap.set(el, { xPercent: 100 });
+      }
+    });
+    innerWrappers.forEach((el, i) => {
+      if (i !== 0) {
+        gsap.set(el, { xPercent: -100 });
+      }
+    });
 
-    gotoSection(0, 1);
+    // Ensure first section is properly set up without animation
+    if (sectionsRefs.current[0]) {
+      gsap.set(sectionsRefs.current[0], { autoAlpha: 1, zIndex: 1 });
+    }
+
+    // Animate text for the first section immediately
+    const animateFirstSectionText = () => {
+      const index = 0;
+      const animate = (splitRef: React.MutableRefObject<SplitText[]>, stagger: number) => {
+        if (splitRef.current[index] && splitRef.current[index].lines) {
+          const lines = splitRef.current[index].lines;
+          gsap.set(lines, { opacity: 0, yPercent: 100 });
+          gsap.to(lines, {
+            opacity: 1,
+            yPercent: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            stagger: { each: stagger, from: 'start' },
+            delay: 0.2
+          });
+        }
+      };
+      animate(splitTitlesRef, 0.1);
+      animate(splitHeadingsRef, 0.1);
+      animate(splitDescriptionsRef, 0.05);
+
+      if (buttonsRefs.current[index]) {
+        gsap.set(buttonsRefs.current[index], { opacity: 0, y: 20 });
+        gsap.to(buttonsRefs.current[index], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', delay: 0.6 });
+      }
+    };
+
+    animateFirstSectionText();
+    currentIndexRef.current = 0;
+    setCurrentIndex(0);
     startAutoplay();
-    
 
     return () => {
       stopAutoplay();
@@ -394,7 +447,7 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
   }, { scope: containerRef, dependencies: [sections.length, imagesLoaded, gotoSection, startAutoplay, stopAutoplay] });
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`relative h-screen w-full overflow-hidden bg-black text-white font-sans ${className}`}
       onMouseMove={handleMouseMove}
@@ -420,18 +473,17 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
             >
               <img
                 src={section.img}
-                alt={`Section ${i + 1}`}
+                alt={section.title}
                 className="w-full h-full object-cover"
               />
-              <div 
-                 className={`absolute inset-0 bg-black transition-opacity duration-1000 ease-in-out ${
-                   currentIndex !== i ? 'opacity-50' : 'opacity-0'
-                 }`} 
-               />
+              <div
+                className={`absolute inset-0 bg-black transition-opacity duration-1000 ease-in-out ${currentIndex !== i ? 'opacity-50' : 'opacity-0'
+                  }`}
+              />
             </div>
           ))}
         </div>
-        
+
         <div className="text-xs md:text-sm tracking-wider flex items-center gap-1">
           <div className="relative overflow-hidden h-[1em] leading-[1em] min-w-[0.8em]">
             <span ref={counterCurrentRef} className="block">1</span>
@@ -442,9 +494,9 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
       </div>
 
       {sections.map((section, i) => (
-        <section 
-          key={`section-${i}`} 
-          className="absolute top-0 h-full w-full invisible"
+        <section
+          key={`section-${i}`}
+          className={`absolute top-0 h-full w-full ${i === 0 ? '' : 'invisible'}`}
           ref={(el) => { if (el) sectionsRefs.current[i] = el; }}
         >
           <div className="outer w-full h-full overflow-hidden" ref={(el) => { if (el) outerRefs.current[i] = el; }}>
@@ -457,28 +509,34 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
                 }}
               >
                 <div className="z-10 text-center max-w-3xl px-4 normal-case">
+                  {i === 0 ? (
+                    <h1 className="section-heading text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
+                      {section.title}
+                    </h1>
+                  ) : (
                     <h2 className="section-heading text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight" ref={(el) => { if (el) titleRefs.current[i] = el; }}>
-                        {section.title}
+                      {section.title}
                     </h2>
-                    <h3 className="text-white/80 font-bold text-lg sm:text-xl md:text-2xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
-                        {section.text}
-                    </h3>
-                    <p className="mt-4 sm:mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
-                        {section.description}
-                    </p>
-                    <div 
-                        className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-                        ref={(el) => { if (el) buttonsRefs.current[i] = el; }}
-                        onMouseEnter={stopAutoplay}
-                        onMouseLeave={startAutoplay}
-                    >
-                        <GradientButton asChild>
-                            <Link href={section.primaryAction.href} scroll={false}>{section.primaryAction.text}</Link>
-                        </GradientButton>
-                        <GradientButton asChild variant="variant">
-                            <Link href={section.secondaryAction.href}>{section.secondaryAction.text}</Link>
-                        </GradientButton>
-                    </div>
+                  )}
+                  <h3 className="text-white/80 font-bold text-lg sm:text-xl md:text-2xl mt-2" ref={(el) => { if (el) headingRefs.current[i] = el; }}>
+                    {section.text}
+                  </h3>
+                  <p className="mt-4 sm:mt-6 text-base md:text-lg text-white/80" ref={(el) => { if (el) descriptionRefs.current[i] = el; }}>
+                    {section.description}
+                  </p>
+                  <div
+                    className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+                    ref={(el) => { if (el) buttonsRefs.current[i] = el; }}
+                    onMouseEnter={stopAutoplay}
+                    onMouseLeave={startAutoplay}
+                  >
+                    <GradientButton asChild>
+                      <Link href={section.primaryAction.href} scroll={false}>{section.primaryAction.text}</Link>
+                    </GradientButton>
+                    <GradientButton asChild variant="variant">
+                      <Link href={section.secondaryAction.href}>{section.secondaryAction.text}</Link>
+                    </GradientButton>
+                  </div>
                 </div>
               </div>
             </div>
@@ -490,7 +548,3 @@ const AnimatedSections: React.FC<AnimatedSectionsProps> = ({
 };
 
 export default AnimatedSections;
-
-    
-
-    

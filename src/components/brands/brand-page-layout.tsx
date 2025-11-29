@@ -34,6 +34,7 @@ export function BrandPageLayout({ brand, heroImage, children }: BrandPageLayoutP
                             src={heroImage.imageUrl}
                             alt={`${brand.name} Hero Image`}
                             fill
+                            sizes="100vw"
                             className="object-cover"
                             priority
                             data-ai-hint={heroImage.imageHint}
@@ -57,6 +58,7 @@ export function BrandPageLayout({ brand, heroImage, children }: BrandPageLayoutP
                                 src={brand.logo}
                                 alt={`${brand.name} logo`}
                                 fill
+                                sizes="(max-width: 768px) 192px, 256px"
                                 className="object-contain drop-shadow-lg"
                             />
                         </div>

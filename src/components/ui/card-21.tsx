@@ -2,6 +2,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils"; // Your utility for merging class names
 import { ArrowRight } from "lucide-react";
 
+import Image from "next/image";
+
 // Define the props for the DestinationCard component
 interface DestinationCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
@@ -27,19 +29,23 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
         <a
           href={href}
           className="relative block w-full h-full rounded-2xl overflow-hidden shadow-lg 
-                     transition-all duration-500 ease-in-out 
-                     group-hover:scale-105 group-hover:shadow-[0_0_60px_-15px_hsl(var(--theme-color)/0.6)]"
+                     transition-shadow duration-300 ease-in-out 
+                     group-hover:shadow-[0_0_60px_-15px_hsl(var(--theme-color)/0.6)]"
           aria-label={`Explore details for ${location}`}
           style={{
-             boxShadow: `0 0 40px -15px hsl(var(--theme-color) / 0.5)`
+            boxShadow: `0 0 40px -15px hsl(var(--theme-color) / 0.5)`
           }}
         >
           {/* Background Image with Parallax Zoom */}
-          <div
-            className="absolute inset-0 bg-cover bg-center 
-                       transition-transform duration-500 ease-in-out group-hover:scale-110"
-            style={{ backgroundImage: `url(${imageUrl})` }}
-          />
+          <div className="absolute inset-0 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <Image
+              src={imageUrl}
+              alt={location}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          </div>
 
           {/* Themed Gradient Overlay */}
           <div
@@ -48,7 +54,7 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
               background: `linear-gradient(to top, hsl(var(--theme-color) / 0.9), hsl(var(--theme-color) / 0.6) 30%, transparent 60%)`,
             }}
           />
-          
+
           {/* Content */}
           <div className="relative flex flex-col justify-end h-full p-6 text-white">
             <h3 className="text-3xl font-bold tracking-tight">

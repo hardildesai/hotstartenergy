@@ -7,6 +7,10 @@ import { Toaster } from "@/components/ui/toaster"
 import { Titillium_Web } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
+import { CountdownOverlay } from '@/components/launch/countdown-overlay';
+import { LaunchGuard } from '@/components/launch/launch-guard';
 
 
 const titilliumWeb = Titillium_Web({
@@ -16,8 +20,49 @@ const titilliumWeb = Titillium_Web({
 });
 
 export const metadata: Metadata = {
-  title: 'Hotstart Energy',
-  description: 'Powering the future with precision and control',
+  metadataBase: new URL('https://www.hotstartenergy.com'),
+  title: {
+    default: 'Hotstart Energy | Electrical, Automation & Power Solutions',
+    template: '%s | Hotstart Energy'
+  },
+  description: 'Hotstart Energy is a leading provider of electrical, automation, and power distribution solutions. Authorized partner for Legrand, Socomec, KEI, and Havells.',
+  keywords: ['Electrical Solutions', 'Industrial Automation', 'Power Distribution', 'Switchgear', 'Legrand', 'Socomec', 'KEI', 'Havells', 'Energy Management', 'Pune'],
+  authors: [{ name: 'Hotstart Energy' }],
+  creator: 'Hotstart Energy',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://www.hotstartenergy.com',
+    title: 'Hotstart Energy | Electrical, Automation & Power Solutions',
+    description: 'Leading provider of electrical, automation, and power distribution solutions in India.',
+    siteName: 'Hotstart Energy',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Hotstart Energy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hotstart Energy | Electrical, Automation & Power Solutions',
+    description: 'Leading provider of electrical, automation, and power distribution solutions in India.',
+    images: ['/opengraph-image.png'],
+    creator: '@hotstartenergy',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const organizationSchema = {
@@ -48,54 +93,6 @@ const organizationSchema = {
   ]
 };
 
-function GlassFilter() {
-  return (
-    <svg className="glass-filter-wrapper">
-      <defs>
-        <filter
-          id="container-glass"
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          colorInterpolationFilters="sRGB"
-        >
-          {/* Generate turbulent noise for distortion */}
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.05 0.05"
-            numOctaves="1"
-            seed="1"
-            result="turbulence"
-          />
-
-          {/* Blur the turbulence pattern slightly */}
-          <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
-
-          {/* Displace the source graphic with the noise */}
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="blurredNoise"
-            scale="70"
-            xChannelSelector="R"
-            yChannelSelector="B"
-            result="displaced"
-          />
-
-          {/* Apply overall blur on the final result */}
-          <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
-
-          {/* Output the result */}
-          <feComposite in="finalBlur" in2="finalBlur" operator="over" />
-        </filter>
-      </defs>
-    </svg>
-  );
-}
-
-import { ScrollToTop } from '@/components/ui/scroll-to-top';
-import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -113,15 +110,16 @@ export default function RootLayout({
         className={cn("font-body antialiased", titilliumWeb.variable)}
         suppressHydrationWarning
       >
-        <ScrollToTop />
-        <GlassFilter />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
-        <SonnerToaster richColors />
-        <SpeedInsights />
-        <FloatingWhatsApp />
+        <LaunchGuard>
+          <ScrollToTop />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Toaster />
+          <SonnerToaster richColors />
+          <SpeedInsights />
+          <FloatingWhatsApp />
+        </LaunchGuard>
       </body>
     </html>
   );

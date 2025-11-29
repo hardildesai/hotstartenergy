@@ -18,44 +18,44 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Your trusted partner for reliable power distribution, automation, and energy management solutions.
             </p>
-             <div className="space-y-4 text-sm">
-                <div className="space-y-1">
-                    <h4 className="font-semibold flex items-center gap-2">Pune (Head Office)</h4>
-                    <p className="text-muted-foreground">
-                        Office No. 203, K. Square, K. P. Shroff Rd, Baner, Pune – 411045, Maharashtra, India.
-                    </p>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <Phone className="h-4 w-4" />
-                        <span>+91-99211-88399</span>
-                    </div>
-                     <div className="flex items-center gap-2 text-muted-foreground">
-                        <Mail className="h-4 w-4" />
-                        <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
-                    </div>
+            <div className="space-y-4 text-sm">
+              <div className="space-y-1">
+                <h4 className="font-semibold flex items-center gap-2">Pune (Head Office)</h4>
+                <p className="text-muted-foreground">
+                  Office No. 203, K. Square, K. P. Shroff Rd, Baner, Pune – 411045, Maharashtra, India.
+                </p>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Phone className="h-4 w-4" />
+                  <span>+91-99211-88399</span>
                 </div>
-                <div className="space-y-1">
-                    <h4 className="font-semibold flex items-center gap-2">Ahmedabad (Branch Office)</h4>
-                    <p className="text-muted-foreground">
-                        514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej, Ahmedabad, Gujarat, 380059.
-                    </p>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <Phone className="h-4 w-4" />
-                        <span>+91-94263 21532</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <Mail className="h-4 w-4" />
-                        <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <Mail className="h-4 w-4" />
-                        <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hovertext-primary">bhavesh.hotstartenergy@gmail.com</a>
-                    </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Mail className="h-4 w-4" />
+                  <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
                 </div>
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-semibold flex items-center gap-2">Ahmedabad (Branch Office)</h4>
+                <p className="text-muted-foreground">
+                  514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej, Ahmedabad, Gujarat, 380059.
+                </p>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Phone className="h-4 w-4" />
+                  <span>+91-94263 21532</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Mail className="h-4 w-4" />
+                  <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Mail className="h-4 w-4" />
+                  <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
+                </div>
+              </div>
             </div>
             <div className="pt-2">
-                <Button asChild>
-                  <Link href="/contact"><Phone className="mr-2 h-4 w-4" /> Request Quote / Contact Sales</Link>
-                </Button>
+              <Button asChild>
+                <Link href="/contact"><Phone className="mr-2 h-4 w-4" /> Request Quote / Contact Sales</Link>
+              </Button>
             </div>
           </div>
 
@@ -103,9 +103,9 @@ export function Footer() {
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Hotstart Energy Pvt. Ltd. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 md:mt-0">
-                <Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
-                <Link href="/terms-of-use" className="hover:text-primary">Terms of Use</Link>
-                <Link href="/sitemap" className="hover:text-primary">Sitemap</Link>
+              <Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+              <Link href="/terms-of-use" className="hover:text-primary">Terms of Use</Link>
+              <Link href="/sitemap" className="hover:text-primary">Sitemap</Link>
             </div>
           </div>
         </div>

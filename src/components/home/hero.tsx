@@ -34,12 +34,13 @@ export function Hero() {
       >
         <CarouselContent className="h-full -ml-0">
           {images.map((image, index) => (
-            <CarouselItem key={index} className="pl-0 h-full">
+            <CarouselItem key={image.id} className="pl-0 h-full">
               <div className="relative h-full w-full">
                 <Image
                   src={image.imageUrl}
                   alt={image.description}
                   fill
+                  sizes="100vw"
                   className="object-cover"
                   priority={index === 0}
                   data-ai-hint={image.imageHint}

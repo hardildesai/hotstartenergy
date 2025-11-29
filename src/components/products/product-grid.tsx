@@ -7,7 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { DestinationCard } from '@/components/ui/card-21';
 
 export function ProductGrid() {
-  const filteredProducts = products;
+  const filteredProducts = products.slice(0, 8);
 
   return (
     <>
@@ -29,7 +29,7 @@ export function ProductGrid() {
       </div>
       {filteredProducts.length === 0 && (
         <div className="text-center col-span-full py-16">
-            <p className="text-muted-foreground">No products match the filter.</p>
+          <p className="text-muted-foreground">No products match the filter.</p>
         </div>
       )}
     </>

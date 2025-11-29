@@ -13,7 +13,7 @@ const quoteSchema = z.object({
 export async function submitQuote(data: unknown) {
   const parsed = quoteSchema.safeParse(data);
   if (parsed.success) {
-    console.log('New Quote Request:', parsed.data);
+
     // In a real app, you would process this data (e.g., send an email, save to DB)
     revalidatePath('/quote');
     return { success: true, message: 'Quote request submitted successfully!' };

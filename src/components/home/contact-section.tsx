@@ -39,7 +39,7 @@ export function ContactSection() {
             Reach Out To Us
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            We'd love to Hear From You.
+            We&apos;d love to Hear From You.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Or just reach out manually to{' '}

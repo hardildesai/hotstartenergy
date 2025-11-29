@@ -19,6 +19,7 @@ export const GlowingButton: React.FC<ButtonProps> = ({
   gradientLight = { from: "from-indigo-500/40", via: "via-indigo-400/40", to: "to-indigo-500/60" },
   gradientDark = { from: "from-indigo-800/30", via: "via-black/50", to: "to-black/70" },
   children,
+  asChild,
   ...props
 }) => {
   const sizes = {
@@ -27,7 +28,7 @@ export const GlowingButton: React.FC<ButtonProps> = ({
     lg: "p-6 rounded-3xl",
   };
 
-  const Comp = props.asChild ? 'div' : 'button';
+  const Comp = asChild ? 'div' : 'button';
 
 
   const buttonContent = (
@@ -86,17 +87,17 @@ export const GlowingButton: React.FC<ButtonProps> = ({
     </div>
   );
 
-  if (props.asChild) {
+  if (asChild) {
     return React.cloneElement(children as React.ReactElement, {
-        children: buttonContent
+      children: buttonContent
     });
   }
 
   return (
-    <Comp
+    <button
       {...props}
     >
-    {buttonContent}
-    </Comp>
+      {buttonContent}
+    </button>
   );
 };

@@ -9,8 +9,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
 import { BrandPartners } from './brand-partners';
 import { TrustedBy } from './trusted-by';
 
@@ -51,25 +51,49 @@ const slides = [
 
 export function AutoHeroSlider() {
   const images = PlaceHolderImages;
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [direction, setDirection] = React.useState<'forward' | 'backward'>('forward')
 
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
-  )
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    const intervalId = setInterval(() => {
+      if (direction === 'forward') {
+        if (api.canScrollNext()) {
+          api.scrollNext()
+        } else {
+          setDirection('backward')
+          api.scrollPrev()
+        }
+      } else {
+        if (api.canScrollPrev()) {
+          api.scrollPrev()
+        } else {
+          setDirection('forward')
+          api.scrollNext()
+        }
+      }
+    }, 4000)
+
+    return () => clearInterval(intervalId)
+  }, [api, direction])
 
   return (
     <section className="relative h-screen min-h-[700px] w-full flex flex-col justify-between">
       <Carousel
-        plugins={[plugin.current]}
+        setApi={setApi}
         className="absolute inset-0 w-full h-full"
         opts={{
-          loop: true,
+          loop: false,
         }}
       >
         <CarouselContent className="h-full -ml-0">
           {slides.map((slide, index) => {
             const image = images.find(img => img.id === slide.imageId);
             return (
-              <CarouselItem key={index} className="pl-0 h-full">
+              <CarouselItem key={slide.id} className="pl-0 h-full">
                 <div className="relative h-full w-full">
                   {image && (
                     <Image
@@ -106,10 +130,10 @@ export function AutoHeroSlider() {
           })}
         </CarouselContent>
       </Carousel>
-      
+
       <div className="absolute bottom-0 z-10 w-full pb-8 space-y-8 bg-background/80 backdrop-blur-sm">
-          <BrandPartners />
-          <TrustedBy />
+        <BrandPartners />
+        <TrustedBy />
       </div>
     </section>
   );

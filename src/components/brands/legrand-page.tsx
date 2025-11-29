@@ -31,7 +31,7 @@ const productCategories = [
                 title: 'DMX³ (630A - 6300A)',
                 description: 'High-performance ACBs for efficient power distribution and protection.',
                 details: 'Frame Size: 3, Poles: 3P/4P, Breaking Capacity: 50kA - 100kA, Mounting: Fixed/Draw-out.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co.in/products/power/air-circuit-breakers-acb/dmx',
                 attributes: ['Frame Size', 'Poles: 3P/4P', '50-100kA', 'Fixed/Draw-out']
             },
@@ -39,7 +39,7 @@ const productCategories = [
                 title: 'DMX SP (Standard)',
                 description: 'Standard range ACBs optimized for essential protection needs.',
                 details: 'Reliable protection for standard applications. Available in various frame sizes and breaking capacities.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Standard Range', 'Reliable Protection']
             },
@@ -47,7 +47,7 @@ const productCategories = [
                 title: 'ACB Accessories',
                 description: 'Comprehensive range of accessories including coils and motors.',
                 details: 'Enhance ACB functionality with shunt trips, closing coils, undervoltage releases, and motor operators.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Coils', 'Motors', 'Auxiliaries']
             }
@@ -61,7 +61,7 @@ const productCategories = [
                 title: 'DPX³ Electronic (Metering)',
                 description: 'Smart MCCBs with integrated metering and advanced protection.',
                 details: 'Rating: 16A - 1600A. Features built-in measurement of voltage, current, and power.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co.in/products/power/moulded-case-circuit-breakers-mccb/dpx',
                 attributes: ['16-1600A', 'Integrated Metering', 'Electronic Trip Unit']
             },
@@ -69,7 +69,7 @@ const productCategories = [
                 title: 'DPX³ Thermal-Mag',
                 description: 'Robust thermal-magnetic MCCBs for reliable circuit protection.',
                 details: 'Adjustable thermal and magnetic settings. Suitable for distribution and motor protection.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Thermal-Magnetic', 'Adjustable Settings']
             },
@@ -77,7 +77,7 @@ const productCategories = [
                 title: 'DRX (Fixed/Standard)',
                 description: 'Compact and economical MCCBs for standard applications.',
                 details: 'Fixed thermal and magnetic settings. Ideal for building and standard industrial applications.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Fixed Settings', 'Compact', 'Economical']
             }
@@ -91,7 +91,7 @@ const productCategories = [
                 title: 'CTX³ Contactors',
                 description: '3-pole and 4-pole contactors for motor control and switching.',
                 details: 'AC-3 Rating up to 800A. Wide range of coil voltages available.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/power/contactors/ctx',
                 attributes: ['AC-3 Rating', 'Various Coil Voltages', '3P/4P']
             },
@@ -99,7 +99,7 @@ const productCategories = [
                 title: 'RTX³ Overload Relays',
                 description: 'Thermal overload relays for precise motor protection.',
                 details: 'Direct mounting on CTX3 contactors. Class 10A tripping class.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/power/thermal-overload-relays/rtx',
                 attributes: ['Thermal Protection', 'Direct Mounting']
             },
@@ -107,7 +107,7 @@ const productCategories = [
                 title: 'MPX³ MPCB',
                 description: 'Motor Protection Circuit Breakers for switching and protection.',
                 details: 'Combines motor control, disconnect, and overload/short-circuit protection in one device.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Motor Protection', 'High Breaking Capacity']
             }
@@ -121,7 +121,7 @@ const productCategories = [
                 title: 'PMX Panel Meters',
                 description: 'Digital multifunction meters and VAF meters for panel mounting.',
                 details: 'Measure and monitor electrical parameters with high accuracy. RS485 communication option.',
-                imageId: 'cat-meters',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/power/measurement-monitoring-and-supervision/pmx-meters',
                 attributes: ['MFM', 'VAF', 'RS485']
             },
@@ -129,7 +129,7 @@ const productCategories = [
                 title: 'ALPX Capacitors',
                 description: 'Cylindrical and box-type capacitors for power factor correction.',
                 details: 'High-quality capacitors for improving system efficiency and reducing energy costs.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/power/capacitors/alpican',
                 attributes: ['Cylindrical/Box', 'PFC', 'Various KVAR']
             },
@@ -137,7 +137,7 @@ const productCategories = [
                 title: 'APFC Controllers',
                 description: 'Automatic Power Factor Correction controllers.',
                 details: 'Intelligent control of capacitor banks to maintain desired power factor.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Automatic Control', 'Digital Display']
             }
@@ -153,7 +153,7 @@ const productCategories = [
                 title: 'MCB DX³ (10kA+)',
                 description: 'High-performance MCBs for industrial and commercial applications.',
                 details: 'Breaking capacity 10kA and above. Available in B, C, and D curves.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/protection/miniature-circuit-breakers-mcb/dx',
                 attributes: ['10kA+', 'B/C/D Curves', '1P-4P']
             },
@@ -161,7 +161,7 @@ const productCategories = [
                 title: 'MCB RX³ (Resi 6kA)',
                 description: 'Reliable MCBs designed specifically for residential protection.',
                 details: '6kA breaking capacity. C curve protection for household circuits.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Residential', '6kA', 'C Curve']
             },
@@ -169,7 +169,7 @@ const productCategories = [
                 title: 'RCCB / ELCB',
                 description: 'Residual Current Circuit Breakers for earth leakage protection.',
                 details: 'Sensitivity: 30mA, 100mA, 300mA. Protects against electric shock and fire hazards.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/protection/residual-current-circuit-breakers-rccb/dx',
                 attributes: ['30mA/100mA/300mA', 'Earth Leakage']
             },
@@ -177,7 +177,7 @@ const productCategories = [
                 title: 'RCBO (Combo)',
                 description: 'Combined MCB and RCCB for comprehensive circuit protection.',
                 details: 'Overload, short-circuit, and earth leakage protection in a single device.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/protection/rcbo-and-rcd-add-on-blocks/rcbo',
                 attributes: ['Combo Protection', 'Compact']
             },
@@ -185,7 +185,7 @@ const productCategories = [
                 title: 'Isolators',
                 description: 'Switch disconnectors for safe circuit isolation.',
                 details: 'Used for isolating circuits during maintenance. Available in various pole configurations.',
-                imageId: 'prod-circuit-breaker',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Isolation', 'Safety']
             }
@@ -199,7 +199,7 @@ const productCategories = [
                 title: 'Ekinox³ SPN DB',
                 description: 'Single Pole & Neutral distribution boards for residential use.',
                 details: 'Elegant design, easy installation. Available in various way configurations.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/distribution-boards/single-pole-and-neutral-spn-dbs/ekinoxe',
                 attributes: ['SPN', 'Residential', 'Metal/Glazed Door']
             },
@@ -207,7 +207,7 @@ const productCategories = [
                 title: 'Ekinox³ TPN DB',
                 description: 'Three Pole & Neutral DBs for commercial and industrial distribution.',
                 details: 'Robust construction with ample wiring space. IP43/IP54 options.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/distribution-boards/three-pole-and-neutral-tpn-dbs/ekinoxe',
                 attributes: ['TPN', 'Commercial', 'IP43/IP54']
             },
@@ -215,7 +215,7 @@ const productCategories = [
                 title: 'Ekinox³ VTPN DB',
                 description: 'Vertical TPN DBs for high-density distribution requirements.',
                 details: 'Vertical arrangement of MCBs for space saving and organized wiring.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Vertical TPN', 'High Density']
             },
@@ -223,7 +223,7 @@ const productCategories = [
                 title: 'Flexy DB',
                 description: 'Flexible distribution boards for versatile mounting and configuration.',
                 details: 'Adaptable design for various site conditions and requirements.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Flexible', 'Versatile']
             },
@@ -231,7 +231,7 @@ const productCategories = [
                 title: 'Metal/Plastic Enclosures',
                 description: 'Robust enclosures for standalone modular devices.',
                 details: 'Available in metal and plastic versions with different IP ratings.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Enclosure', 'IP Rated']
             }
@@ -245,7 +245,7 @@ const productCategories = [
                 title: 'P17 Tempra Pro',
                 description: 'Industrial plugs and sockets for demanding environments.',
                 details: 'IP44 (Splash-proof) and IP66/67 (Watertight) options. Amperage: 16A, 32A, 63A, 125A.',
-                imageId: 'prod-legrand-socket',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/plugs-sockets/p17-tempra-pro',
                 attributes: ['IP44/IP66/IP67', '16A-125A', '2P+E to 3P+N+E']
             },
@@ -253,7 +253,7 @@ const productCategories = [
                 title: 'Hypra Series',
                 description: 'Heavy-duty plugs and sockets for extreme conditions.',
                 details: 'Rubber and plastic material options. Designed for high impact resistance.',
-                imageId: 'prod-legrand-socket',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Heavy Duty', 'Rubber/Plastic']
             }
@@ -269,7 +269,7 @@ const productCategories = [
                 title: 'Allzy (Matte / All-rounder)',
                 description: 'Versatile switches with a modern matte finish.',
                 details: 'The all-rounder switch range. Available in White and Matt Black.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/allzy',
                 attributes: ['Matte Finish', 'Economy', 'White/Black']
             },
@@ -277,7 +277,7 @@ const productCategories = [
                 title: 'Britzy (Glossy / Budget)',
                 description: 'Glossy finish switches offering value and reliability.',
                 details: 'The "No Problem Switch". Simple, durable, and budget-friendly.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/britzy',
                 attributes: ['Glossy', 'Budget', 'Reliable']
             }
@@ -291,7 +291,7 @@ const productCategories = [
                 title: 'Lyncus (Curved / Sleek)',
                 description: 'Sleek switches with a distinct curved design.',
                 details: 'Minimalist and beveled design. Available in White and Chic Grey.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/lyncus',
                 attributes: ['Curved', 'Sleek', 'White/Grey']
             },
@@ -299,7 +299,7 @@ const productCategories = [
                 title: 'Mylinc (Standard Modular)',
                 description: 'Smart modular switches with screw-less finish.',
                 details: 'Alignment perfection and safety. A standard for modern homes.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/mylinc',
                 attributes: ['Modular', 'Screw-less', 'Standard']
             }
@@ -313,7 +313,7 @@ const productCategories = [
                 title: 'Arteor (Luxury / Materials)',
                 description: 'Luxury switches with premium materials and finishes.',
                 details: 'Available in wood, leather, mirror, and metal finishes. Round and square shapes.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/arteor',
                 attributes: ['Luxury', 'Premium Materials', 'Round/Square']
             },
@@ -321,7 +321,7 @@ const productCategories = [
                 title: 'Myrius NextGen (Patterned)',
                 description: 'Designer switches with unique patterns and motifs.',
                 details: 'IMD technology for long-lasting patterns. Anti-bacterial options available.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/wiring-accessories/myrius',
                 attributes: ['Patterned', 'Motifs', 'Anti-bacterial']
             }
@@ -335,7 +335,7 @@ const productCategories = [
                 title: 'Living Now (Full Touch / Netatmo)',
                 description: 'Revolutionary full-touch switches with smart connectivity.',
                 details: 'Connected functions for light, shutter, and power control. Works with Netatmo.',
-                imageId: 'prod-legrand-switch',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Full Touch', 'IoT', 'Netatmo', 'Smart Home']
             }
@@ -351,7 +351,7 @@ const productCategories = [
                 title: 'Zucchini SCP',
                 description: 'Super Compact busbar for high power distribution.',
                 details: 'Sandwich Construction, 630A-6300A, Horizontal Run. Ideal for industrial power distribution.',
-                imageId: 'cat-busbar',
+                imageId: 'legrand-placeholder',
                 url: 'https://www.legrand.co_in/products/busbar-trunking-system/zucchini',
                 attributes: ['Sandwich Construction', '630A-6300A', 'Horizontal Run']
             }
@@ -365,7 +365,7 @@ const productCategories = [
                 title: 'Zucchini XCP',
                 description: 'High performance busbar for heavy industry applications.',
                 details: 'Fire Resistant (IEC 60331), IP65 protection. Designed for demanding environments.',
-                imageId: 'cat-busbar',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['Heavy Industry', 'Fire Resistant', 'IP65']
             }
@@ -379,7 +379,7 @@ const productCategories = [
                 title: 'Zucchini MS',
                 description: 'Medium power busbar for decentralized distribution.',
                 details: 'Rating: 63A-160A. Flexible solution for medium power requirements.',
-                imageId: 'cat-busbar',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['63A-160A', 'Decentralized']
             }
@@ -393,7 +393,7 @@ const productCategories = [
                 title: 'Zucchini MR',
                 description: 'Vertical riser specific busbar with tap-offs.',
                 details: 'Rating: 160A-1000A. Perfect for rising mains in commercial buildings.',
-                imageId: 'cat-busbar',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['160A-1000A', 'Vertical Riser', 'Tap-offs']
             }
@@ -407,7 +407,7 @@ const productCategories = [
                 title: 'LB Plus',
                 description: 'Busbar system for lighting distribution with plug-in tap-offs.',
                 details: 'Rating: 25A-63A. Efficient power distribution for lighting systems.',
-                imageId: 'cat-busbar',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['25A-63A', 'Lighting', 'Plug-in Tap-offs']
             }
@@ -421,9 +421,92 @@ const productCategories = [
                 title: 'Green T.HE Transformers',
                 description: 'High efficiency cast resin transformers.',
                 details: 'Rating: 160kVA - 16MVA. Eco-friendly and reliable power transformation.',
-                imageId: 'cat-switchgear',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['160kVA - 16MVA', 'Cast Resin', 'Green T.HE']
+            }
+        ]
+    },
+    // --- Power Protection & Switching ---
+    {
+        group: 'Power Protection & Switching',
+        category: 'Air Circuit Breakers (ACB)',
+        products: [
+            {
+                title: 'DMX3 ACB',
+                description: 'Air Circuit Breakers from 630A to 6300A.',
+                details: 'Rating: 630 Amp to 6300 Amp (50/65/100 KA). 3P & 4P. Microprocessor LSI / LSIG. Available in Fixed / Draw out versions.',
+                imageId: 'legrand-placeholder',
+                url: '#',
+                attributes: ['630A-6300A', '50/65/100 KA', 'Microprocessor LSI/LSIG']
+            },
+            {
+                title: 'DMX-SP ACB',
+                description: 'Optimized Air Circuit Breakers up to 2500A.',
+                details: 'Rating: 630 Amp to 2500 Amp (50 KA). 3P & 4P. Microprocessor LSI / LSIG. Available in Fixed / Draw out versions.',
+                imageId: 'legrand-placeholder',
+                url: '#',
+                attributes: ['630A-2500A', '50 KA', 'Microprocessor LSI/LSIG']
+            }
+        ]
+    },
+    {
+        group: 'Power Protection & Switching',
+        category: 'Molded Case Circuit Breakers (MCCB)',
+        products: [
+            {
+                title: 'DPX3 MCCB',
+                description: 'High performance MCCBs for power distribution.',
+                details: 'Rating: 16 Amp to 1250 Amp (16 to 100 KA). 3P & 4P. Thermal Magnetic LSI/ LSIG protection.',
+                imageId: 'legrand-placeholder', // Using DMX-SP image as it contains DPX3 too or placeholder
+                url: '#',
+                attributes: ['16A-1250A', '16-100 KA', 'Thermal Magnetic']
+            },
+            {
+                title: 'DPX3 Electronic MCCB',
+                description: 'Electronic release MCCBs for precise protection.',
+                details: 'Rating: 250 Amp to 1600 Amp (36 to 100 KA). 3P & 4P. Microprocessor LSI/ LSIG protection.',
+                imageId: 'legrand-placeholder', // Using DRX image which has DPX3
+                url: '#',
+                attributes: ['250A-1600A', '36-100 KA', 'Microprocessor LSI/LSIG']
+            },
+            {
+                title: 'DRX MCCB',
+                description: 'Robust MCCBs for standard applications.',
+                details: 'Rating: 16 Amp to 630 Amp (10 to 50 KA). 3P & 4P. Thermal Magnetic & Microprocessor LSI / LSIG.',
+                imageId: 'legrand-placeholder',
+                url: '#',
+                attributes: ['16A-630A', '10-50 KA', 'Thermal Magnetic']
+            }
+        ]
+    },
+    {
+        group: 'Power Protection & Switching',
+        category: 'Contactors & Relays',
+        products: [
+            {
+                title: 'CTX3 Contactor',
+                description: 'Power contactors for motor control and switching.',
+                details: 'Type-AC1 & AC3. 3-Pole: 9A to 800A. 4-Pole: 40A to 900A.',
+                imageId: 'legrand-placeholder',
+                url: '#',
+                attributes: ['9A-800A', 'AC1 & AC3', '3P & 4P']
+            },
+            {
+                title: 'RTX3 Overload Relay',
+                description: 'Thermal overload relays for motor protection.',
+                details: 'OLR - 3/4 Pole. Suitable for overload thermal protection.',
+                imageId: 'legrand-placeholder', // Same image group
+                url: '#',
+                attributes: ['Thermal Overload', '3/4 Pole', 'Motor Protection']
+            },
+            {
+                title: 'MPX3 MPCB',
+                description: 'Motor Protection Circuit Breakers.',
+                details: 'Rating: 0.02 to 45 KW @415V. 0.1A to 100A. Breaking capacity: 15/20/50/100KA.',
+                imageId: 'legrand-placeholder', // Same image group
+                url: '#',
+                attributes: ['0.1A-100A', '15-100 KA', 'Motor Protection']
             }
         ]
     },
@@ -435,7 +518,7 @@ const productCategories = [
                 title: 'XL³ Low Voltage Panels',
                 description: 'Type Tested Assemblies (TTA) for safe and reliable power distribution.',
                 details: 'Fully tested switchboard systems ensuring maximum safety and continuity of service. Compliant with IEC 61439 standards.',
-                imageId: 'prod-lv-panel',
+                imageId: 'legrand-placeholder',
                 url: '#',
                 attributes: ['TTA', 'IEC 61439', 'Safe']
             }
@@ -466,6 +549,22 @@ export function LegrandPage({ brand }: { brand: Brand }) {
     };
 
     React.useEffect(() => {
+        // Handle initial hash scroll with offset
+        if (window.location.hash) {
+            const id = window.location.hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    const offset = 180; // Adjust for sticky header
+                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: elementPosition - offset,
+                        behavior: 'smooth'
+                    });
+                }, 100); // Small delay to ensure rendering
+            }
+        }
+
         const handleScroll = () => {
             const sections = ['components', 'bbt', 'tta-panels'];
             // Trigger point: when the section hits the top third of the viewport
@@ -569,147 +668,154 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                 </section>
 
                 {/* Components Section */}
-                <div id="components" className="scroll-mt-40">
-                    {Object.entries(productCategories.filter(c => !['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers', 'TTA Panels'].includes(c.group || '')).reduce((acc, category) => {
-                        const group = category.group || 'Other';
-                        if (!acc[group]) acc[group] = [];
-                        acc[group].push(category);
-                        return acc;
-                    }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
-                        <div key={group} className="mb-16 pt-16">
-                            <div className="container mx-auto px-4 mb-8">
-                                <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
-                            </div>
-                            {categories.map((category, categoryIndex) => (
-                                <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
-                                    <div className="container mx-auto px-4">
-                                        <div className="text-center mb-10">
-                                            <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
-                                        </div>
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                                            {category.products.map((product, productIndex) => {
-                                                const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                <div id="components" className="scroll-mt-48">
+                    {
+                        Object.entries(productCategories.filter(c => !['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers', 'TTA Panels'].includes(c.group || '')).reduce((acc, category) => {
+                            const group = category.group || 'Other';
+                            if (!acc[group]) acc[group] = [];
+                            acc[group].push(category);
+                            return acc;
+                        }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
+                            <div key={group} className="mb-16 pt-16">
+                                <div className="container mx-auto px-4 mb-8">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
+                                </div>
+                                {categories.map((category, categoryIndex) => (
+                                    <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
+                                        <div className="container mx-auto px-4">
+                                            <div className="text-center mb-10">
+                                                <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
+                                            </div>
+                                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                                {category.products.map((product, productIndex) => {
+                                                    const image = PlaceHolderImages.find(p => p.id === product.imageId);
 
-                                                return (
-                                                    <motion.div
-                                                        key={product.title}
-                                                        initial={{ opacity: 0, scale: 0.9 }}
-                                                        whileInView={{ opacity: 1, scale: 1 }}
-                                                        viewport={{ once: true }}
-                                                        transition={{ duration: 0.4, delay: productIndex * 0.1 }}
-                                                        className="h-full"
-                                                    >
-                                                        <ProductRevealCard
-                                                            name={product.title}
-                                                            image={image?.imageUrl}
-                                                            description={product.description}
-                                                            category={category.category}
-                                                            onAdd={handleEnquire}
-                                                            onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
-                                                            className="w-full h-full"
-                                                        />
-                                                    </motion.div>
-                                                )
-                                            })}
+                                                    return (
+                                                        <motion.div
+                                                            key={product.title}
+                                                            initial={{ opacity: 0, scale: 0.9 }}
+                                                            whileInView={{ opacity: 1, scale: 1 }}
+                                                            viewport={{ once: true }}
+                                                            transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                            className="h-full"
+                                                        >
+                                                            <ProductRevealCard
+                                                                name={product.title}
+                                                                image={image?.imageUrl}
+                                                                description={product.description}
+                                                                category={category.category}
+                                                                onAdd={handleEnquire}
+                                                                onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                                className="w-full h-full"
+                                                            />
+                                                        </motion.div>
+                                                    )
+                                                })}
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            ))}
-                        </div>
-                    ))}
+                                    </section>
+                                ))}
+                            </div>
+                        ))
+                    }
                 </div>
 
                 {/* BBT Section */}
-                <div id="bbt" className="scroll-mt-40">
-                    {Object.entries(productCategories.filter(c => ['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers'].includes(c.group || '')).reduce((acc, category) => {
-                        const group = category.group || 'Other';
-                        if (!acc[group]) acc[group] = [];
-                        acc[group].push(category);
-                        return acc;
-                    }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
-                        <div key={group} className="mb-16 pt-16">
-                            <div className="container mx-auto px-4 mb-8">
-                                <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
-                            </div>
-                            {categories.map((category, categoryIndex) => (
-                                <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
-                                    <div className="container mx-auto px-4">
-                                        <div className="text-center mb-10">
-                                            <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
-                                        </div>
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                                            {category.products.map((product, productIndex) => {
-                                                const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                <div id="bbt" className="scroll-mt-48">
+                    {
+                        Object.entries(productCategories.filter(c => ['Industry (Power Distribution)', 'Building (Rising Mains)', 'Lighting Distribution', 'Transformers'].includes(c.group || '')).reduce((acc, category) => {
+                            const group = category.group || 'Other';
+                            if (!acc[group]) acc[group] = [];
+                            acc[group].push(category);
+                            return acc;
+                        }, {} as Record<string, typeof productCategories>)).map(([group, categories], groupIndex) => (
+                            <div key={group} className="mb-16 pt-16">
+                                <div className="container mx-auto px-4 mb-8">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-primary/80 border-l-4 border-primary pl-4">{group}</h2>
+                                </div>
+                                {categories.map((category, categoryIndex) => (
+                                    <section key={category.category} className={`py-12 ${categoryIndex % 2 !== 0 ? 'bg-secondary/20' : 'bg-background'}`}>
+                                        <div className="container mx-auto px-4">
+                                            <div className="text-center mb-10">
+                                                <h3 className="text-xl md:text-2xl font-semibold tracking-tight inline-block pb-2">{category.category}</h3>
+                                            </div>
+                                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                                {category.products.map((product, productIndex) => {
+                                                    const image = PlaceHolderImages.find(p => p.id === product.imageId);
 
-                                                return (
-                                                    <motion.div
-                                                        key={product.title}
-                                                        initial={{ opacity: 0, scale: 0.9 }}
-                                                        whileInView={{ opacity: 1, scale: 1 }}
-                                                        viewport={{ once: true }}
-                                                        transition={{ duration: 0.4, delay: productIndex * 0.1 }}
-                                                        className="h-full"
-                                                    >
-                                                        <ProductRevealCard
-                                                            name={product.title}
-                                                            image={image?.imageUrl}
-                                                            description={product.description}
-                                                            category={category.category}
-                                                            onAdd={handleEnquire}
-                                                            onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
-                                                            className="w-full h-full"
-                                                        />
-                                                    </motion.div>
-                                                )
-                                            })}
+                                                    return (
+                                                        <motion.div
+                                                            key={product.title}
+                                                            initial={{ opacity: 0, scale: 0.9 }}
+                                                            whileInView={{ opacity: 1, scale: 1 }}
+                                                            viewport={{ once: true }}
+                                                            transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                            className="h-full"
+                                                        >
+                                                            <ProductRevealCard
+                                                                name={product.title}
+                                                                image={image?.imageUrl}
+                                                                description={product.description}
+                                                                category={category.category}
+                                                                onAdd={handleEnquire}
+                                                                onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                                className="w-full h-full"
+                                                            />
+                                                        </motion.div>
+                                                    )
+                                                })}
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            ))}
-                        </div>
-                    ))}
+                                    </section>
+                                ))}
+                            </div>
+                        ))
+                    }
                 </div>
 
                 {/* TTA Panels Section */}
-                <div id="tta-panels" className="scroll-mt-40 mb-24">
-                    {productCategories.filter(c => c.category === 'TTA Panels').map((category, categoryIndex) => (
-                        <section key={category.category} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-secondary/30' : 'bg-background'}`}>
-                            <div className="container mx-auto px-4">
-                                <div className="text-center mb-16">
-                                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight inline-block border-b-4 border-primary pb-2">{category.category}</h2>
-                                </div>
-                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                                    {category.products.map((product, productIndex) => {
-                                        const image = PlaceHolderImages.find(p => p.id === product.imageId);
+                <div id="tta-panels" className="scroll-mt-48 mb-24">
+                    {
+                        productCategories.filter(c => c.category === 'TTA Panels').map((category, categoryIndex) => (
+                            <section key={category.category} className={`py-16 md:py-24 ${categoryIndex % 2 === 0 ? 'bg-secondary/30' : 'bg-background'}`}>
+                                <div className="container mx-auto px-4">
+                                    <div className="text-center mb-16">
+                                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight inline-block border-b-4 border-primary pb-2">{category.category}</h2>
+                                    </div>
+                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                                        {category.products.map((product, productIndex) => {
+                                            const image = PlaceHolderImages.find(p => p.id === product.imageId);
 
-                                        return (
-                                            <motion.div
-                                                key={product.title}
-                                                initial={{ opacity: 0, scale: 0.9 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 0.4, delay: productIndex * 0.1 }}
-                                                className="h-full"
-                                            >
-                                                <ProductRevealCard
-                                                    name={product.title}
-                                                    image={image?.imageUrl}
-                                                    description={product.description}
-                                                    category={category.category}
-                                                    onAdd={handleEnquire}
-                                                    onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
-                                                    className="w-full h-full"
-                                                />
-                                            </motion.div>
-                                        )
-                                    })}
+                                            return (
+                                                <motion.div
+                                                    key={product.title}
+                                                    initial={{ opacity: 0, scale: 0.9 }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 0.4, delay: productIndex * 0.1 }}
+                                                    className="h-full"
+                                                >
+                                                    <ProductRevealCard
+                                                        name={product.title}
+                                                        image={image?.imageUrl}
+                                                        description={product.description}
+                                                        category={category.category}
+                                                        onAdd={handleEnquire}
+                                                        onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
+                                                        className="w-full h-full"
+                                                    />
+                                                </motion.div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
-                    ))}
+                            </section>
+                        ))
+                    }
                 </div>
             </div>
 
+            {/* Product Details Dialog */}
             {/* Product Details Dialog */}
             <Dialog open={!!selectedProduct} onOpenChange={(isOpen) => !isOpen && setSelectedProduct(null)}>
                 <DialogContent
@@ -723,13 +829,14 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                     src={getProductImage(selectedProduct)}
                                     alt={selectedProduct.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="object-cover"
                                 />
                             </div>
                             <div className="p-8 flex flex-col h-full">
                                 <Badge variant="secondary" className="w-fit mb-4">{selectedProduct.category}</Badge>
-                                <h2 className="text-2xl font-bold mb-2">{selectedProduct.title}</h2>
-                                <p className="text-muted-foreground mb-6 text-sm flex-grow">{selectedProduct.description}</p>
+                                <DialogTitle className="text-2xl font-bold mb-2">{selectedProduct.title}</DialogTitle>
+                                <p className="text-muted-foreground mb-6 text-sm">{selectedProduct.description}</p>
 
                                 {selectedProduct.attributes && (
                                     <div className="flex flex-wrap gap-2 mb-6">
@@ -740,30 +847,20 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                 )}
 
                                 <div className="flex gap-4 mb-6">
-                                    <Button variant="outline" className="flex-1"><Download className="w-4 h-4 mr-2" /> Datasheet</Button>
-                                    <Button asChild className="flex-1">
+                                    <Button asChild className="w-full">
                                         <Link href="/quote">Get Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
                                     </Button>
                                 </div>
 
-                                <Tabs defaultValue="description" className="w-full">
-                                    <TabsList className="w-full grid grid-cols-2">
-                                        <TabsTrigger value="description">Description</TabsTrigger>
-                                        <TabsTrigger value="specifications">Specs</TabsTrigger>
-                                    </TabsList>
-                                    <TabsContent value="description" className="text-sm text-foreground/80 mt-4 h-40 overflow-y-auto pr-2 custom-scrollbar">
-                                        {selectedProduct.details}
-                                    </TabsContent>
-                                    <TabsContent value="specifications" className="text-sm text-foreground/80 mt-4 h-40 overflow-y-auto pr-2 custom-scrollbar">
-                                        {selectedProduct.details}
-                                    </TabsContent>
-                                </Tabs>
+                                <div className="text-sm text-foreground/80 mt-4 h-40 overflow-y-auto pr-2 custom-scrollbar">
+                                    <h4 className="font-semibold mb-2">Product Details</h4>
+                                    {selectedProduct.details}
+                                </div>
                             </div>
                         </div>
                     )}
                 </DialogContent>
             </Dialog>
-
 
             {/* Why Choose Legrand */}
             <section className="py-16 md:py-24 bg-background">
@@ -805,3 +902,4 @@ export function LegrandPage({ brand }: { brand: Brand }) {
         </BrandPageLayout>
     );
 }
+

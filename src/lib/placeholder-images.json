@@ -238,5 +238,242 @@
     "description": "Legrand Power Socket",
     "imageUrl": "/generated/prod-legrand-socket.png",
     "imageHint": "power socket"
+  },
+  {
+    "id": "acb",
+    "description": "Legrand DMX3 Air Circuit Breaker",
+    "imageUrl": "/acb_dmx3.png",
+    "imageHint": "air circuit breaker"
+  },
+  {
+    "imageHint": "robotic arm"
+  },
+  {
+    "id": "cat-lighting",
+    "description": "LED industrial lighting fixture",
+    "imageUrl": "https://images.unsplash.com/photo-1605419589330-0b6dede4c265?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxMRUQlMjBsaWdodHxlbnwwfHx8fDE3NjEyODcxMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "LED light"
+  },
+  {
+    "id": "career-hero",
+    "description": "A team of engineers collaborating in a modern office",
+    "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+    "imageHint": "engineering team"
+  },
+  {
+    "id": "career-gallery-1",
+    "description": "Team members in a training session",
+    "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop",
+    "imageHint": "team meeting"
+  },
+  {
+    "id": "career-gallery-2",
+    "description": "An engineer working on-site with industrial equipment",
+    "imageUrl": "https://images.unsplash.com/photo-1581092919534-89cda27c1d63?q=80&w=1770&auto=format&fit=crop",
+    "imageHint": "industrial work"
+  },
+  {
+    "id": "about-hero",
+    "description": "Abstract image of interconnected power grids and data streams",
+    "imageUrl": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvZmZpY2V8ZW58MHx8fHwxNzYxNDY5NzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "modern office"
+  },
+  {
+    "id": "about-story",
+    "description": "Modern office building representing the Pune headquarters",
+    "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop",
+    "imageHint": "modern office"
+  },
+  {
+    "id": "legrand-hero",
+    "description": "Abstract image of Legrand smart home devices",
+    "imageUrl": "https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?q=80&w=1886&auto=format&fit=crop",
+    "imageHint": "smart home"
+  },
+  {
+    "id": "kei-hero",
+    "description": "Closeup of industrial cables and wires",
+    "imageUrl": "https://images.unsplash.com/photo-1598252510902-b63c636d338f?q=80&w=2070&auto=format&fit=crop",
+    "imageHint": "industrial cables"
+  },
+  {
+    "id": "kei-hv-cable",
+    "description": "KEI High Voltage power cables",
+    "imageUrl": "https://images.unsplash.com/photo-1664199014827-02b92524fcea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwb3dlciUyMGNhYmxlc3xlbnwwfHx8fDE3NjE1NjAxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "power cables"
+  },
+  {
+    "id": "kei-lv-cable",
+    "description": "KEI Low Voltage power and control cables",
+    "imageUrl": "https://images.unsplash.com/photo-1544672531-c546e93e2cfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb250cm9sJTIwY2FibGVzfGVufDB8fHx8MTc2MTU2MDExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "control cables"
+  },
+  {
+    "id": "kei-building-wires",
+    "description": "Coils of colorful building wires",
+    "imageUrl": "https://images.unsplash.com/photo-1758215566907-472a6b890264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YnVpbGRpbmclMjB3aXJlfGVufDB8fHx8MTc2MTU2MDIxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "building wire"
+  },
+  {
+    "id": "kei-solar-cables",
+    "description": "Solar cables connecting panels",
+    "imageUrl": "https://images.unsplash.com/photo-1754620906571-9ba64bd3ffb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzb2xhciUyMGNhYmxlfGVufDB8fHx8MTc2MTU2MDIxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "solar cable"
+  },
+  {
+    "id": "kei-flexible-wires",
+    "description": "Flexible multi-core wires",
+    "imageUrl": "https://images.unsplash.com/photo-1733913106110-3f9832a788a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmbGV4aWJsZSUyMHdpcmVfZW58MHx8fHwxNzYxNTYwMjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "flexible wire"
+  },
+  {
+    "id": "kei-ehv-cable",
+    "description": "Extra-High Voltage power cable on a large spool",
+    "imageUrl": "https://images.unsplash.com/photo-1570622010005-a1222c488dc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxFSFYlMjBjYWJsZXxlbnwwfHx8fDE3NjE1NjAyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "EHV cable"
+  },
+  {
+    "id": "kei-telecom-cables",
+    "description": "Bundle of fiber optic telecom cables",
+    "imageUrl": "https://images.unsplash.com/photo-1692539015888-a6b61f69871c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWxlY29tJTIwY2FibGV8ZW58MHx8fHwxNzYxNTYwMjEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "telecom cable"
+  },
+  {
+    "id": "kei-instrumentation-cables",
+    "description": "Instrumentation cables connected to a panel",
+    "imageUrl": "https://images.unsplash.com/photo-1696150874769-ea4f30453c2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbnN0cnVtZW50YXRpb24lMjBjYWJsZXxlbnwwfHx8fDE3NjE1NjAyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "instrumentation cable"
+  },
+  {
+    "id": "kei-fire-survival-cables",
+    "description": "Fire-resistant cables in a conduit",
+    "imageUrl": "https://images.unsplash.com/photo-1599932566288-33d57caf0cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmaXJlJTIwcHJvb2Z8ZW58MHx8fHwxNzYxNTYwMjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "fire proof"
+  },
+  {
+    "id": "socomec-hero",
+    "description": "Bright and clean image of a modern power management facility",
+    "imageUrl": "/socomec page main.png",
+    "imageHint": "power facility"
+  },
+  {
+    "id": "socomec-countis-meter",
+    "description": "Clear shot of a Socomec Countis energy meter",
+    "imageUrl": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1769&auto=format&fit=crop",
+    "imageHint": "energy meter"
+  },
+  {
+    "id": "socomec-multis-meter",
+    "description": "Front view of a Socomec MULTIS multifunction meter",
+    "imageUrl": "https://images.unsplash.com/photo-1567504381395-5a213955e85f?q=80&w=1932&auto=format&fit=crop",
+    "imageHint": "multifunction meter"
+  },
+  {
+    "id": "socomec-diris-digiware",
+    "description": "Socomec DIRIS Digiware monitoring system in a server rack",
+    "imageUrl": "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2070&auto=format&fit=crop",
+    "imageHint": "monitoring system"
+  },
+  {
+    "id": "socomec-manual-changeover",
+    "description": "A clean, well-lit Socomec manual changeover switch",
+    "imageUrl": "https://images.unsplash.com/photo-1617861096383-0593ef53e3a4?q=80&w=1770&auto=format&fit=crop",
+    "imageHint": "changeover switch"
+  },
+  {
+    "id": "socomec-load-break",
+    "description": "Industrial Socomec load break switch",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+    "imageHint": "load switch"
+  },
+  {
+    "id": "socomec-bypass-switch",
+    "description": "Close-up of a Socomec bypass switch",
+    "imageUrl": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop",
+    "imageHint": "bypass switch"
+  },
+  {
+    "id": "socomec-ats",
+    "description": "A Socomec Automatic Transfer Switch in a control panel",
+    "imageUrl": "https://images.unsplash.com/photo-1596008610979-9a6d685140b2?q=80&w=1974&auto=format&fit=crop",
+    "imageHint": "transfer switch"
+  },
+  {
+    "id": "prod-circuit-breaker",
+    "description": "Industrial circuit breaker",
+    "imageUrl": "/generated/prod-circuit-breaker.png",
+    "imageHint": "circuit breaker"
+  },
+  {
+    "id": "prod-mv-switchgear",
+    "description": "Medium Voltage Switchgear",
+    "imageUrl": "/generated/prod-mv-switchgear.png",
+    "imageHint": "mv switchgear"
+  },
+  {
+    "id": "prod-lv-panel",
+    "description": "Low Voltage Panel",
+    "imageUrl": "/generated/prod-lv-panel.png",
+    "imageHint": "lv panel"
+  },
+  {
+    "id": "prod-legrand-switch",
+    "description": "Legrand Smart Switch",
+    "imageUrl": "/generated/prod-legrand-switch.png",
+    "imageHint": "smart switch"
+  },
+  {
+    "id": "prod-home-automation",
+    "description": "Home Automation Hub",
+    "imageUrl": "/generated/prod-home-automation.png",
+    "imageHint": "automation hub"
+  },
+  {
+    "id": "prod-legrand-socket",
+    "description": "Legrand Power Socket",
+    "imageUrl": "/generated/prod-legrand-socket.png",
+    "imageHint": "power socket"
+  },
+  {
+    "id": "acb",
+    "description": "Legrand DMX3 Air Circuit Breaker",
+    "imageUrl": "/acb_dmx3.png",
+    "imageHint": "air circuit breaker"
+  },
+  {
+    "id": "mccb",
+    "description": "Legrand DRX MCCB",
+    "imageUrl": "/images/legrand/legrand-drx.png",
+    "imageHint": "mccb"
+  },
+  {
+    "id": "contactor",
+    "description": "Legrand CTX3 Contactor",
+    "imageUrl": "/images/legrand/legrand-ctx3.png",
+    "imageHint": "contactor"
+  },
+  {
+    "id": "legrand-placeholder",
+    "description": "Legrand Brand Logo",
+    "imageUrl": "/legrand_logo.png",
+    "imageHint": "legrand logo"
+  },
+  {
+    "id": "kei-placeholder",
+    "description": "KEI Cables Brand Logo",
+    "imageUrl": "/kei_logo.png",
+    "imageHint": "kei logo"
+  },
+  {
+    "id": "socomec-placeholder",
+    "description": "Socomec Brand Logo",
+    "imageUrl": "/socomecc-p-500.png",
+    "imageHint": "socomec logo"
+  },
+  {
+    "id": "elmeasure-placeholder",
+    "description": "Elmeasure Brand Logo",
+    "imageUrl": "/Elmeasure_logo.png",
+    "imageHint": "elmeasure logo"
   }
 ]

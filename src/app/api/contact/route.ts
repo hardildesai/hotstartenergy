@@ -2,13 +2,13 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
-    console.log("📩 Contact API triggered");
+
 
     try {
         const body = await req.json();
         const { name, email, subject, message } = body;
 
-        console.log("📦 Payload received:", { name, email, subject, messageLength: message?.length });
+
 
         // 1. Validate Input
         if (!name || !email || !message) {
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
             );
         }
 
-        console.log(`🔐 Authenticating as: ${emailUser}`);
+
 
         // 3. Configure Transporter
         const transporter = nodemailer.createTransport({
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         // 4. Verify Connection
         try {
             await transporter.verify();
-            console.log("✅ Transporter connection verified");
+
         } catch (verifyError) {
             console.error("❌ Transporter verification failed:", verifyError);
             return NextResponse.json(
@@ -84,7 +84,7 @@ export async function POST(req: Request) {
         };
 
         const info = await transporter.sendMail(mailOptions);
-        console.log("✅ Email sent:", info.messageId);
+
 
         return NextResponse.json(
             { message: 'Email sent successfully' },

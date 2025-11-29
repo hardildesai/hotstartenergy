@@ -22,13 +22,22 @@ function DesktopNavbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
 
   const getProductCategoryHref = (categoryId: string) => {
-    if (categoryId === 'cables-wires') {
-      return '/brands/kei-cables';
+    switch (categoryId) {
+      case 'switchgear-panels':
+        return '/brands/legrand#components';
+      case 'cables-wires':
+        return '/brands/kei-cables';
+      case 'meters-monitoring':
+        return '/brands/socomec';
+      case 'busbar-systems':
+        return '/brands/legrand#bbt';
+      case 'lighting-accessories':
+        return '/brands/havells';
+      case 'automation-drives':
+        return '/automation-coming-soon';
+      default:
+        return `/products?category=${categoryId}`;
     }
-    if (categoryId === 'lighting-accessories') {
-      return '/brands/havells';
-    }
-    return `/products?category=${categoryId}`;
   };
 
   return (
@@ -37,8 +46,8 @@ function DesktopNavbar({ className }: { className?: string }) {
     >
       <nav
         onMouseLeave={() => setActive(null)} // resets the state
-        className="relative rounded-full border border-transparent dark:bg-black/50 bg-white/80 dark:border-white/[0.2] shadow-input flex justify-between items-center w-full px-8 py-4"
-        style={{ backdropFilter: 'url("#container-glass")' }}
+        className="relative rounded-full border border-transparent dark:bg-black/50 bg-white/80 dark:border-white/[0.2] shadow-input flex justify-between items-center w-full px-8 py-4 backdrop-blur-md"
+        style={{}}
       >
         <div onMouseEnter={() => setActive(null)}>
           <Link href="/" className="flex items-center">
@@ -102,19 +111,28 @@ function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const getProductCategoryHref = (categoryId: string) => {
-    if (categoryId === 'cables-wires') {
-      return '/brands/kei-cables';
+    switch (categoryId) {
+      case 'switchgear-panels':
+        return '/brands/legrand#components';
+      case 'cables-wires':
+        return '/brands/kei-cables';
+      case 'meters-monitoring':
+        return '/brands/socomec';
+      case 'busbar-systems':
+        return '/brands/legrand#bbt';
+      case 'lighting-accessories':
+        return '/brands/havells';
+      case 'automation-drives':
+        return '/automation-coming-soon';
+      default:
+        return `/products?category=${categoryId}`;
     }
-    if (categoryId === 'lighting-accessories') {
-      return '/brands/havells';
-    }
-    return `/products?category=${categoryId}`;
   };
 
   return (
     <div
-      className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md"
-      style={{ backdropFilter: 'url("#container-glass")' }}
+      className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md backdrop-blur-md"
+      style={{}}
     >
       <div className="container mx-auto px-4 h-16 flex justify-between items-center">
         <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
@@ -140,10 +158,11 @@ function MobileNavbar() {
                 <Accordion type="single" collapsible>
                   <AccordionItem value="products" className="border-b-0">
                     <AccordionTrigger className="text-lg font-medium hover:no-underline py-2">
-                      <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
+                      <span onClick={() => setIsOpen(false)}>Products</span>
                     </AccordionTrigger>
                     <AccordionContent className="pl-4">
                       <div className="flex flex-col gap-2">
+                        <Link href="/products" className="block text-muted-foreground hover:text-foreground font-medium" onClick={() => setIsOpen(false)}>All Products</Link>
                         {productCategories.map(category => (
                           <Link key={category.id} href={getProductCategoryHref(category.id)} className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>{category.title}</Link>
                         ))}

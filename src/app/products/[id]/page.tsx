@@ -8,14 +8,47 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
+import { Metadata } from 'next';
+
 export function generateStaticParams() {
   return products.map((product) => ({
     id: product.id,
   }));
 }
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+    };
+  }
+
+  const image = PlaceHolderImages.find((p) => p.id === product.imageId);
+
+  return {
+    title: `${product.name} | ${product.brand} | Hotstart Energy`,
+    description: product.description,
+    openGraph: {
+      title: `${product.name} | ${product.brand} | Hotstart Energy`,
+      description: product.description,
+      images: image ? [
+        {
+          url: image.imageUrl,
+          width: 800,
+          height: 600,
+          alt: product.name,
+        },
+      ] : [],
+    },
+  };
+}
+
+export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     notFound();
@@ -23,22 +56,74 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
   const image = PlaceHolderImages.find((p) => p.id === product.imageId);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    image: image?.imageUrl,
+    description: product.description,
+    brand: {
+      '@type': 'Brand',
+      name: product.brand,
+    },
+    offers: {
+      '@type': 'Offer',
+      url: `https://www.hotstartenergy.com/products/${product.id}`,
+      priceCurrency: 'INR',
+      price: '0', // Price on request
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.hotstartenergy.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: 'https://www.hotstartenergy.com/products',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.name,
+        item: `https://www.hotstartenergy.com/products/${product.id}`,
+      },
+    ],
+  };
+
   return (
     <div className="container mx-auto px-4 py-12 pt-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div>
           {image && (
             <Card className="overflow-hidden">
-                <div className="relative aspect-video w-full">
-                    <Image
-                        src={image.imageUrl}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        data-ai-hint={image.imageHint}
-                    />
-                </div>
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={image.imageUrl}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  data-ai-hint={image.imageHint}
+                />
+              </div>
             </Card>
           )}
         </div>
@@ -46,9 +131,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           <Badge variant="secondary">{product.category}</Badge>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">{product.name}</h1>
           <h2 className="mt-2 text-xl text-muted-foreground">{product.brand}</h2>
-          
+
           <p className="mt-6 text-base text-foreground/80">{product.description}</p>
-          
+
           <Separator className="my-8" />
 
           <h3 className="text-xl font-semibold mb-4">Specifications</h3>

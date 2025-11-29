@@ -10,13 +10,27 @@ export function ProductCategoriesSection() {
   const router = useRouter();
 
   const handleCardClick = (categoryId: string) => {
-    if (categoryId === 'cables-wires') {
-      router.push('/brands/kei-cables');
-    } else if (categoryId === 'lighting-accessories') {
-      router.push('/brands/havells');
-    }
-    else {
-      router.push(`/products?category=${categoryId}`);
+    switch (categoryId) {
+      case 'switchgear-panels':
+        router.push('/brands/legrand#components');
+        break;
+      case 'cables-wires':
+        router.push('/brands/kei-cables');
+        break;
+      case 'meters-monitoring':
+        router.push('/brands/socomec');
+        break;
+      case 'busbar-systems':
+        router.push('/brands/legrand#bbt');
+        break;
+      case 'lighting-accessories':
+        router.push('/brands/havells');
+        break;
+      case 'automation-drives':
+        router.push('/automation-coming-soon');
+        break;
+      default:
+        router.push(`/products?category=${categoryId}`);
     }
   };
 

@@ -8,6 +8,12 @@ import { ProductGrid } from '@/components/products/product-grid';
 import Image from 'next/image';
 import { SmoothScrollToAnchor } from '@/components/ui/smooth-scroll-to-anchor';
 import { Suspense } from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Our Products | Hotstart Energy",
+  description: "Explore our comprehensive range of electrical and automation products from top brands like Legrand, Socomec, KEI, and Havells.",
+};
 
 export default function ProductsPage() {
   return (
@@ -65,4 +71,3 @@ export default function ProductsPage() {
   );
 }
 
-    
