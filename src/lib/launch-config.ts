@@ -1,5 +1,5 @@
 export const LAUNCH_CONFIG = {
-    TARGET_DATE: '2025-12-04T09:00:00+05:30', // Dec 4, 2025, 9 AM IST
+    TARGET_DATE: '2025-12-04T10:00:00+05:30', // Dec 4, 2025, 10 AM IST
     CAMPAIGN_START_DATE: '2025-11-29T00:00:00+05:30', // Nov 29, 2025 (Today)
     TEST_MODE_DURATION: 5000, // 5 seconds for testing
     OWNER_PASSWORD: 'hotadminstart',

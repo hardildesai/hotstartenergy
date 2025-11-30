@@ -223,12 +223,7 @@ export function CountdownOverlay({ onUnlock }: CountdownOverlayProps) {
                         <div className="relative z-10 flex flex-col items-center gap-12 p-8 text-center max-w-5xl w-full">
 
                             {/* Logo Area */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="relative"
-                            >
+                            <div className="relative">
                                 <div className="relative w-64 h-24 md:w-80 md:h-32 mx-auto">
                                     <Image
                                         src="/navbar_logo.png"
@@ -238,22 +233,25 @@ export function CountdownOverlay({ onUnlock }: CountdownOverlayProps) {
                                         priority
                                     />
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Main Content */}
                             <div className="flex flex-col items-center gap-6">
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.8, delay: 0.4 }}
-                                >
+                                <div>
                                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">
                                         Unveiling Innovation
                                     </h1>
                                     <p className="mt-4 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto">
                                         The future of industrial power and automation is arriving.
                                     </p>
-                                </motion.div>
+                                    {/* SEO Content (Hidden visually but available to crawlers) */}
+                                    <div className="sr-only">
+                                        Hotstart Energy is a leading provider of electrical, automation, and power distribution solutions in Pune, India.
+                                        We are authorized partners for premium brands like Legrand, Socomec, KEI, and Havells.
+                                        Our services include Industrial Automation, Switchgear, Energy Management Systems, and Power Distribution Units.
+                                        Contact us for expert electrical solutions.
+                                    </div>
+                                </div>
 
                                 {/* Countdown Timer */}
                                 <motion.div
@@ -306,13 +304,29 @@ export function CountdownOverlay({ onUnlock }: CountdownOverlayProps) {
                                         </AnimatePresence>
                                         <span>{Math.round(progress)}%</span>
                                     </div>
-                                    <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                    <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden relative">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={{ width: `${progress}%` }}
                                             transition={{ duration: 1, ease: "easeOut" }}
-                                            className="h-full bg-blue-600 rounded-full"
-                                        />
+                                            className="h-full bg-blue-600 rounded-full relative overflow-hidden"
+                                        >
+                                            {/* Shimmer Effect */}
+                                            <motion.div
+                                                className="absolute inset-0 z-10"
+                                                style={{
+                                                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)",
+                                                }}
+                                                animate={{ x: ["-100%", "100%"] }}
+                                                transition={{
+                                                    repeat: Infinity,
+                                                    duration: 1.5,
+                                                    ease: "linear",
+                                                }}
+                                            />
+                                            {/* Leading Edge Glow */}
+                                            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/50 shadow-[0_0_10px_2px_rgba(255,255,255,0.6)] z-20" />
+                                        </motion.div>
                                     </div>
                                 </motion.div>
                             </div>
