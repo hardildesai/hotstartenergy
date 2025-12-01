@@ -27,9 +27,9 @@ interface AnimatedSectionsProps {
 
 const defaultSections: SectionData[] = [
   {
-    title: 'HOTSTART ENERGY PVT. LTD.',
-    text: 'LEADING PROVIDER OF POWER & ENERGY SOLUTIONS',
-    description: 'Leading provider of premier electrical products for Indian industry. Trusted by top brands, built for your growth.',
+    title: 'HOTSTART ENERGY: INDUSTRIAL AUTOMATION & POWER SOLUTIONS',
+    text: 'AUTHORIZED DISTRIBUTOR FOR LEGRAND, SOCOMEC, KEI & HAVELLS',
+    description: 'Your trusted partner for premier electrical products and integrated energy solutions. Powering Indian industry with quality, reliability, and expertise.',
     img: PlaceHolderImages.find(p => p.id === 'hero-1')?.imageUrl || '',
     primaryAction: { text: 'Contact Us Now', href: '/contact' },
     secondaryAction: { text: 'View Products', href: '/products' },

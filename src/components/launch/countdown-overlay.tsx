@@ -308,24 +308,51 @@ export function CountdownOverlay({ onUnlock }: CountdownOverlayProps) {
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={{ width: `${progress}%` }}
-                                            transition={{ duration: 1, ease: "easeOut" }}
-                                            className="h-full bg-blue-600 rounded-full relative overflow-hidden"
+                                            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+                                            style={{
+                                                background: "linear-gradient(90deg, #2563eb, #60a5fa, #2563eb)",
+                                                backgroundSize: "200% 100%",
+                                                willChange: "width, transform"
+                                            }}
+                                            className="h-full rounded-full relative overflow-hidden"
                                         >
-                                            {/* Shimmer Effect */}
+                                            {/* Moving Gradient Background Animation */}
+                                            <motion.div
+                                                className="absolute inset-0 z-0"
+                                                animate={{ backgroundPosition: ["0% 0%", "200% 0%"] }}
+                                                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                                            />
+
+                                            {/* Shimmer Overlay */}
                                             <motion.div
                                                 className="absolute inset-0 z-10"
                                                 style={{
-                                                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)",
+                                                    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent)",
                                                 }}
                                                 animate={{ x: ["-100%", "100%"] }}
                                                 transition={{
                                                     repeat: Infinity,
-                                                    duration: 1.5,
+                                                    duration: 1.2,
                                                     ease: "linear",
                                                 }}
                                             />
-                                            {/* Leading Edge Glow */}
-                                            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-white/50 shadow-[0_0_10px_2px_rgba(255,255,255,0.6)] z-20" />
+
+                                            {/* Leading Edge Glow with Pulse */}
+                                            <motion.div
+                                                className="absolute right-0 top-0 bottom-0 w-[3px] bg-white z-20"
+                                                animate={{
+                                                    boxShadow: [
+                                                        "0 0 10px 2px rgba(255,255,255,0.6)",
+                                                        "0 0 20px 5px rgba(255,255,255,0.8)",
+                                                        "0 0 10px 2px rgba(255,255,255,0.6)"
+                                                    ]
+                                                }}
+                                                transition={{
+                                                    repeat: Infinity,
+                                                    duration: 1.5,
+                                                    ease: "easeInOut"
+                                                }}
+                                            />
                                         </motion.div>
                                     </div>
                                 </motion.div>

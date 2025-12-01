@@ -12,8 +12,8 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { ContactSection } from '@/components/home/contact-section';
 
 export const metadata: Metadata = {
-  title: "Hotstart Energy Pvt. Ltd. | Electrical, Automation & Power Solutions",
-  description: "Hotstart Energy is a leading provider of electrical, automation, and power distribution solutions. As an authorized partner for top global brands, we deliver reliable products and integrated energy solutions for industrial, commercial, and infrastructure projects across India."
+  title: "Hotstart Energy - Premier Industrial Automation & Electrical Solutions Partner",
+  description: "Explore our comprehensive range of industrial automation, switchgear, and power distribution products. Authorized distributor for Legrand, Socomec, KEI, and Havells in India."
 }
 
 export default function Home() {

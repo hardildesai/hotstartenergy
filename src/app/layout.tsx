@@ -22,33 +22,36 @@ const titilliumWeb = Titillium_Web({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.hotstartenergy.com'),
   title: {
-    default: 'Hotstart Energy | Electrical, Automation & Power Solutions',
+    default: 'Hotstart Energy | Industrial Automation & Power Distribution Solutions',
     template: '%s | Hotstart Energy'
   },
-  description: 'Hotstart Energy is a leading provider of electrical, automation, and power distribution solutions. Authorized partner for Legrand, Socomec, KEI, and Havells.',
-  keywords: ['Electrical Solutions', 'Industrial Automation', 'Power Distribution', 'Switchgear', 'Legrand', 'Socomec', 'KEI', 'Havells', 'Energy Management', 'Pune'],
+  description: 'Hotstart Energy is a leading authorized distributor of Legrand, Socomec, KEI, and Havells products. We provide industrial automation, switchgear, and power distribution solutions in Pune and across India.',
+  keywords: ['Industrial Automation', 'Power Distribution', 'Electrical Switchgear', 'Energy Management Systems', 'Legrand Distributor', 'Socomec Partner', 'KEI Cables', 'Havells Industrial', 'Pune Electrical Suppliers', 'PLC Automation'],
+  alternates: {
+    canonical: 'https://www.hotstartenergy.com',
+  },
   authors: [{ name: 'Hotstart Energy' }],
   creator: 'Hotstart Energy',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: 'https://www.hotstartenergy.com',
-    title: 'Hotstart Energy | Electrical, Automation & Power Solutions',
-    description: 'Leading provider of electrical, automation, and power distribution solutions in India.',
+    title: 'Hotstart Energy | Industrial Automation & Power Solutions',
+    description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
     siteName: 'Hotstart Energy',
     images: [
       {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Hotstart Energy',
+        alt: 'Hotstart Energy Industrial Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hotstart Energy | Electrical, Automation & Power Solutions',
-    description: 'Leading provider of electrical, automation, and power distribution solutions in India.',
+    title: 'Hotstart Energy | Industrial Automation & Power Solutions',
+    description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
     images: ['/opengraph-image.png'],
     creator: '@hotstartenergy',
   },

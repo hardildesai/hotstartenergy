@@ -39,7 +39,7 @@ export function ProductCategoriesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Products & Solutions
+            Industrial Electrical Products & Solutions
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Explore our complete range of electrical distribution and automation

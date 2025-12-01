@@ -59,7 +59,7 @@ export function ContactForm() {
     };
 
     return (
-        <div className="bg-card p-8 rounded-lg shadow-sm border">
+        <div className="bg-card p-6 md:p-8 rounded-lg shadow-sm border">
             <h2 className="text-2xl font-bold mb-6 text-center">Send us a Message</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">

@@ -22,54 +22,54 @@ export default function ContactPage() {
 
             <div className="max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-8">
-                    <div className="bg-card p-8 rounded-lg shadow-sm border h-fit">
+                    <div className="bg-card p-5 md:p-8 rounded-lg shadow-sm border h-fit w-full overflow-hidden">
                         <h2 className="text-2xl font-bold mb-6 text-center">Contact Information</h2>
                         <div className="grid md:grid-cols-1 gap-8 mb-8">
                             <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-foreground">Our Offices</h3>
                                 <div className="space-y-6">
-                                    <div>
+                                    <div className="w-full">
                                         <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                            <MapPin className="h-5 w-5 text-accent" /> Pune (Head Office)
+                                            <MapPin className="h-5 w-5 text-accent flex-shrink-0" /> Pune (Head Office)
                                         </h4>
-                                        <div className="pl-7 space-y-1">
+                                        <div className="pl-0 md:pl-7 space-y-1">
                                             <p className="text-muted-foreground">
                                                 Office No. 203, K. Square, K. P. Shroff Rd, Baner,<br />
                                                 Pune – 411045, Maharashtra, India
                                             </p>
                                             <div className="flex items-center gap-2 text-muted-foreground">
-                                                <Phone className="h-4 w-4 text-accent" />
+                                                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
                                                 <span>+91-99211-88399</span>
                                             </div>
-                                            <div className="flex items-center gap-2 text-muted-foreground">
-                                                <Mail className="h-4 w-4 text-accent" />
+                                            <div className="flex items-center gap-2 text-muted-foreground w-full">
+                                                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                                                 {/* eslint-disable-next-line */}
-                                                <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary">hotstartenergy@gmail.com</a>
+                                                <a href="mailto:hotstartenergy@gmail.com" className="hover:text-primary break-all min-w-0 flex-1">hotstartenergy@gmail.com</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className="w-full">
                                         <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                            <MapPin className="h-5 w-5 text-accent" /> Ahmedabad (Branch Office)
+                                            <MapPin className="h-5 w-5 text-accent flex-shrink-0" /> Ahmedabad (Branch Office)
                                         </h4>
-                                        <div className="pl-7 space-y-1">
+                                        <div className="pl-0 md:pl-7 space-y-1">
                                             <p className="text-muted-foreground">
                                                 514, Times Square 1, Thaltej-Shilaj Road, Nr. Ravija Plaza, Opp. Rambaug, Thaltej,<br />
                                                 Ahmedabad, Gujarat, 380059.
                                             </p>
                                             <div className="flex items-center gap-2 text-muted-foreground">
-                                                <Phone className="h-4 w-4 text-accent" />
+                                                <Phone className="h-4 w-4 text-accent flex-shrink-0" />
                                                 <span>+91-94263 21532</span>
                                             </div>
-                                            <div className="flex items-center gap-2 text-muted-foreground">
-                                                <Mail className="h-4 w-4 text-accent" />
+                                            <div className="flex items-center gap-2 text-muted-foreground w-full">
+                                                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                                                 {/* eslint-disable-next-line */}
-                                                <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary">sales.ahm.hotstartenergy@gmail.com</a>
+                                                <a href="mailto:sales.ahm.hotstartenergy@gmail.com" className="hover:text-primary break-all min-w-0 flex-1">sales.ahm.hotstartenergy@gmail.com</a>
                                             </div>
-                                            <div className="flex items-center gap-2 text-muted-foreground">
-                                                <Mail className="h-4 w-4 text-accent" />
+                                            <div className="flex items-center gap-2 text-muted-foreground w-full">
+                                                <Mail className="h-4 w-4 text-accent flex-shrink-0" />
                                                 {/* eslint-disable-next-line */}
-                                                <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary">bhavesh.hotstartenergy@gmail.com</a>
+                                                <a href="mailto:bhavesh.hotstartenergy@gmail.com" className="hover:text-primary break-all min-w-0 flex-1">bhavesh.hotstartenergy@gmail.com</a>
                                             </div>
                                         </div>
                                     </div>
