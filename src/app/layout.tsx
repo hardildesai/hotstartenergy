@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Titillium_Web } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
 import { CountdownOverlay } from '@/components/launch/countdown-overlay';
@@ -121,6 +122,7 @@ export default function RootLayout({
                     <Toaster />
                     <SonnerToaster richColors />
                     <SpeedInsights />
+                    <Analytics />
                     <FloatingWhatsApp />
                 </LaunchGuard>
             </body>
