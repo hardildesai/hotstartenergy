@@ -4,19 +4,23 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 222.2 84% 4.9%; /* Dark Gray */
+    --background: 0 0% 100%;
+    /* White */
+    --foreground: 222.2 84% 4.9%;
+    /* Dark Gray */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 216 34% 47%; /* Deep Blue */
+    --primary: 216 34% 47%;
+    /* Deep Blue */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 204 80% 55%; /* Electric Blue */
+    --accent: 204 80% 55%;
+    /* Electric Blue */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -80,10 +84,12 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
   html {
     @apply scroll-smooth;
   }
@@ -200,16 +206,15 @@
     height: 0;
     visibility: hidden;
   }
+
   .gradient-button {
     @apply relative appearance-none cursor-pointer;
-    background: radial-gradient(
-      var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
-      var(--color-1) var(--stop-1),
-      var(--color-2) var(--stop-2),
-      var(--color-3) var(--stop-3),
-      var(--color-4) var(--stop-4),
-      var(--color-5) var(--stop-5)
-    );
+    background: radial-gradient(var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+        var(--color-1) var(--stop-1),
+        var(--color-2) var(--stop-2),
+        var(--color-3) var(--stop-3),
+        var(--color-4) var(--stop-4),
+        var(--color-5) var(--stop-5));
     transition:
       --pos-x 0.5s,
       --pos-y 0.5s,
@@ -236,11 +241,9 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(
-      var(--border-angle),
-      var(--border-color-1),
-      var(--border-color-2)
-    );
+    background: linear-gradient(var(--border-angle),
+        var(--border-color-1),
+        var(--border-color-2));
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     pointer-events: none;
@@ -298,6 +301,6 @@
   }
 
   .footer-container .lower-footer {
-      border-top: 1px solid hsl(var(--border));
+    border-top: 1px solid hsl(var(--border));
   }
 }

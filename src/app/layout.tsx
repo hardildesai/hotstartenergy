@@ -14,116 +14,116 @@ import { LaunchGuard } from '@/components/launch/launch-guard';
 
 
 const titilliumWeb = Titillium_Web({
-  subsets: ['latin'],
-  weight: ['200', '300', '400', '600', '700', '900'],
-  variable: '--font-titillium-web',
+    subsets: ['latin'],
+    weight: ['200', '300', '400', '600', '700', '900'],
+    variable: '--font-titillium-web',
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.hotstartenergy.com'),
-  title: {
-    default: 'Hotstart Energy | Industrial Automation & Power Distribution Solutions',
-    template: '%s | Hotstart Energy'
-  },
-  description: 'Hotstart Energy is a leading authorized distributor of Legrand, Socomec, KEI, and Havells products. We provide industrial automation, switchgear, and power distribution solutions in Pune and across India.',
-  keywords: ['Industrial Automation', 'Power Distribution', 'Electrical Switchgear', 'Energy Management Systems', 'Legrand Distributor', 'Socomec Partner', 'KEI Cables', 'Havells Industrial', 'Pune Electrical Suppliers', 'PLC Automation'],
-  alternates: {
-    canonical: 'https://www.hotstartenergy.com',
-  },
-  authors: [{ name: 'Hotstart Energy' }],
-  creator: 'Hotstart Energy',
-  openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    url: 'https://www.hotstartenergy.com',
-    title: 'Hotstart Energy | Industrial Automation & Power Solutions',
-    description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
-    siteName: 'Hotstart Energy',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Hotstart Energy Industrial Solutions',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Hotstart Energy | Industrial Automation & Power Solutions',
-    description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
-    images: ['/opengraph-image.png'],
-    creator: '@hotstartenergy',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+    metadataBase: new URL('https://www.hotstartenergy.com'),
+    title: {
+        default: 'Hotstart Energy | Industrial Automation & Power Distribution Solutions',
+        template: '%s | Hotstart Energy'
     },
-  },
+    description: 'Hotstart Energy is a leading authorized distributor of Legrand, Socomec, KEI, and Havells products. We provide industrial automation, switchgear, and power distribution solutions in Pune and across India.',
+    keywords: ['Industrial Automation', 'Power Distribution', 'Electrical Switchgear', 'Energy Management Systems', 'Legrand Distributor', 'Socomec Partner', 'KEI Cables', 'Havells Industrial', 'Pune Electrical Suppliers', 'PLC Automation'],
+    alternates: {
+        canonical: 'https://www.hotstartenergy.com',
+    },
+    authors: [{ name: 'Hotstart Energy' }],
+    creator: 'Hotstart Energy',
+    openGraph: {
+        type: 'website',
+        locale: 'en_IN',
+        url: 'https://www.hotstartenergy.com',
+        title: 'Hotstart Energy | Industrial Automation & Power Solutions',
+        description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
+        siteName: 'Hotstart Energy',
+        images: [
+            {
+                url: '/opengraph-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Hotstart Energy Industrial Solutions',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Hotstart Energy | Industrial Automation & Power Solutions',
+        description: 'Authorized distributor for Legrand, Socomec, KEI, and Havells. Expert industrial automation and power distribution solutions.',
+        images: ['/opengraph-image.png'],
+        creator: '@hotstartenergy',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
 };
 
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Hotstart Energy Pvt. Ltd.",
-  "url": "https://www.hotstartenergy.com",
-  "logo": "https://www.hotstartenergy.com/logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-99211-88399",
-    "contactType": "customer service",
-    "email": "hotstartenergy@gmail.com"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Office No. 203, K. Square, K. P. Shroff Rd, Baner",
-    "addressLocality": "Pune",
-    "postalCode": "411045",
-    "addressRegion": "Maharashtra",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/hotstart-energy",
-    "https://www.instagram.com/hotstart_energy",
-    "https://www.youtube.com/channel/UC...-...",
-    "https://www.facebook.com/hotstartenergy"
-  ]
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hotstart Energy Pvt. Ltd.",
+    "url": "https://www.hotstartenergy.com",
+    "logo": "https://www.hotstartenergy.com/logo.png",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-99211-88399",
+        "contactType": "customer service",
+        "email": "hotstartenergy@gmail.com"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office No. 203, K. Square, K. P. Shroff Rd, Baner",
+        "addressLocality": "Pune",
+        "postalCode": "411045",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/company/hotstart-energy",
+        "https://www.instagram.com/hotstart_energy",
+        "https://www.youtube.com/channel/UC...-...",
+        "https://www.facebook.com/hotstartenergy"
+    ]
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-      </head>
-      <body
-        className={cn("font-body antialiased", titilliumWeb.variable)}
-        suppressHydrationWarning
-      >
-        <LaunchGuard>
-          <ScrollToTop />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <Toaster />
-          <SonnerToaster richColors />
-          <SpeedInsights />
-          <FloatingWhatsApp />
-        </LaunchGuard>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                />
+            </head>
+            <body
+                className={cn("font-body antialiased", titilliumWeb.variable)}
+                suppressHydrationWarning
+            >
+                <LaunchGuard>
+                    <ScrollToTop />
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                    <Toaster />
+                    <SonnerToaster richColors />
+                    <SpeedInsights />
+                    <FloatingWhatsApp />
+                </LaunchGuard>
+            </body>
+        </html>
+    );
 }
