@@ -48,7 +48,7 @@ export default function AdminDashboardPage() {
                         <CardTitle>Quick Actions</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <p className="text-sm text-muted-foreground p-4">Select "Products" from the sidebar to generate new product entries.</p>
+                        <p className="text-sm text-muted-foreground p-4">Select &quot;Products&quot; from the sidebar to generate new product entries.</p>
                     </CardContent>
                 </Card>
             </div>
