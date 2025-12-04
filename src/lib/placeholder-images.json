@@ -416,43 +416,43 @@
   {
     "id": "socomec-countis-new",
     "description": "Countis Energy Meter",
-    "imageUrl": "/socomec/SOCOMEC-DIRIS-MULTI-FUNCTION-ENERGY-METER.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-DIRIS-MULTI-FUNCTION-ENERGY-METER.jpg",
     "imageHint": "energy meter"
   },
   {
     "id": "socomec-multis-new",
     "description": "MULTIS Multifunction Meter",
-    "imageUrl": "/socomec/SOCOMEC-MULTI-FUNCTION-METERING--MONITORING.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-MULTI-FUNCTION-METERING--MONITORING.jpg",
     "imageHint": "multifunction meter"
   },
   {
     "id": "socomec-diris-new",
     "description": "DIRIS Digiware System",
-    "imageUrl": "/socomec/SOCOMEC-DIRIS-DIGIWARE-MANAGEMENT-SYSTEM.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-DIRIS-DIGIWARE-MANAGEMENT-SYSTEM.jpg",
     "imageHint": "monitoring system"
   },
   {
     "id": "socomec-manual-changeover-new",
     "description": "Manual Changeover Switch",
-    "imageUrl": "/socomec/SOCOMEC-MANUAL--TRANSFER-SWITCH.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-MANUAL--TRANSFER-SWITCH.jpg",
     "imageHint": "changeover switch"
   },
   {
     "id": "socomec-load-break-new",
     "description": "Load Break Switch",
-    "imageUrl": "/socomec/SOCOMEC-LOAD-BREAK-SWITCH.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-LOAD-BREAK-SWITCH.jpg",
     "imageHint": "load switch"
   },
   {
     "id": "socomec-bypass-new",
     "description": "Bypass Switch",
-    "imageUrl": "/socomec/SOCOMEC-BYPASS-SWITCH.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-BYPASS-SWITCH.jpg",
     "imageHint": "bypass switch"
   },
   {
     "id": "socomec-ats-new",
     "description": "Automatic Transfer Switch",
-    "imageUrl": "/socomec/SOCOMEC-ATyS-R-CHANGEOVER.jpg",
+    "imageUrl": "/Socomec/SOCOMEC-ATyS-R-CHANGEOVER.jpg",
     "imageHint": "transfer switch"
   }
 ]
