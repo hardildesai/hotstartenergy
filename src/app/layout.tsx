@@ -10,8 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
-import { CountdownOverlay } from '@/components/launch/countdown-overlay';
-import { LaunchGuard } from '@/components/launch/launch-guard';
+
 import { SmoothScroll } from '@/components/ui/smooth-scroll';
 
 
@@ -115,19 +114,19 @@ export default function RootLayout({
                 className={cn("font-body antialiased", titilliumWeb.variable)}
                 suppressHydrationWarning
             >
-                <LaunchGuard>
-                    <SmoothScroll>
-                        <ScrollToTop />
-                        <Header />
-                        <main>{children}</main>
-                        <Footer />
-                        <Toaster />
-                        <SonnerToaster richColors />
-                        <SpeedInsights />
-                        <Analytics />
-                        <FloatingWhatsApp />
-                    </SmoothScroll>
-                </LaunchGuard>
+
+                <SmoothScroll>
+                    <ScrollToTop />
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                    <Toaster />
+                    <SonnerToaster richColors />
+                    <SpeedInsights />
+                    <Analytics />
+                    <FloatingWhatsApp />
+                </SmoothScroll>
+
             </body>
         </html>
     );
