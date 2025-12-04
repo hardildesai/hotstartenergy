@@ -9,7 +9,7 @@ interface TravelCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
   imageAlt: string;
   title: string;
-  location: string;
+  location?: string;
   overview: string;
   price: number;
   pricePeriod: string;
@@ -54,12 +54,12 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
 
         {/* Content Container */}
         <div className="relative flex h-full flex-col justify-end p-6 text-card-foreground">
-          
+
           {/* Middle Section: Details (slides up on hover) */}
           <div className="space-y-4 transition-transform duration-500 ease-in-out group-hover:-translate-y-16">
             <div>
               <h3 className="text-3xl font-bold text-white">{title}</h3>
-              <p className="text-sm text-white/80">{location}</p>
+              {location && <p className="text-sm text-white/80">{location}</p>}
             </div>
             <div className="h-20">
               <h4 className="font-semibold text-white/90">OVERVIEW</h4>
@@ -72,9 +72,9 @@ const TravelCard = React.forwardRef<HTMLDivElement, TravelCardProps>(
           {/* Bottom Section: Price and Button (revealed on hover) */}
           <div className="absolute -bottom-20 left-0 w-full p-6 opacity-0 transition-all duration-500 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
             <div className="flex items-end justify-between">
-               <Button asChild variant="ghost" size="sm" className="text-white hover:bg-white/10">
-                 <Link href="/contact">Request Quote</Link>
-               </Button>
+              <Button asChild variant="ghost" size="sm" className="text-white hover:bg-white/10">
+                <Link href="/contact">Request Quote</Link>
+              </Button>
               <Button onClick={onBookNow} className="bg-white text-black hover:bg-white/90">
                 View Products <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

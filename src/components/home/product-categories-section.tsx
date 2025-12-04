@@ -64,7 +64,6 @@ export function ProductCategoriesSection() {
                   imageUrl={image?.imageUrl || ''}
                   imageAlt={category.title}
                   title={category.title}
-                  location="Global Shipping"
                   overview={category.description}
                   price={0} // Mock price, can be dynamic
                   pricePeriod="Request Quote"

@@ -77,7 +77,7 @@ const productCategories = [
                 title: 'DRX (Fixed/Standard)',
                 description: 'Compact and economical MCCBs for standard applications.',
                 details: 'Fixed thermal and magnetic settings. Ideal for building and standard industrial applications.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-drx-new',
                 url: '#',
                 attributes: ['Fixed Settings', 'Compact', 'Economical']
             }
@@ -91,7 +91,7 @@ const productCategories = [
                 title: 'CTX³ Contactors',
                 description: '3-pole and 4-pole contactors for motor control and switching.',
                 details: 'AC-3 Rating up to 800A. Wide range of coil voltages available.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-ctx3-new',
                 url: 'https://www.legrand.co_in/products/power/contactors/ctx',
                 attributes: ['AC-3 Rating', 'Various Coil Voltages', '3P/4P']
             },
@@ -99,7 +99,7 @@ const productCategories = [
                 title: 'RTX³ Overload Relays',
                 description: 'Thermal overload relays for precise motor protection.',
                 details: 'Direct mounting on CTX3 contactors. Class 10A tripping class.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-rtx3-new',
                 url: 'https://www.legrand.co_in/products/power/thermal-overload-relays/rtx',
                 attributes: ['Thermal Protection', 'Direct Mounting']
             },
@@ -107,7 +107,7 @@ const productCategories = [
                 title: 'MPX³ MPCB',
                 description: 'Motor Protection Circuit Breakers for switching and protection.',
                 details: 'Combines motor control, disconnect, and overload/short-circuit protection in one device.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-mpx3-new',
                 url: '#',
                 attributes: ['Motor Protection', 'High Breaking Capacity']
             }
@@ -474,7 +474,7 @@ const productCategories = [
                 title: 'DRX MCCB',
                 description: 'Robust MCCBs for standard applications.',
                 details: 'Rating: 16 Amp to 630 Amp (10 to 50 KA). 3P & 4P. Thermal Magnetic & Microprocessor LSI / LSIG.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-drx-new',
                 url: '#',
                 attributes: ['16A-630A', '10-50 KA', 'Thermal Magnetic']
             }
@@ -488,7 +488,7 @@ const productCategories = [
                 title: 'CTX3 Contactor',
                 description: 'Power contactors for motor control and switching.',
                 details: 'Type-AC1 & AC3. 3-Pole: 9A to 800A. 4-Pole: 40A to 900A.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-ctx3-new',
                 url: '#',
                 attributes: ['9A-800A', 'AC1 & AC3', '3P & 4P']
             },
@@ -496,7 +496,7 @@ const productCategories = [
                 title: 'RTX3 Overload Relay',
                 description: 'Thermal overload relays for motor protection.',
                 details: 'OLR - 3/4 Pole. Suitable for overload thermal protection.',
-                imageId: 'legrand-placeholder', // Same image group
+                imageId: 'legrand-rtx3-new',
                 url: '#',
                 attributes: ['Thermal Overload', '3/4 Pole', 'Motor Protection']
             },
@@ -504,7 +504,7 @@ const productCategories = [
                 title: 'MPX3 MPCB',
                 description: 'Motor Protection Circuit Breakers.',
                 details: 'Rating: 0.02 to 45 KW @415V. 0.1A to 100A. Breaking capacity: 15/20/50/100KA.',
-                imageId: 'legrand-placeholder', // Same image group
+                imageId: 'legrand-mpx3-new',
                 url: '#',
                 attributes: ['0.1A-100A', '15-100 KA', 'Motor Protection']
             }
@@ -707,6 +707,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                                                 onAdd={handleEnquire}
                                                                 onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
                                                                 className="w-full h-full"
+                                                                imageFit="contain"
                                                             />
                                                         </motion.div>
                                                     )
@@ -760,6 +761,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                                                 onAdd={handleEnquire}
                                                                 onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
                                                                 className="w-full h-full"
+                                                                imageFit="contain"
                                                             />
                                                         </motion.div>
                                                     )
@@ -803,6 +805,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                                         onAdd={handleEnquire}
                                                         onViewDetails={() => handleViewDetails({ ...product, category: category.category })}
                                                         className="w-full h-full"
+                                                        imageFit="contain"
                                                     />
                                                 </motion.div>
                                             )
@@ -830,7 +833,7 @@ export function LegrandPage({ brand }: { brand: Brand }) {
                                     alt={selectedProduct.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
-                                    className="object-cover"
+                                    className="object-contain p-4"
                                 />
                             </div>
                             <div className="p-8 flex flex-col h-full">

@@ -102,14 +102,8 @@ export const ProductItem = ({
   src: string;
   setActive: (item: string | null) => void;
 }) => {
-  const router = useRouter();
-  const handleClick = () => {
-    setActive(null);
-    router.push(href);
-  };
-
   return (
-    <div className="flex space-x-2 cursor-pointer" onClick={handleClick}>
+    <Link href={href} className="flex space-x-2" onClick={() => setActive(null)}>
       <Image
         src={src}
         width={60}
@@ -125,7 +119,7 @@ export const ProductItem = ({
           {description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -59,7 +59,11 @@ export default function ProductsPage() {
                 </CardContent>
                 <CardFooter className="justify-center pb-6 pt-2">
                   <div className="text-xs text-muted-foreground group-hover:text-accent">
-                    {brand.productCount} products <ArrowRight className="inline-block ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    {brand.slug === 'havells' ? (
+                      <span className="font-medium">Coming Soon</span>
+                    ) : (
+                      <>{brand.productCount} products <ArrowRight className="inline-block ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" /></>
+                    )}
                   </div>
                 </CardFooter>
               </Card>
