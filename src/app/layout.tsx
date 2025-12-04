@@ -12,6 +12,7 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
 import { CountdownOverlay } from '@/components/launch/countdown-overlay';
 import { LaunchGuard } from '@/components/launch/launch-guard';
+import { SmoothScroll } from '@/components/ui/smooth-scroll';
 
 
 const titilliumWeb = Titillium_Web({
@@ -115,15 +116,17 @@ export default function RootLayout({
                 suppressHydrationWarning
             >
                 <LaunchGuard>
-                    <ScrollToTop />
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
-                    <Toaster />
-                    <SonnerToaster richColors />
-                    <SpeedInsights />
-                    <Analytics />
-                    <FloatingWhatsApp />
+                    <SmoothScroll>
+                        <ScrollToTop />
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
+                        <Toaster />
+                        <SonnerToaster richColors />
+                        <SpeedInsights />
+                        <Analytics />
+                        <FloatingWhatsApp />
+                    </SmoothScroll>
                 </LaunchGuard>
             </body>
         </html>

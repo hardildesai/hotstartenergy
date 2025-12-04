@@ -1,6 +1,6 @@
 'use server';
 
-const OWNER_PASSWORD = 'hotadminstart';
+const OWNER_PASSWORD = 'admin';
 
 export async function verifyOwnerPassword(password: string) {
     // Simulate a slight delay to prevent timing attacks (optional but good practice)
