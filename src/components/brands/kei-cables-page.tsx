@@ -28,19 +28,19 @@ const productCategories = [
         title: 'HV Power Cable',
         description: 'Built for high performance, KEI HV wire ensures safe and efficient power transmission. These cables are designed to handle high voltage with reliability, making them ideal for demanding industrial and commercial applications.',
         details: 'KEI HV power cables are manufactured using high-quality conductors and insulation to withstand high voltage stress. They are suitable for underground and overhead applications in power transmission and distribution networks. Features include low dielectric loss, high reliability, and long service life. Available in various configurations including single-core and multi-core, with aluminum or copper conductors.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-hv-cable-new',
       },
       {
         title: 'LV Power & Control Cable',
         description: 'KEI LV wire and cable are ideal for low-voltage power needs. The LV Power & Control Cable ensures efficient performance and safety, making it perfect for residential, commercial, and industrial use.',
         details: 'KEI Low Voltage (LV) cables are designed for a wide range of applications, including power distribution and control circuits. They are manufactured with high-purity copper or aluminum conductors and high-grade PVC or XLPE insulation. These cables offer excellent electrical, mechanical, and thermal properties, ensuring safe and reliable operation.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-lv-cable-new',
       },
       {
         title: 'EHV Power Cable',
         description: 'KEI EHV wire and KEI EHV cable are designed for efficient power transmission at extremely high voltages. These EHV power cables ensure superior insulation, reliability, and safety, making them ideal for large-scale industrial and infrastructure projects.',
         details: 'Extra-High Voltage (EHV) cables from KEI are engineered for bulk power transmission over long distances. They feature advanced insulation systems (like XLPE) and robust sheathing to handle voltages from 66 kV up to 400 kV. These cables are critical for national power grids and large industrial complexes, offering minimal power loss and maximum reliability.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-ehv-cable-new',
       },
     ]
   },
@@ -51,19 +51,19 @@ const productCategories = [
         title: 'Building Wires',
         description: 'KEI building wires are crafted for secure and efficient electrical connections in homes and offices. The building wires offer high durability and superior insulation, ensuring long-lasting performance and safety for everyday use.',
         details: 'KEI\'s range of building wires includes flame-retardant (FR), flame-retardant low-smoke (FRLS), and zero-halogen flame-retardant (ZHFR) options. These wires are designed for use in conduits and fixed installations, providing safety against electrical shocks and fires in residential and commercial buildings. They are flexible, easy to install, and meet all relevant national and international standards.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-building-wire-new',
       },
       {
         title: 'Flexible Single And Multi Core Wires',
         description: 'KEI flexible cable is built for versatile use in residential, commercial, and industrial setups. These flexible single and multi core wires offer excellent conductivity, durability, and ease of installation, ensuring reliable performance in various applications.',
         details: 'These versatile flexible cables are designed for applications requiring high flexibility, such as in control panels, machinery, and appliances. Available in single-core and multi-core configurations, they are made with finely stranded copper conductors and a flexible PVC sheath, making them easy to handle and install in tight spaces.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-flexible-wire-new',
       },
       {
         title: 'Fire Survival Cables',
         description: 'KEI fire survival cables are designed to maintain circuit integrity during fire emergencies. These cables ensure safety and reliability in critical applications, making them ideal for fire-prone environments in residential, commercial, and industrial setups.',
         details: 'Also known as fire-resistant cables, these are designed to continue operating for a specified period during a fire. They are essential for critical systems like fire alarms, emergency lighting, and public address systems. KEI\'s fire survival cables use special materials that form a ceramic-like insulation layer when exposed to fire, ensuring circuit integrity.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-fire-survival-new',
       }
     ]
   },
@@ -74,19 +74,19 @@ const productCategories = [
         title: 'Solar Cables',
         description: 'KEI solar cable is designed for reliable and efficient energy transmission in solar power systems. These Solar Cables ensure durability, UV resistance, and safety, making them ideal for sustainable energy solutions in residential and commercial setups.',
         details: 'Specifically designed for photovoltaic systems, KEI solar cables are UV-resistant, weather-resistant, and flame-retardant. They can withstand the harsh outdoor conditions of solar installations and offer excellent performance over a wide temperature range. These cables connect solar panels to inverters, ensuring minimal energy loss.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-solar-cable-new',
       },
       {
         title: 'Telecom Cables',
         description: 'KEI telecom cables are engineered to ensure seamless and reliable data and voice transmission. Designed for durability and high performance, these telecom cables provide efficient connectivity, making them ideal for modern communication networks.',
         details: 'KEI manufactures a variety of telecommunication cables, including jelly-filled telephone cables, CATV coaxial cables, and LAN cables. These products are designed for high-speed data and clear voice transmission with minimal interference, supporting the infrastructure of modern communication networks.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-telecom-cable-new',
       },
       {
         title: 'Instrumentation Cables',
         description: 'KEI instrumentation cable is designed for precise signal transmission in industrial applications. These cables ensure accuracy, reliability, and durability, making them essential for controlling and monitoring processes in various industries.',
         details: 'Instrumentation cables are vital for process control in industries like oil & gas, power generation, and manufacturing. KEI\'s range includes shielded and unshielded cables, available in pairs, triads, or quads. They are designed to protect low-level signals from electrical noise and interference, ensuring accurate measurement and control.',
-        imageId: 'kei-placeholder',
+        imageId: 'kei-instrumentation-cable-new',
       }
     ]
   }

@@ -20,6 +20,7 @@ interface ProductRevealCardProps {
   className?: string
   features?: { title: string; subtitle: string }[];
   category: string;
+  imageFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
 }
 
 export function ProductRevealCard({
@@ -31,6 +32,7 @@ export function ProductRevealCard({
   enableAnimations = true,
   className,
   category,
+  imageFit = "cover",
 }: ProductRevealCardProps) {
   const shouldReduceMotion = useReducedMotion()
   const shouldAnimate = enableAnimations && !shouldReduceMotion
@@ -64,12 +66,15 @@ export function ProductRevealCard({
       <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-white/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
       {/* Image Section */}
-      <div className="relative aspect-[4/3] overflow-hidden p-2">
+      <div className={cn("relative aspect-[4/3] overflow-hidden p-2", imageFit === 'contain' && "bg-white/5")}>
         <div className="relative h-full w-full overflow-hidden rounded-2xl">
           <motion.img
             src={image}
             alt={name}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            className={cn(
+              "h-full w-full transition-transform duration-700 ease-out group-hover:scale-110",
+              imageFit === "contain" ? "object-contain" : "object-cover"
+            )}
           />
 
           {/* Overlay Gradient */}
