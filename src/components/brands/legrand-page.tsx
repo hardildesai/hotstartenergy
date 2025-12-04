@@ -31,7 +31,7 @@ const productCategories = [
                 title: 'DMX³ (630A - 6300A)',
                 description: 'High-performance ACBs for efficient power distribution and protection.',
                 details: 'Frame Size: 3, Poles: 3P/4P, Breaking Capacity: 50kA - 100kA, Mounting: Fixed/Draw-out.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-dmx3-new',
                 url: 'https://www.legrand.co.in/products/power/air-circuit-breakers-acb/dmx',
                 attributes: ['Frame Size', 'Poles: 3P/4P', '50-100kA', 'Fixed/Draw-out']
             },
@@ -39,7 +39,7 @@ const productCategories = [
                 title: 'DMX SP (Standard)',
                 description: 'Standard range ACBs optimized for essential protection needs.',
                 details: 'Reliable protection for standard applications. Available in various frame sizes and breaking capacities.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-dmx-sp-new',
                 url: '#',
                 attributes: ['Standard Range', 'Reliable Protection']
             },
@@ -47,7 +47,7 @@ const productCategories = [
                 title: 'ACB Accessories',
                 description: 'Comprehensive range of accessories including coils and motors.',
                 details: 'Enhance ACB functionality with shunt trips, closing coils, undervoltage releases, and motor operators.',
-                imageId: 'legrand-placeholder',
+                imageId: 'legrand-acb-accessories-new',
                 url: '#',
                 attributes: ['Coils', 'Motors', 'Auxiliaries']
             }

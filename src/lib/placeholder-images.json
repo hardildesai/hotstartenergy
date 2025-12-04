@@ -276,18 +276,6 @@
     "imageHint": "socomec logo"
   },
   {
-    "id": "elmeasure-placeholder",
-    "description": "Elmeasure Brand Logo",
-    "imageUrl": "/Elmeasure_logo.png",
-    "imageHint": "elmeasure logo"
-  },
-  {
-    "id": "kei-hv-cable-new",
-    "description": "KEI High Voltage power cables",
-    "imageUrl": "/kei/hv-cables.jpg",
-    "imageHint": "power cables"
-  },
-  {
     "id": "kei-lv-cable-new",
     "description": "KEI Low Voltage power and control cables",
     "imageUrl": "/kei/lv-cables.jpg",
@@ -478,6 +466,186 @@
     "description": "KEI Low Voltage power and control cables",
     "imageUrl": "/kei/lv-cables.jpg",
     "imageHint": "control cables"
+  },
+  {
+    "id": "kei-ehv-cable-new",
+    "description": "Extra-High Voltage power cable on a large spool",
+    "imageUrl": "/kei/ehv-cable.jpg",
+    "imageHint": "EHV cable"
+  },
+  {
+    "id": "kei-building-wire-new",
+    "description": "Coils of colorful building wires",
+    "imageUrl": "/kei/house-wire-home.jpg",
+    "imageHint": "building wire"
+  },
+  {
+    "id": "kei-flexible-wire-new",
+    "description": "Flexible multi-core wires",
+    "imageUrl": "/kei/single-multicore-flexibles.jpg",
+    "imageHint": "flexible wire"
+  },
+  {
+    "id": "kei-fire-survival-new",
+    "description": "Fire-resistant cables in a conduit",
+    "imageUrl": "/kei/fire-survival-resistant-cables.jpg",
+    "imageHint": "fire proof"
+  },
+  {
+    "id": "kei-solar-cable-new",
+    "description": "Solar cables connecting panels",
+    "imageUrl": "/kei/solar-cables.jpg",
+    "imageHint": "solar cable"
+  },
+  {
+    "id": "kei-telecom-cable-new",
+    "description": "Bundle of fiber optic telecom cables",
+    "imageUrl": "/kei/communication-cables.jpg",
+    "imageHint": "telecom cable"
+  },
+  {
+    "id": "kei-instrumentation-cable-new",
+    "description": "Instrumentation cables connected to a panel",
+    "imageUrl": "/kei/instrumentation-cables.jpg",
+    "imageHint": "instrumentation cable"
+  },
+  {
+    "id": "elmeasure-ats-new",
+    "description": "Automatic Transfer Switches",
+    "imageUrl": "/elmeasure/Automatic-Transfer-Switches.webp",
+    "imageHint": "ATS"
+  },
+  {
+    "id": "elmeasure-mts-new",
+    "description": "Manual Transfer Switches",
+    "imageUrl": "/elmeasure/Manual-Transfer-Switches.webp",
+    "imageHint": "MTS"
+  },
+  {
+    "id": "elmeasure-accl-new",
+    "description": "Automatic Changeover with Current Limiter",
+    "imageUrl": "/elmeasure/Automatic-Changover-With-Current-Limiter.webp",
+    "imageHint": "ACCL"
+  },
+  {
+    "id": "elmeasure-solenoid-ats-new",
+    "description": "Solenoid-Based Automatic Transfer Switch",
+    "imageUrl": "/elmeasure/Solenoid-Automatic-Transfer-Switch.webp",
+    "imageHint": "solenoid ATS"
+  },
+  {
+    "id": "elmeasure-static-ts-new",
+    "description": "Static Transfer Switches",
+    "imageUrl": "/elmeasure/Static-Transfer-Switches.webp",
+    "imageHint": "static transfer switch"
+  },
+  {
+    "id": "elmeasure-dc-meter-new",
+    "description": "DC Energy Meters",
+    "imageUrl": "/elmeasure/DC-Energy-Meters.webp",
+    "imageHint": "DC meter"
+  },
+  {
+    "id": "elmeasure-bcpm-new",
+    "description": "Branch Circuit Power Monitors",
+    "imageUrl": "/elmeasure/Branch-Circuit-Power-Monitors.webp",
+    "imageHint": "BCPM"
+  },
+  {
+    "id": "elmeasure-basic-meter-new",
+    "description": "Basic Meters",
+    "imageUrl": "/elmeasure/Basic-Meters.webp",
+    "imageHint": "basic meter"
+  },
+  {
+    "id": "elmeasure-pq-monitor-new",
+    "description": "Power Quality Monitors",
+    "imageUrl": "/elmeasure/Power-Quality-Monitors.webp",
+    "imageHint": "PQ monitor"
+  },
+  {
+    "id": "elmeasure-multifunction-meter-new",
+    "description": "Multi-Functional Energy Meters",
+    "imageUrl": "/elmeasure/Multi-Functional-Energy-Meters.webp",
+    "imageHint": "multifunction meter"
+  },
+  {
+    "id": "elmeasure-pq-analyser-new",
+    "description": "Power Quality Analysers",
+    "imageUrl": "/elmeasure/Power-Quality-Analysers.webp",
+    "imageHint": "PQ analyser"
+  },
+  {
+    "id": "elmeasure-portable-pqa-new",
+    "description": "Portable Power Quality Analyzers",
+    "imageUrl": "/elmeasure/Portable-Power-Quality-Analysers.webp",
+    "imageHint": "portable PQA"
+  },
+  {
+    "id": "elmeasure-iot-meter-new",
+    "description": "IoT Energy Meters",
+    "imageUrl": "/elmeasure/IoT-Energy-Meters.webp",
+    "imageHint": "IoT meter"
+  },
+  {
+    "id": "socomec-countis-new",
+    "description": "Countis Energy Meter",
+    "imageUrl": "/Socomec/SOCOMEC-DIRIS-MULTI-FUNCTION-ENERGY-METER.jpg",
+    "imageHint": "energy meter"
+  },
+  {
+    "id": "socomec-multis-new",
+    "description": "MULTIS Multifunction Meter",
+    "imageUrl": "/Socomec/SOCOMEC-MULTI-FUNCTION-METERING--MONITORING.jpg",
+    "imageHint": "multifunction meter"
+  },
+  {
+    "id": "socomec-diris-new",
+    "description": "DIRIS Digiware System",
+    "imageUrl": "/Socomec/SOCOMEC-DIRIS-DIGIWARE-MANAGEMENT-SYSTEM.jpg",
+    "imageHint": "monitoring system"
+  },
+  {
+    "id": "socomec-manual-changeover-new",
+    "description": "Manual Changeover Switch",
+    "imageUrl": "/Socomec/SOCOMEC-MANUAL--TRANSFER-SWITCH.jpg",
+    "imageHint": "changeover switch"
+  },
+  {
+    "id": "socomec-load-break-new",
+    "description": "Load Break Switch",
+    "imageUrl": "/Socomec/SOCOMEC-LOAD-BREAK-SWITCH.jpg",
+    "imageHint": "load switch"
+  },
+  {
+    "id": "socomec-bypass-new",
+    "description": "Bypass Switch",
+    "imageUrl": "/Socomec/SOCOMEC-BYPASS-SWITCH.jpg",
+    "imageHint": "bypass switch"
+  },
+  {
+    "id": "socomec-ats-new",
+    "description": "Automatic Transfer Switch",
+    "imageUrl": "/Socomec/SOCOMEC-ATyS-R-CHANGEOVER.jpg",
+    "imageHint": "transfer switch"
+  },
+  {
+    "id": "legrand-ctx3-new",
+    "description": "CTX3 Contactor",
+    "imageUrl": "/legrand/CTX3_CONTACTOR.jpg",
+    "imageHint": "contactor"
+  },
+  {
+    "id": "legrand-drx-new",
+    "description": "DRX MCCB",
+    "imageUrl": "/legrand/DRX_MCCB_FIXED STANDARD.jpg",
+    "imageHint": "mccb"
+  },
+  {
+    "id": "legrand-mpx3-new",
+    "description": "MPX3 MPCB",
+    "imageUrl": "/legrand/MPX3_MCBC.jpg",
+    "imageHint": "mpcb"
   },
   {
     "id": "kei-ehv-cable-new",
@@ -670,5 +838,23 @@
     "description": "Elmeasure Brand Hero Image",
     "imageUrl": "/elmeasure/Elmeasure_bg.png",
     "imageHint": "elmeasure hero"
+  },
+  {
+    "id": "legrand-dmx3-new",
+    "description": "DMX3 ACB",
+    "imageUrl": "/legrand/DMX_630A.jpg",
+    "imageHint": "dmx3 acb"
+  },
+  {
+    "id": "legrand-dmx-sp-new",
+    "description": "DMX SP ACB",
+    "imageUrl": "/legrand/DMX_SP.jpg",
+    "imageHint": "dmx sp acb"
+  },
+  {
+    "id": "legrand-acb-accessories-new",
+    "description": "ACB Accessories",
+    "imageUrl": "/legrand/ACB_ACCESORIES.jpg",
+    "imageHint": "acb accessories"
   }
 ]
