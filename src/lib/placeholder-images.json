@@ -276,6 +276,12 @@
     "imageHint": "socomec logo"
   },
   {
+    "id": "kei-hv-cable-new",
+    "description": "KEI High Voltage power cables",
+    "imageUrl": "/kei/hv-cables.jpg",
+    "imageHint": "HV cable"
+  },
+  {
     "id": "kei-lv-cable-new",
     "description": "KEI Low Voltage power and control cables",
     "imageUrl": "/kei/lv-cables.jpg",
